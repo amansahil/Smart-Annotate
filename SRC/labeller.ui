@@ -14,7 +14,7 @@
    <string>Labeller</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="imageBrowseButton">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
+   <widget class="QListView" name="imageList">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -73,7 +73,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="classBrowseButton">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -86,7 +86,7 @@
      <string>Browse</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView_2">
+   <widget class="QListView" name="classList">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -109,7 +109,7 @@
      <string>Classes</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="annotationBrowseButton">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -151,8 +151,8 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>40</y>
+      <x>480</x>
+      <y>30</y>
       <width>811</width>
       <height>641</height>
      </rect>
@@ -162,27 +162,61 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>1160</x>
-      <y>10</y>
+      <x>1150</x>
+      <y>0</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Redo</string>
+     <string> Redo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/imgs/redo-128.png</normaloff>:/imgs/redo-128.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
       <x>1050</x>
-      <y>10</y>
+      <y>0</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Undo</string>
+     <string> Undo</string>
+    </property>
+    <property name="icon">
+     <iconset resource="images.qrc">
+      <normaloff>:/imgs/undo-128.png</normaloff>:/imgs/undo-128.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imageDirLabel">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="classFileLabel">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>380</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -198,6 +232,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

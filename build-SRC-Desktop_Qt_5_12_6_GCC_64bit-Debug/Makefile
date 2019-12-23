@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../SRC/main.cpp \
-		../SRC/labeller.cpp moc_labeller.cpp
+		../SRC/labeller.cpp qrc_images.cpp \
+		moc_labeller.cpp
 OBJECTS       = main.o \
 		labeller.o \
+		qrc_images.o \
 		moc_labeller.o
 DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/common/unix.conf \
@@ -231,6 +233,7 @@ DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_post.prf \
+		../SRC/.qmake.stash \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/default_pre.prf \
@@ -437,6 +440,7 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/default_pre.prf \
@@ -456,7 +460,8 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf \
-		../SRC/SRC.pro
+		../SRC/SRC.pro \
+		../SRC/images.qrc
 	$(QMAKE) -o Makefile ../SRC/SRC.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/common/unix.conf:
@@ -632,6 +637,7 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/default_pre.prf:
@@ -652,6 +658,7 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf:
 ../SRC/SRC.pro:
+../SRC/images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../SRC/SRC.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 
@@ -666,6 +673,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
@@ -693,8 +701,15 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_images.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_images.cpp
+qrc_images.cpp: ../SRC/images.qrc \
+		../../../Qt/5.12.6/gcc_64/bin/rcc \
+		../SRC/redo-128.png \
+		../SRC/undo-128.png
+	/home/sahil/Qt/5.12.6/gcc_64/bin/rcc -name images ../SRC/images.qrc -o qrc_images.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -811,6 +826,33 @@ moc_labeller.cpp: ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qfileinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QFile \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTextStream \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QStringListModel \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlistmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qrubberband.h \
 		moc_predefs.h \
 		../../../Qt/5.12.6/gcc_64/bin/moc
 	/home/sahil/Qt/5.12.6/gcc_64/bin/moc $(DEFINES) --include /home/sahil/Desktop/Group_24_SDI_SOFT20091/build-SRC-Desktop_Qt_5_12_6_GCC_64bit-Debug/moc_predefs.h -I/home/sahil/Qt/5.12.6/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Group_24_SDI_SOFT20091/SRC -I/home/sahil/Qt/5.12.6/gcc_64/include -I/home/sahil/Qt/5.12.6/gcc_64/include/QtWidgets -I/home/sahil/Qt/5.12.6/gcc_64/include/QtGui -I/home/sahil/Qt/5.12.6/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../SRC/labeller.h -o moc_labeller.cpp
@@ -832,7 +874,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -943,6 +985,33 @@ main.o: ../SRC/main.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qfileinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QFile \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTextStream \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QStringListModel \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlistmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qrubberband.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1059,8 +1128,72 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qicon.h \
-		ui_labeller.h
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qfileinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QFile \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTextStream \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QStringListModel \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlistmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qrubberband.h \
+		ui_labeller.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QListView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlistview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMenuBar \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmenu.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labeller.o ../SRC/labeller.cpp
+
+qrc_images.o: qrc_images.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_images.o qrc_images.cpp
 
 moc_labeller.o: moc_labeller.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_labeller.o moc_labeller.cpp
