@@ -1,6 +1,11 @@
 #include "labeller.h"
 #include "ui_labeller.h"
+#include "labeller_model.h"
+
+#include <QtWidgets>
 #include <QAbstractItemView>
+
+// Listeners & UI
 
 Labeller::Labeller(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +16,11 @@ Labeller::Labeller(QWidget *parent)
     // Making both list view uneditable by user
     ui->imageList->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->classList->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+   // Model
+   labellerModel = new LabellerModel;
+
+   createListeners();
 }
 
 Labeller::~Labeller()
@@ -18,11 +28,46 @@ Labeller::~Labeller()
     delete ui;
 }
 
+void Labeller::setImageList() {
+    auto model = new QStringListModel;
+    model->setStringList(labellerModel->getImageFiles());
+    ui->imageList->setModel(model);
+}
+
+void Labeller::setClassList() {
+    auto model = new QStringListModel;
+    model->setStringList(labellerModel->getClassNames());
+    ui->classList->setModel(model);
+}
+
+void Labeller::setImageDir() {
+    ui->imageDirLabel->setText(labellerModel->getImageDir());
+}
+
+void Labeller::setClassFile() {
+    ui->classFileLabel->setText(labellerModel->getNameFile());
+}
+
+void Labeller::setAnnotationFile() {
+    ui->annotationDirLabel->setText(labellerModel->getAnnotationFile());
+}
+
+void Labeller::createListeners() {
+       connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
+       connect(labellerModel, SIGNAL(classNamesChanged()), this, SLOT(setClassList()));
+       connect(labellerModel, SIGNAL(annotationFileChanged()), this, SLOT(setAnnotationFile()));
+       connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
+       connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
+
+}
+
+// Controller methods
 
 void Labeller::on_imageBrowseButton_clicked()
 {
     QString imageDirectory = QFileDialog::getExistingDirectory(this, "Select Directory");
-    ui->imageDirLabel->setText(imageDirectory);
+
+    labellerModel->updateimageDir(imageDirectory);
 
     QDir directory(imageDirectory);
 
@@ -31,15 +76,13 @@ void Labeller::on_imageBrowseButton_clicked()
 
     QStringList images = directory.entryList(filters);
 
-    auto model = new QStringListModel;
-    model->setStringList(images);
-    ui->imageList->setModel(model);
+    labellerModel->updateImageFiles(images);
 }
 
 void Labeller::on_classBrowseButton_clicked()
 {
-    QString classFile = QFileDialog::getOpenFileName(this, "Select a Class file", nullptr, "Class Files (*.classes)");
-    QFile file(classFile);
+    QString nameFile = QFileDialog::getOpenFileName(this, "Select a Names file", nullptr, "Name Files (*.names)");
+    QFile file(nameFile);
 
     QStringList classes;
 
@@ -48,7 +91,7 @@ void Labeller::on_classBrowseButton_clicked()
         return;
     }
 
-    ui->classFileLabel->setText(classFile);
+    labellerModel->updateNameFile(nameFile);
 
     QTextStream textStream(&file);
 
@@ -61,9 +104,14 @@ void Labeller::on_classBrowseButton_clicked()
             classes.append(line);
     }
 
-    auto model = new QStringListModel;
-    model->setStringList(classes);
-    ui->classList->setModel(model);
+    labellerModel->updateClassNames(classes);
 
     file.close();
+}
+
+void Labeller::on_annotationBrowseButton_clicked()
+{
+    QString annotationFile = QFileDialog::getOpenFileName(this, "Select an annotation file", nullptr, "Annotation files (*.annotations)");
+
+    labellerModel->updateAnnotationFile(annotationFile);
 }
