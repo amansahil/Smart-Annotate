@@ -33,6 +33,7 @@ public:
     QAction *actionAdd_Text;
     QAction *actionCopy;
     QAction *actionPaste;
+    QAction *actionCopy_Paste;
     QWidget *centralwidget;
     QPushButton *imageBrowseButton;
     QLabel *label;
@@ -47,7 +48,6 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
     QLabel *imageDirLabel;
     QLabel *classFileLabel;
     QPushButton *pushButton;
@@ -57,15 +57,14 @@ public:
     QPushButton *pushButton_8;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton_10;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_13;
-    QLineEdit *lineEdit_2;
-    QPushButton *pushButton_9;
+    QPushButton *sortClassDscButton;
+    QPushButton *sortClassAscButton;
+    QPushButton *addNameItemButton;
+    QLineEdit *classItemLineEdit;
+    QPushButton *deleteClassItemButton;
     QLabel *annotationDirLabel;
     QMenuBar *menubar;
     QMenu *menuLabel;
-    QMenu *menuEdit;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Labeller)
@@ -81,6 +80,8 @@ public:
         actionCopy->setObjectName(QString::fromUtf8("actionCopy"));
         actionPaste = new QAction(Labeller);
         actionPaste->setObjectName(QString::fromUtf8("actionPaste"));
+        actionCopy_Paste = new QAction(Labeller);
+        actionCopy_Paste->setObjectName(QString::fromUtf8("actionCopy_Paste"));
         centralwidget = new QWidget(Labeller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
@@ -125,12 +126,6 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/imgs/redo-128.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_5->setIcon(icon);
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setGeometry(QRect(1080, 10, 89, 25));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/imgs/undo-128.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon1);
         imageDirLabel = new QLabel(centralwidget);
         imageDirLabel->setObjectName(QString::fromUtf8("imageDirLabel"));
         imageDirLabel->setGeometry(QRect(170, 40, 281, 21));
@@ -158,21 +153,21 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(10, 430, 91, 20));
-        pushButton_10 = new QPushButton(centralwidget);
-        pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
-        pushButton_10->setGeometry(QRect(120, 460, 89, 25));
-        pushButton_11 = new QPushButton(centralwidget);
-        pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
-        pushButton_11->setGeometry(QRect(10, 460, 89, 25));
-        pushButton_13 = new QPushButton(centralwidget);
-        pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
-        pushButton_13->setGeometry(QRect(240, 390, 89, 25));
-        lineEdit_2 = new QLineEdit(centralwidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(10, 390, 221, 25));
-        pushButton_9 = new QPushButton(centralwidget);
-        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
-        pushButton_9->setGeometry(QRect(340, 390, 89, 25));
+        sortClassDscButton = new QPushButton(centralwidget);
+        sortClassDscButton->setObjectName(QString::fromUtf8("sortClassDscButton"));
+        sortClassDscButton->setGeometry(QRect(120, 460, 89, 25));
+        sortClassAscButton = new QPushButton(centralwidget);
+        sortClassAscButton->setObjectName(QString::fromUtf8("sortClassAscButton"));
+        sortClassAscButton->setGeometry(QRect(10, 460, 89, 25));
+        addNameItemButton = new QPushButton(centralwidget);
+        addNameItemButton->setObjectName(QString::fromUtf8("addNameItemButton"));
+        addNameItemButton->setGeometry(QRect(270, 390, 89, 25));
+        classItemLineEdit = new QLineEdit(centralwidget);
+        classItemLineEdit->setObjectName(QString::fromUtf8("classItemLineEdit"));
+        classItemLineEdit->setGeometry(QRect(10, 390, 251, 25));
+        deleteClassItemButton = new QPushButton(centralwidget);
+        deleteClassItemButton->setObjectName(QString::fromUtf8("deleteClassItemButton"));
+        deleteClassItemButton->setGeometry(QRect(370, 390, 89, 25));
         annotationDirLabel = new QLabel(centralwidget);
         annotationDirLabel->setObjectName(QString::fromUtf8("annotationDirLabel"));
         annotationDirLabel->setGeometry(QRect(230, 660, 231, 21));
@@ -182,19 +177,15 @@ public:
         menubar->setGeometry(QRect(0, 0, 1302, 22));
         menuLabel = new QMenu(menubar);
         menuLabel->setObjectName(QString::fromUtf8("menuLabel"));
-        menuEdit = new QMenu(menubar);
-        menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         Labeller->setMenuBar(menubar);
         statusbar = new QStatusBar(Labeller);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         Labeller->setStatusBar(statusbar);
 
         menubar->addAction(menuLabel->menuAction());
-        menubar->addAction(menuEdit->menuAction());
         menuLabel->addAction(actionMark_Object);
         menuLabel->addAction(actionAdd_Text);
-        menuEdit->addAction(actionCopy);
-        menuEdit->addAction(actionPaste);
+        menuLabel->addAction(actionCopy_Paste);
 
         retranslateUi(Labeller);
 
@@ -208,6 +199,7 @@ public:
         actionAdd_Text->setText(QApplication::translate("Labeller", "Add Text", nullptr));
         actionCopy->setText(QApplication::translate("Labeller", "Copy", nullptr));
         actionPaste->setText(QApplication::translate("Labeller", "Paste", nullptr));
+        actionCopy_Paste->setText(QApplication::translate("Labeller", "Copy / Paste", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
@@ -215,8 +207,7 @@ public:
         annotationBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label_5->setText(QApplication::translate("Labeller", "Annotation File", nullptr));
         pushButton_4->setText(QApplication::translate("Labeller", "Save", nullptr));
-        pushButton_5->setText(QApplication::translate("Labeller", " Redo", nullptr));
-        pushButton_6->setText(QApplication::translate("Labeller", " Undo", nullptr));
+        pushButton_5->setText(QApplication::translate("Labeller", "Clear", nullptr));
         imageDirLabel->setText(QString());
         classFileLabel->setText(QString());
         pushButton->setText(QApplication::translate("Labeller", "Search", nullptr));
@@ -226,13 +217,12 @@ public:
         pushButton_8->setText(QApplication::translate("Labeller", "Date (DSC)", nullptr));
         label_2->setText(QApplication::translate("Labeller", "Sort By :", nullptr));
         label_3->setText(QApplication::translate("Labeller", "Sort By :", nullptr));
-        pushButton_10->setText(QApplication::translate("Labeller", "Name (DSC)", nullptr));
-        pushButton_11->setText(QApplication::translate("Labeller", "Name (ASC)", nullptr));
-        pushButton_13->setText(QApplication::translate("Labeller", "Add", nullptr));
-        pushButton_9->setText(QApplication::translate("Labeller", "Delete", nullptr));
+        sortClassDscButton->setText(QApplication::translate("Labeller", "Name (DSC)", nullptr));
+        sortClassAscButton->setText(QApplication::translate("Labeller", "Name (ASC)", nullptr));
+        addNameItemButton->setText(QApplication::translate("Labeller", "Add", nullptr));
+        deleteClassItemButton->setText(QApplication::translate("Labeller", "Delete", nullptr));
         annotationDirLabel->setText(QString());
         menuLabel->setTitle(QApplication::translate("Labeller", "Label", nullptr));
-        menuEdit->setTitle(QApplication::translate("Labeller", "Edit", nullptr));
     } // retranslateUi
 
 };

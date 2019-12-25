@@ -54,13 +54,11 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
-		../SRC/labeller.cpp qrc_images.cpp \
-		moc_labeller.cpp \
+		../SRC/labeller.cpp moc_labeller.cpp \
 		moc_labeller_model.cpp
 OBJECTS       = labeller_model.o \
 		main.o \
 		labeller.o \
-		qrc_images.o \
 		moc_labeller.o \
 		moc_labeller_model.o
 DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
@@ -466,8 +464,7 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf \
-		../SRC/SRC.pro \
-		../SRC/images.qrc
+		../SRC/SRC.pro
 	$(QMAKE) -o Makefile ../SRC/SRC.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/common/unix.conf:
@@ -664,7 +661,6 @@ Makefile: ../SRC/SRC.pro ../../../Qt/5.12.6/gcc_64/mkspecs/linux-g++/qmake.conf 
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf:
 ../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf:
 ../SRC/SRC.pro:
-../SRC/images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../SRC/SRC.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug
 
@@ -679,7 +675,6 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
@@ -707,15 +702,8 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all: qrc_images.cpp
+compiler_rcc_make_all:
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_images.cpp
-qrc_images.cpp: ../SRC/images.qrc \
-		../../../Qt/5.12.6/gcc_64/bin/rcc \
-		../SRC/redo-128.png \
-		../SRC/undo-128.png
-	/home/sahil/Qt/5.12.6/gcc_64/bin/rcc -name images ../SRC/images.qrc -o qrc_images.cpp
-
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -936,7 +924,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1274,6 +1262,9 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		ui_labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/QIcon \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1291,11 +1282,10 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtextoption.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QListView \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qlistview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMenu \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmenu.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmenubar.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qmenu.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qaction.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractbutton.h \
@@ -1616,9 +1606,6 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwizard.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labeller.o ../SRC/labeller.cpp
-
-qrc_images.o: qrc_images.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_images.o qrc_images.cpp
 
 moc_labeller.o: moc_labeller.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_labeller.o moc_labeller.cpp

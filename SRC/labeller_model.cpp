@@ -2,7 +2,7 @@
 
 
 
-LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(""), classNames("")
+LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(""), classNames(""), classListSorting("none")
 {
 }
 
@@ -24,6 +24,10 @@ QString LabellerModel::getNameFile() {
 
 QString LabellerModel::getImageDir() {
     return imageDir;
+}
+
+QString LabellerModel::getClassListSorting() {
+    return classListSorting;
 }
 
 void LabellerModel::updateImageFiles(QStringList newImageFiles) {
@@ -59,4 +63,16 @@ void LabellerModel::updateAnnotationFile(QString newAnnotationFile) {
         annotationFile = newAnnotationFile;
         emit annotationFileChanged();
     }
+}
+
+void LabellerModel::updateClassListSorting(QString newClassListSorting) {
+    if(classListSorting != newClassListSorting) {
+        classListSorting = newClassListSorting;
+        emit classListChangedSorted();
+    }
+}
+
+void LabellerModel::addClassName(QString newClassName) {
+    classNames.append(newClassName);
+    emit classNamesChanged();
 }

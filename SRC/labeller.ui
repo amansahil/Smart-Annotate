@@ -156,28 +156,11 @@
      </rect>
     </property>
     <property name="text">
-     <string> Redo</string>
+     <string>Clear</string>
     </property>
     <property name="icon">
-     <iconset resource="images.qrc">
+     <iconset>
       <normaloff>:/imgs/redo-128.png</normaloff>:/imgs/redo-128.png</iconset>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>1080</x>
-      <y>10</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string> Undo</string>
-    </property>
-    <property name="icon">
-     <iconset resource="images.qrc">
-      <normaloff>:/imgs/undo-128.png</normaloff>:/imgs/undo-128.png</iconset>
     </property>
    </widget>
    <widget class="QLabel" name="imageDirLabel">
@@ -297,7 +280,7 @@
      <string>Sort By :</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="sortClassDscButton">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -310,7 +293,7 @@
      <string>Name (DSC)</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="sortClassAscButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -323,10 +306,10 @@
      <string>Name (ASC)</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_13">
+   <widget class="QPushButton" name="addNameItemButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>270</x>
       <y>390</y>
       <width>89</width>
       <height>25</height>
@@ -336,20 +319,20 @@
      <string>Add</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="classItemLineEdit">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>390</y>
-      <width>221</width>
+      <width>251</width>
       <height>25</height>
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="deleteClassItemButton">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>370</x>
       <y>390</y>
       <width>89</width>
       <height>25</height>
@@ -388,16 +371,9 @@
     </property>
     <addaction name="actionMark_Object"/>
     <addaction name="actionAdd_Text"/>
-   </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
-    <addaction name="actionCopy"/>
-    <addaction name="actionPaste"/>
+    <addaction name="actionCopy_Paste"/>
    </widget>
    <addaction name="menuLabel"/>
-   <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMark_Object">
@@ -420,9 +396,12 @@
     <string>Paste</string>
    </property>
   </action>
+  <action name="actionCopy_Paste">
+   <property name="text">
+    <string>Copy / Paste</string>
+   </property>
+  </action>
  </widget>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

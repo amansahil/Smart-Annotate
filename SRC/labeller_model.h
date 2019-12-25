@@ -18,13 +18,16 @@ public:
     QString getAnnotationFile();
     QString getImageDir();
     QString getNameFile();
+    QString getClassListSorting();
 
     void updateImageFiles(QStringList newImageFiles);
     void updateClassNames(QStringList newClassNames);
 
+    void addClassName(QString newClassName);
     void updateAnnotationFile(QString newAnnotationFile);
     void updateimageDir(QString newImageDir);
     void updateNameFile(QString newNameFile);
+    void updateClassListSorting(QString newClassListSorting);
 
 signals:
     void imageFilesChanged();
@@ -32,6 +35,7 @@ signals:
     void annotationFileChanged();
     void imageDirChanged();
     void classFileChanged();
+    void classListChangedSorted();
 
 private:
     QStringList imageFiles;
@@ -40,6 +44,7 @@ private:
     QString annotationFile;
     QString nameFile;
     QString imageDir;
+    QString classListSorting;
 };
 
 #endif // LABELLER_MODEL_H

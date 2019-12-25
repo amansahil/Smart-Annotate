@@ -45,5 +45,9 @@ private slots:
     void on_classBrowseButton_clicked();
 
     void on_annotationBrowseButton_clicked();
+    void on_addNameItemButton_clicked();
+    void on_deleteClassItemButton_clicked();
+    void on_sortClassAscButton_clicked();
+    void on_sortClassDscButton_clicked();
 };
 #endif // LABELLER_H
