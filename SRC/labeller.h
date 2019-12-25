@@ -14,6 +14,7 @@ namespace Ui { class Labeller; }
 QT_END_NAMESPACE
 
 class LabellerModel;
+class ImageEditor;
 
 class Labeller : public QMainWindow
 {
@@ -28,6 +29,7 @@ public:
 private:
     Ui::Labeller *ui;
     LabellerModel *labellerModel;
+    ImageEditor *imageEditor;
 
     void createListeners();
 
@@ -37,6 +39,7 @@ private slots:
     void setImageDir();
     void setClassFile();
     void setAnnotationFile();
+    void setSelectedImageFile();
 
 // Controller methods
 
@@ -49,5 +52,11 @@ private slots:
     void on_deleteClassItemButton_clicked();
     void on_sortClassAscButton_clicked();
     void on_sortClassDscButton_clicked();
+    void on_pushButton_5_clicked();
+    void on_imageList_clicked(const QModelIndex &index);
+    void on_actionMark_Object_triggered();
+    void on_actionAdd_Text_triggered();
+    void on_classList_clicked(const QModelIndex &index);
+    void on_actionSelect_triggered();
 };
 #endif // LABELLER_H

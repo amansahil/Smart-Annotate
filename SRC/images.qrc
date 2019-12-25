@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/imgs">
-        <file>undo-128.png</file>
-        <file>redo-128.png</file>
-    </qresource>
-</RCC>

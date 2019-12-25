@@ -16,11 +16,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    image_editor.cpp \
     labeller_model.cpp \
     main.cpp \
     labeller.cpp
 
 HEADERS += \
+    image_editor.h \
     labeller.h \
     labeller_model.h
 

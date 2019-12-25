@@ -30,6 +30,10 @@ QString LabellerModel::getClassListSorting() {
     return classListSorting;
 }
 
+QString LabellerModel::getSelectedImageFile() {
+    return selectedImageFile;
+}
+
 void LabellerModel::updateImageFiles(QStringList newImageFiles) {
     if (imageFiles != newImageFiles) {
         imageFiles = newImageFiles;
@@ -69,6 +73,13 @@ void LabellerModel::updateClassListSorting(QString newClassListSorting) {
     if(classListSorting != newClassListSorting) {
         classListSorting = newClassListSorting;
         emit classListChangedSorted();
+    }
+}
+
+void LabellerModel::updateSelectedImageFile(QString newSelectedImageFile) {
+    if(selectedImageFile != newSelectedImageFile) {
+        selectedImageFile = newSelectedImageFile;
+        emit selectedImageFileChanged();
     }
 }
 

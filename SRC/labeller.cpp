@@ -1,6 +1,7 @@
 #include "labeller.h"
 #include "ui_labeller.h"
 #include "labeller_model.h"
+#include "image_editor.h"
 
 #include <QtWidgets>
 #include <QAbstractItemView>
@@ -21,6 +22,17 @@ Labeller::Labeller(QWidget *parent)
    // Model
    labellerModel = new LabellerModel;
 
+   imageEditor = new ImageEditor;
+
+   ui->graphicsView->setScene(imageEditor);
+
+   ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+   ui->graphicsView->setSceneRect(0,0,781,651);
+
+
+   ui->graphicsView->show();
+
    createListeners();
 }
 
@@ -28,6 +40,7 @@ Labeller::~Labeller()
 {
     delete ui;
     delete labellerModel;
+    delete imageEditor;
 }
 
 void Labeller::setImageList()
@@ -74,6 +87,10 @@ void Labeller::setAnnotationFile() {
     ui->annotationDirLabel->setText(labellerModel->getAnnotationFile());
 }
 
+void Labeller::setSelectedImageFile() {
+    imageEditor->setImage(labellerModel->getSelectedImageFile());
+}
+
 void Labeller::createListeners() {
        connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
        connect(labellerModel, SIGNAL(classNamesChanged()), this, SLOT(setClassList()));
@@ -81,6 +98,7 @@ void Labeller::createListeners() {
        connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
        connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
        connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
+       connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
 }
 
 // Controller methods
@@ -203,4 +221,38 @@ void Labeller::on_sortClassAscButton_clicked()
 void Labeller::on_sortClassDscButton_clicked()
 {
     labellerModel->updateClassListSorting("dsc");
+}
+
+void Labeller::on_pushButton_5_clicked()
+{
+    imageEditor->clear();
+    imageEditor->update();
+}
+
+void Labeller::on_imageList_clicked(const QModelIndex &index)
+{
+    QString imageName = ui->imageList->currentIndex().data().toString();
+    QString fileName = labellerModel->getImageDir() + "/" + imageName;
+
+    labellerModel->updateSelectedImageFile(fileName);
+}
+
+void Labeller::on_actionMark_Object_triggered()
+{
+    imageEditor->updateCursorType("draw");
+}
+
+void Labeller::on_actionAdd_Text_triggered()
+{
+    imageEditor->updateCursorType("addText");
+}
+
+void Labeller::on_classList_clicked(const QModelIndex &index)
+{
+   imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
+}
+
+void Labeller::on_actionSelect_triggered()
+{
+    imageEditor->updateCursorType("none");
 }

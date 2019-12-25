@@ -135,17 +135,6 @@
      <string>Save</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>40</y>
-      <width>811</width>
-      <height>651</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout"/>
-   </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
@@ -355,6 +344,16 @@
      <string/>
     </property>
    </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>40</y>
+      <width>781</width>
+      <height>651</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -371,9 +370,17 @@
     </property>
     <addaction name="actionMark_Object"/>
     <addaction name="actionAdd_Text"/>
-    <addaction name="actionCopy_Paste"/>
+    <addaction name="actionSelect"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
    </widget>
    <addaction name="menuLabel"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMark_Object">
@@ -396,9 +403,9 @@
     <string>Paste</string>
    </property>
   </action>
-  <action name="actionCopy_Paste">
+  <action name="actionSelect">
    <property name="text">
-    <string>Copy / Paste</string>
+    <string>Select</string>
    </property>
   </action>
  </widget>
