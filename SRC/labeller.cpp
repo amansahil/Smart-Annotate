@@ -30,7 +30,6 @@ Labeller::Labeller(QWidget *parent)
    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
    ui->graphicsView->setSceneRect(0,0,781,651);
 
-
    ui->graphicsView->show();
 
    createListeners();

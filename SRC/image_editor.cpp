@@ -1,7 +1,8 @@
 #include "image_editor.h"
 #include<QDebug>
 
-ImageEditor::ImageEditor() : imageSet(false), cursorType("none")
+ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
+
 {
 }
 
@@ -11,7 +12,6 @@ void ImageEditor::setImage(QString fileName) {
     QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
 
     QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
-
 
     ImageEditor::clear();
     ImageEditor::update();
@@ -23,11 +23,8 @@ void ImageEditor::setImage(QString fileName) {
 }
 
 void ImageEditor::updateCursorType(QString newCursorType) {
-    try {
-        if(imageSet && cursorType != newCursorType) {
-            cursorType = newCursorType;
-        }
-    } catch (QException e) {
+    if(imageSet && cursorType != newCursorType) {
+        cursorType = newCursorType;
     }
 }
 
@@ -42,12 +39,11 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     originF = event->scenePos();
 
     if(cursorType == "draw") {
-        rubberBand = new QRubberBand(QRubberBand::Rectangle, nullptr);
         rubberBand->setGeometry(QRect(origin, QSize()));
         rubberBand->show();
 
         ImageEditor::update();
-    } else if(cursorType == "addText") {
+    } else if(cursorType == "addText" && classLabel !="") {
         QFont font;
         font.setPixelSize(20);
 
