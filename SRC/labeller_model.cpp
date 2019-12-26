@@ -106,4 +106,5 @@ void LabellerModel::addClassName(QString newClassName)
 {
     classNames.append(newClassName);
     emit classNamesChanged();
+    emit clearClassItemLineEdit();
 }

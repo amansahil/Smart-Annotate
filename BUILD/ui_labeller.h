@@ -46,7 +46,7 @@ public:
     QPushButton *annotationBrowseButton;
     QLabel *label_5;
     QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
+    QPushButton *clearButton;
     QLabel *imageDirLabel;
     QLabel *classFileLabel;
     QPushButton *pushButton;
@@ -117,12 +117,12 @@ public:
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(370, 690, 89, 25));
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(1190, 10, 89, 25));
+        clearButton = new QPushButton(centralwidget);
+        clearButton->setObjectName(QString::fromUtf8("clearButton"));
+        clearButton->setGeometry(QRect(1190, 10, 89, 25));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/imgs/redo-128.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_5->setIcon(icon);
+        clearButton->setIcon(icon);
         imageDirLabel = new QLabel(centralwidget);
         imageDirLabel->setObjectName(QString::fromUtf8("imageDirLabel"));
         imageDirLabel->setGeometry(QRect(170, 40, 281, 21));
@@ -214,7 +214,7 @@ public:
         annotationBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label_5->setText(QApplication::translate("Labeller", "Annotation File", nullptr));
         pushButton_4->setText(QApplication::translate("Labeller", "Save", nullptr));
-        pushButton_5->setText(QApplication::translate("Labeller", "Clear", nullptr));
+        clearButton->setText(QApplication::translate("Labeller", "Clear", nullptr));
         imageDirLabel->setText(QString());
         classFileLabel->setText(QString());
         pushButton->setText(QApplication::translate("Labeller", "Search", nullptr));

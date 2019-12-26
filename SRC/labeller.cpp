@@ -3,10 +3,6 @@
 #include "labeller_model.h"
 #include "image_editor.h"
 
-#include <QtWidgets>
-#include <QAbstractItemView>
-#include <QDebug>
-
 // Listeners & UI
 
 Labeller::Labeller(QWidget *parent)
@@ -95,6 +91,52 @@ void Labeller::setSelectedImageFile()
     imageEditor->setImage(labellerModel->getSelectedImageFile());
 }
 
+void Labeller::clearClassItemLineEdit() {
+    ui->classItemLineEdit->clear();
+}
+
+void Labeller::on_actionMark_Object_triggered()
+{
+    imageEditor->updateCursorType("draw");
+}
+
+void Labeller::on_actionAdd_Text_triggered()
+{
+    imageEditor->updateCursorType("addText");
+}
+
+void Labeller::on_classList_clicked(const QModelIndex &index)
+{
+    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
+}
+
+void Labeller::on_actionSelect_triggered()
+{
+    imageEditor->updateCursorType("none");
+}
+
+void Labeller::on_actionDelete_triggered()
+{
+    imageEditor->deleteSelectedItem();
+}
+
+void Labeller::on_actionCopy_triggered()
+{
+    imageEditor->copySelectedItem();
+}
+
+void Labeller::on_actionPaste_triggered()
+{
+    imageEditor->pasteSelectedItem();
+}
+
+void Labeller::on_clearButton_clicked()
+{
+    imageEditor->clear();
+    imageEditor->setImageToFalse();
+    imageEditor->update();
+}
+
 void Labeller::createListeners()
 {
     connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
@@ -104,6 +146,7 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
     connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
     connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
+    connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
 }
 
 // Controller methods
@@ -173,8 +216,6 @@ void Labeller::on_addNameItemButton_clicked()
     QString itemToAdd = ui->classItemLineEdit->text();
     labellerModel->addClassName(itemToAdd);
 
-    ui->classItemLineEdit->clear();
-
     QFile file(fileName);
     if (!file.open(QIODevice::Append | QFile::Text))
     {
@@ -232,52 +273,10 @@ void Labeller::on_sortClassDscButton_clicked()
     labellerModel->updateClassListSorting("dsc");
 }
 
-void Labeller::on_pushButton_5_clicked()
-{
-    imageEditor->clear();
-    imageEditor->setImageToFalse();
-    imageEditor->update();
-}
-
 void Labeller::on_imageList_clicked(const QModelIndex &index)
 {
     QString imageName = ui->imageList->currentIndex().data().toString();
     QString fileName = labellerModel->getImageDir() + "/" + imageName;
 
     labellerModel->updateSelectedImageFile(fileName);
-}
-
-void Labeller::on_actionMark_Object_triggered()
-{
-    imageEditor->updateCursorType("draw");
-}
-
-void Labeller::on_actionAdd_Text_triggered()
-{
-    imageEditor->updateCursorType("addText");
-}
-
-void Labeller::on_classList_clicked(const QModelIndex &index)
-{
-    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
-}
-
-void Labeller::on_actionSelect_triggered()
-{
-    imageEditor->updateCursorType("none");
-}
-
-void Labeller::on_actionDelete_triggered()
-{
-    imageEditor->deleteSelectedItem();
-}
-
-void Labeller::on_actionCopy_triggered()
-{
-    imageEditor->copySelectedItem();
-}
-
-void Labeller::on_actionPaste_triggered()
-{
-    imageEditor->pasteSelectedItem();
 }

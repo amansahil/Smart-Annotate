@@ -23,7 +23,7 @@ class Labeller : public QMainWindow
 {
     Q_OBJECT
 
-    // Listeners & UI
+// Listeners & UI
 
 public:
     Labeller(QWidget *parent = nullptr);
@@ -43,20 +43,7 @@ private slots:
     void setClassFile();
     void setAnnotationFile();
     void setSelectedImageFile();
-
-    // Controller methods
-
-private slots:
-    void on_imageBrowseButton_clicked();
-    void on_classBrowseButton_clicked();
-
-    void on_annotationBrowseButton_clicked();
-    void on_addNameItemButton_clicked();
-    void on_deleteClassItemButton_clicked();
-    void on_sortClassAscButton_clicked();
-    void on_sortClassDscButton_clicked();
-    void on_pushButton_5_clicked();
-    void on_imageList_clicked(const QModelIndex &index);
+    void clearClassItemLineEdit();
     void on_actionMark_Object_triggered();
     void on_actionAdd_Text_triggered();
     void on_classList_clicked(const QModelIndex &index);
@@ -64,5 +51,18 @@ private slots:
     void on_actionDelete_triggered();
     void on_actionCopy_triggered();
     void on_actionPaste_triggered();
+    void on_clearButton_clicked();
+
+// Controller methods
+
+private slots:
+    void on_imageBrowseButton_clicked();
+    void on_classBrowseButton_clicked();
+    void on_annotationBrowseButton_clicked();
+    void on_addNameItemButton_clicked();
+    void on_deleteClassItemButton_clicked();
+    void on_sortClassAscButton_clicked();
+    void on_sortClassDscButton_clicked();
+    void on_imageList_clicked(const QModelIndex &index);
 };
 #endif // LABELLER_H

@@ -1,5 +1,4 @@
 ﻿#include "image_editor.h"
-#include <QDebug>
 
 ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false)
 {
@@ -146,7 +145,7 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         menu.addAction(deleteAction);
 
         clipbordClickPoint = event->scenePos();
-        QAction *selectedAction = menu.exec(event->screenPos());
+        menu.exec(event->screenPos());
     }
 }
 

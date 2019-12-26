@@ -39,6 +39,7 @@ signals:
     void classFileChanged();
     void classListChangedSorted();
     void selectedImageFileChanged();
+    void clearClassItemLineEdit();
 
 private:
     QStringList imageFiles;
