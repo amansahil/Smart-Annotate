@@ -225,6 +225,7 @@ void Labeller::on_sortClassDscButton_clicked()
 void Labeller::on_pushButton_5_clicked()
 {
     imageEditor->clear();
+    imageEditor->setImageToFalse();
     imageEditor->update();
 }
 
@@ -254,4 +255,19 @@ void Labeller::on_classList_clicked(const QModelIndex &index)
 void Labeller::on_actionSelect_triggered()
 {
     imageEditor->updateCursorType("none");
+}
+
+void Labeller::on_actionDelete_triggered()
+{
+    imageEditor->deleteSelectedItem();
+}
+
+void Labeller::on_actionCopy_triggered()
+{
+    imageEditor->copySelectedItem();
+}
+
+void Labeller::on_actionPaste_triggered()
+{
+    imageEditor->pasteSelectedItem();
 }

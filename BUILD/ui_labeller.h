@@ -34,6 +34,7 @@ public:
     QAction *actionCopy;
     QAction *actionPaste;
     QAction *actionSelect;
+    QAction *actionDelete;
     QWidget *centralwidget;
     QPushButton *imageBrowseButton;
     QLabel *label;
@@ -82,6 +83,8 @@ public:
         actionPaste->setObjectName(QString::fromUtf8("actionPaste"));
         actionSelect = new QAction(Labeller);
         actionSelect->setObjectName(QString::fromUtf8("actionSelect"));
+        actionDelete = new QAction(Labeller);
+        actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
         centralwidget = new QWidget(Labeller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
@@ -188,6 +191,7 @@ public:
         menuLabel->addAction(actionSelect);
         menuEdit->addAction(actionCopy);
         menuEdit->addAction(actionPaste);
+        menuEdit->addAction(actionDelete);
 
         retranslateUi(Labeller);
 
@@ -202,6 +206,7 @@ public:
         actionCopy->setText(QApplication::translate("Labeller", "Copy", nullptr));
         actionPaste->setText(QApplication::translate("Labeller", "Paste", nullptr));
         actionSelect->setText(QApplication::translate("Labeller", "Select", nullptr));
+        actionDelete->setText(QApplication::translate("Labeller", "Delete", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));

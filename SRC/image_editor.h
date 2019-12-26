@@ -13,17 +13,30 @@ public:
     ImageEditor();
 
     void setImage(QString fileName);
+    void setImageToFalse();
+
     void updateCursorType(QString newCursorType);
     void updateClassLabel(QString newClassLabel);
+    void createActions();
+
+public slots:
+    void deleteSelectedItem();
+    void copySelectedItem();
+    void pasteSelectedItem();
+    void pasteSelectedItemInPlace();
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*event) override;
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
 
 private:
     bool imageSet;
     bool drawing;
+    bool clipbord;
+
+    QPen pen;
 
     QString cursorType;
     QString classLabel;
@@ -33,6 +46,15 @@ private:
 
     QPointF originF;
     QPointF lastPointF;
+
+    QPointF clipbordPoint;
+    QPointF clipbordClickPoint;
+    qreal clipbordHeight;
+    qreal clipbordWidth;
+
+    QAction *copyAction;
+    QAction *pasteAction;
+    QAction *deleteAction;
 
     QRubberBand *rubberBand;
 };

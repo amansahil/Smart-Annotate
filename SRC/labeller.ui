@@ -378,6 +378,7 @@
     </property>
     <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
    </widget>
    <addaction name="menuLabel"/>
    <addaction name="menuEdit"/>
@@ -406,6 +407,11 @@
   <action name="actionSelect">
    <property name="text">
     <string>Select</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
    </property>
   </action>
  </widget>

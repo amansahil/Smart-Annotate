@@ -58,5 +58,8 @@ private slots:
     void on_actionAdd_Text_triggered();
     void on_classList_clicked(const QModelIndex &index);
     void on_actionSelect_triggered();
+    void on_actionDelete_triggered();
+    void on_actionCopy_triggered();
+    void on_actionPaste_triggered();
 };
 #endif // LABELLER_H
