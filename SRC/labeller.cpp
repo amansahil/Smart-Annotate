@@ -17,14 +17,14 @@ Labeller::Labeller(QWidget *parent)
     // Model
     labellerModel = new LabellerModel;
 
+    // Custom image editor component
     imageEditor = new ImageEditor;
 
+    // Graphics view config
     ui->graphicsView->setScene(imageEditor);
-
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setSceneRect(0, 0, 781, 651);
-
     ui->graphicsView->show();
 
     createListeners();
