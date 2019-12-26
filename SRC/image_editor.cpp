@@ -1,5 +1,5 @@
 ﻿#include "image_editor.h"
-#include<QDebug>
+#include <QDebug>
 
 ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false)
 {
@@ -11,7 +11,8 @@ ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel("")
 
 void ImageEditor::setImageToFalse() { imageSet = false; };
 
-void ImageEditor::createActions() {
+void ImageEditor::createActions()
+{
     deleteAction = new QAction(tr("Delete"), this);
     connect(deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedItem()));
 
@@ -22,13 +23,15 @@ void ImageEditor::createActions() {
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-void ImageEditor::setImage(QString fileName) {
-    try {
+void ImageEditor::setImage(QString fileName)
+{
+    try
+    {
         QImage image(fileName);
 
         QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
 
-        QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
+        QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
 
         ImageEditor::clear();
         ImageEditor::update();
@@ -37,33 +40,44 @@ void ImageEditor::setImage(QString fileName) {
 
         imageSet = true;
         cursorType = "draw";
-    } catch (QException &e) {
+    }
+    catch (QException &e)
+    {
         QMessageBox::about(nullptr, tr("Error"),
-                tr("Could not open image"));
+                           tr("Could not open image"));
     }
 }
 
-void ImageEditor::updateCursorType(QString newCursorType) {
-    if(imageSet && cursorType != newCursorType) {
+void ImageEditor::updateCursorType(QString newCursorType)
+{
+    if (imageSet && cursorType != newCursorType)
+    {
         cursorType = newCursorType;
     }
 }
 
-void ImageEditor::updateClassLabel(QString newClassLabel) {
-    if(classLabel != newClassLabel) {
+void ImageEditor::updateClassLabel(QString newClassLabel)
+{
+    if (classLabel != newClassLabel)
+    {
         classLabel = newClassLabel;
     }
 }
 
-void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    if(imageSet) {
+void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (imageSet)
+    {
         origin = event->screenPos();
         originF = event->scenePos();
 
-        if(cursorType == "draw") {
+        if (cursorType == "draw")
+        {
             rubberBand->setGeometry(QRect(origin, QSize()));
             rubberBand->show();
-        } else if(cursorType == "addText" && classLabel !="") {
+        }
+        else if (cursorType == "addText" && classLabel != "")
+        {
             QFont font;
             font.setPixelSize(20);
 
@@ -72,33 +86,39 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event) {
             text->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
         }
 
-        if(cursorType == "none")
+        if (cursorType == "none")
             QGraphicsScene::mousePressEvent(event);
 
         ImageEditor::update();
     }
 }
 
-void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
-    if(imageSet) {
-        if(cursorType == "draw") {
+void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (imageSet)
+    {
+        if (cursorType == "draw")
+        {
             drawing = true;
 
             lastPoint = event->screenPos();
-            lastPointF= event->scenePos();
+            lastPointF = event->scenePos();
 
             rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
         }
-        if(cursorType == "none")
+        if (cursorType == "none")
             QGraphicsScene::mouseMoveEvent(event);
 
         ImageEditor::update();
     }
 }
 
-void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
-    if(imageSet) {
-        if(cursorType == "draw" && origin != lastPoint && drawing) {
+void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (imageSet)
+    {
+        if (cursorType == "draw" && origin != lastPoint && drawing)
+        {
             rubberBand->hide();
 
             QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(originF, lastPointF), pen);
@@ -108,15 +128,17 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
             drawing = false;
         }
 
-        if(cursorType == "none")
+        if (cursorType == "none")
             QGraphicsScene::mouseReleaseEvent(event);
 
         ImageEditor::update();
     }
 }
 
-void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
-    if(cursorType == "none" && imageSet) {
+void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    if (cursorType == "none" && imageSet)
+    {
         QMenu menu;
 
         menu.addAction(copyAction);
@@ -128,24 +150,30 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
     }
 }
 
-void ImageEditor::deleteSelectedItem() {
-    if(ImageEditor::selectedItems().size() > 0) {
+void ImageEditor::deleteSelectedItem()
+{
+    if (ImageEditor::selectedItems().size() > 0)
+    {
         delete ImageEditor::selectedItems().at(0);
     }
 }
 
-void ImageEditor::copySelectedItem() {
-    if(ImageEditor::selectedItems().size() > 0) {
-        QRectF selectedReactangle  = ImageEditor::selectedItems().at(0)->sceneBoundingRect();
+void ImageEditor::copySelectedItem()
+{
+    if (ImageEditor::selectedItems().size() > 0)
+    {
+        QRectF selectedReactangle = ImageEditor::selectedItems().at(0)->sceneBoundingRect();
         clipbord = true;
-        clipbordPoint  = selectedReactangle.topLeft();
+        clipbordPoint = selectedReactangle.topLeft();
         clipbordHeight = selectedReactangle.height();
         clipbordWidth = selectedReactangle.width();
     }
 }
 
-void ImageEditor::pasteSelectedItem() {
-    if(clipbord) {
+void ImageEditor::pasteSelectedItem()
+{
+    if (clipbord)
+    {
         qreal x = clipbordPoint.x() + 4.0;
         qreal y = clipbordPoint.y() - 8.0;
 
@@ -157,8 +185,10 @@ void ImageEditor::pasteSelectedItem() {
     }
 }
 
-void ImageEditor::pasteSelectedItemInPlace() {
-    if(clipbord) {
+void ImageEditor::pasteSelectedItemInPlace()
+{
+    if (clipbord)
+    {
         qreal x = clipbordClickPoint.x() + 4.0;
         qreal y = clipbordClickPoint.y() - 8.0;
 

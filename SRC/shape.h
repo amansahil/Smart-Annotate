@@ -3,7 +3,7 @@
 
 #include <QtWidgets>
 
-class Shape: public QGraphicsRectItem
+class Shape : public QGraphicsRectItem
 {
 public:
     Shape();

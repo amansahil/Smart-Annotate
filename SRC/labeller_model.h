@@ -4,7 +4,7 @@
 #include <QStringList>
 #include <QObject>
 
-class LabellerModel: public QObject
+class LabellerModel : public QObject
 {
 
     Q_OBJECT

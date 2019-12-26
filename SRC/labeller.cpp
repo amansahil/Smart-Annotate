@@ -10,8 +10,7 @@
 // Listeners & UI
 
 Labeller::Labeller(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Labeller)
+    : QMainWindow(parent), ui(new Ui::Labeller)
 {
     ui->setupUi(this);
 
@@ -19,20 +18,20 @@ Labeller::Labeller(QWidget *parent)
     ui->imageList->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->classList->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-   // Model
-   labellerModel = new LabellerModel;
+    // Model
+    labellerModel = new LabellerModel;
 
-   imageEditor = new ImageEditor;
+    imageEditor = new ImageEditor;
 
-   ui->graphicsView->setScene(imageEditor);
+    ui->graphicsView->setScene(imageEditor);
 
-   ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   ui->graphicsView->setSceneRect(0,0,781,651);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setSceneRect(0, 0, 781, 651);
 
-   ui->graphicsView->show();
+    ui->graphicsView->show();
 
-   createListeners();
+    createListeners();
 }
 
 Labeller::~Labeller()
@@ -58,12 +57,16 @@ void Labeller::setClassList()
 
     QStringList dscClasses;
 
-    if(sorting == "asc") {
+    if (sorting == "asc")
+    {
         classes.sort();
-    } else if(sorting == "dsc") {
+    }
+    else if (sorting == "dsc")
+    {
         // Reverse Order class
         classes.sort();
-        for(int i = classes.size() - 1; i >= 0; i--) {
+        for (int i = classes.size() - 1; i >= 0; i--)
+        {
             dscClasses.append(classes.at(i));
         }
     }
@@ -82,22 +85,25 @@ void Labeller::setClassFile()
     ui->classFileLabel->setText(labellerModel->getNameFile());
 }
 
-void Labeller::setAnnotationFile() {
+void Labeller::setAnnotationFile()
+{
     ui->annotationDirLabel->setText(labellerModel->getAnnotationFile());
 }
 
-void Labeller::setSelectedImageFile() {
+void Labeller::setSelectedImageFile()
+{
     imageEditor->setImage(labellerModel->getSelectedImageFile());
 }
 
-void Labeller::createListeners() {
-       connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
-       connect(labellerModel, SIGNAL(classNamesChanged()), this, SLOT(setClassList()));
-       connect(labellerModel, SIGNAL(annotationFileChanged()), this, SLOT(setAnnotationFile()));
-       connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
-       connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
-       connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
-       connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
+void Labeller::createListeners()
+{
+    connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
+    connect(labellerModel, SIGNAL(classNamesChanged()), this, SLOT(setClassList()));
+    connect(labellerModel, SIGNAL(annotationFileChanged()), this, SLOT(setAnnotationFile()));
+    connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
+    connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
+    connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
+    connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
 }
 
 // Controller methods
@@ -111,7 +117,9 @@ void Labeller::on_imageBrowseButton_clicked()
     const QDir directory(imageDirectory);
 
     QStringList filters;
-    filters << "*.png" << "*.jpg" << "*.bmp";
+    filters << "*.png"
+            << "*.jpg"
+            << "*.bmp";
 
     const QStringList images = directory.entryList(filters);
     labellerModel->updateImageFiles(images);
@@ -124,7 +132,8 @@ void Labeller::on_classBrowseButton_clicked()
 
     QStringList classes;
 
-    if(!file.open(QIODevice::ReadOnly | QFile::Text)) {
+    if (!file.open(QIODevice::ReadOnly | QFile::Text))
+    {
         QMessageBox::warning(this, "Warning", "Cannot open file : " + file.errorString());
         return;
     }
@@ -132,12 +141,12 @@ void Labeller::on_classBrowseButton_clicked()
     labellerModel->updateNameFile(nameFile);
 
     QTextStream textStream(&file);
-    while(true)
+    while (true)
     {
         QString line = textStream.readLine();
-        if(line.isNull())
+        if (line.isNull())
             break;
-        else if(line != "")
+        else if (line != "")
             classes.append(line);
     }
 
@@ -152,11 +161,11 @@ void Labeller::on_annotationBrowseButton_clicked()
     labellerModel->updateAnnotationFile(annotationFile);
 }
 
-
 void Labeller::on_addNameItemButton_clicked()
 {
     const QString fileName = labellerModel->getNameFile();
-    if(fileName == "") {
+    if (fileName == "")
+    {
         QMessageBox::warning(this, "Warning", "No file selected");
         return;
     }
@@ -167,25 +176,27 @@ void Labeller::on_addNameItemButton_clicked()
     ui->classItemLineEdit->clear();
 
     QFile file(fileName);
-    if(!file.open(QIODevice::Append | QFile::Text)) {
+    if (!file.open(QIODevice::Append | QFile::Text))
+    {
         QMessageBox::warning(this, "Warning", "Could not add to file : " + file.errorString());
         return;
     }
 
-    file.write("\n"+itemToAdd.toUtf8());
+    file.write("\n" + itemToAdd.toUtf8());
     file.close();
 }
 
 void Labeller::on_deleteClassItemButton_clicked()
 {
     const QString fileName = labellerModel->getNameFile();
-    if(fileName == "") {
+    if (fileName == "")
+    {
         QMessageBox::warning(this, "Warning", "No file selected");
         return;
     }
 
     QFile file(fileName);
-    if(!file.open(QIODevice::ReadWrite | QFile::Text))
+    if (!file.open(QIODevice::ReadWrite | QFile::Text))
     {
         QMessageBox::warning(this, "Warning", "Could not delete item from file : " + file.errorString());
         return;
@@ -200,7 +211,7 @@ void Labeller::on_deleteClassItemButton_clicked()
 
     QString s;
     QTextStream textStream(&file);
-    for ( const auto& i : classes  )
+    for (const auto &i : classes)
     {
         s.append(i + "\n");
     }
@@ -210,7 +221,6 @@ void Labeller::on_deleteClassItemButton_clicked()
 
     file.close();
 }
-
 
 void Labeller::on_sortClassAscButton_clicked()
 {
@@ -249,7 +259,7 @@ void Labeller::on_actionAdd_Text_triggered()
 
 void Labeller::on_classList_clicked(const QModelIndex &index)
 {
-   imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
+    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
 }
 
 void Labeller::on_actionSelect_triggered()

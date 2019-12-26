@@ -10,7 +10,10 @@
 #include <QAbstractItemView>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Labeller; }
+namespace Ui
+{
+class Labeller;
+}
 QT_END_NAMESPACE
 
 class LabellerModel;
@@ -20,7 +23,7 @@ class Labeller : public QMainWindow
 {
     Q_OBJECT
 
-// Listeners & UI
+    // Listeners & UI
 
 public:
     Labeller(QWidget *parent = nullptr);
@@ -41,7 +44,7 @@ private slots:
     void setAnnotationFile();
     void setSelectedImageFile();
 
-// Controller methods
+    // Controller methods
 
 private slots:
     void on_imageBrowseButton_clicked();

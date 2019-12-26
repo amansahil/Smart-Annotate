@@ -5,7 +5,7 @@
 #include <QtWidgets>
 #include <QRubberBand>
 
-class ImageEditor: public QGraphicsScene
+class ImageEditor : public QGraphicsScene
 {
     Q_OBJECT
 
@@ -28,7 +28,7 @@ public slots:
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*event) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
 
 private:
