@@ -23,19 +23,24 @@ void ImageEditor::createActions() {
 }
 
 void ImageEditor::setImage(QString fileName) {
-    QImage image(fileName);
+    try {
+        QImage image(fileName);
 
-    QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
+        QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
 
-    QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
+        QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
 
-    ImageEditor::clear();
-    ImageEditor::update();
+        ImageEditor::clear();
+        ImageEditor::update();
 
-    ImageEditor::addItem(item);
+        ImageEditor::addItem(item);
 
-    imageSet = true;
-    cursorType = "draw";
+        imageSet = true;
+        cursorType = "draw";
+    } catch (QException &e) {
+        QMessageBox::about(nullptr, tr("Error"),
+                tr("Could not open image"));
+    }
 }
 
 void ImageEditor::updateCursorType(QString newCursorType) {
@@ -67,7 +72,9 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event) {
             text->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
         }
 
-        QGraphicsScene::mousePressEvent(event);
+        if(cursorType == "none")
+            QGraphicsScene::mousePressEvent(event);
+
         ImageEditor::update();
     }
 }
@@ -82,8 +89,9 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 
             rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
         }
+        if(cursorType == "none")
+            QGraphicsScene::mouseMoveEvent(event);
 
-        QGraphicsScene::mouseMoveEvent(event);
         ImageEditor::update();
     }
 }
@@ -100,7 +108,9 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
             drawing = false;
         }
 
-        QGraphicsScene::mouseReleaseEvent(event);
+        if(cursorType == "none")
+            QGraphicsScene::mouseReleaseEvent(event);
+
         ImageEditor::update();
     }
 }
