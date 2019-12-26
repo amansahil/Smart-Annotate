@@ -275,8 +275,8 @@ void Labeller::on_sortClassDscButton_clicked()
 
 void Labeller::on_imageList_clicked(const QModelIndex &index)
 {
-    QString imageName = ui->imageList->currentIndex().data().toString();
-    QString fileName = labellerModel->getImageDir() + "/" + imageName;
+    const QString imageName = ui->imageList->currentIndex().data().toString();
+    const QString fileName = labellerModel->getImageDir() + "/" + imageName;
 
     labellerModel->updateSelectedImageFile(fileName);
 }

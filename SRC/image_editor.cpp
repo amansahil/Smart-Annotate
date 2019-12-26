@@ -26,9 +26,9 @@ void ImageEditor::setImage(QString fileName)
 {
     try
     {
-        QImage image(fileName);
+        const QImage image(fileName);
 
-        QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
+        const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
 
         QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
 
@@ -161,7 +161,8 @@ void ImageEditor::copySelectedItem()
 {
     if (ImageEditor::selectedItems().size() > 0)
     {
-        QRectF selectedReactangle = ImageEditor::selectedItems().at(0)->sceneBoundingRect();
+        const QRectF selectedReactangle = ImageEditor::selectedItems().at(0)->sceneBoundingRect();
+
         clipbord = true;
         clipbordPoint = selectedReactangle.topLeft();
         clipbordHeight = selectedReactangle.height();
@@ -173,8 +174,8 @@ void ImageEditor::pasteSelectedItem()
 {
     if (clipbord)
     {
-        qreal x = clipbordPoint.x() + 4.0;
-        qreal y = clipbordPoint.y() - 8.0;
+        const qreal x = clipbordPoint.x() + 4.0;
+        const qreal y = clipbordPoint.y() - 8.0;
 
         QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)), pen);
 
@@ -188,8 +189,8 @@ void ImageEditor::pasteSelectedItemInPlace()
 {
     if (clipbord)
     {
-        qreal x = clipbordClickPoint.x() + 4.0;
-        qreal y = clipbordClickPoint.y() - 8.0;
+        const qreal x = clipbordClickPoint.x() + 4.0;
+        const qreal y = clipbordClickPoint.y() - 8.0;
 
         QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)), pen);
 
