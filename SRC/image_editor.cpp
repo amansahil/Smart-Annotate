@@ -4,9 +4,6 @@
 
 ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false), clipbordText("")
 {
-    pen.setBrush(Qt::blue);
-    pen.setWidth(2);
-
     createActions();
 }
 
@@ -240,6 +237,10 @@ void ImageEditor::pasteSelectedItemInPlace()
 
 void ImageEditor::drawRectangle(QRectF newRectangle)
 {
+    QPen pen;
+    pen.setBrush(Qt::blue);
+    pen.setWidth(2);
+
     QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
 
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);

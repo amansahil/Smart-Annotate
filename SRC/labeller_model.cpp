@@ -4,40 +4,19 @@ LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(""),
 {
 }
 
-QStringList LabellerModel::getClassNames()
-{
-    return classNames;
-}
+QStringList LabellerModel::getClassNames() { return classNames; }
 
-QStringList LabellerModel::getImageFiles()
-{
-    return imageFiles;
-}
+QStringList LabellerModel::getImageFiles() { return imageFiles; }
 
-QString LabellerModel::getAnnotationFile()
-{
-    return annotationFile;
-}
+QString LabellerModel::getAnnotationFile() { return annotationFile; }
 
-QString LabellerModel::getNameFile()
-{
-    return nameFile;
-}
+QString LabellerModel::getNameFile() { return nameFile; }
 
-QString LabellerModel::getImageDir()
-{
-    return imageDir;
-}
+QString LabellerModel::getImageDir() { return imageDir; }
 
-QString LabellerModel::getClassListSorting()
-{
-    return classListSorting;
-}
+QString LabellerModel::getClassListSorting() { return classListSorting; }
 
-QString LabellerModel::getSelectedImageFile()
-{
-    return selectedImageFile;
-}
+QString LabellerModel::getSelectedImageFile() { return selectedImageFile; }
 
 void LabellerModel::updateImageFiles(QStringList newImageFiles)
 {

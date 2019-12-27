@@ -46,8 +46,6 @@ private:
     bool drawing;
     bool clipbord;
 
-    QPen pen;
-
     QString cursorType;
     QString classLabel;
 

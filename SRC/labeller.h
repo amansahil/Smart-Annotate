@@ -23,7 +23,7 @@ class Labeller : public QMainWindow
 {
     Q_OBJECT
 
-// Listeners & UI
+// Listeners & UI Methods
 
 public:
     Labeller(QWidget *parent = nullptr);
