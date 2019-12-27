@@ -22,7 +22,8 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-QString ImageEditor::getCursorType() {
+QString ImageEditor::getCursorType() 
+{
     return cursorType;
 }
 
@@ -155,12 +156,18 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 }
 
 void ImageEditor::keyPressEvent(QKeyEvent *event) {
-    if(event->type() == QKeyEvent::KeyPress && cursorType == "none") {
-        if(event->matches(QKeySequence::Copy)) {
+    if(event->type() == QKeyEvent::KeyPress && cursorType == "none") 
+    {
+        if(event->matches(QKeySequence::Copy)) 
+        {
             copySelectedItem();
-        } else if(event->matches(QKeySequence::Paste)) {
+        } 
+        else if(event->matches(QKeySequence::Paste)) 
+        {
             pasteSelectedItem();
-        } else if(event->matches(QKeySequence::Delete)) {
+        } 
+        else if(event->matches(QKeySequence::Delete)) 
+        {
             deleteSelectedItem();
         }
     }

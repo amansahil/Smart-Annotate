@@ -98,13 +98,20 @@ void Labeller::clearClassItemLineEdit() {
 void Labeller::setCursorTypeLabel() {
     const QString cursorType = imageEditor->getCursorType();
 
-    if(cursorType == "draw") {
+    if(cursorType == "draw") 
+    {
         ui->cursorLabel->setText("Drawing");
-    } else if(cursorType == "addText") {
+    } 
+    else if(cursorType == "addText") 
+    {
         ui->cursorLabel->setText("Adding Text");
-    } else if(cursorType == "none") {
+    } 
+    else if(cursorType == "none") 
+    {
         ui->cursorLabel->setText("Select Mode");
-    } else {
+    } 
+    else 
+    {
         ui->cursorLabel->setText("None");
     }
 }
