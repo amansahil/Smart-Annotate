@@ -149,6 +149,18 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
 }
 
+void ImageEditor::keyPressEvent(QKeyEvent *event) {
+    if(event->type() == QKeyEvent::KeyPress && cursorType == "none") {
+        if(event->matches(QKeySequence::Copy)) {
+            copySelectedItem();
+        } else if(event->matches(QKeySequence::Paste)) {
+            pasteSelectedItem();
+        } else if(event->matches(QKeySequence::Delete)) {
+            deleteSelectedItem();
+        }
+    }
+}
+
 void ImageEditor::deleteSelectedItem()
 {
     if (ImageEditor::selectedItems().size() > 0)
