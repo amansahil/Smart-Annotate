@@ -422,12 +422,12 @@
   </action>
   <action name="actionCopy">
    <property name="text">
-    <string>Copy</string>
+    <string>Copy (Ctrl + C)</string>
    </property>
   </action>
   <action name="actionPaste">
    <property name="text">
-    <string>Paste</string>
+    <string>Paste (Ctrl + V)</string>
    </property>
   </action>
   <action name="actionSelect">
@@ -437,7 +437,7 @@
   </action>
   <action name="actionDelete">
    <property name="text">
-    <string>Delete</string>
+    <string>Delete (Del)</string>
    </property>
   </action>
  </widget>

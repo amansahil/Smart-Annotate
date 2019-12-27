@@ -211,10 +211,10 @@ public:
         Labeller->setWindowTitle(QApplication::translate("Labeller", "Labeller", nullptr));
         actionMark_Object->setText(QApplication::translate("Labeller", "Mark Object", nullptr));
         actionAdd_Text->setText(QApplication::translate("Labeller", "Add Text", nullptr));
-        actionCopy->setText(QApplication::translate("Labeller", "Copy", nullptr));
-        actionPaste->setText(QApplication::translate("Labeller", "Paste", nullptr));
+        actionCopy->setText(QApplication::translate("Labeller", "Copy (Ctrl + C)", nullptr));
+        actionPaste->setText(QApplication::translate("Labeller", "Paste (Ctrl + V)", nullptr));
         actionSelect->setText(QApplication::translate("Labeller", "Select", nullptr));
-        actionDelete->setText(QApplication::translate("Labeller", "Delete", nullptr));
+        actionDelete->setText(QApplication::translate("Labeller", "Delete (Del)", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
