@@ -13,11 +13,13 @@ public:
     ImageEditor();
 
     void setImage(QString fileName);
-    void setImageToFalse();
-
     void updateCursorType(QString newCursorType);
     void updateClassLabel(QString newClassLabel);
+
+    void setImageToFalse();
     void createActions();
+
+    QString getCursorType();
 
 public slots:
     void deleteSelectedItem();
@@ -58,6 +60,11 @@ private:
     QAction *deleteAction;
 
     QRubberBand *rubberBand;
+
+    void drawRectangle(QRectF newRectangle);
+
+signals:
+    void cursorTypeChanged();
 };
 
 #endif // IMAGEEDITOR_H

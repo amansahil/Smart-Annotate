@@ -22,6 +22,10 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
+QString ImageEditor::getCursorType() {
+    return cursorType;
+}
+
 void ImageEditor::setImage(QString fileName)
 {
     try
@@ -38,7 +42,7 @@ void ImageEditor::setImage(QString fileName)
         ImageEditor::addItem(item);
 
         imageSet = true;
-        cursorType = "draw";
+        updateCursorType("draw");
     }
     catch (QException &e)
     {
@@ -52,6 +56,7 @@ void ImageEditor::updateCursorType(QString newCursorType)
     if (imageSet && cursorType != newCursorType)
     {
         cursorType = newCursorType;
+        emit cursorTypeChanged();
     }
 }
 
@@ -184,16 +189,14 @@ void ImageEditor::copySelectedItem()
 
 void ImageEditor::pasteSelectedItem()
 {
-    if (clipbord)
+    if (clipbord && imageSet)
     {
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
 
-        QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)), pen);
+        drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
 
-        rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
-
-        cursorType = "none";
+        updateCursorType("none");
     }
 }
 
@@ -204,8 +207,12 @@ void ImageEditor::pasteSelectedItemInPlace()
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
-        QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)), pen);
-
-        rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+        drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
     }
+}
+
+void ImageEditor::drawRectangle(QRectF newRectangle) {
+    QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
+
+    rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }

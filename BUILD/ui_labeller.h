@@ -63,6 +63,8 @@ public:
     QPushButton *deleteClassItemButton;
     QLabel *annotationDirLabel;
     QGraphicsView *graphicsView;
+    QLabel *cursorLabel;
+    QLabel *label_6;
     QMenuBar *menubar;
     QMenu *menuLabel;
     QMenu *menuEdit;
@@ -171,6 +173,12 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(500, 40, 781, 651));
+        cursorLabel = new QLabel(centralwidget);
+        cursorLabel->setObjectName(QString::fromUtf8("cursorLabel"));
+        cursorLabel->setGeometry(QRect(600, 10, 151, 21));
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(500, 10, 91, 21));
         Labeller->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Labeller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -229,6 +237,8 @@ public:
         addNameItemButton->setText(QApplication::translate("Labeller", "Add", nullptr));
         deleteClassItemButton->setText(QApplication::translate("Labeller", "Delete", nullptr));
         annotationDirLabel->setText(QString());
+        cursorLabel->setText(QApplication::translate("Labeller", "Select Mode", nullptr));
+        label_6->setText(QApplication::translate("Labeller", "Cursor Mode:", nullptr));
         menuLabel->setTitle(QApplication::translate("Labeller", "Label", nullptr));
         menuEdit->setTitle(QApplication::translate("Labeller", "Edit", nullptr));
     } // retranslateUi

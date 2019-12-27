@@ -95,6 +95,20 @@ void Labeller::clearClassItemLineEdit() {
     ui->classItemLineEdit->clear();
 }
 
+void Labeller::setCursorTypeLabel() {
+    const QString cursorType = imageEditor->getCursorType();
+
+    if(cursorType == "draw") {
+        ui->cursorLabel->setText("Drawing");
+    } else if(cursorType == "addText") {
+        ui->cursorLabel->setText("Adding Text");
+    } else if(cursorType == "none") {
+        ui->cursorLabel->setText("Select Mode");
+    } else {
+        ui->cursorLabel->setText("None");
+    }
+}
+
 void Labeller::on_actionMark_Object_triggered()
 {
     imageEditor->updateCursorType("draw");
@@ -147,6 +161,7 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
     connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
+    connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
 }
 
 // Controller methods

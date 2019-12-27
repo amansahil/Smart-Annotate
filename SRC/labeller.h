@@ -43,6 +43,7 @@ private slots:
     void setClassFile();
     void setAnnotationFile();
     void setSelectedImageFile();
+    void setCursorTypeLabel();
     void clearClassItemLineEdit();
     void on_actionMark_Object_triggered();
     void on_actionAdd_Text_triggered();
