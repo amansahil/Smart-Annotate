@@ -4,6 +4,13 @@
 #include <QWidget>
 #include <QtWidgets>
 #include <QRubberBand>
+#include <vector>
+#include <QObject>
+#include<QGraphicsObject>
+
+#include <sstream> //for std::stringstream
+#include <string>  //for std::string
+
 
 class ImageEditor : public QGraphicsScene
 {
@@ -50,6 +57,7 @@ private:
     QPointF originF;
     QPointF lastPointF;
 
+    QString clipbordText;
     QPointF clipbordPoint;
     QPointF clipbordClickPoint;
     qreal clipbordHeight;
@@ -62,6 +70,7 @@ private:
     QRubberBand *rubberBand;
 
     void drawRectangle(QRectF newRectangle);
+    void drawText(QString newText, QPointF newPoint);
 
 signals:
     void cursorTypeChanged();

@@ -1,6 +1,8 @@
 ﻿#include "image_editor.h"
 
-ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false)
+#include <QDebug>
+
+ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false), clipbordText("")
 {
     pen.setBrush(Qt::blue);
     pen.setWidth(2);
@@ -22,10 +24,7 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-QString ImageEditor::getCursorType() 
-{
-    return cursorType;
-}
+QString ImageEditor::getCursorType() {  return cursorType;  };
 
 void ImageEditor::setImage(QString fileName)
 {
@@ -47,7 +46,7 @@ void ImageEditor::setImage(QString fileName)
     }
     catch (QException &e)
     {
-        QMessageBox::about(nullptr, tr("Error"),
+        QMessageBox::warning(nullptr, tr("Error"),
                            tr("Could not open image"));
     }
 }
@@ -83,12 +82,7 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
         else if (cursorType == "addText" && classLabel != "")
         {
-            QFont font;
-            font.setPixelSize(20);
-
-            QGraphicsTextItem *text = ImageEditor::addText(classLabel, font);
-            text->setPos(originF);
-            text->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+            drawText(classLabel, originF);
         }
 
         if (cursorType == "none")
@@ -126,9 +120,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         {
             rubberBand->hide();
 
-            QGraphicsRectItem *rectangle = ImageEditor::addRect(QRectF(originF, lastPointF), pen);
-
-            rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+            drawRectangle(QRectF(originF, lastPointF));
 
             drawing = false;
         }
@@ -185,41 +177,80 @@ void ImageEditor::copySelectedItem()
 {
     if (ImageEditor::selectedItems().size() > 0)
     {
-        const QRectF selectedReactangle = ImageEditor::selectedItems().at(0)->sceneBoundingRect();
+        QGraphicsItem *selectedItem = ImageEditor::selectedItems().at(0);
+
+        QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem*>(selectedItem);
 
         clipbord = true;
-        clipbordPoint = selectedReactangle.topLeft();
-        clipbordHeight = selectedReactangle.height();
-        clipbordWidth = selectedReactangle.width();
+
+        if(textItem == nullptr)
+        {
+            const QRectF selectedReactangle = selectedItem->sceneBoundingRect();
+
+            clipbordText = "";
+            clipbordPoint = selectedReactangle.topLeft();
+            clipbordHeight = selectedReactangle.height();
+            clipbordWidth = selectedReactangle.width();
+        }
+        else
+        {
+            clipbordText = textItem->toPlainText();
+            clipbordPoint = selectedItem->scenePos();
+        }
     }
 }
 
 void ImageEditor::pasteSelectedItem()
 {
-    if (clipbord && imageSet)
+    if(imageSet && clipbord)
     {
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
 
-        drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
-
+        if (clipbordText == "")
+        {
+            drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
+        }
+        else
+        {
+            drawText(clipbordText, QPointF(x, y));
+        }
         updateCursorType("none");
     }
 }
 
 void ImageEditor::pasteSelectedItemInPlace()
 {
-    if (clipbord)
+    if (imageSet && clipbord)
     {
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
-        drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
+        if(clipbordText == "")
+        {
+            drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
+        }
+        else
+        {
+            drawText(clipbordText, QPointF(x, y));
+
+        }
     }
 }
 
-void ImageEditor::drawRectangle(QRectF newRectangle) {
+void ImageEditor::drawRectangle(QRectF newRectangle)
+{
     QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
 
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+}
+
+void ImageEditor::drawText(QString newText, QPointF newPoint)
+{
+    QFont font;
+    font.setPixelSize(20);
+
+    QGraphicsTextItem *text = ImageEditor::addText(newText, font);
+    text->setPos(newPoint);
+    text->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }

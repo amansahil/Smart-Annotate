@@ -74,7 +74,7 @@ public:
     {
         if (Labeller->objectName().isEmpty())
             Labeller->setObjectName(QString::fromUtf8("Labeller"));
-        Labeller->resize(1302, 850);
+        Labeller->resize(1308, 778);
         actionMark_Object = new QAction(Labeller);
         actionMark_Object->setObjectName(QString::fromUtf8("actionMark_Object"));
         actionAdd_Text = new QAction(Labeller);
@@ -182,7 +182,7 @@ public:
         Labeller->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Labeller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1302, 22));
+        menubar->setGeometry(QRect(0, 0, 1308, 22));
         menuLabel = new QMenu(menubar);
         menuLabel->setObjectName(QString::fromUtf8("menuLabel"));
         menuEdit = new QMenu(menubar);
