@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false), clipbordText("")
+ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false), clipbordText(""), currFileName("")
 {
     createActions();
 }
@@ -25,8 +25,11 @@ QString ImageEditor::getCursorType() {  return cursorType;  };
 
 void ImageEditor::setImage(QString fileName)
 {
-    try
-    {
+    // Save previous image details
+    saveImageState();
+
+    // Open new selected image
+    try {
         const QImage image(fileName);
 
         const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
@@ -37,14 +40,67 @@ void ImageEditor::setImage(QString fileName)
         ImageEditor::update();
 
         ImageEditor::addItem(item);
+        currFileName = fileName;
 
         imageSet = true;
         updateCursorType("draw");
-    }
-    catch (QException &e)
-    {
+    } catch (QException e) {
         QMessageBox::warning(nullptr, tr("Error"),
                            tr("Could not open image"));
+    }
+
+    // Load any annotation and lables on image if it exists
+    QHash<QString, QList<QRectF>>::const_iterator valueIt = applicationRectState.find(fileName);
+
+    bool found = true;
+    if(valueIt == applicationRectState.end())
+    {
+        found = false;
+    }
+
+    if(found)
+    {
+        for( int i = 0; i < applicationRectState.value(fileName).count(); i++ )
+        {
+            drawRectangle(applicationRectState.value(fileName).at(i));
+        }
+
+        for( int i = 0; i < applicationTextState.value(fileName).count(); i++ )
+        {
+            drawText(applicationTextState.value(fileName).at(i).first, applicationTextState.value(fileName).at(i).second);
+        }
+
+    }
+}
+
+void ImageEditor::saveImageState() {
+    if(imageSet && currFileName != "")
+    {
+        QList<QRectF> rectItems;
+        QList<QPair<QString, QPointF>> textItems;
+
+        for(int i = 0; i< ImageEditor::items().count(); i++)
+        {
+            QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem*>(ImageEditor::items().at(i));
+            QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem*>(ImageEditor::items().at(i));
+
+            if(rectItem != nullptr)
+            {
+                const QRectF newRectItem = rectItem->sceneBoundingRect();
+                rectItems.append(newRectItem);
+            }
+            else if (textItem != nullptr)
+            {
+                QPair<QString, QPointF> newTextItem;
+                newTextItem.first = textItem->toPlainText();
+                newTextItem.second = textItem->pos();
+
+                textItems.append(newTextItem);
+            }
+        }
+
+        applicationRectState[currFileName] = rectItems;
+        applicationTextState[currFileName] = textItems;
     }
 }
 
@@ -230,7 +286,6 @@ void ImageEditor::pasteSelectedItemInPlace()
         else
         {
             drawText(clipbordText, QPointF(x, y));
-
         }
     }
 }

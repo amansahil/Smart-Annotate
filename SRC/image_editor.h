@@ -4,13 +4,7 @@
 #include <QWidget>
 #include <QtWidgets>
 #include <QRubberBand>
-#include <vector>
-#include <QObject>
-#include<QGraphicsObject>
-
-#include <sstream> //for std::stringstream
-#include <string>  //for std::string
-
+#include <QHash>
 
 class ImageEditor : public QGraphicsScene
 {
@@ -48,6 +42,7 @@ private:
 
     QString cursorType;
     QString classLabel;
+    QString currFileName;
 
     QPoint origin;
     QPoint lastPoint;
@@ -67,8 +62,13 @@ private:
 
     QRubberBand *rubberBand;
 
+    QHash<QString, QList<QRectF>>  applicationRectState;
+    QHash<QString, QList<QPair<QString, QPointF>>>  applicationTextState;
+
     void drawRectangle(QRectF newRectangle);
     void drawText(QString newText, QPointF newPoint);
+
+    void saveImageState();
 
 signals:
     void cursorTypeChanged();
