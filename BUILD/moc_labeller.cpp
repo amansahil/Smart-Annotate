@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Labeller_t {
-    QByteArrayData data[28];
-    char stringdata0[599];
+    QByteArrayData data[26];
+    char stringdata0[581];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,21 +44,19 @@ QT_MOC_LITERAL(9, 119, 22), // "clearClassItemLineEdit"
 QT_MOC_LITERAL(10, 142, 30), // "on_actionMark_Object_triggered"
 QT_MOC_LITERAL(11, 173, 27), // "on_actionAdd_Text_triggered"
 QT_MOC_LITERAL(12, 201, 20), // "on_classList_clicked"
-QT_MOC_LITERAL(13, 222, 11), // "QModelIndex"
-QT_MOC_LITERAL(14, 234, 5), // "index"
-QT_MOC_LITERAL(15, 240, 25), // "on_actionSelect_triggered"
-QT_MOC_LITERAL(16, 266, 25), // "on_actionDelete_triggered"
-QT_MOC_LITERAL(17, 292, 23), // "on_actionCopy_triggered"
-QT_MOC_LITERAL(18, 316, 24), // "on_actionPaste_triggered"
-QT_MOC_LITERAL(19, 341, 22), // "on_clearButton_clicked"
-QT_MOC_LITERAL(20, 364, 28), // "on_imageBrowseButton_clicked"
-QT_MOC_LITERAL(21, 393, 28), // "on_classBrowseButton_clicked"
-QT_MOC_LITERAL(22, 422, 33), // "on_annotationBrowseButton_cli..."
-QT_MOC_LITERAL(23, 456, 28), // "on_addNameItemButton_clicked"
-QT_MOC_LITERAL(24, 485, 32), // "on_deleteClassItemButton_clicked"
-QT_MOC_LITERAL(25, 518, 29), // "on_sortClassAscButton_clicked"
-QT_MOC_LITERAL(26, 548, 29), // "on_sortClassDscButton_clicked"
-QT_MOC_LITERAL(27, 578, 20) // "on_imageList_clicked"
+QT_MOC_LITERAL(13, 222, 25), // "on_actionSelect_triggered"
+QT_MOC_LITERAL(14, 248, 25), // "on_actionDelete_triggered"
+QT_MOC_LITERAL(15, 274, 23), // "on_actionCopy_triggered"
+QT_MOC_LITERAL(16, 298, 24), // "on_actionPaste_triggered"
+QT_MOC_LITERAL(17, 323, 22), // "on_clearButton_clicked"
+QT_MOC_LITERAL(18, 346, 28), // "on_imageBrowseButton_clicked"
+QT_MOC_LITERAL(19, 375, 28), // "on_classBrowseButton_clicked"
+QT_MOC_LITERAL(20, 404, 33), // "on_annotationBrowseButton_cli..."
+QT_MOC_LITERAL(21, 438, 28), // "on_addNameItemButton_clicked"
+QT_MOC_LITERAL(22, 467, 32), // "on_deleteClassItemButton_clicked"
+QT_MOC_LITERAL(23, 500, 29), // "on_sortClassAscButton_clicked"
+QT_MOC_LITERAL(24, 530, 29), // "on_sortClassDscButton_clicked"
+QT_MOC_LITERAL(25, 560, 20) // "on_imageList_clicked"
 
     },
     "Labeller\0setImageList\0\0setClassList\0"
@@ -67,8 +65,7 @@ QT_MOC_LITERAL(27, 578, 20) // "on_imageList_clicked"
     "clearClassItemLineEdit\0"
     "on_actionMark_Object_triggered\0"
     "on_actionAdd_Text_triggered\0"
-    "on_classList_clicked\0QModelIndex\0index\0"
-    "on_actionSelect_triggered\0"
+    "on_classList_clicked\0on_actionSelect_triggered\0"
     "on_actionDelete_triggered\0"
     "on_actionCopy_triggered\0"
     "on_actionPaste_triggered\0"
@@ -108,7 +105,9 @@ static const uint qt_meta_data_Labeller[] = {
        9,    0,  141,    2, 0x08 /* Private */,
       10,    0,  142,    2, 0x08 /* Private */,
       11,    0,  143,    2, 0x08 /* Private */,
-      12,    1,  144,    2, 0x08 /* Private */,
+      12,    0,  144,    2, 0x08 /* Private */,
+      13,    0,  145,    2, 0x08 /* Private */,
+      14,    0,  146,    2, 0x08 /* Private */,
       15,    0,  147,    2, 0x08 /* Private */,
       16,    0,  148,    2, 0x08 /* Private */,
       17,    0,  149,    2, 0x08 /* Private */,
@@ -120,8 +119,6 @@ static const uint qt_meta_data_Labeller[] = {
       23,    0,  155,    2, 0x08 /* Private */,
       24,    0,  156,    2, 0x08 /* Private */,
       25,    0,  157,    2, 0x08 /* Private */,
-      26,    0,  158,    2, 0x08 /* Private */,
-      27,    1,  159,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -134,7 +131,6 @@ static const uint qt_meta_data_Labeller[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   14,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -147,7 +143,8 @@ static const uint qt_meta_data_Labeller[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   14,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -168,7 +165,7 @@ void Labeller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 7: _t->clearClassItemLineEdit(); break;
         case 8: _t->on_actionMark_Object_triggered(); break;
         case 9: _t->on_actionAdd_Text_triggered(); break;
-        case 10: _t->on_classList_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 10: _t->on_classList_clicked(); break;
         case 11: _t->on_actionSelect_triggered(); break;
         case 12: _t->on_actionDelete_triggered(); break;
         case 13: _t->on_actionCopy_triggered(); break;
@@ -181,10 +178,11 @@ void Labeller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 20: _t->on_deleteClassItemButton_clicked(); break;
         case 21: _t->on_sortClassAscButton_clicked(); break;
         case 22: _t->on_sortClassDscButton_clicked(); break;
-        case 23: _t->on_imageList_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 23: _t->on_imageList_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject Labeller::staticMetaObject = { {

@@ -47,7 +47,7 @@ private slots:
     void clearClassItemLineEdit();
     void on_actionMark_Object_triggered();
     void on_actionAdd_Text_triggered();
-    void on_classList_clicked(const QModelIndex &index);
+    void on_classList_clicked();
     void on_actionSelect_triggered();
     void on_actionDelete_triggered();
     void on_actionCopy_triggered();
@@ -64,6 +64,6 @@ private slots:
     void on_deleteClassItemButton_clicked();
     void on_sortClassAscButton_clicked();
     void on_sortClassDscButton_clicked();
-    void on_imageList_clicked(const QModelIndex &index);
+    void on_imageList_clicked();
 };
 #endif // LABELLER_H

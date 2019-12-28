@@ -71,6 +71,7 @@ private:
     void drawText(QString newText, QPointF newPoint);
 
     void saveImageState();
+
     void openImage(QString fileName);
 
     bool savedStateExists(QString fileName);

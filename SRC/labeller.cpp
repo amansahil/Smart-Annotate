@@ -106,7 +106,7 @@ void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(
 
 void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType("addText"); }
 
-void Labeller::on_classList_clicked(const QModelIndex &index) { imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString()); }
+void Labeller::on_classList_clicked() { imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString()); }
 
 void Labeller::on_actionSelect_triggered() { imageEditor->updateCursorType("none"); }
 
@@ -225,8 +225,6 @@ void Labeller::on_deleteClassItemButton_clicked()
         return;
     }
 
-    const int selectedItemIndex = ui->classList->currentIndex().row();
-
     QStringList classes = labellerModel->getClassNames();
 
     for(int i = 0; i <= classes.length() - 1; i++) {
@@ -253,7 +251,7 @@ void Labeller::on_sortClassAscButton_clicked() { labellerModel->updateClassListS
 
 void Labeller::on_sortClassDscButton_clicked() { labellerModel->updateClassListSorting("dsc"); }
 
-void Labeller::on_imageList_clicked(const QModelIndex &index)
+void Labeller::on_imageList_clicked()
 {
     const QString imageName = ui->imageList->currentIndex().data().toString();
     const QString fileName = labellerModel->getImageDir() + "/" + imageName;

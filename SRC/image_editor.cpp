@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr)), clipbord(false), clipbordText(""), currFileName("")
+ImageEditor::ImageEditor() : imageSet(false), clipbord(false), cursorType("none"), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
 }
