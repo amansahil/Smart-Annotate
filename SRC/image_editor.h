@@ -64,8 +64,8 @@ private:
 
     QRubberBand *rubberBand;
 
-    QHash<QString, QList<QRectF>>  applicationRectState;
-    QHash<QString, QList<QPair<QString, QPointF>>>  applicationTextState;
+    QHash<QString, QList<QRectF>> applicationRectState;
+    QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
     void drawRectangle(QRectF newRectangle);
     void drawText(QString newText, QPointF newPoint);

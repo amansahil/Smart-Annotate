@@ -19,7 +19,7 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-QString ImageEditor::getCursorType() {  return cursorType;  };
+QString ImageEditor::getCursorType() { return cursorType; };
 
 void ImageEditor::setImage(QString fileName)
 {
@@ -41,26 +41,26 @@ void ImageEditor::setImage(QString fileName)
     catch (QException e)
     {
         QMessageBox::warning(nullptr, tr("Error"),
-                           tr("Could not open image"));
+                             tr("Could not open image"));
     }
 
     // Load any annotation and lables on image if it exists
-    if(savedStateExists(fileName))
+    if (savedStateExists(fileName))
     {
-        for( int i = 0; i < applicationRectState.value(fileName).count(); i++ )
+        for (int i = 0; i < applicationRectState.value(fileName).count(); i++)
         {
             drawRectangle(applicationRectState.value(fileName).at(i));
         }
 
-        for( int i = 0; i < applicationTextState.value(fileName).count(); i++ )
+        for (int i = 0; i < applicationTextState.value(fileName).count(); i++)
         {
             drawText(applicationTextState.value(fileName).at(i).first, applicationTextState.value(fileName).at(i).second);
         }
-
     }
 }
 
-void ImageEditor::openImage(QString fileName) {
+void ImageEditor::openImage(QString fileName)
+{
     const QImage image(fileName);
     const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
 
@@ -70,18 +70,19 @@ void ImageEditor::openImage(QString fileName) {
     ImageEditor::update();
 }
 
-void ImageEditor::saveImageState() {
-    if(imageSet && currFileName != "")
+void ImageEditor::saveImageState()
+{
+    if (imageSet && currFileName != "")
     {
         QList<QRectF> rectItems;
         QList<QPair<QString, QPointF>> textItems;
 
-        for(int i = 0; i< ImageEditor::items().count(); i++)
+        for (int i = 0; i < ImageEditor::items().count(); i++)
         {
-            QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem*>(ImageEditor::items().at(i));
-            QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem*>(ImageEditor::items().at(i));
+            QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem *>(ImageEditor::items().at(i));
+            QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem *>(ImageEditor::items().at(i));
 
-            if(rectItem != nullptr)
+            if (rectItem != nullptr)
             {
                 const QRectF newRectItem = rectItem->sceneBoundingRect();
                 rectItems.append(newRectItem);
@@ -101,14 +102,15 @@ void ImageEditor::saveImageState() {
     }
 }
 
-bool ImageEditor::savedStateExists(QString fileName) {
+bool ImageEditor::savedStateExists(QString fileName)
+{
     QHash<QString, QList<QRectF>>::const_iterator valueIt = applicationRectState.find(fileName);
 
-    if(valueIt == applicationRectState.end())
+    if (valueIt == applicationRectState.end())
     {
         return false;
     }
-        return true;
+    return true;
 }
 
 void ImageEditor::updateCursorType(QString newCursorType)
@@ -208,18 +210,19 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
 }
 
-void ImageEditor::keyPressEvent(QKeyEvent *event) {
-    if(event->type() == QKeyEvent::KeyPress && cursorType == "none") 
+void ImageEditor::keyPressEvent(QKeyEvent *event)
+{
+    if (event->type() == QKeyEvent::KeyPress && cursorType == "none")
     {
-        if(event->matches(QKeySequence::Copy)) 
+        if (event->matches(QKeySequence::Copy))
         {
             copySelectedItem();
-        } 
-        else if(event->matches(QKeySequence::Paste)) 
+        }
+        else if (event->matches(QKeySequence::Paste))
         {
             pasteSelectedItem();
-        } 
-        else if(event->matches(QKeySequence::Delete)) 
+        }
+        else if (event->matches(QKeySequence::Delete))
         {
             deleteSelectedItem();
         }
@@ -240,11 +243,11 @@ void ImageEditor::copySelectedItem()
     {
         QGraphicsItem *selectedItem = ImageEditor::selectedItems().at(0);
 
-        QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem*>(selectedItem);
+        QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem *>(selectedItem);
 
         clipbord = true;
 
-        if(textItem == nullptr)
+        if (textItem == nullptr)
         {
             const QRectF selectedReactangle = selectedItem->sceneBoundingRect();
 
@@ -263,7 +266,7 @@ void ImageEditor::copySelectedItem()
 
 void ImageEditor::pasteSelectedItem()
 {
-    if(imageSet && clipbord)
+    if (imageSet && clipbord)
     {
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
@@ -288,7 +291,7 @@ void ImageEditor::pasteSelectedItemInPlace()
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
-        if(clipbordText == "")
+        if (clipbordText == "")
         {
             drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
         }
@@ -321,13 +324,13 @@ void ImageEditor::drawText(QString newText, QPointF newPoint)
 
 void ImageEditor::clearItems()
 {
-    if(imageSet)
+    if (imageSet)
     {
         ImageEditor::clear();
 
         openImage(currFileName);
 
-        if(savedStateExists(currFileName))
+        if (savedStateExists(currFileName))
         {
             applicationRectState.remove(currFileName);
             applicationTextState.remove(currFileName);

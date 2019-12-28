@@ -23,7 +23,7 @@ class Labeller : public QMainWindow
 {
     Q_OBJECT
 
-// Listeners & UI Methods
+    // Listeners & UI Methods
 
 public:
     Labeller(QWidget *parent = nullptr);
@@ -54,7 +54,7 @@ private slots:
     void on_actionPaste_triggered();
     void on_clearButton_clicked();
 
-// Controller methods
+    // Controller methods
 
 private slots:
     void on_imageBrowseButton_clicked();
