@@ -7,8 +7,6 @@ ImageEditor::ImageEditor() : imageSet(false), cursorType("none"), classLabel("")
     createActions();
 }
 
-void ImageEditor::setImageToFalse() { imageSet = false; };
-
 void ImageEditor::createActions()
 {
     deleteAction = new QAction(tr("Delete"), this);
@@ -29,36 +27,25 @@ void ImageEditor::setImage(QString fileName)
     saveImageState();
 
     // Open new selected image
-    try {
-        const QImage image(fileName);
-
-        const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
-
-        QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
-
+    try
+    {
         ImageEditor::clear();
-        ImageEditor::update();
 
-        ImageEditor::addItem(item);
+        openImage(fileName);
+
         currFileName = fileName;
-
         imageSet = true;
+
         updateCursorType("draw");
-    } catch (QException e) {
+    }
+    catch (QException e)
+    {
         QMessageBox::warning(nullptr, tr("Error"),
                            tr("Could not open image"));
     }
 
     // Load any annotation and lables on image if it exists
-    QHash<QString, QList<QRectF>>::const_iterator valueIt = applicationRectState.find(fileName);
-
-    bool found = true;
-    if(valueIt == applicationRectState.end())
-    {
-        found = false;
-    }
-
-    if(found)
+    if(savedStateExists(fileName))
     {
         for( int i = 0; i < applicationRectState.value(fileName).count(); i++ )
         {
@@ -71,6 +58,16 @@ void ImageEditor::setImage(QString fileName)
         }
 
     }
+}
+
+void ImageEditor::openImage(QString fileName) {
+    const QImage image(fileName);
+    const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
+
+    QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(small));
+
+    ImageEditor::addItem(item);
+    ImageEditor::update();
 }
 
 void ImageEditor::saveImageState() {
@@ -102,6 +99,16 @@ void ImageEditor::saveImageState() {
         applicationRectState[currFileName] = rectItems;
         applicationTextState[currFileName] = textItems;
     }
+}
+
+bool ImageEditor::savedStateExists(QString fileName) {
+    QHash<QString, QList<QRectF>>::const_iterator valueIt = applicationRectState.find(fileName);
+
+    if(valueIt == applicationRectState.end())
+    {
+        return false;
+    }
+        return true;
 }
 
 void ImageEditor::updateCursorType(QString newCursorType)
@@ -158,6 +165,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
             rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
         }
+
         if (cursorType == "none")
             QGraphicsScene::mouseMoveEvent(event);
 
@@ -268,6 +276,7 @@ void ImageEditor::pasteSelectedItem()
         {
             drawText(clipbordText, QPointF(x, y));
         }
+
         updateCursorType("none");
     }
 }
@@ -297,7 +306,6 @@ void ImageEditor::drawRectangle(QRectF newRectangle)
     pen.setWidth(2);
 
     QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
-
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 
@@ -309,4 +317,20 @@ void ImageEditor::drawText(QString newText, QPointF newPoint)
     QGraphicsTextItem *text = ImageEditor::addText(newText, font);
     text->setPos(newPoint);
     text->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+}
+
+void ImageEditor::clearItems()
+{
+    if(imageSet)
+    {
+        ImageEditor::clear();
+
+        openImage(currFileName);
+
+        if(savedStateExists(currFileName))
+        {
+            applicationRectState.remove(currFileName);
+            applicationTextState.remove(currFileName);
+        }
+    }
 }

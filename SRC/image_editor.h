@@ -17,8 +17,8 @@ public:
     void updateCursorType(QString newCursorType);
     void updateClassLabel(QString newClassLabel);
 
-    void setImageToFalse();
     void createActions();
+    void clearItems();
 
     QString getCursorType();
 
@@ -51,8 +51,10 @@ private:
     QPointF lastPointF;
 
     QString clipbordText;
+
     QPointF clipbordPoint;
     QPointF clipbordClickPoint;
+
     qreal clipbordHeight;
     qreal clipbordWidth;
 
@@ -69,6 +71,9 @@ private:
     void drawText(QString newText, QPointF newPoint);
 
     void saveImageState();
+    void openImage(QString fileName);
+
+    bool savedStateExists(QString fileName);
 
 signals:
     void cursorTypeChanged();

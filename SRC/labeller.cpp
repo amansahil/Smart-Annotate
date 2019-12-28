@@ -116,12 +116,7 @@ void Labeller::on_actionCopy_triggered() { imageEditor->copySelectedItem(); }
 
 void Labeller::on_actionPaste_triggered() { imageEditor->pasteSelectedItem(); }
 
-void Labeller::on_clearButton_clicked()
-{
-    imageEditor->clear();
-    imageEditor->setImageToFalse();
-    imageEditor->update();
-}
+void Labeller::on_clearButton_clicked() { imageEditor->clearItems(); }
 
 void Labeller::createListeners()
 {
