@@ -1,7 +1,7 @@
 #ifndef IMAGEEDITOR_H
 #define IMAGEEDITOR_H
 
-#include<customresizer.h>
+#include <customresizer.h>
 
 #include <QWidget>
 #include <QtWidgets>

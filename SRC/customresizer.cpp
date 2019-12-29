@@ -2,7 +2,7 @@
 
 #include <QBrush>
 
-CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer* parent)
+CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent)
     : QGraphicsRectItem(-4, -4, 8, 8, parent),
       positionFlags_(positionFlags),
       parent_(parent)
@@ -15,7 +15,7 @@ CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer* parent)
 int CustomResizer::HandleItem::positionFlags() const { return positionFlags_; }
 
 QVariant CustomResizer::HandleItem::itemChange(GraphicsItemChange change,
-                                              const QVariant &value)
+                                               const QVariant &value)
 {
     QVariant retVal = value;
 
@@ -29,37 +29,37 @@ QVariant CustomResizer::HandleItem::itemChange(GraphicsItemChange change,
 
         switch (positionFlags_)
         {
-            case TopLeft:
-                parent_->setTopLeft(pos);
-                break;
-            case Top:
-                parent_->setTop(pos.y());
-                break;
-            case TopRight:
-                parent_->setTopRight(pos);
-                break;
-            case Right:
-                parent_->setRight(pos.x());
-                break;
-            case BottomRight:
-                parent_->setBottomRight(pos);
-                break;
-            case Bottom:
-                parent_->setBottom(pos.y());
-                break;
-            case BottomLeft:
-                parent_->setBottomLeft(pos);
-                break;
-            case Left:
-                parent_->setLeft(pos.x());
-                break;
+        case TopLeft:
+            parent_->setTopLeft(pos);
+            break;
+        case Top:
+            parent_->setTop(pos.y());
+            break;
+        case TopRight:
+            parent_->setTopRight(pos);
+            break;
+        case Right:
+            parent_->setRight(pos.x());
+            break;
+        case BottomRight:
+            parent_->setBottomRight(pos);
+            break;
+        case Bottom:
+            parent_->setBottom(pos.y());
+            break;
+        case BottomLeft:
+            parent_->setBottomLeft(pos);
+            break;
+        case Left:
+            parent_->setLeft(pos.x());
+            break;
         }
     }
 
     return retVal;
 }
 
-QPointF CustomResizer::HandleItem::restrictPosition(const QPointF& newPos)
+QPointF CustomResizer::HandleItem::restrictPosition(const QPointF &newPos)
 {
     QPointF retVal = pos();
 
@@ -82,7 +82,7 @@ QPointF CustomResizer::HandleItem::restrictPosition(const QPointF& newPos)
     return retVal;
 }
 
-CustomResizer::CustomResizer(QGraphicsItem* parent): QGraphicsItem(parent)
+CustomResizer::CustomResizer(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     if (parentItem())
         rect_ = parentItem()->boundingRect();
@@ -105,32 +105,32 @@ QRectF CustomResizer::boundingRect() const
     return rect_;
 }
 
-void CustomResizer::paint(QPainter* painter,
-                         const QStyleOptionGraphicsItem* option,
-                         QWidget* widget)
+void CustomResizer::paint(QPainter *painter,
+                          const QStyleOptionGraphicsItem *option,
+                          QWidget *widget)
 {
 }
 
-#define IMPL_SET_FN(TYPE, POS)                  \
-    void CustomResizer::set ## POS (TYPE v)      \
-    {                                           \
-        rect_.set ## POS (v);                   \
-        doResize();                             \
+#define IMPL_SET_FN(TYPE, POS)           \
+    void CustomResizer::set##POS(TYPE v) \
+    {                                    \
+        rect_.set##POS(v);               \
+        doResize();                      \
     }
 
 IMPL_SET_FN(qreal, Top)
 IMPL_SET_FN(qreal, Right)
 IMPL_SET_FN(qreal, Bottom)
 IMPL_SET_FN(qreal, Left)
-IMPL_SET_FN(const QPointF&, TopLeft)
-IMPL_SET_FN(const QPointF&, TopRight)
-IMPL_SET_FN(const QPointF&, BottomRight)
-IMPL_SET_FN(const QPointF&, BottomLeft)
+IMPL_SET_FN(const QPointF &, TopLeft)
+IMPL_SET_FN(const QPointF &, TopRight)
+IMPL_SET_FN(const QPointF &, BottomRight)
+IMPL_SET_FN(const QPointF &, BottomLeft)
 
 void CustomResizer::doResize()
 {
-    QGraphicsRectItem* rectItem =
-        dynamic_cast<QGraphicsRectItem*>(parentItem());
+    QGraphicsRectItem *rectItem =
+        dynamic_cast<QGraphicsRectItem *>(parentItem());
 
     if (rectItem)
     {
@@ -142,40 +142,40 @@ void CustomResizer::doResize()
 
 void CustomResizer::updateHandleItemPositions()
 {
-    foreach (HandleItem* item, handleItems_)
+    foreach (HandleItem *item, handleItems_)
     {
         item->setFlag(ItemSendsGeometryChanges, false);
 
         switch (item->positionFlags())
         {
-            case TopLeft:
-                item->setPos(rect_.topLeft());
-                break;
-            case Top:
-                item->setPos(rect_.left() + rect_.width() / 2 - 1,
-                             rect_.top());
-                break;
-            case TopRight:
-                item->setPos(rect_.topRight());
-                break;
-            case Right:
-                item->setPos(rect_.right(),
-                             rect_.top() + rect_.height() / 2 - 1);
-                break;
-            case BottomRight:
-                item->setPos(rect_.bottomRight());
-                break;
-            case Bottom:
-                item->setPos(rect_.left() + rect_.width() / 2 - 1,
-                             rect_.bottom());
-                break;
-            case BottomLeft:
-                item->setPos(rect_.bottomLeft());
-                break;
-            case Left:
-                item->setPos(rect_.left(),
-                             rect_.top() + rect_.height() / 2 - 1);
-                break;
+        case TopLeft:
+            item->setPos(rect_.topLeft());
+            break;
+        case Top:
+            item->setPos(rect_.left() + rect_.width() / 2 - 1,
+                         rect_.top());
+            break;
+        case TopRight:
+            item->setPos(rect_.topRight());
+            break;
+        case Right:
+            item->setPos(rect_.right(),
+                         rect_.top() + rect_.height() / 2 - 1);
+            break;
+        case BottomRight:
+            item->setPos(rect_.bottomRight());
+            break;
+        case Bottom:
+            item->setPos(rect_.left() + rect_.width() / 2 - 1,
+                         rect_.bottom());
+            break;
+        case BottomLeft:
+            item->setPos(rect_.bottomLeft());
+            break;
+        case Left:
+            item->setPos(rect_.left(),
+                         rect_.top() + rect_.height() / 2 - 1);
+            break;
         }
 
         item->setFlag(ItemSendsGeometryChanges, true);
