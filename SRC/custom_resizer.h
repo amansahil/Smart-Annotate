@@ -24,41 +24,43 @@ private:
     {
     public:
         HandleItem(int positionFlags, CustomResizer *parent);
-        int positionFlags() const;
+
+        int getPositionFlags() const;
 
     protected:
-        virtual QVariant itemChange(GraphicsItemChange change,
-                                    const QVariant &value);
+        virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
     private:
+        CustomResizer *parent;
+
         QPointF restrictPosition(const QPointF &newPos);
 
-        int positionFlags_;
-        CustomResizer *parent_;
+        int positionFlags;
     };
 
 public:
     CustomResizer(QGraphicsItem *parent = 0);
     virtual ~CustomResizer();
+
     virtual QRectF boundingRect() const;
-    virtual void paint(QPainter *painter,
-                       const QStyleOptionGraphicsItem *option,
-                       QWidget *widget = 0);
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
+
     void setTopLeft(const QPointF &pos);
-    void setTop(qreal y);
     void setTopRight(const QPointF &pos);
-    void setRight(qreal x);
     void setBottomRight(const QPointF &pos);
-    void setBottom(qreal y);
     void setBottomLeft(const QPointF &pos);
+
+    void setTop(qreal y);
+    void setRight(qreal x);
+    void setBottom(qreal y);
     void setLeft(qreal x);
 
 private:
     void doResize();
     void updateHandleItemPositions();
 
-    QList<HandleItem *> handleItems_;
-    QRectF rect_;
+    QList<HandleItem *> handleItems;
+    QRectF rect;
 };
 
 #endif // CUSTOMRESIZER_H

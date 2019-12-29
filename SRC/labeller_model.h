@@ -25,6 +25,7 @@ public:
     void updateClassNames(QStringList newClassNames);
 
     void addClassName(QString newClassName);
+
     void updateAnnotationFile(QString newAnnotationFile);
     void updateimageDir(QString newImageDir);
     void updateNameFile(QString newNameFile);

@@ -31,7 +31,9 @@ public:
 
 private:
     Ui::Labeller *ui;
+
     LabellerModel *labellerModel;
+
     ImageEditor *imageEditor;
 
     void createListeners();

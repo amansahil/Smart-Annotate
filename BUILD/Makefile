@@ -52,14 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SRC/customresizer.cpp \
+SOURCES       = ../SRC/custom_resizer.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
 		../SRC/labeller.cpp moc_image_editor.cpp \
 		moc_labeller.cpp \
 		moc_labeller_model.cpp
-OBJECTS       = customresizer.o \
+OBJECTS       = custom_resizer.o \
 		image_editor.o \
 		labeller_model.o \
 		main.o \
@@ -261,10 +261,10 @@ DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf \
-		../SRC/SRC.pro ../SRC/customresizer.h \
+		../SRC/SRC.pro ../SRC/custom_resizer.h \
 		../SRC/image_editor.h \
 		../SRC/labeller.h \
-		../SRC/labeller_model.h ../SRC/customresizer.cpp \
+		../SRC/labeller_model.h ../SRC/custom_resizer.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
@@ -686,8 +686,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/customresizer.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/customresizer.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/custom_resizer.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/custom_resizer.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.ui $(DISTDIR)/
 
 
@@ -724,7 +724,7 @@ compiler_moc_header_make_all: moc_image_editor.cpp moc_labeller.cpp moc_labeller
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
 moc_image_editor.cpp: ../SRC/image_editor.h \
-		../SRC/customresizer.h \
+		../SRC/custom_resizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1407,7 +1407,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-customresizer.o: ../SRC/customresizer.cpp ../SRC/customresizer.h \
+custom_resizer.o: ../SRC/custom_resizer.cpp ../SRC/custom_resizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1499,10 +1499,10 @@ customresizer.o: ../SRC/customresizer.cpp ../SRC/customresizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o customresizer.o ../SRC/customresizer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o custom_resizer.o ../SRC/custom_resizer.cpp
 
 image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
-		../SRC/customresizer.h \
+		../SRC/custom_resizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2344,7 +2344,7 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QStringList \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
 		../SRC/image_editor.h \
-		../SRC/customresizer.h \
+		../SRC/custom_resizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \

@@ -1,7 +1,7 @@
 #ifndef IMAGEEDITOR_H
 #define IMAGEEDITOR_H
 
-#include <customresizer.h>
+#include <custom_resizer.h>
 
 #include <QWidget>
 #include <QtWidgets>
@@ -69,10 +69,10 @@ private:
     QHash<QString, QList<QRectF>> applicationRectState;
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
+    void saveImageState();
+
     void drawRectangle(QRectF newRectangle);
     void drawText(QString newText, QPointF newPoint);
-
-    void saveImageState();
 
     void openImage(QString fileName);
 
