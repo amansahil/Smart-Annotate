@@ -311,8 +311,8 @@ void ImageEditor::drawRectangle(QRectF newRectangle)
     QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 
-    CustomResizer *rectSizeGripItem =
-        new CustomResizer(rectangle);
+    CustomResizer *rectSizeGripItem = new CustomResizer(rectangle);
+    resizerItems.append(rectSizeGripItem);
 }
 
 void ImageEditor::drawText(QString newText, QPointF newPoint)

@@ -1,7 +1,5 @@
 #include "custom_resizer.h"
 
-#include <QBrush>
-
 CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent): QGraphicsRectItem(-4, -4, 8, 8, parent), positionFlags(positionFlags), parent(parent)
 {
     setBrush(QBrush(Qt::lightGray));
@@ -9,10 +7,13 @@ CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent):
     setFlag(ItemSendsGeometryChanges);
 }
 
+int CustomResizer::HandleItem::type() const {
+    return Type;
+}
+
 int CustomResizer::HandleItem::getPositionFlags() const { return positionFlags; }
 
-QVariant CustomResizer::HandleItem::itemChange(GraphicsItemChange change,
-                                               const QVariant &value)
+QVariant CustomResizer::HandleItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
     QVariant retVal = value;
 
@@ -97,6 +98,10 @@ CustomResizer::CustomResizer(QGraphicsItem *parent) : QGraphicsItem(parent)
 
 CustomResizer::~CustomResizer() {}
 
+int CustomResizer::type() const {
+    return Type;
+}
+
 QRectF CustomResizer::boundingRect() const
 {
     return rect;
@@ -111,7 +116,7 @@ void CustomResizer::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
     {                                    \
         rect.set##POS(v);               \
         doResize();                      \
-    }
+    }                                   \
 
 IMPL_SET_FN(qreal, Top)
 IMPL_SET_FN(qreal, Right)

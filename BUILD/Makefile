@@ -814,10 +814,11 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixelformat.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfont.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontinfo.h \
@@ -1592,10 +1593,11 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixelformat.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfont.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontinfo.h \
@@ -2348,6 +2350,7 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgets \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QtCore \

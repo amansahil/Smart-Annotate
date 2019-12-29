@@ -3,8 +3,8 @@
 
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
-#include <map>
-#include <string>
+#include <QBrush>
+
 class CustomResizer : public QGraphicsItem
 {
 private:
@@ -23,9 +23,7 @@ private:
     class HandleItem : public QGraphicsRectItem
     {
     public:
-        HandleItem(int positionFlags, CustomResizer *parent);
-
-        int getPositionFlags() const;
+        enum { Type = UserType + 1 };
 
     protected:
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
@@ -36,9 +34,17 @@ private:
         QPointF restrictPosition(const QPointF &newPos);
 
         int positionFlags;
+
+    public:
+        HandleItem(int positionFlags, CustomResizer *parent);
+
+        int getPositionFlags() const;
+        int type() const override;
     };
 
 public:
+    enum { Type = UserType };
+
     CustomResizer(QGraphicsItem *parent = 0);
     virtual ~CustomResizer();
 
@@ -54,6 +60,8 @@ public:
     void setRight(qreal x);
     void setBottom(qreal y);
     void setLeft(qreal x);
+
+    int type() const override;
 
 private:
     void doResize();

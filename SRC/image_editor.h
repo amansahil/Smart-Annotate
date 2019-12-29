@@ -66,6 +66,8 @@ private:
 
     QRubberBand *rubberBand;
 
+    QList<CustomResizer*> resizerItems;
+
     QHash<QString, QList<QRectF>> applicationRectState;
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
