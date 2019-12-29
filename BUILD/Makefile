@@ -52,13 +52,15 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SRC/image_editor.cpp \
+SOURCES       = ../SRC/customresizer.cpp \
+		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
 		../SRC/labeller.cpp moc_image_editor.cpp \
 		moc_labeller.cpp \
 		moc_labeller_model.cpp
-OBJECTS       = image_editor.o \
+OBJECTS       = customresizer.o \
+		image_editor.o \
 		labeller_model.o \
 		main.o \
 		labeller.o \
@@ -259,9 +261,11 @@ DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf \
-		../SRC/SRC.pro ../SRC/image_editor.h \
+		../SRC/SRC.pro ../SRC/customresizer.h \
+		../SRC/image_editor.h \
 		../SRC/labeller.h \
-		../SRC/labeller_model.h ../SRC/image_editor.cpp \
+		../SRC/labeller_model.h ../SRC/customresizer.cpp \
+		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
 		../SRC/labeller.cpp
@@ -682,8 +686,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/customresizer.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/customresizer.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.ui $(DISTDIR)/
 
 
@@ -720,8 +724,9 @@ compiler_moc_header_make_all: moc_image_editor.cpp moc_labeller.cpp moc_labeller
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
 moc_image_editor.cpp: ../SRC/image_editor.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+		../SRC/customresizer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
@@ -747,12 +752,10 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
@@ -777,32 +780,44 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qsize.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qcolor.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgb.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgba64.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpainterpath.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qmatrix.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpolygon.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qiodevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qline.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgba64.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qimage.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixelformat.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixmap.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfont.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontinfo.h \
@@ -810,13 +825,6 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qcursor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qkeysequence.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qevent.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qvariant.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qlocale.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qset.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qurl.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qurlquery.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qfile.h \
@@ -1100,7 +1108,6 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesture.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesturerecognizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsanchorlayout.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayout.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicseffect.h \
@@ -1180,6 +1187,7 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwizard.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsversion.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QRubberBand \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QHash \
 		moc_predefs.h \
 		../../../Qt/5.12.6/gcc_64/bin/moc
 	/home/sahil/Qt/5.12.6/gcc_64/bin/moc $(DEFINES) --include /home/sahil/Desktop/Group_24_SDI_SOFT20091/BUILD/moc_predefs.h -I/home/sahil/Qt/5.12.6/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Group_24_SDI_SOFT20091/SRC -I/home/sahil/Qt/5.12.6/gcc_64/include -I/home/sahil/Qt/5.12.6/gcc_64/include/QtWidgets -I/home/sahil/Qt/5.12.6/gcc_64/include/QtGui -I/home/sahil/Qt/5.12.6/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../SRC/image_editor.h -o moc_image_editor.cpp
@@ -1399,9 +1407,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+customresizer.o: ../SRC/customresizer.cpp ../SRC/customresizer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
@@ -1427,12 +1435,10 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
@@ -1457,32 +1463,139 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qsize.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qcolor.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgb.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgba64.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpainterpath.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qmatrix.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpolygon.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qdatastream.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qiodevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qline.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgba64.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qimage.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixelformat.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixmap.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o customresizer.o ../SRC/customresizer.cpp
+
+image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
+		../SRC/customresizer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdebug.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qbrush.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfont.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qfontinfo.h \
@@ -1490,13 +1603,6 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qcursor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qkeysequence.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qevent.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qvariant.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qlocale.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qset.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qurl.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qurlquery.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qfile.h \
@@ -1780,7 +1886,6 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesture.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesturerecognizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsanchorlayout.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayout.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicseffect.h \
@@ -1859,7 +1964,9 @@ image_editor.o: ../SRC/image_editor.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidgetaction.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwizard.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsversion.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QRubberBand
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QRubberBand \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QHash \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o image_editor.o ../SRC/image_editor.cpp
 
 labeller_model.o: ../SRC/labeller_model.cpp ../SRC/labeller_model.h \
@@ -2056,7 +2163,9 @@ main.o: ../SRC/main.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qeventloop.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qguiapplication.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QScrollArea \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qscrollarea.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../SRC/main.cpp
 
 labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
@@ -2235,6 +2344,10 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QStringList \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
 		../SRC/image_editor.h \
+		../SRC/customresizer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgets \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QtCore \
@@ -2473,7 +2586,6 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesture.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgesturerecognizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsanchorlayout.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayout.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicseffect.h \
@@ -2541,7 +2653,7 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwizard.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsversion.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QRubberBand \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/QDebug
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QHash
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labeller.o ../SRC/labeller.cpp
 
 moc_image_editor.o: moc_image_editor.cpp 
