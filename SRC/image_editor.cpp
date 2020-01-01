@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-ImageEditor::ImageEditor() : imageSet(false), clipbord(false), cursorType("none"), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
+ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType("none"), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
 }
@@ -137,7 +137,7 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
         origin = event->screenPos();
         originF = event->scenePos();
 
-        if (cursorType == "draw")
+        if (cursorType == "draw" && event->button() == Qt::LeftButton)
         {
             rubberBand->setGeometry(QRect(origin, QSize()));
             rubberBand->show();
@@ -158,7 +158,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == "draw")
+        if (cursorType == "draw" && (event->buttons() & Qt::LeftButton))
         {
             drawing = true;
 
@@ -179,7 +179,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == "draw" && origin != lastPoint && drawing)
+        if (cursorType == "draw" && event->button() == Qt::LeftButton && drawing)
         {
             rubberBand->hide();
 
