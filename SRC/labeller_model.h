@@ -1,11 +1,11 @@
 #ifndef LABELLER_MODEL_H
 #define LABELLER_MODEL_H
 
+#include <string_date_hash.h>
+
 #include <QFileInfoList>
 #include <QStringList>
 #include <QObject>
-
-#include <string_date_hash.h>
 
 class LabellerModel : public QObject
 {
@@ -24,7 +24,7 @@ public:
 
     explicit LabellerModel(QObject *parent = 0);
 
-    StringDateHash* getImageFiles();
+    StringDateHash *getImageFiles();
     QStringList getClassNames();
 
     QString getAnnotationFile();
@@ -59,7 +59,7 @@ signals:
     void clearClassItemLineEdit();
 
 private:
-    StringDateHash* imageFiles;
+    StringDateHash *imageFiles;
     QStringList classNames;
 
     QString annotationFile;
@@ -69,7 +69,6 @@ private:
 
     SortingType imageFilesSorting;
     SortingType classListSorting;
-
 };
 
 #endif // LABELLER_MODEL_H

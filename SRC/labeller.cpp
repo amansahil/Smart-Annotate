@@ -42,20 +42,19 @@ void Labeller::setImageList()
     auto model = new QStringListModel;
     QStringList imageFiles;
 
-    if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameAsc)
+    if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameAsc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByKeyAsc();
     }
-    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameDesc)
+    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameDesc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByKeyDesc();
-
     }
-    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateAsc)
+    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateAsc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByDateAsc();
     }
-    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateDesc)
+    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateDesc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByDateDesc();
     }
@@ -155,7 +154,6 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
     connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
-
 }
 
 // Controller methods
@@ -316,7 +314,7 @@ void Labeller::on_searchImages_clicked()
 
     bool exist = labellerModel->getImageFiles()->get(imageToSearch, dateTime);
 
-    if(exist)
+    if (exist)
     {
         auto model = new QStringListModel;
         model->setStringList({imageToSearch});

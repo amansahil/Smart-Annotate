@@ -6,7 +6,7 @@ LabellerModel::LabellerModel(QObject *parent) : QObject(parent), classNames(""),
 
 QStringList LabellerModel::getClassNames() { return classNames; }
 
-StringDateHash* LabellerModel::getImageFiles() { return imageFiles; }
+StringDateHash *LabellerModel::getImageFiles() { return imageFiles; }
 
 QString LabellerModel::getAnnotationFile() { return annotationFile; }
 
@@ -22,14 +22,14 @@ LabellerModel::SortingType LabellerModel::getImageFilesSorting() { return imageF
 
 void LabellerModel::updateImageFiles(QFileInfoList newImageFiles)
 {
-        delete imageFiles;
-        imageFiles = new StringDateHash;
+    delete imageFiles;
+    imageFiles = new StringDateHash;
 
-        for ( const auto& i : newImageFiles  )
-        {
-            imageFiles->put(i.fileName(), i.lastModified());
-        }
-        emit imageFilesChanged();
+    for (const auto &i : newImageFiles)
+    {
+        imageFiles->put(i.fileName(), i.lastModified());
+    }
+    emit imageFilesChanged();
 }
 
 void LabellerModel::updateClassNames(QStringList newClassNames)
@@ -79,7 +79,7 @@ void LabellerModel::updateClassListSorting(SortingType newClassListSorting)
 
 void LabellerModel::updateImageFilesSorting(SortingType newImageFilesSorting)
 {
-    if(imageFilesSorting != newImageFilesSorting)
+    if (imageFilesSorting != newImageFilesSorting)
     {
         imageFilesSorting = newImageFilesSorting;
         emit imageFilesChangedSorted();

@@ -3,10 +3,10 @@
 
 #include <custom_resizer.h>
 
-#include <QWidget>
-#include <QtWidgets>
-#include <QRubberBand>
 #include <QHash>
+#include <QRubberBand>
+#include <QtWidgets>
+#include <QWidget>
 
 class ImageEditor : public QGraphicsScene
 {
@@ -66,7 +66,7 @@ private:
 
     QRubberBand *rubberBand;
 
-    QList<CustomResizer*> resizerItems;
+    QList<CustomResizer *> resizerItems;
 
     QHash<QString, QList<QRectF>> applicationRectState;
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;

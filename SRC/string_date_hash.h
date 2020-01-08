@@ -56,15 +56,15 @@ public:
 private:
     int capacity = 200;
 
-    std::vector<HashNode*> table;
+    std::vector<HashNode *> table;
 
     int hashFunc(const QString &key) const;
 
-    void merge(HashNode* begin, HashNode* middle, HashNode* end, HashNode* res);
-    void mergesort(HashNode* begin, HashNode* end, HashNode* res);
+    void merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res);
+    void mergesort(HashNode *begin, HashNode *end, HashNode *res);
 
-    StringDateHash(const StringDateHash & other);
-    const StringDateHash & operator=(const StringDateHash & other);
+    StringDateHash(const StringDateHash &other);
+    const StringDateHash &operator=(const StringDateHash &other);
 };
 
 #endif // STRINGDATEHASH_H

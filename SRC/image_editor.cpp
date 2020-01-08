@@ -1,7 +1,5 @@
 ﻿#include "image_editor.h"
 
-#include <QDebug>
-
 ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType("none"), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
