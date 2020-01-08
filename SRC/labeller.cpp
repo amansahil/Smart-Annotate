@@ -288,24 +288,18 @@ void Labeller::on_imageList_clicked()
     labellerModel->updateSelectedImageFile(fileName);
 }
 
-void Labeller::on_sortImagesAsc_clicked()
-{
-    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameAsc);
-}
+void Labeller::on_sortImagesAsc_clicked() { labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameAsc); }
 
-void Labeller::on_sortImagesDsc_clicked()
-{
-    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameDesc);
-}
+void Labeller::on_sortImagesDsc_clicked() { labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameDesc); }
 
-void Labeller::on_sortImagesdateAsc_clicked()
-{
-    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateAsc);
-}
+void Labeller::on_sortImagesdateAsc_clicked() { labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateAsc); }
 
-void Labeller::on_sortImagesDateDsc_clicked()
-{
-    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateDesc);
+void Labeller::on_sortImagesDateDsc_clicked() { labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateDesc); }
+
+void Labeller::on_restoreImages_clicked() {
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
+
+    setImageList();
 }
 
 void Labeller::on_searchImages_clicked()
@@ -324,17 +318,15 @@ void Labeller::on_searchImages_clicked()
     }
     else
     {
-        QMessageBox::warning(this, "Oops", "Could not find a file name: " + imageToSearch);
+        QMessageBox::warning(this, "Oops", "Could not find a file named: \"" + imageToSearch + "\"");
     }
-}
-
-void Labeller::on_restoreImages_clicked()
-{
-    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
-    setImageList();
 }
 
 void Labeller::on_saveButton_clicked()
 {
-    // Some magic to save the file
+    imageEditor->saveImageState();
+
+    QHash<QString, QList<QRectF>> applicationRectState = imageEditor->getApplicationRectState();
+
+    // Some magic to save to annotation file
 }

@@ -113,6 +113,8 @@ bool ImageEditor::savedStateExists(QString fileName)
     return true;
 }
 
+QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() { return applicationRectState; }
+
 void ImageEditor::updateCursorType(QString newCursorType)
 {
     if (imageSet && cursorType != newCursorType)

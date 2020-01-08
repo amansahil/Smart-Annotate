@@ -7,9 +7,7 @@ CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent):
     setFlag(ItemSendsGeometryChanges);
 }
 
-int CustomResizer::HandleItem::type() const {
-    return Type;
-}
+int CustomResizer::HandleItem::type() const { return Type; }
 
 int CustomResizer::HandleItem::getPositionFlags() const { return positionFlags; }
 
@@ -98,14 +96,9 @@ CustomResizer::CustomResizer(QGraphicsItem *parent) : QGraphicsItem(parent)
 
 CustomResizer::~CustomResizer() {}
 
-int CustomResizer::type() const {
-    return Type;
-}
+int CustomResizer::type() const { return Type; }
 
-QRectF CustomResizer::boundingRect() const
-{
-    return rect;
-}
+QRectF CustomResizer::boundingRect() const{ return rect; }
 
 void CustomResizer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {

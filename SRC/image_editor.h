@@ -21,6 +21,9 @@ public:
 
     void createActions();
     void clearItems();
+    void saveImageState();
+
+    QHash<QString, QList<QRectF>> getApplicationRectState();
 
     QString getCursorType();
 
@@ -70,8 +73,6 @@ private:
 
     QHash<QString, QList<QRectF>> applicationRectState;
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
-
-    void saveImageState();
 
     void drawRectangle(QRectF newRectangle);
     void drawText(QString newText, QPointF newPoint);
