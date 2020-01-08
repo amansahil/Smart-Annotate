@@ -1,13 +1,13 @@
 #ifndef LABELLER_H
 #define LABELLER_H
 
-#include <QMainWindow>
+#include <QAbstractItemView>
 #include <QFileDialog>
 #include <QFile>
-#include <QTextStream>
+#include <QMainWindow>
 #include <QMessageBox>
 #include <QStringListModel>
-#include <QAbstractItemView>
+#include <QTextStream>
 
 QT_BEGIN_NAMESPACE
 namespace Ui

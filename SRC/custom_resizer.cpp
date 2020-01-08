@@ -1,6 +1,6 @@
 #include "custom_resizer.h"
 
-CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent): QGraphicsRectItem(-4, -4, 8, 8, parent), positionFlags(positionFlags), parent(parent)
+CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent) : QGraphicsRectItem(-4, -4, 8, 8, parent), positionFlags(positionFlags), parent(parent)
 {
     setBrush(QBrush(Qt::lightGray));
     setFlag(ItemIsMovable);
@@ -107,9 +107,9 @@ void CustomResizer::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 #define IMPL_SET_FN(TYPE, POS)           \
     void CustomResizer::set##POS(TYPE v) \
     {                                    \
-        rect.set##POS(v);               \
+        rect.set##POS(v);                \
         doResize();                      \
-    }                                   \
+    }
 
 IMPL_SET_FN(qreal, Top)
 IMPL_SET_FN(qreal, Right)

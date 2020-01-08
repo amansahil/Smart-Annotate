@@ -1,9 +1,9 @@
 #ifndef CUSTOMRESIZER_H
 #define CUSTOMRESIZER_H
 
+#include <QBrush>
 #include <QGraphicsItem>
 #include <QGraphicsRectItem>
-#include <QBrush>
 
 class CustomResizer : public QGraphicsItem
 {
@@ -23,7 +23,10 @@ private:
     class HandleItem : public QGraphicsRectItem
     {
     public:
-        enum { Type = UserType + 1 };
+        enum
+        {
+            Type = UserType + 1
+        };
 
     protected:
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
@@ -43,7 +46,10 @@ private:
     };
 
 public:
-    enum { Type = UserType };
+    enum
+    {
+        Type = UserType
+    };
 
     CustomResizer(QGraphicsItem *parent = 0);
     virtual ~CustomResizer();
