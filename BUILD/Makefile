@@ -56,7 +56,8 @@ SOURCES       = ../SRC/custom_resizer.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
-		../SRC/labeller.cpp moc_image_editor.cpp \
+		../SRC/labeller.cpp \
+		../SRC/string_date_hash.cpp moc_image_editor.cpp \
 		moc_labeller.cpp \
 		moc_labeller_model.cpp
 OBJECTS       = custom_resizer.o \
@@ -64,6 +65,7 @@ OBJECTS       = custom_resizer.o \
 		labeller_model.o \
 		main.o \
 		labeller.o \
+		string_date_hash.o \
 		moc_image_editor.o \
 		moc_labeller.o \
 		moc_labeller_model.o
@@ -264,11 +266,13 @@ DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../SRC/SRC.pro ../SRC/custom_resizer.h \
 		../SRC/image_editor.h \
 		../SRC/labeller.h \
-		../SRC/labeller_model.h ../SRC/custom_resizer.cpp \
+		../SRC/labeller_model.h \
+		../SRC/string_date_hash.h ../SRC/custom_resizer.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
-		../SRC/labeller.cpp
+		../SRC/labeller.cpp \
+		../SRC/string_date_hash.cpp
 QMAKE_TARGET  = SRC
 DESTDIR       = 
 TARGET        = SRC
@@ -686,8 +690,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/custom_resizer.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/custom_resizer.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/custom_resizer.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h ../SRC/string_date_hash.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/custom_resizer.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp ../SRC/string_date_hash.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.ui $(DISTDIR)/
 
 
@@ -2658,6 +2662,57 @@ labeller.o: ../SRC/labeller.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QRubberBand \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QHash
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labeller.o ../SRC/labeller.cpp
+
+string_date_hash.o: ../SRC/string_date_hash.cpp ../SRC/string_date_hash.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QString \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QDateTime \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qdatetime.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QVector \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpoint.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o string_date_hash.o ../SRC/string_date_hash.cpp
 
 moc_image_editor.o: moc_image_editor.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_image_editor.o moc_image_editor.cpp

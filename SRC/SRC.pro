@@ -20,13 +20,15 @@ SOURCES += \
     image_editor.cpp \
     labeller_model.cpp \
     main.cpp \
-    labeller.cpp
+    labeller.cpp \
+    string_date_hash.cpp
 
 HEADERS += \
     custom_resizer.h \
     image_editor.h \
     labeller.h \
-    labeller_model.h
+    labeller_model.h \
+    string_date_hash.h
 
 FORMS += \
     labeller.ui

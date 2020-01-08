@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Labeller_t {
-    QByteArrayData data[26];
-    char stringdata0[581];
+    QByteArrayData data[32];
+    char stringdata0[738];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,7 +56,13 @@ QT_MOC_LITERAL(21, 438, 28), // "on_addNameItemButton_clicked"
 QT_MOC_LITERAL(22, 467, 32), // "on_deleteClassItemButton_clicked"
 QT_MOC_LITERAL(23, 500, 29), // "on_sortClassAscButton_clicked"
 QT_MOC_LITERAL(24, 530, 29), // "on_sortClassDscButton_clicked"
-QT_MOC_LITERAL(25, 560, 20) // "on_imageList_clicked"
+QT_MOC_LITERAL(25, 560, 20), // "on_imageList_clicked"
+QT_MOC_LITERAL(26, 581, 24), // "on_sortImagesAsc_clicked"
+QT_MOC_LITERAL(27, 606, 24), // "on_sortImagesDsc_clicked"
+QT_MOC_LITERAL(28, 631, 28), // "on_sortImagesdateAsc_clicked"
+QT_MOC_LITERAL(29, 660, 28), // "on_sortImagesDateDsc_clicked"
+QT_MOC_LITERAL(30, 689, 23), // "on_searchImages_clicked"
+QT_MOC_LITERAL(31, 713, 24) // "on_restoreImages_clicked"
 
     },
     "Labeller\0setImageList\0\0setClassList\0"
@@ -77,7 +83,12 @@ QT_MOC_LITERAL(25, 560, 20) // "on_imageList_clicked"
     "on_deleteClassItemButton_clicked\0"
     "on_sortClassAscButton_clicked\0"
     "on_sortClassDscButton_clicked\0"
-    "on_imageList_clicked"
+    "on_imageList_clicked\0on_sortImagesAsc_clicked\0"
+    "on_sortImagesDsc_clicked\0"
+    "on_sortImagesdateAsc_clicked\0"
+    "on_sortImagesDateDsc_clicked\0"
+    "on_searchImages_clicked\0"
+    "on_restoreImages_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,7 +98,7 @@ static const uint qt_meta_data_Labeller[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      24,   14, // methods
+      30,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -95,32 +106,44 @@ static const uint qt_meta_data_Labeller[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  134,    2, 0x08 /* Private */,
-       3,    0,  135,    2, 0x08 /* Private */,
-       4,    0,  136,    2, 0x08 /* Private */,
-       5,    0,  137,    2, 0x08 /* Private */,
-       6,    0,  138,    2, 0x08 /* Private */,
-       7,    0,  139,    2, 0x08 /* Private */,
-       8,    0,  140,    2, 0x08 /* Private */,
-       9,    0,  141,    2, 0x08 /* Private */,
-      10,    0,  142,    2, 0x08 /* Private */,
-      11,    0,  143,    2, 0x08 /* Private */,
-      12,    0,  144,    2, 0x08 /* Private */,
-      13,    0,  145,    2, 0x08 /* Private */,
-      14,    0,  146,    2, 0x08 /* Private */,
-      15,    0,  147,    2, 0x08 /* Private */,
-      16,    0,  148,    2, 0x08 /* Private */,
-      17,    0,  149,    2, 0x08 /* Private */,
-      18,    0,  150,    2, 0x08 /* Private */,
-      19,    0,  151,    2, 0x08 /* Private */,
-      20,    0,  152,    2, 0x08 /* Private */,
-      21,    0,  153,    2, 0x08 /* Private */,
-      22,    0,  154,    2, 0x08 /* Private */,
-      23,    0,  155,    2, 0x08 /* Private */,
-      24,    0,  156,    2, 0x08 /* Private */,
-      25,    0,  157,    2, 0x08 /* Private */,
+       1,    0,  164,    2, 0x08 /* Private */,
+       3,    0,  165,    2, 0x08 /* Private */,
+       4,    0,  166,    2, 0x08 /* Private */,
+       5,    0,  167,    2, 0x08 /* Private */,
+       6,    0,  168,    2, 0x08 /* Private */,
+       7,    0,  169,    2, 0x08 /* Private */,
+       8,    0,  170,    2, 0x08 /* Private */,
+       9,    0,  171,    2, 0x08 /* Private */,
+      10,    0,  172,    2, 0x08 /* Private */,
+      11,    0,  173,    2, 0x08 /* Private */,
+      12,    0,  174,    2, 0x08 /* Private */,
+      13,    0,  175,    2, 0x08 /* Private */,
+      14,    0,  176,    2, 0x08 /* Private */,
+      15,    0,  177,    2, 0x08 /* Private */,
+      16,    0,  178,    2, 0x08 /* Private */,
+      17,    0,  179,    2, 0x08 /* Private */,
+      18,    0,  180,    2, 0x08 /* Private */,
+      19,    0,  181,    2, 0x08 /* Private */,
+      20,    0,  182,    2, 0x08 /* Private */,
+      21,    0,  183,    2, 0x08 /* Private */,
+      22,    0,  184,    2, 0x08 /* Private */,
+      23,    0,  185,    2, 0x08 /* Private */,
+      24,    0,  186,    2, 0x08 /* Private */,
+      25,    0,  187,    2, 0x08 /* Private */,
+      26,    0,  188,    2, 0x08 /* Private */,
+      27,    0,  189,    2, 0x08 /* Private */,
+      28,    0,  190,    2, 0x08 /* Private */,
+      29,    0,  191,    2, 0x08 /* Private */,
+      30,    0,  192,    2, 0x08 /* Private */,
+      31,    0,  193,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -179,6 +202,12 @@ void Labeller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 21: _t->on_sortClassAscButton_clicked(); break;
         case 22: _t->on_sortClassDscButton_clicked(); break;
         case 23: _t->on_imageList_clicked(); break;
+        case 24: _t->on_sortImagesAsc_clicked(); break;
+        case 25: _t->on_sortImagesDsc_clicked(); break;
+        case 26: _t->on_sortImagesdateAsc_clicked(); break;
+        case 27: _t->on_sortImagesDateDsc_clicked(); break;
+        case 28: _t->on_searchImages_clicked(); break;
+        case 29: _t->on_restoreImages_clicked(); break;
         default: ;
         }
     }
@@ -214,13 +243,13 @@ int Labeller::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 24)
+        if (_id < 30)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 30;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 24)
+        if (_id < 30)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 24;
+        _id -= 30;
     }
     return _id;
 }

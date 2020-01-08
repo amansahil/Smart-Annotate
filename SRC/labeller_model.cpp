@@ -1,12 +1,12 @@
 #include "labeller_model.h"
 
-LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(""), classNames(""), classListSorting("none")
+LabellerModel::LabellerModel(QObject *parent) : QObject(parent), classNames(""), imageFiles(new StringDateHash), classListSorting(None), imageFilesSorting(None)
 {
 }
 
 QStringList LabellerModel::getClassNames() { return classNames; }
 
-QStringList LabellerModel::getImageFiles() { return imageFiles; }
+StringDateHash* LabellerModel::getImageFiles() { return imageFiles; }
 
 QString LabellerModel::getAnnotationFile() { return annotationFile; }
 
@@ -14,17 +14,22 @@ QString LabellerModel::getNameFile() { return nameFile; }
 
 QString LabellerModel::getImageDir() { return imageDir; }
 
-QString LabellerModel::getClassListSorting() { return classListSorting; }
-
 QString LabellerModel::getSelectedImageFile() { return selectedImageFile; }
 
-void LabellerModel::updateImageFiles(QStringList newImageFiles)
+LabellerModel::SortingType LabellerModel::getClassListSorting() { return classListSorting; }
+
+LabellerModel::SortingType LabellerModel::getImageFilesSorting() { return imageFilesSorting; }
+
+void LabellerModel::updateImageFiles(QFileInfoList newImageFiles)
 {
-    if (imageFiles != newImageFiles)
-    {
-        imageFiles = newImageFiles;
+        delete imageFiles;
+        imageFiles = new StringDateHash;
+
+        for ( const auto& i : newImageFiles  )
+        {
+            imageFiles->put(i.fileName(), i.lastModified());
+        }
         emit imageFilesChanged();
-    }
 }
 
 void LabellerModel::updateClassNames(QStringList newClassNames)
@@ -63,12 +68,21 @@ void LabellerModel::updateAnnotationFile(QString newAnnotationFile)
     }
 }
 
-void LabellerModel::updateClassListSorting(QString newClassListSorting)
+void LabellerModel::updateClassListSorting(SortingType newClassListSorting)
 {
     if (classListSorting != newClassListSorting)
     {
         classListSorting = newClassListSorting;
         emit classListChangedSorted();
+    }
+}
+
+void LabellerModel::updateImageFilesSorting(SortingType newImageFilesSorting)
+{
+    if(imageFilesSorting != newImageFilesSorting)
+    {
+        imageFilesSorting = newImageFilesSorting;
+        emit imageFilesChangedSorted();
     }
 }
 

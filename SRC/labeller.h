@@ -67,5 +67,12 @@ private slots:
     void on_sortClassAscButton_clicked();
     void on_sortClassDscButton_clicked();
     void on_imageList_clicked();
+    void on_sortImagesAsc_clicked();
+    void on_sortImagesDsc_clicked();
+    void on_sortImagesdateAsc_clicked();
+    void on_sortImagesDateDsc_clicked();
+    void on_searchImages_clicked();
+    void on_restoreImages_clicked();
+    void on_saveButton_clicked();
 };
 #endif // LABELLER_H

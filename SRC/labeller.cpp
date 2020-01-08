@@ -40,7 +40,31 @@ Labeller::~Labeller()
 void Labeller::setImageList()
 {
     auto model = new QStringListModel;
-    model->setStringList(labellerModel->getImageFiles());
+    QStringList imageFiles;
+
+    if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameAsc)
+    {
+        imageFiles = labellerModel->getImageFiles()->sortByKeyAsc();
+    }
+    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameDesc)
+    {
+        imageFiles = labellerModel->getImageFiles()->sortByKeyDesc();
+
+    }
+    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateAsc)
+    {
+        imageFiles = labellerModel->getImageFiles()->sortByDateAsc();
+    }
+    else if(labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateDesc)
+    {
+        imageFiles = labellerModel->getImageFiles()->sortByDateDesc();
+    }
+    else
+    {
+        imageFiles = labellerModel->getImageFiles()->getKeys();
+    }
+    model->setStringList(imageFiles);
+
     ui->imageList->setModel(model);
 }
 
@@ -49,15 +73,15 @@ void Labeller::setClassList()
     auto model = new QStringListModel;
 
     QStringList classes = labellerModel->getClassNames();
-    const QString sorting = labellerModel->getClassListSorting();
+    const LabellerModel::SortingType sorting = labellerModel->getClassListSorting();
 
     QStringList dscClasses;
 
-    if (sorting == "asc")
+    if (sorting == LabellerModel::NameAsc)
     {
         classes.sort();
     }
-    else if (sorting == "dsc")
+    else if (sorting == LabellerModel::NameDesc)
     {
         // Reverse Order class
         classes.sort();
@@ -67,7 +91,7 @@ void Labeller::setClassList()
         }
     }
 
-    sorting == "dsc" ? model->setStringList(dscClasses) : model->setStringList(classes);
+    sorting == LabellerModel::NameDesc ? model->setStringList(dscClasses) : model->setStringList(classes);
     ui->classList->setModel(model);
 }
 
@@ -127,9 +151,11 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
     connect(labellerModel, SIGNAL(classFileChanged()), this, SLOT(setClassFile()));
     connect(labellerModel, SIGNAL(classListChangedSorted()), this, SLOT(setClassList()));
+    connect(labellerModel, SIGNAL(imageFilesChangedSorted()), this, SLOT(setImageList()));
     connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
     connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
+
 }
 
 // Controller methods
@@ -145,9 +171,10 @@ void Labeller::on_imageBrowseButton_clicked()
     QStringList filters;
     filters << "*.png"
             << "*.jpg"
-            << "*.bmp";
+            << "*.bmp"
+            << "*.jpeg";
 
-    const QStringList images = directory.entryList(filters);
+    const QFileInfoList images = directory.entryInfoList(filters);
     labellerModel->updateImageFiles(images);
 }
 
@@ -249,9 +276,9 @@ void Labeller::on_deleteClassItemButton_clicked()
     file.close();
 }
 
-void Labeller::on_sortClassAscButton_clicked() { labellerModel->updateClassListSorting("asc"); }
+void Labeller::on_sortClassAscButton_clicked() { labellerModel->updateClassListSorting(LabellerModel::SortingType::NameAsc); }
 
-void Labeller::on_sortClassDscButton_clicked() { labellerModel->updateClassListSorting("dsc"); }
+void Labeller::on_sortClassDscButton_clicked() { labellerModel->updateClassListSorting(LabellerModel::SortingType::NameDesc); }
 
 void Labeller::on_imageList_clicked()
 {
@@ -259,4 +286,55 @@ void Labeller::on_imageList_clicked()
     const QString fileName = labellerModel->getImageDir() + "/" + imageName;
 
     labellerModel->updateSelectedImageFile(fileName);
+}
+
+void Labeller::on_sortImagesAsc_clicked()
+{
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameAsc);
+}
+
+void Labeller::on_sortImagesDsc_clicked()
+{
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::NameDesc);
+}
+
+void Labeller::on_sortImagesdateAsc_clicked()
+{
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateAsc);
+}
+
+void Labeller::on_sortImagesDateDsc_clicked()
+{
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateDesc);
+}
+
+void Labeller::on_searchImages_clicked()
+{
+    QString imageToSearch = ui->imageLineEdit->text();
+
+    QDateTime dateTime;
+
+    bool exist = labellerModel->getImageFiles()->get(imageToSearch, dateTime);
+
+    if(exist)
+    {
+        auto model = new QStringListModel;
+        model->setStringList({imageToSearch});
+        ui->imageList->setModel(model);
+    }
+    else
+    {
+        QMessageBox::warning(this, "Oops", "Could not find a file name: " + imageToSearch);
+    }
+}
+
+void Labeller::on_restoreImages_clicked()
+{
+    labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
+    setImageList();
+}
+
+void Labeller::on_saveButton_clicked()
+{
+    // Some magic to save the file
 }
