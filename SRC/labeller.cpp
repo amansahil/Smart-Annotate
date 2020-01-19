@@ -116,17 +116,17 @@ void Labeller::clearClassItemLineEdit() { ui->classItemLineEdit->clear(); }
 
 void Labeller::setCursorTypeLabel()
 {
-    const QString cursorType = imageEditor->getCursorType();
+    const ImageEditor::CursorType cursorType = imageEditor->getCursorType();
 
-    if (cursorType == "draw")
+    if (cursorType == ImageEditor::CursorType::Draw)
     {
         ui->cursorLabel->setText("Drawing");
     }
-    else if (cursorType == "addText")
+    else if (cursorType == ImageEditor::CursorType::Text)
     {
         ui->cursorLabel->setText("Adding Text");
     }
-    else if (cursorType == "none")
+    else if (cursorType == ImageEditor::CursorType::Select)
     {
         ui->cursorLabel->setText("Select Mode");
     }
@@ -136,13 +136,17 @@ void Labeller::setCursorTypeLabel()
     }
 }
 
-void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType("draw"); }
+void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Draw); }
 
-void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType("addText"); }
+void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Text); }
 
-void Labeller::on_classList_clicked() { imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString()); }
+void Labeller::on_classList_clicked()
+{
+    imageEditor->updateCursorType(ImageEditor::CursorType::Text);
+    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
+}
 
-void Labeller::on_actionSelect_triggered() { imageEditor->updateCursorType("none"); }
+void Labeller::on_actionSelect_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Select); }
 
 void Labeller::on_actionDelete_triggered() { imageEditor->deleteSelectedItem(); }
 

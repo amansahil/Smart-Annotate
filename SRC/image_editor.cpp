@@ -1,6 +1,6 @@
 ﻿#include "image_editor.h"
 
-ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType("none"), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
+ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType(CursorType::Select), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
 }
@@ -17,7 +17,7 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-QString ImageEditor::getCursorType() const { return cursorType; };
+ImageEditor::CursorType ImageEditor::getCursorType() const { return cursorType; };
 
 void ImageEditor::setImage(const QString fileName)
 {
@@ -34,7 +34,7 @@ void ImageEditor::setImage(const QString fileName)
         currFileName = fileName;
         imageSet = true;
 
-        updateCursorType("draw");
+        updateCursorType(CursorType::Draw);
     }
     catch (QException e)
     {
@@ -113,7 +113,7 @@ bool ImageEditor::savedStateExists(const QString fileName)
 
 QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { return applicationRectState; }
 
-void ImageEditor::updateCursorType(const QString newCursorType)
+void ImageEditor::updateCursorType(const ImageEditor::CursorType newCursorType)
 {
     if (imageSet && cursorType != newCursorType)
     {
@@ -137,17 +137,17 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
         origin = event->screenPos();
         originF = event->scenePos();
 
-        if (cursorType == "draw" && event->button() == Qt::LeftButton)
+        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
             rubberBand->setGeometry(QRect(origin, QSize()));
             rubberBand->show();
         }
-        else if (cursorType == "addText" && classLabel != "")
+        else if (cursorType == CursorType::Text && classLabel != "")
         {
             drawText(classLabel, originF);
         }
 
-        if (cursorType == "none")
+        if (cursorType == CursorType::Select)
             QGraphicsScene::mousePressEvent(event);
 
         ImageEditor::update();
@@ -158,7 +158,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == "draw" && (event->buttons() & Qt::LeftButton))
+        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton))
         {
             drawing = true;
 
@@ -168,7 +168,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
             rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
         }
 
-        if (cursorType == "none")
+        if (cursorType == CursorType::Select)
             QGraphicsScene::mouseMoveEvent(event);
 
         ImageEditor::update();
@@ -179,7 +179,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == "draw" && event->button() == Qt::LeftButton && drawing)
+        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton && drawing)
         {
             rubberBand->hide();
 
@@ -188,7 +188,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             drawing = false;
         }
 
-        if (cursorType == "none")
+        if (cursorType == CursorType::Select)
             QGraphicsScene::mouseReleaseEvent(event);
 
         ImageEditor::update();
@@ -197,7 +197,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    if (cursorType == "none" && imageSet)
+    if (cursorType == CursorType::Select && imageSet)
     {
         QMenu menu;
 
@@ -212,7 +212,7 @@ void ImageEditor::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 void ImageEditor::keyPressEvent(QKeyEvent *event)
 {
-    if (event->type() == QKeyEvent::KeyPress && cursorType == "none")
+    if (event->type() == QKeyEvent::KeyPress && cursorType == CursorType::Select)
     {
         if (event->matches(QKeySequence::Copy))
         {
@@ -280,7 +280,7 @@ void ImageEditor::pasteSelectedItem()
             drawText(clipbordText, QPointF(x, y));
         }
 
-        updateCursorType("none");
+        updateCursorType(CursorType::Select);
     }
 }
 

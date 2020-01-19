@@ -15,8 +15,15 @@ class ImageEditor : public QGraphicsScene
 public:
     ImageEditor();
 
+    enum CursorType
+    {
+        Draw,
+        Text,
+        Select
+    };
+
     void setImage(const QString fileName);
-    void updateCursorType(const QString newCursorType);
+    void updateCursorType(const CursorType newCursorType);
     void updateClassLabel(const QString newClassLabel);
 
     void createActions();
@@ -25,7 +32,7 @@ public:
 
     QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
-    QString getCursorType() const;
+    CursorType getCursorType() const;
 
 public slots:
     void deleteSelectedItem();
@@ -45,7 +52,7 @@ private:
     bool drawing;
     bool clipbord;
 
-    QString cursorType;
+    CursorType cursorType;
     QString classLabel;
     QString currFileName;
 
