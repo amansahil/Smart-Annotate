@@ -163,7 +163,7 @@ void StringDateHash::remove(const QString &key)
     }
 }
 
-int StringDateHash::getSize()
+int StringDateHash::getSize() const
 {
     int size = 0;
     for (int i = 0; i < capacity; i++)
@@ -277,7 +277,7 @@ QStringList StringDateHash::sortByDateDesc()
     return keyList;
 }
 
-int StringDateHash::hashFunc(const QString &key)
+int StringDateHash::hashFunc(const QString &key) const
 {
     const QByteArray hexHash = QCryptographicHash::hash((key.toUtf8()), QCryptographicHash::Sha1);
 

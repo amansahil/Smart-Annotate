@@ -45,7 +45,7 @@ public:
     void put(const QString &key, const QDateTime &value);
     void remove(const QString &key);
 
-    int getSize();
+    int getSize() const;
     int getCapacity() const;
 
     QStringList getKeys();
@@ -59,7 +59,7 @@ private:
 
     std::vector<HashNode *> table;
 
-    int hashFunc(const QString &key);
+    int hashFunc(const QString &key) const;
 
     void merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res);
     void mergesort(HashNode *begin, HashNode *end, HashNode *res);
