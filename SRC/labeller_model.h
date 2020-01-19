@@ -24,31 +24,35 @@ public:
 
     explicit LabellerModel(QObject *parent = 0);
 
-    StringDateHash *getImageFiles();
-    QStringList getClassNames();
+    StringDateHash *getImageFiles() const;
 
-    QString getAnnotationFile();
-    QString getImageDir();
-    QString getNameFile();
-    QString getSelectedImageFile();
+    QStringList getClassNames() const;
 
-    SortingType getClassListSorting();
-    SortingType getImageFilesSorting();
+    QString getAnnotationFile() const;
+    QString getImageDir() const;
+    QString getNameFile() const;
+    QString getSelectedImageFile() const;
+    QString getImageFileResult() const;
 
-    void updateImageFiles(QFileInfoList newImageFiles);
-    void updateClassNames(QStringList newClassNames);
+    SortingType getClassListSorting() const;
+    SortingType getImageFilesSorting() const;
 
-    void addClassName(QString newClassName);
+    void updateImageFiles(const QFileInfoList newImageFiles);
+    void updateImageFiles(const QString newImageFileResult);
+    void updateClassNames(const QStringList newClassNames);
 
-    void updateAnnotationFile(QString newAnnotationFile);
-    void updateimageDir(QString newImageDir);
-    void updateNameFile(QString newNameFile);
-    void updateSelectedImageFile(QString newSelectedImageFile);
-    void updateClassListSorting(SortingType newClassListSorting);
-    void updateImageFilesSorting(SortingType newImageFilesSorting);
+    void addClassName(const QString newClassName);
+
+    void updateAnnotationFile(const QString newAnnotationFile);
+    void updateimageDir(const QString newImageDir);
+    void updateNameFile(const QString newNameFile);
+    void updateSelectedImageFile(const QString newSelectedImageFile);
+    void updateClassListSorting(const SortingType newClassListSorting);
+    void updateImageFilesSorting(const SortingType newImageFilesSorting);
 
 signals:
     void imageFilesChanged();
+    void imageFileResultChanged();
     void classNamesChanged();
     void annotationFileChanged();
     void imageDirChanged();
@@ -60,12 +64,14 @@ signals:
 
 private:
     StringDateHash *imageFiles;
+
     QStringList classNames;
 
     QString annotationFile;
     QString nameFile;
     QString imageDir;
     QString selectedImageFile;
+    QString imageFileResult;
 
     SortingType imageFilesSorting;
     SortingType classListSorting;

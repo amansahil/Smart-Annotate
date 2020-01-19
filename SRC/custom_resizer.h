@@ -8,18 +8,6 @@
 class CustomResizer : public QGraphicsItem
 {
 private:
-    enum Position
-    {
-        Top = 0x1,
-        Bottom = 0x2,
-        Left = 0x4,
-        TopLeft = Top | Left,
-        BottomLeft = Bottom | Left,
-        Right = 0x8,
-        TopRight = Top | Right,
-        BottomRight = Bottom | Right
-    };
-
     class HandleItem : public QGraphicsRectItem
     {
     public:
@@ -70,6 +58,18 @@ public:
     int type() const override;
 
 private:
+    enum Position
+    {
+        Top = 0x1,
+        Bottom = 0x2,
+        Left = 0x4,
+        TopLeft = Top | Left,
+        BottomLeft = Bottom | Left,
+        Right = 0x8,
+        TopRight = Top | Right,
+        BottomRight = Bottom | Right
+    };
+
     void doResize();
     void updateHandleItemPositions();
 

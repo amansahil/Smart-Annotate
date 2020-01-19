@@ -1,26 +1,28 @@
 #include "labeller_model.h"
 
-LabellerModel::LabellerModel(QObject *parent) : QObject(parent), classNames(""), imageFiles(new StringDateHash), classListSorting(None), imageFilesSorting(None)
+LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(new StringDateHash), classNames(""), imageFilesSorting(None), classListSorting(None)
 {
 }
 
-QStringList LabellerModel::getClassNames() { return classNames; }
+QStringList LabellerModel::getClassNames() const { return classNames; }
 
-StringDateHash *LabellerModel::getImageFiles() { return imageFiles; }
+StringDateHash *LabellerModel::getImageFiles() const { return imageFiles; }
 
-QString LabellerModel::getAnnotationFile() { return annotationFile; }
+QString LabellerModel::getImageFileResult() const { return imageFileResult; }
 
-QString LabellerModel::getNameFile() { return nameFile; }
+QString LabellerModel::getAnnotationFile() const { return annotationFile; }
 
-QString LabellerModel::getImageDir() { return imageDir; }
+QString LabellerModel::getNameFile() const { return nameFile; }
 
-QString LabellerModel::getSelectedImageFile() { return selectedImageFile; }
+QString LabellerModel::getImageDir() const { return imageDir; }
 
-LabellerModel::SortingType LabellerModel::getClassListSorting() { return classListSorting; }
+QString LabellerModel::getSelectedImageFile() const { return selectedImageFile; }
 
-LabellerModel::SortingType LabellerModel::getImageFilesSorting() { return imageFilesSorting; }
+LabellerModel::SortingType LabellerModel::getClassListSorting() const { return classListSorting; }
 
-void LabellerModel::updateImageFiles(QFileInfoList newImageFiles)
+LabellerModel::SortingType LabellerModel::getImageFilesSorting() const { return imageFilesSorting; }
+
+void LabellerModel::updateImageFiles(const QFileInfoList newImageFiles)
 {
     delete imageFiles;
     imageFiles = new StringDateHash;
@@ -32,7 +34,15 @@ void LabellerModel::updateImageFiles(QFileInfoList newImageFiles)
     emit imageFilesChanged();
 }
 
-void LabellerModel::updateClassNames(QStringList newClassNames)
+void LabellerModel::updateImageFiles(const QString newImageFileResult)
+{
+    if(imageFileResult != newImageFileResult) {
+        imageFileResult = newImageFileResult;
+        emit imageFileResultChanged();
+    }
+}
+
+void LabellerModel::updateClassNames(const QStringList newClassNames)
 {
     if (classNames != newClassNames)
     {
@@ -41,7 +51,7 @@ void LabellerModel::updateClassNames(QStringList newClassNames)
     }
 }
 
-void LabellerModel::updateimageDir(QString newImageDir)
+void LabellerModel::updateimageDir(const QString newImageDir)
 {
     if (imageDir != newImageDir)
     {
@@ -50,7 +60,7 @@ void LabellerModel::updateimageDir(QString newImageDir)
     }
 }
 
-void LabellerModel::updateNameFile(QString newNameFile)
+void LabellerModel::updateNameFile(const QString newNameFile)
 {
     if (nameFile != newNameFile)
     {
@@ -59,7 +69,7 @@ void LabellerModel::updateNameFile(QString newNameFile)
     }
 }
 
-void LabellerModel::updateAnnotationFile(QString newAnnotationFile)
+void LabellerModel::updateAnnotationFile(const QString newAnnotationFile)
 {
     if (annotationFile != newAnnotationFile)
     {
@@ -68,7 +78,7 @@ void LabellerModel::updateAnnotationFile(QString newAnnotationFile)
     }
 }
 
-void LabellerModel::updateClassListSorting(SortingType newClassListSorting)
+void LabellerModel::updateClassListSorting(const SortingType newClassListSorting)
 {
     if (classListSorting != newClassListSorting)
     {
@@ -77,7 +87,7 @@ void LabellerModel::updateClassListSorting(SortingType newClassListSorting)
     }
 }
 
-void LabellerModel::updateImageFilesSorting(SortingType newImageFilesSorting)
+void LabellerModel::updateImageFilesSorting(const SortingType newImageFilesSorting)
 {
     if (imageFilesSorting != newImageFilesSorting)
     {
@@ -86,7 +96,7 @@ void LabellerModel::updateImageFilesSorting(SortingType newImageFilesSorting)
     }
 }
 
-void LabellerModel::updateSelectedImageFile(QString newSelectedImageFile)
+void LabellerModel::updateSelectedImageFile(const QString newSelectedImageFile)
 {
     if (selectedImageFile != newSelectedImageFile)
     {
@@ -95,7 +105,7 @@ void LabellerModel::updateSelectedImageFile(QString newSelectedImageFile)
     }
 }
 
-void LabellerModel::addClassName(QString newClassName)
+void LabellerModel::addClassName(const QString newClassName)
 {
     classNames.append(newClassName);
     emit classNamesChanged();

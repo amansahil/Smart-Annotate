@@ -17,9 +17,9 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-QString ImageEditor::getCursorType() { return cursorType; };
+QString ImageEditor::getCursorType() const { return cursorType; };
 
-void ImageEditor::setImage(QString fileName)
+void ImageEditor::setImage(const QString fileName)
 {
     // Save previous image details
     saveImageState();
@@ -57,7 +57,7 @@ void ImageEditor::setImage(QString fileName)
     }
 }
 
-void ImageEditor::openImage(QString fileName)
+void ImageEditor::openImage(const QString fileName)
 {
     const QImage image(fileName);
     const QImage small = image.scaled(781, 651, Qt::KeepAspectRatio);
@@ -100,7 +100,7 @@ void ImageEditor::saveImageState()
     }
 }
 
-bool ImageEditor::savedStateExists(QString fileName)
+bool ImageEditor::savedStateExists(const QString fileName)
 {
     QHash<QString, QList<QRectF>>::const_iterator valueIt = applicationRectState.find(fileName);
 
@@ -111,9 +111,9 @@ bool ImageEditor::savedStateExists(QString fileName)
     return true;
 }
 
-QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() { return applicationRectState; }
+QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { return applicationRectState; }
 
-void ImageEditor::updateCursorType(QString newCursorType)
+void ImageEditor::updateCursorType(const QString newCursorType)
 {
     if (imageSet && cursorType != newCursorType)
     {
@@ -122,7 +122,7 @@ void ImageEditor::updateCursorType(QString newCursorType)
     }
 }
 
-void ImageEditor::updateClassLabel(QString newClassLabel)
+void ImageEditor::updateClassLabel(const QString newClassLabel)
 {
     if (classLabel != newClassLabel)
     {
@@ -302,7 +302,7 @@ void ImageEditor::pasteSelectedItemInPlace()
     }
 }
 
-void ImageEditor::drawRectangle(QRectF newRectangle)
+void ImageEditor::drawRectangle(const QRectF newRectangle)
 {
     QPen pen;
     pen.setBrush(Qt::blue);
@@ -315,7 +315,7 @@ void ImageEditor::drawRectangle(QRectF newRectangle)
     resizerItems.append(rectSizeGripItem);
 }
 
-void ImageEditor::drawText(QString newText, QPointF newPoint)
+void ImageEditor::drawText(const QString newText, const QPointF newPoint)
 {
     QFont font;
     font.setPixelSize(20);

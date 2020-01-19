@@ -15,17 +15,17 @@ class ImageEditor : public QGraphicsScene
 public:
     ImageEditor();
 
-    void setImage(QString fileName);
-    void updateCursorType(QString newCursorType);
-    void updateClassLabel(QString newClassLabel);
+    void setImage(const QString fileName);
+    void updateCursorType(const QString newCursorType);
+    void updateClassLabel(const QString newClassLabel);
 
     void createActions();
     void clearItems();
     void saveImageState();
 
-    QHash<QString, QList<QRectF>> getApplicationRectState();
+    QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
-    QString getCursorType();
+    QString getCursorType() const;
 
 public slots:
     void deleteSelectedItem();
@@ -74,12 +74,12 @@ private:
     QHash<QString, QList<QRectF>> applicationRectState;
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
-    void drawRectangle(QRectF newRectangle);
-    void drawText(QString newText, QPointF newPoint);
+    void drawRectangle(const QRectF newRectangle);
+    void drawText(const QString newText, const QPointF newPoint);
 
-    void openImage(QString fileName);
+    void openImage(const QString fileName);
 
-    bool savedStateExists(QString fileName);
+    bool savedStateExists(const QString fileName);
 
 signals:
     void cursorTypeChanged();

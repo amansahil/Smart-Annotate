@@ -172,7 +172,7 @@ int StringDateHash::getSize()
     return size;
 }
 
-int StringDateHash::getCapacity() { return capacity; }
+int StringDateHash::getCapacity() const { return capacity; }
 
 QStringList StringDateHash::getKeys()
 {

@@ -45,7 +45,7 @@ public:
     void remove(const QString &key);
 
     int getSize();
-    int getCapacity();
+    int getCapacity() const;
 
     QStringList getKeys();
     QStringList sortByKeyAsc();
@@ -54,7 +54,7 @@ public:
     QStringList sortByDateDesc();
 
 private:
-    int capacity = 200;
+    int capacity = 1;
 
     std::vector<HashNode *> table;
 

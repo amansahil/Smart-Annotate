@@ -42,19 +42,21 @@ void Labeller::setImageList()
     auto model = new QStringListModel;
     QStringList imageFiles;
 
-    if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameAsc)
+    const LabellerModel::SortingType sortingOption = labellerModel->getImageFilesSorting();
+
+    if (sortingOption == LabellerModel::SortingType::NameAsc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByKeyAsc();
     }
-    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::NameDesc)
+    else if (sortingOption == LabellerModel::SortingType::NameDesc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByKeyDesc();
     }
-    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateAsc)
+    else if (sortingOption == LabellerModel::SortingType::DateAsc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByDateAsc();
     }
-    else if (labellerModel->getImageFilesSorting() == LabellerModel::SortingType::DateDesc)
+    else if (sortingOption == LabellerModel::SortingType::DateDesc)
     {
         imageFiles = labellerModel->getImageFiles()->sortByDateDesc();
     }
@@ -63,6 +65,13 @@ void Labeller::setImageList()
         imageFiles = labellerModel->getImageFiles()->getKeys();
     }
     model->setStringList(imageFiles);
+
+    ui->imageList->setModel(model);
+}
+
+void Labeller::setImageListToResult() {
+    auto model = new QStringListModel;
+    model->setStringList({labellerModel->getImageFileResult()});
 
     ui->imageList->setModel(model);
 }
@@ -145,6 +154,7 @@ void Labeller::on_clearButton_clicked() { imageEditor->clearItems(); }
 void Labeller::createListeners()
 {
     connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
+    connect(labellerModel, SIGNAL(imageFileResultChanged()), this, SLOT(setImageListToResult()));
     connect(labellerModel, SIGNAL(classNamesChanged()), this, SLOT(setClassList()));
     connect(labellerModel, SIGNAL(annotationFileChanged()), this, SLOT(setAnnotationFile()));
     connect(labellerModel, SIGNAL(imageDirChanged()), this, SLOT(setImageDir()));
@@ -300,22 +310,21 @@ void Labeller::on_sortImagesDateDsc_clicked() { labellerModel->updateImageFilesS
 void Labeller::on_restoreImages_clicked() {
     labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
 
+    // Force update image list
     setImageList();
 }
 
 void Labeller::on_searchImages_clicked()
 {
-    QString imageToSearch = ui->imageLineEdit->text();
+    const QString imageToSearch = ui->imageLineEdit->text();
 
     QDateTime dateTime;
 
-    bool exist = labellerModel->getImageFiles()->get(imageToSearch, dateTime);
+    const bool exist = labellerModel->getImageFiles()->get(imageToSearch, dateTime);
 
     if (exist)
     {
-        auto model = new QStringListModel;
-        model->setStringList({imageToSearch});
-        ui->imageList->setModel(model);
+        labellerModel->updateImageFiles(imageToSearch);
     }
     else
     {
