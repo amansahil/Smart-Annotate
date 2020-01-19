@@ -2,8 +2,8 @@
 #define LABELLER_H
 
 #include <QAbstractItemView>
-#include <QFileDialog>
 #include <QFile>
+#include <QFileDialog>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QStringListModel>

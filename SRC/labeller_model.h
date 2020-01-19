@@ -4,8 +4,8 @@
 #include <string_date_hash.h>
 
 #include <QFileInfoList>
-#include <QStringList>
 #include <QObject>
+#include <QStringList>
 
 class LabellerModel : public QObject
 {

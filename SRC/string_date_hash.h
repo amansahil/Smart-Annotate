@@ -1,12 +1,12 @@
 #ifndef STRINGDATEHASH_H
 #define STRINGDATEHASH_H
 
-#include <QString>
-#include <QDateTime>
 #include <vector>
 #include <QCryptographicHash>
-#include <QtEndian>
+#include <QDateTime>
 #include <QMessageBox>
+#include <QString>
+#include <QtEndian>
 
 class HashNode
 {

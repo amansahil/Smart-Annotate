@@ -1,7 +1,7 @@
-#include "labeller.h"
-#include "ui_labeller.h"
-#include "labeller_model.h"
 #include "image_editor.h"
+#include "labeller.h"
+#include "labeller_model.h"
+#include "ui_labeller.h"
 
 // Listeners & UI
 
