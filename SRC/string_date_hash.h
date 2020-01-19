@@ -6,6 +6,7 @@
 #include <vector>
 #include <QCryptographicHash>
 #include <QtEndian>
+#include <QMessageBox>
 
 class HashNode
 {
@@ -58,7 +59,7 @@ private:
 
     std::vector<HashNode *> table;
 
-    int hashFunc(const QString &key) const;
+    int hashFunc(const QString &key);
 
     void merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res);
     void mergesort(HashNode *begin, HashNode *end, HashNode *res);

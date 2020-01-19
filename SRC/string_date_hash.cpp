@@ -76,15 +76,19 @@ void StringDateHash::put(const QString &key, const QDateTime &value)
 
     if (hashValue >= table.size())
     {
+        try {
+            // Make table big enough for new values
+            while (hashValue >= table.size())
+            {
+                table.push_back(NULL);
+                capacity++;
+            }
 
-        // Make table big enough for new values
-        while (hashValue >= table.size())
-        {
-            table.push_back(NULL);
-            capacity++;
+            table[hashValue] = new HashNode(key, value);
+        } catch(const std::bad_alloc& ex) {
+            QMessageBox::warning(nullptr, "Error", "Application out of memory");
+            throw;
         }
-
-        table[hashValue] = new HashNode(key, value);
     }
     else
     {
@@ -244,6 +248,7 @@ QStringList StringDateHash::sortByDateDesc()
 {
     QStringList keyList;
     const int size = StringDateHash::getSize();
+
     HashNode list[size];
     HashNode sortedList[size];
 
@@ -269,13 +274,13 @@ QStringList StringDateHash::sortByDateDesc()
     return keyList;
 }
 
-int StringDateHash::hashFunc(const QString &key) const
+int StringDateHash::hashFunc(const QString &key)
 {
-    QByteArray someData = QCryptographicHash::hash((key.toUtf8()), QCryptographicHash::Sha1);
+    const QByteArray hexHash = QCryptographicHash::hash((key.toUtf8()), QCryptographicHash::Sha1);
 
-    int count = qFromLittleEndian<qint8>(someData);
+    const int intHash = qFromLittleEndian<qint8>(hexHash);
 
-    return abs(count);
+    return abs(intHash);
 }
 
 void StringDateHash::merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res)

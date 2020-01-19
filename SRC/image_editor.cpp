@@ -38,8 +38,7 @@ void ImageEditor::setImage(const QString fileName)
     }
     catch (QException e)
     {
-        QMessageBox::warning(nullptr, tr("Error"),
-                             tr("Could not open image"));
+        QMessageBox::warning(nullptr, "Error", "Could not open image");
     }
 
     // Load any annotation and lables on image if it exists
