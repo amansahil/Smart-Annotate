@@ -48,9 +48,9 @@ public:
     int getSize() const;
     int getCapacity() const;
 
-    QStringList getKeys();
-    QStringList sortByKeyAsc();
-    QStringList sortByKeyDesc();
+    QStringList getKeys() const;
+    QStringList sortByKeyAsc() const;
+    QStringList sortByKeyDesc() const;
     QStringList sortByDateAsc();
     QStringList sortByDateDesc();
 

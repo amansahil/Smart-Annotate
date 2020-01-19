@@ -181,7 +181,7 @@ int StringDateHash::getSize() const
 
 int StringDateHash::getCapacity() const { return capacity; }
 
-QStringList StringDateHash::getKeys()
+QStringList StringDateHash::getKeys() const
 {
     QStringList keyList;
 
@@ -199,14 +199,14 @@ QStringList StringDateHash::getKeys()
     return keyList;
 }
 
-QStringList StringDateHash::sortByKeyAsc()
+QStringList StringDateHash::sortByKeyAsc() const
 {
     QStringList keyList = StringDateHash::getKeys();
     keyList.sort();
     return keyList;
 }
 
-QStringList StringDateHash::sortByKeyDesc()
+QStringList StringDateHash::sortByKeyDesc() const
 {
     QStringList keyList = StringDateHash::sortByKeyAsc();
     QStringList dscKeyList;
