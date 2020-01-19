@@ -91,6 +91,7 @@ CustomResizer::CustomResizer(QGraphicsItem *parent) : QGraphicsItem(parent)
     handleItems.append(new HandleItem(Bottom, this));
     handleItems.append(new HandleItem(BottomLeft, this));
     handleItems.append(new HandleItem(Left, this));
+
     updateHandleItemPositions();
 }
 

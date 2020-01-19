@@ -316,6 +316,7 @@ void Labeller::on_sortImagesDateDsc_clicked() { labellerModel->updateImageFilesS
 void Labeller::on_restoreImages_clicked()
 {
     labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
+    labellerModel->updateImageFiles("");
 
     // Force update image list
     setImageList();
