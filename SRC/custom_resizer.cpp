@@ -98,7 +98,7 @@ CustomResizer::~CustomResizer() {}
 
 int CustomResizer::type() const { return Type; }
 
-QRectF CustomResizer::boundingRect() const{ return rect; }
+QRectF CustomResizer::boundingRect() const { return rect; }
 
 void CustomResizer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {

@@ -69,7 +69,8 @@ void Labeller::setImageList()
     ui->imageList->setModel(model);
 }
 
-void Labeller::setImageListToResult() {
+void Labeller::setImageListToResult()
+{
     auto model = new QStringListModel;
     model->setStringList({labellerModel->getImageFileResult()});
 
@@ -233,7 +234,8 @@ void Labeller::on_addNameItemButton_clicked()
 
     QString itemToAdd = ui->classItemLineEdit->text();
 
-    if(!itemToAdd.trimmed().isEmpty()) {
+    if (!itemToAdd.trimmed().isEmpty())
+    {
         labellerModel->addClassName(itemToAdd);
 
         QFile file(fileName);
@@ -307,7 +309,8 @@ void Labeller::on_sortImagesdateAsc_clicked() { labellerModel->updateImageFilesS
 
 void Labeller::on_sortImagesDateDsc_clicked() { labellerModel->updateImageFilesSorting(LabellerModel::SortingType::DateDesc); }
 
-void Labeller::on_restoreImages_clicked() {
+void Labeller::on_restoreImages_clicked()
+{
     labellerModel->updateImageFilesSorting(LabellerModel::SortingType::None);
 
     // Force update image list

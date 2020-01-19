@@ -36,7 +36,8 @@ void LabellerModel::updateImageFiles(const QFileInfoList newImageFiles)
 
 void LabellerModel::updateImageFiles(const QString newImageFileResult)
 {
-    if(imageFileResult != newImageFileResult) {
+    if (imageFileResult != newImageFileResult)
+    {
         imageFileResult = newImageFileResult;
         emit imageFileResultChanged();
     }
