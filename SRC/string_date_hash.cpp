@@ -76,7 +76,8 @@ void StringDateHash::put(const QString &key, const QDateTime &value)
 
     if (hashValue >= table.size())
     {
-        try {
+        try
+        {
             // Make table big enough for new values
             while (hashValue >= table.size())
             {
@@ -85,7 +86,9 @@ void StringDateHash::put(const QString &key, const QDateTime &value)
             }
 
             table[hashValue] = new HashNode(key, value);
-        } catch(const std::bad_alloc& ex) {
+        }
+        catch (const std::bad_alloc &ex)
+        {
             QMessageBox::warning(nullptr, "Error", "Application out of memory");
             throw;
         }
