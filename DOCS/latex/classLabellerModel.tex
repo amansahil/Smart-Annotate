@@ -1,0 +1,342 @@
+\hypertarget{classLabellerModel}{}\doxysection{Labeller\+Model Class Reference}
+\label{classLabellerModel}\index{LabellerModel@{LabellerModel}}
+
+
+Class for model methods for the main page.  
+
+
+
+
+{\ttfamily \#include $<$labeller\+\_\+model.\+h$>$}
+
+Inheritance diagram for Labeller\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLabellerModel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \{ \newline
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa}{Name\+Asc}}, 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f}{Name\+Desc}}, 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a63f13912df2fded9b02b364fa948aa91}{Date\+Asc}}, 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e}{Date\+Desc}}, 
+\newline
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72}{None}}
+ \}
+\begin{DoxyCompactList}\small\item\em Sorting type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLabellerModel_aedca695c6bede47b116073d2ebb3a9c7}\label{classLabellerModel_aedca695c6bede47b116073d2ebb3a9c7}} 
+void {\bfseries image\+Files\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_a8f8826eb7fd49cd056dd1ef91bff3201}\label{classLabellerModel_a8f8826eb7fd49cd056dd1ef91bff3201}} 
+void {\bfseries image\+File\+Result\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_aa45825cc0fa3fcd585f6906702fecb33}\label{classLabellerModel_aa45825cc0fa3fcd585f6906702fecb33}} 
+void {\bfseries class\+Names\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_abae36e55ccd6517914c3fd3189d0840d}\label{classLabellerModel_abae36e55ccd6517914c3fd3189d0840d}} 
+void {\bfseries annotation\+File\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_a1d2312092edb0c61ef04c00699fb349f}\label{classLabellerModel_a1d2312092edb0c61ef04c00699fb349f}} 
+void {\bfseries image\+Dir\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_aa804a526d0ccd15b11039a010ee30b1f}\label{classLabellerModel_aa804a526d0ccd15b11039a010ee30b1f}} 
+void {\bfseries class\+File\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_abe7f7cbb80dc3d7c0f93d363163cd38b}\label{classLabellerModel_abe7f7cbb80dc3d7c0f93d363163cd38b}} 
+void {\bfseries class\+List\+Changed\+Sorted} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_a24dd2df7a125b45da788f260bc6e7b04}\label{classLabellerModel_a24dd2df7a125b45da788f260bc6e7b04}} 
+void {\bfseries image\+Files\+Changed\+Sorted} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_a35cd613c9bfd210eeb32d87d1fbcb2f7}\label{classLabellerModel_a35cd613c9bfd210eeb32d87d1fbcb2f7}} 
+void {\bfseries selected\+Image\+File\+Changed} ()
+\item 
+\mbox{\Hypertarget{classLabellerModel_a37007b91ec12e44f7e779ada2ca0a779}\label{classLabellerModel_a37007b91ec12e44f7e779ada2ca0a779}} 
+void {\bfseries clear\+Class\+Item\+Line\+Edit} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLabellerModel_a8ce58d5d39d8278e7dd82ea3f207f663}\label{classLabellerModel_a8ce58d5d39d8278e7dd82ea3f207f663}} 
+{\bfseries Labeller\+Model} (Q\+Object $\ast$parent=0)
+\item 
+\mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} $\ast$ \mbox{\hyperlink{classLabellerModel_adcd9fa21ed9f4a494432077ca85f1553}{get\+Image\+Files}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classLabellerModel_ae47b483c763d68be74ba544b3d6f8944}{get\+Class\+Names}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_aaed0c2907cd812511a774bf5394928b1}{get\+Annotation\+File}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_a08c33edb9a1469ba43f10cb7baf86c2d}{get\+Image\+Dir}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_a288660912a27883ab7242db1138ad65d}{get\+Name\+File}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_aaf2162e0043c3a725cfa8d8a6aea05c8}{get\+Selected\+Image\+File}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_aa3e76748f0dab5b8d4c227b2c01955ca}{get\+Image\+File\+Result}} () const
+\item 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_a206d29135e6c353d48bcbbb631f6b733}{get\+Class\+List\+Sorting}} () const
+\item 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_a08f11856309a198db66cf02483534738}{get\+Image\+Files\+Sorting}} () const
+\item 
+void \mbox{\hyperlink{classLabellerModel_a559b17d5bde669055bd34af099c8cfaa}{update\+Image\+Files}} (const Q\+File\+Info\+List new\+Image\+Files)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a458e554e484fc6381187d8c8e41c487f}{update\+Image\+Files}} (const Q\+String new\+Image\+File\+Result)
+\item 
+void \mbox{\hyperlink{classLabellerModel_ae7c0cdd90c3e96a35921500c1baddfda}{update\+Class\+Names}} (const Q\+String\+List new\+Class\+Names)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a727e984982fc9b8099d39f5bef3a6478}{add\+Class\+Name}} (const Q\+String new\+Class\+Name)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a4e33c681cd7f6ed1de118509b2099bcf}{update\+Annotation\+File}} (const Q\+String new\+Annotation\+File)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}{updateimage\+Dir}} (const Q\+String new\+Image\+Dir)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a53d091ac03750ecf9083566345d64caa}{update\+Name\+File}} (const Q\+String new\+Name\+File)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a8a41825f1400708cf9521d7fc66a0fe1}{update\+Selected\+Image\+File}} (const Q\+String new\+Selected\+Image\+File)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a7a7df19b8c27d1182d39c870305ab42a}{update\+Class\+List\+Sorting}} (const \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} new\+Class\+List\+Sorting)
+\item 
+void \mbox{\hyperlink{classLabellerModel_aed9cde8b6f170a5c60cf5cada11e113f}{update\+Image\+Files\+Sorting}} (const \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} new\+Image\+Files\+Sorting)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}\label{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}} 
+\mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} $\ast$ \mbox{\hyperlink{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}{image\+Files}}
+\begin{DoxyCompactList}\small\item\em Container for image files from selected directory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_aa841785453bf06727d564df57708d53b}\label{classLabellerModel_aa841785453bf06727d564df57708d53b}} 
+Q\+String\+List \mbox{\hyperlink{classLabellerModel_aa841785453bf06727d564df57708d53b}{class\+Names}}
+\begin{DoxyCompactList}\small\item\em Container for class names from selected class file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}\label{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}} 
+Q\+String \mbox{\hyperlink{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}{annotation\+File}}
+\begin{DoxyCompactList}\small\item\em Container for annotation file path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}\label{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}} 
+Q\+String \mbox{\hyperlink{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}{name\+File}}
+\begin{DoxyCompactList}\small\item\em Container for class file path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}\label{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}} 
+Q\+String \mbox{\hyperlink{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}{image\+Dir}}
+\begin{DoxyCompactList}\small\item\em Container for image directory path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}\label{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}} 
+Q\+String \mbox{\hyperlink{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}{selected\+Image\+File}}
+\begin{DoxyCompactList}\small\item\em Container for selected image file path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}\label{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}} 
+Q\+String \mbox{\hyperlink{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}{image\+File\+Result}}
+\begin{DoxyCompactList}\small\item\em Container for image search list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}\label{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}} 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}{image\+Files\+Sorting}}
+\begin{DoxyCompactList}\small\item\em Container for selected image file sorting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLabellerModel_a177351afad036a657a147a43362e9ec8}\label{classLabellerModel_a177351afad036a657a147a43362e9ec8}} 
+\mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_a177351afad036a657a147a43362e9ec8}{class\+List\+Sorting}}
+\begin{DoxyCompactList}\small\item\em Container for selected class list sorting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for model methods for the main page. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}} 
+\index{LabellerModel@{LabellerModel}!SortingType@{SortingType}}
+\index{SortingType@{SortingType}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{SortingType}{SortingType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Labeller\+Model\+::\+Sorting\+Type}}}
+
+
+
+Sorting type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NameAsc@{NameAsc}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!NameAsc@{NameAsc}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa}} 
+Name\+Asc&Sort by name ascended \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NameDesc@{NameDesc}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!NameDesc@{NameDesc}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f}} 
+Name\+Desc&Sort by name descended \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DateAsc@{DateAsc}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!DateAsc@{DateAsc}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a63f13912df2fded9b02b364fa948aa91}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a63f13912df2fded9b02b364fa948aa91}} 
+Date\+Asc&Sort by date ascended \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DateDesc@{DateDesc}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!DateDesc@{DateDesc}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e}} 
+Date\+Desc&Sort by date descended \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!None@{None}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72}} 
+None&No sorting \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLabellerModel_a727e984982fc9b8099d39f5bef3a6478}\label{classLabellerModel_a727e984982fc9b8099d39f5bef3a6478}} 
+\index{LabellerModel@{LabellerModel}!addClassName@{addClassName}}
+\index{addClassName@{addClassName}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{addClassName()}{addClassName()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::add\+Class\+Name (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Class\+Name }\end{DoxyParamCaption})}
+
+Adds item to {\ttfamily class\+Names} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Class\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_aaed0c2907cd812511a774bf5394928b1}\label{classLabellerModel_aaed0c2907cd812511a774bf5394928b1}} 
+\index{LabellerModel@{LabellerModel}!getAnnotationFile@{getAnnotationFile}}
+\index{getAnnotationFile@{getAnnotationFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getAnnotationFile()}{getAnnotationFile()}}
+{\footnotesize\ttfamily Q\+String Labeller\+Model\+::get\+Annotation\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily annotation\+File} \mbox{\Hypertarget{classLabellerModel_a206d29135e6c353d48bcbbb631f6b733}\label{classLabellerModel_a206d29135e6c353d48bcbbb631f6b733}} 
+\index{LabellerModel@{LabellerModel}!getClassListSorting@{getClassListSorting}}
+\index{getClassListSorting@{getClassListSorting}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getClassListSorting()}{getClassListSorting()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Labeller\+Model\+::\+Sorting\+Type}} Labeller\+Model\+::get\+Class\+List\+Sorting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily image\+Files\+Sorting} \mbox{\Hypertarget{classLabellerModel_ae47b483c763d68be74ba544b3d6f8944}\label{classLabellerModel_ae47b483c763d68be74ba544b3d6f8944}} 
+\index{LabellerModel@{LabellerModel}!getClassNames@{getClassNames}}
+\index{getClassNames@{getClassNames}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getClassNames()}{getClassNames()}}
+{\footnotesize\ttfamily Q\+String\+List Labeller\+Model\+::get\+Class\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily class\+Names} \mbox{\Hypertarget{classLabellerModel_a08c33edb9a1469ba43f10cb7baf86c2d}\label{classLabellerModel_a08c33edb9a1469ba43f10cb7baf86c2d}} 
+\index{LabellerModel@{LabellerModel}!getImageDir@{getImageDir}}
+\index{getImageDir@{getImageDir}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getImageDir()}{getImageDir()}}
+{\footnotesize\ttfamily Q\+String Labeller\+Model\+::get\+Image\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily image\+Dir} \mbox{\Hypertarget{classLabellerModel_aa3e76748f0dab5b8d4c227b2c01955ca}\label{classLabellerModel_aa3e76748f0dab5b8d4c227b2c01955ca}} 
+\index{LabellerModel@{LabellerModel}!getImageFileResult@{getImageFileResult}}
+\index{getImageFileResult@{getImageFileResult}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getImageFileResult()}{getImageFileResult()}}
+{\footnotesize\ttfamily Q\+String Labeller\+Model\+::get\+Image\+File\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily image\+File\+Result} \mbox{\Hypertarget{classLabellerModel_adcd9fa21ed9f4a494432077ca85f1553}\label{classLabellerModel_adcd9fa21ed9f4a494432077ca85f1553}} 
+\index{LabellerModel@{LabellerModel}!getImageFiles@{getImageFiles}}
+\index{getImageFiles@{getImageFiles}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getImageFiles()}{getImageFiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} $\ast$ Labeller\+Model\+::get\+Image\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily image\+Files} \mbox{\Hypertarget{classLabellerModel_a08f11856309a198db66cf02483534738}\label{classLabellerModel_a08f11856309a198db66cf02483534738}} 
+\index{LabellerModel@{LabellerModel}!getImageFilesSorting@{getImageFilesSorting}}
+\index{getImageFilesSorting@{getImageFilesSorting}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getImageFilesSorting()}{getImageFilesSorting()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Labeller\+Model\+::\+Sorting\+Type}} Labeller\+Model\+::get\+Image\+Files\+Sorting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily class\+List\+Sorting} \mbox{\Hypertarget{classLabellerModel_a288660912a27883ab7242db1138ad65d}\label{classLabellerModel_a288660912a27883ab7242db1138ad65d}} 
+\index{LabellerModel@{LabellerModel}!getNameFile@{getNameFile}}
+\index{getNameFile@{getNameFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getNameFile()}{getNameFile()}}
+{\footnotesize\ttfamily Q\+String Labeller\+Model\+::get\+Name\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily name\+File} \mbox{\Hypertarget{classLabellerModel_aaf2162e0043c3a725cfa8d8a6aea05c8}\label{classLabellerModel_aaf2162e0043c3a725cfa8d8a6aea05c8}} 
+\index{LabellerModel@{LabellerModel}!getSelectedImageFile@{getSelectedImageFile}}
+\index{getSelectedImageFile@{getSelectedImageFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{getSelectedImageFile()}{getSelectedImageFile()}}
+{\footnotesize\ttfamily Q\+String Labeller\+Model\+::get\+Selected\+Image\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily selected\+Image\+File} \mbox{\Hypertarget{classLabellerModel_a4e33c681cd7f6ed1de118509b2099bcf}\label{classLabellerModel_a4e33c681cd7f6ed1de118509b2099bcf}} 
+\index{LabellerModel@{LabellerModel}!updateAnnotationFile@{updateAnnotationFile}}
+\index{updateAnnotationFile@{updateAnnotationFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateAnnotationFile()}{updateAnnotationFile()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Annotation\+File (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Annotation\+File }\end{DoxyParamCaption})}
+
+Updates {\ttfamily annotation\+File} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Annotation\+File} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a7a7df19b8c27d1182d39c870305ab42a}\label{classLabellerModel_a7a7df19b8c27d1182d39c870305ab42a}} 
+\index{LabellerModel@{LabellerModel}!updateClassListSorting@{updateClassListSorting}}
+\index{updateClassListSorting@{updateClassListSorting}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateClassListSorting()}{updateClassListSorting()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Class\+List\+Sorting (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}}}]{new\+Class\+List\+Sorting }\end{DoxyParamCaption})}
+
+Updates {\ttfamily class\+List\+Sorting} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Class\+List\+Sorting} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_ae7c0cdd90c3e96a35921500c1baddfda}\label{classLabellerModel_ae7c0cdd90c3e96a35921500c1baddfda}} 
+\index{LabellerModel@{LabellerModel}!updateClassNames@{updateClassNames}}
+\index{updateClassNames@{updateClassNames}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateClassNames()}{updateClassNames()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Class\+Names (\begin{DoxyParamCaption}\item[{const Q\+String\+List}]{new\+Class\+Names }\end{DoxyParamCaption})}
+
+Updates {\ttfamily class\+Names} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Class\+Names} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}\label{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}} 
+\index{LabellerModel@{LabellerModel}!updateimageDir@{updateimageDir}}
+\index{updateimageDir@{updateimageDir}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateimageDir()}{updateimageDir()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::updateimage\+Dir (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Image\+Dir }\end{DoxyParamCaption})}
+
+Updates {\ttfamily image\+Dir} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Image\+Dir} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a559b17d5bde669055bd34af099c8cfaa}\label{classLabellerModel_a559b17d5bde669055bd34af099c8cfaa}} 
+\index{LabellerModel@{LabellerModel}!updateImageFiles@{updateImageFiles}}
+\index{updateImageFiles@{updateImageFiles}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateImageFiles()}{updateImageFiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Image\+Files (\begin{DoxyParamCaption}\item[{const Q\+File\+Info\+List}]{new\+Image\+Files }\end{DoxyParamCaption})}
+
+Upadtes {\ttfamily image\+Files} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Image\+Files} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a458e554e484fc6381187d8c8e41c487f}\label{classLabellerModel_a458e554e484fc6381187d8c8e41c487f}} 
+\index{LabellerModel@{LabellerModel}!updateImageFiles@{updateImageFiles}}
+\index{updateImageFiles@{updateImageFiles}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateImageFiles()}{updateImageFiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Image\+Files (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Image\+File\+Result }\end{DoxyParamCaption})}
+
+Updates {\ttfamily image\+Files} \mbox{\Hypertarget{classLabellerModel_aed9cde8b6f170a5c60cf5cada11e113f}\label{classLabellerModel_aed9cde8b6f170a5c60cf5cada11e113f}} 
+\index{LabellerModel@{LabellerModel}!updateImageFilesSorting@{updateImageFilesSorting}}
+\index{updateImageFilesSorting@{updateImageFilesSorting}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateImageFilesSorting()}{updateImageFilesSorting()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Image\+Files\+Sorting (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}}}]{new\+Image\+Files\+Sorting }\end{DoxyParamCaption})}
+
+Updates {\ttfamily image\+File\+Result} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Image\+Files\+Sorting} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a53d091ac03750ecf9083566345d64caa}\label{classLabellerModel_a53d091ac03750ecf9083566345d64caa}} 
+\index{LabellerModel@{LabellerModel}!updateNameFile@{updateNameFile}}
+\index{updateNameFile@{updateNameFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateNameFile()}{updateNameFile()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Name\+File (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Name\+File }\end{DoxyParamCaption})}
+
+Updates {\ttfamily name\+File} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Name\+File} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabellerModel_a8a41825f1400708cf9521d7fc66a0fe1}\label{classLabellerModel_a8a41825f1400708cf9521d7fc66a0fe1}} 
+\index{LabellerModel@{LabellerModel}!updateSelectedImageFile@{updateSelectedImageFile}}
+\index{updateSelectedImageFile@{updateSelectedImageFile}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateSelectedImageFile()}{updateSelectedImageFile()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Selected\+Image\+File (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Selected\+Image\+File }\end{DoxyParamCaption})}
+
+Updates {\ttfamily selected\+Image\+File} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Selected\+Image\+File} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/labeller\+\_\+model.\+h\item 
+S\+R\+C/labeller\+\_\+model.\+cpp\end{DoxyCompactItemize}

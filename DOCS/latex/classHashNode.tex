@@ -1,0 +1,100 @@
+\hypertarget{classHashNode}{}\doxysection{Hash\+Node Class Reference}
+\label{classHashNode}\index{HashNode@{HashNode}}
+
+
+A node for {\ttfamily \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}}}  
+
+
+
+
+{\ttfamily \#include $<$string\+\_\+date\+\_\+hash.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashNode_af205e606230d0e633ea32118750f91ed}\label{classHashNode_af205e606230d0e633ea32118750f91ed}} 
+{\bfseries Hash\+Node} (const Q\+String \&key, const Q\+Date\+Time \&value)
+\item 
+Q\+String \mbox{\hyperlink{classHashNode_a52f10503db7dc31b31244d730c121371}{get\+Key}} () const
+\item 
+Q\+Date\+Time \mbox{\hyperlink{classHashNode_a42655deb1017df1e4a44d8188ac29e30}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{classHashNode_ae4ac85b1bba0c86e3a254c78411a6f87}{set\+Value}} (Q\+Date\+Time value)
+\item 
+void \mbox{\hyperlink{classHashNode_a021b603bd6f58a1b54e53ceb65441fb7}{set\+Next}} (\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$next)
+\item 
+\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$ \mbox{\hyperlink{classHashNode_a1d22392c8286bedcb964bd50c241c007}{get\+Next}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashNode_a8891c69a3efc76946061e5605bfb2e3e}\label{classHashNode_a8891c69a3efc76946061e5605bfb2e3e}} 
+Q\+String {\bfseries key}
+\item 
+\mbox{\Hypertarget{classHashNode_a30717a93c985a66a9cd306548c82a8b7}\label{classHashNode_a30717a93c985a66a9cd306548c82a8b7}} 
+Q\+Date\+Time {\bfseries value}
+\item 
+\mbox{\Hypertarget{classHashNode_a667b4a191c9b6d08fcda0a162ce78012}\label{classHashNode_a667b4a191c9b6d08fcda0a162ce78012}} 
+\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$ {\bfseries next}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHashNode_a7a98b4bc5f2eb48f071e6808d1e366a2}\label{classHashNode_a7a98b4bc5f2eb48f071e6808d1e366a2}} 
+bool {\bfseries operator$>$} (\mbox{\hyperlink{classHashNode}{Hash\+Node}} const \&left, \mbox{\hyperlink{classHashNode}{Hash\+Node}} const \&right)
+\item 
+\mbox{\Hypertarget{classHashNode_a4ab8efaa9e75ab5bf2fe0f3c48be8cbf}\label{classHashNode_a4ab8efaa9e75ab5bf2fe0f3c48be8cbf}} 
+bool {\bfseries operator$<$} (\mbox{\hyperlink{classHashNode}{Hash\+Node}} const \&left, \mbox{\hyperlink{classHashNode}{Hash\+Node}} const \&right)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A node for {\ttfamily \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHashNode_a52f10503db7dc31b31244d730c121371}\label{classHashNode_a52f10503db7dc31b31244d730c121371}} 
+\index{HashNode@{HashNode}!getKey@{getKey}}
+\index{getKey@{getKey}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{getKey()}{getKey()}}
+{\footnotesize\ttfamily Q\+String Hash\+Node\+::get\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily key} \mbox{\Hypertarget{classHashNode_a1d22392c8286bedcb964bd50c241c007}\label{classHashNode_a1d22392c8286bedcb964bd50c241c007}} 
+\index{HashNode@{HashNode}!getNext@{getNext}}
+\index{getNext@{getNext}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$ Hash\+Node\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns next {\ttfamily \mbox{\hyperlink{classHashNode}{Hash\+Node}}} \mbox{\Hypertarget{classHashNode_a42655deb1017df1e4a44d8188ac29e30}\label{classHashNode_a42655deb1017df1e4a44d8188ac29e30}} 
+\index{HashNode@{HashNode}!getValue@{getValue}}
+\index{getValue@{getValue}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily Q\+Date\+Time Hash\+Node\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily value} \mbox{\Hypertarget{classHashNode_a021b603bd6f58a1b54e53ceb65441fb7}\label{classHashNode_a021b603bd6f58a1b54e53ceb65441fb7}} 
+\index{HashNode@{HashNode}!setNext@{setNext}}
+\index{setNext@{setNext}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily void Hash\+Node\+::set\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$}]{next }\end{DoxyParamCaption})}
+
+Sets addtional value for node with key that returns same hash value 
+\begin{DoxyParams}{Parameters}
+{\em next} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHashNode_ae4ac85b1bba0c86e3a254c78411a6f87}\label{classHashNode_ae4ac85b1bba0c86e3a254c78411a6f87}} 
+\index{HashNode@{HashNode}!setValue@{setValue}}
+\index{setValue@{setValue}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Hash\+Node\+::set\+Value (\begin{DoxyParamCaption}\item[{Q\+Date\+Time}]{value }\end{DoxyParamCaption})}
+
+Sets {\ttfamily value} 
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/string\+\_\+date\+\_\+hash.\+h\item 
+S\+R\+C/string\+\_\+date\+\_\+hash.\+cpp\end{DoxyCompactItemize}

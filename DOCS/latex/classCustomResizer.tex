@@ -1,0 +1,169 @@
+\hypertarget{classCustomResizer}{}\doxysection{Custom\+Resizer Class Reference}
+\label{classCustomResizer}\index{CustomResizer@{CustomResizer}}
+
+
+Class for the resizer box.  
+
+
+
+
+{\ttfamily \#include $<$custom\+\_\+resizer.\+h$>$}
+
+Inheritance diagram for Custom\+Resizer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCustomResizer}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCustomResizer_1_1HandleItem}{Handle\+Item}}
+\begin{DoxyCompactList}\small\item\em Class for the resizer item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCustomResizer_a47b05279ffac358f073eca2ec4b92315}\label{classCustomResizer_a47b05279ffac358f073eca2ec4b92315}} 
+enum \{ {\bfseries Type} = User\+Type
+ \}
+\begin{DoxyCompactList}\small\item\em Used by Q\+Graphics\+Rect\+Item to indentify the item type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCustomResizer_a65f818fc1c2f3b89e0d3a1e573f19a79}\label{classCustomResizer_a65f818fc1c2f3b89e0d3a1e573f19a79}} 
+{\bfseries Custom\+Resizer} (Q\+Graphics\+Item $\ast$parent=0)
+\item 
+virtual Q\+RectF \mbox{\hyperlink{classCustomResizer_a01b4905c5fcedfc6032029017307fb8c}{bounding\+Rect}} () const
+\item 
+\mbox{\Hypertarget{classCustomResizer_ac6f473800fce4c2b0eac8768d8fbcdf1}\label{classCustomResizer_ac6f473800fce4c2b0eac8768d8fbcdf1}} 
+virtual void {\bfseries paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+Graphics\+Item $\ast$option, Q\+Widget $\ast$widget=0)
+\item 
+void \mbox{\hyperlink{classCustomResizer_a27f1074a1b6bb8c550510a53315c6d6c}{set\+Top\+Left}} (const Q\+PointF \&pos)
+\item 
+void \mbox{\hyperlink{classCustomResizer_aa93735b34295352a59b062fff47096e1}{set\+Top\+Right}} (const Q\+PointF \&pos)
+\item 
+void \mbox{\hyperlink{classCustomResizer_ac92bf413d338fa94e076a8b5c4b1036b}{set\+Bottom\+Right}} (const Q\+PointF \&pos)
+\item 
+void \mbox{\hyperlink{classCustomResizer_aff990d4ce7225aed98de6799b17e0f81}{set\+Bottom\+Left}} (const Q\+PointF \&pos)
+\item 
+void \mbox{\hyperlink{classCustomResizer_aea92d2679fe56ead0fd36d62593c9232}{set\+Top}} (qreal y)
+\item 
+void \mbox{\hyperlink{classCustomResizer_a485c56feed632676b8c32f9c54ccb0bb}{set\+Right}} (qreal x)
+\item 
+void \mbox{\hyperlink{classCustomResizer_aaa77dc88be5420eedf0a60d8605ea102}{set\+Bottom}} (qreal y)
+\item 
+void \mbox{\hyperlink{classCustomResizer_a72cef835ceceb2c3a5c3d1b1846543cb}{set\+Left}} (qreal x)
+\item 
+\mbox{\Hypertarget{classCustomResizer_ad4d4498371f0f060ec2a27d793b4ccf2}\label{classCustomResizer_ad4d4498371f0f060ec2a27d793b4ccf2}} 
+int \mbox{\hyperlink{classCustomResizer_ad4d4498371f0f060ec2a27d793b4ccf2}{type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns custom type value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCustomResizer_aa6c24ba703fe7e3f5ab763bca4392da0}\label{classCustomResizer_aa6c24ba703fe7e3f5ab763bca4392da0}} 
+enum \mbox{\hyperlink{classCustomResizer_aa6c24ba703fe7e3f5ab763bca4392da0}{Position}} \{ \newline
+{\bfseries Top} = 0x1, 
+{\bfseries Bottom} = 0x2, 
+{\bfseries Left} = 0x4, 
+{\bfseries Top\+Left} = Top $\vert$ Left, 
+\newline
+{\bfseries Bottom\+Left} = Bottom $\vert$ Left, 
+{\bfseries Right} = 0x8, 
+{\bfseries Top\+Right} = Top $\vert$ Right, 
+{\bfseries Bottom\+Right} = Bottom $\vert$ Right
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to represent position of resizer item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCustomResizer_ad76dada54c42c138dbc1fbf52864d990}{do\+Resize}} ()
+\item 
+void \mbox{\hyperlink{classCustomResizer_ab973df5ea081715d217073fe513de5c9}{update\+Handle\+Item\+Positions}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCustomResizer_ab0f521467414387b0a410143c08be6a7}\label{classCustomResizer_ab0f521467414387b0a410143c08be6a7}} 
+Q\+List$<$ \mbox{\hyperlink{classCustomResizer_1_1HandleItem}{Handle\+Item}} $\ast$ $>$ \mbox{\hyperlink{classCustomResizer_ab0f521467414387b0a410143c08be6a7}{handle\+Items}}
+\begin{DoxyCompactList}\small\item\em List of individual resizer items. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCustomResizer_a26750895c71f502d12983b98e2e881f8}\label{classCustomResizer_a26750895c71f502d12983b98e2e881f8}} 
+Q\+RectF \mbox{\hyperlink{classCustomResizer_a26750895c71f502d12983b98e2e881f8}{rect}}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for the resizer box. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCustomResizer_a01b4905c5fcedfc6032029017307fb8c}\label{classCustomResizer_a01b4905c5fcedfc6032029017307fb8c}} 
+\index{CustomResizer@{CustomResizer}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily Q\+RectF Custom\+Resizer\+::bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns {\ttfamily rect} \mbox{\Hypertarget{classCustomResizer_ad76dada54c42c138dbc1fbf52864d990}\label{classCustomResizer_ad76dada54c42c138dbc1fbf52864d990}} 
+\index{CustomResizer@{CustomResizer}!doResize@{doResize}}
+\index{doResize@{doResize}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{doResize()}{doResize()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::do\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Upadtes postions of necessary resizer items and updates size of Q\+Graphics\+Item \mbox{\Hypertarget{classCustomResizer_aaa77dc88be5420eedf0a60d8605ea102}\label{classCustomResizer_aaa77dc88be5420eedf0a60d8605ea102}} 
+\index{CustomResizer@{CustomResizer}!setBottom@{setBottom}}
+\index{setBottom@{setBottom}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setBottom()}{setBottom()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Bottom (\begin{DoxyParamCaption}\item[{qreal}]{y }\end{DoxyParamCaption})}
+
+Sets bottom resizer item \mbox{\Hypertarget{classCustomResizer_aff990d4ce7225aed98de6799b17e0f81}\label{classCustomResizer_aff990d4ce7225aed98de6799b17e0f81}} 
+\index{CustomResizer@{CustomResizer}!setBottomLeft@{setBottomLeft}}
+\index{setBottomLeft@{setBottomLeft}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setBottomLeft()}{setBottomLeft()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Bottom\+Left (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos }\end{DoxyParamCaption})}
+
+Sets bottom left resizer item \mbox{\Hypertarget{classCustomResizer_ac92bf413d338fa94e076a8b5c4b1036b}\label{classCustomResizer_ac92bf413d338fa94e076a8b5c4b1036b}} 
+\index{CustomResizer@{CustomResizer}!setBottomRight@{setBottomRight}}
+\index{setBottomRight@{setBottomRight}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setBottomRight()}{setBottomRight()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Bottom\+Right (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos }\end{DoxyParamCaption})}
+
+Sets bottom right resizer item \mbox{\Hypertarget{classCustomResizer_a72cef835ceceb2c3a5c3d1b1846543cb}\label{classCustomResizer_a72cef835ceceb2c3a5c3d1b1846543cb}} 
+\index{CustomResizer@{CustomResizer}!setLeft@{setLeft}}
+\index{setLeft@{setLeft}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setLeft()}{setLeft()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Left (\begin{DoxyParamCaption}\item[{qreal}]{x }\end{DoxyParamCaption})}
+
+Sets left resizer item \mbox{\Hypertarget{classCustomResizer_a485c56feed632676b8c32f9c54ccb0bb}\label{classCustomResizer_a485c56feed632676b8c32f9c54ccb0bb}} 
+\index{CustomResizer@{CustomResizer}!setRight@{setRight}}
+\index{setRight@{setRight}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setRight()}{setRight()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Right (\begin{DoxyParamCaption}\item[{qreal}]{x }\end{DoxyParamCaption})}
+
+Sets right resizer item \mbox{\Hypertarget{classCustomResizer_aea92d2679fe56ead0fd36d62593c9232}\label{classCustomResizer_aea92d2679fe56ead0fd36d62593c9232}} 
+\index{CustomResizer@{CustomResizer}!setTop@{setTop}}
+\index{setTop@{setTop}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setTop()}{setTop()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Top (\begin{DoxyParamCaption}\item[{qreal}]{y }\end{DoxyParamCaption})}
+
+Sets top resizer item \mbox{\Hypertarget{classCustomResizer_a27f1074a1b6bb8c550510a53315c6d6c}\label{classCustomResizer_a27f1074a1b6bb8c550510a53315c6d6c}} 
+\index{CustomResizer@{CustomResizer}!setTopLeft@{setTopLeft}}
+\index{setTopLeft@{setTopLeft}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setTopLeft()}{setTopLeft()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Top\+Left (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos }\end{DoxyParamCaption})}
+
+Sets top left resizer item \mbox{\Hypertarget{classCustomResizer_aa93735b34295352a59b062fff47096e1}\label{classCustomResizer_aa93735b34295352a59b062fff47096e1}} 
+\index{CustomResizer@{CustomResizer}!setTopRight@{setTopRight}}
+\index{setTopRight@{setTopRight}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{setTopRight()}{setTopRight()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::set\+Top\+Right (\begin{DoxyParamCaption}\item[{const Q\+PointF \&}]{pos }\end{DoxyParamCaption})}
+
+Sets top right resizer item \mbox{\Hypertarget{classCustomResizer_ab973df5ea081715d217073fe513de5c9}\label{classCustomResizer_ab973df5ea081715d217073fe513de5c9}} 
+\index{CustomResizer@{CustomResizer}!updateHandleItemPositions@{updateHandleItemPositions}}
+\index{updateHandleItemPositions@{updateHandleItemPositions}!CustomResizer@{CustomResizer}}
+\doxysubsubsection{\texorpdfstring{updateHandleItemPositions()}{updateHandleItemPositions()}}
+{\footnotesize\ttfamily void Custom\+Resizer\+::update\+Handle\+Item\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Upadtes postions of individual resizer items 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/custom\+\_\+resizer.\+h\item 
+S\+R\+C/custom\+\_\+resizer.\+cpp\end{DoxyCompactItemize}

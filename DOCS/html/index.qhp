@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>org.Group24.Project</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="Image Annotator" ref="index.html">
+        <section title="Classes" ref="annotated.html">
+          <section title="Class List" ref="annotated.html">
+            <section title="CustomResizer" ref="classCustomResizer.html">
+              <section title="HandleItem" ref="classCustomResizer_1_1HandleItem.html">
+                <section title="Type" ref="classCustomResizer_1_1HandleItem.html#a1e5bf3f95d050d2a1c58a7b8e09e3293ae829c8eef8df58778f6497388eefb083" />
+                <section title="HandleItem" ref="classCustomResizer_1_1HandleItem.html#a1322ef869972bdcea57e963a9c59b21c" />
+                <section title="getPositionFlags" ref="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a" />
+                <section title="itemChange" ref="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87" />
+                <section title="restrictPosition" ref="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282" />
+                <section title="type" ref="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c" />
+                <section title="parent" ref="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed" />
+                <section title="positionFlags" ref="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e" />
+              </section>
+              <section title="Type" ref="classCustomResizer.html#a47b05279ffac358f073eca2ec4b92315aa57592e8818fd13369c1661f9d7e0159" />
+              <section title="Position" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">
+                <section title="Top" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0aa9833531437da791b937bc673bcadc57" />
+                <section title="Bottom" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0aa2f648efbf757eb02a44e8e8d09ca543" />
+                <section title="Left" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0ae31b0655fac95715bbb30643d974849f" />
+                <section title="TopLeft" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0ab14396b2a9471d3a4c96fa94ba7b36f9" />
+                <section title="BottomLeft" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0a6fe33bfb46a60b91174916e15bb14ec9" />
+                <section title="Right" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0ad4f31ab9531d8acabce9e4f67736a530" />
+                <section title="TopRight" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0aa05001f0834cdae70995c9a5fc53117c" />
+                <section title="BottomRight" ref="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0a449a7554da12c32e29c29d8ce5d1bde6" />
+              </section>
+              <section title="CustomResizer" ref="classCustomResizer.html#a65f818fc1c2f3b89e0d3a1e573f19a79" />
+              <section title="~CustomResizer" ref="classCustomResizer.html#af02d376e7aa43d50bc7bb58ae0195cd1" />
+              <section title="boundingRect" ref="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c" />
+              <section title="doResize" ref="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990" />
+              <section title="paint" ref="classCustomResizer.html#ac6f473800fce4c2b0eac8768d8fbcdf1" />
+              <section title="setBottom" ref="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102" />
+              <section title="setBottomLeft" ref="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81" />
+              <section title="setBottomRight" ref="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b" />
+              <section title="setLeft" ref="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb" />
+              <section title="setRight" ref="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb" />
+              <section title="setTop" ref="classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232" />
+              <section title="setTopLeft" ref="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c" />
+              <section title="setTopRight" ref="classCustomResizer.html#aa93735b34295352a59b062fff47096e1" />
+              <section title="type" ref="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2" />
+              <section title="updateHandleItemPositions" ref="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9" />
+              <section title="handleItems" ref="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7" />
+              <section title="rect" ref="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8" />
+            </section>
+            <section title="HashNode" ref="classHashNode.html">
+              <section title="HashNode" ref="classHashNode.html#a90063c7c68cbc38916c1e3903de40212" />
+              <section title="HashNode" ref="classHashNode.html#af205e606230d0e633ea32118750f91ed" />
+              <section title="getKey" ref="classHashNode.html#a52f10503db7dc31b31244d730c121371" />
+              <section title="getNext" ref="classHashNode.html#a1d22392c8286bedcb964bd50c241c007" />
+              <section title="getValue" ref="classHashNode.html#a42655deb1017df1e4a44d8188ac29e30" />
+              <section title="setNext" ref="classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7" />
+              <section title="setValue" ref="classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87" />
+              <section title="operator&lt;" ref="classHashNode.html#a4ab8efaa9e75ab5bf2fe0f3c48be8cbf" />
+              <section title="operator&gt;" ref="classHashNode.html#a7a98b4bc5f2eb48f071e6808d1e366a2" />
+              <section title="key" ref="classHashNode.html#a8891c69a3efc76946061e5605bfb2e3e" />
+              <section title="next" ref="classHashNode.html#a667b4a191c9b6d08fcda0a162ce78012" />
+              <section title="value" ref="classHashNode.html#a30717a93c985a66a9cd306548c82a8b7" />
+            </section>
+            <section title="ImageEditor" ref="classImageEditor.html">
+              <section title="CursorType" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b">
+                <section title="Draw" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236" />
+                <section title="Text" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840" />
+                <section title="Select" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce" />
+              </section>
+              <section title="ImageEditor" ref="classImageEditor.html#a66e021d837c2f15e026e045dc3fbdcc5" />
+              <section title="clearItems" ref="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4" />
+              <section title="contextMenuEvent" ref="classImageEditor.html#a92e4b717ef8f3d9ba47fef61a9a17585" />
+              <section title="copySelectedItem" ref="classImageEditor.html#a7b39d701944f2fc3972572c11238afa8" />
+              <section title="createActions" ref="classImageEditor.html#add222524e3faee21eec56abeb2b41ed6" />
+              <section title="cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
+              <section title="deleteSelectedItem" ref="classImageEditor.html#adba8cb9e2ce9de0ba679549c5f062c07" />
+              <section title="drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
+              <section title="drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
+              <section title="getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
+              <section title="getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
+              <section title="keyPressEvent" ref="classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b" />
+              <section title="mouseMoveEvent" ref="classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c" />
+              <section title="mousePressEvent" ref="classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a" />
+              <section title="mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
+              <section title="openImage" ref="classImageEditor.html#ad52e5e0927c367bca83d8b0c74219974" />
+              <section title="pasteSelectedItem" ref="classImageEditor.html#a1a439d3b73b68d6517719bf543234cde" />
+              <section title="pasteSelectedItemInPlace" ref="classImageEditor.html#a2070e3479702b26262222353e1d12377" />
+              <section title="savedStateExists" ref="classImageEditor.html#aff34ce1abfe216be62ce72e95454c1a8" />
+              <section title="saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
+              <section title="setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
+              <section title="updateClassLabel" ref="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8" />
+              <section title="updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
+              <section title="applicationRectState" ref="classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d" />
+              <section title="applicationTextState" ref="classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d" />
+              <section title="classLabel" ref="classImageEditor.html#a1e7ea34f1f876fc69864ba8a2e05bcdf" />
+              <section title="clipbord" ref="classImageEditor.html#a8bd0011bd75752c1d7d1fe67efd72b6f" />
+              <section title="clipbordClickPoint" ref="classImageEditor.html#ac0153d4f0cc4f4cdc9c6c228979f86a4" />
+              <section title="clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
+              <section title="clipbordPoint" ref="classImageEditor.html#ac59bf651ace474b2030c0b22c5b169a3" />
+              <section title="clipbordText" ref="classImageEditor.html#a25e4e09a5d02878601eb16fe35547dfd" />
+              <section title="clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
+              <section title="copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
+              <section title="currFileName" ref="classImageEditor.html#abb395a59c68778495558677b04caf1d7" />
+              <section title="cursorType" ref="classImageEditor.html#a7cc7b0f748c522ea1dc0e047d493c5ad" />
+              <section title="deleteAction" ref="classImageEditor.html#af071bc217624330f8e9b1d978ebd54e5" />
+              <section title="drawing" ref="classImageEditor.html#af6bcc04b8fde6f0600f545af113b60aa" />
+              <section title="imageSet" ref="classImageEditor.html#a5ba34537c42ad7f57a9eed398d360aee" />
+              <section title="lastPoint" ref="classImageEditor.html#a2869fca3fc610a18e90c713aa15d4246" />
+              <section title="lastPointF" ref="classImageEditor.html#aaf00b11bf66f5d8d92cec7f99c4ed984" />
+              <section title="origin" ref="classImageEditor.html#a67761379e97907f6232473b6ae22ca05" />
+              <section title="originF" ref="classImageEditor.html#a601196bdc1c4b1e66313bfae02de08fb" />
+              <section title="pasteAction" ref="classImageEditor.html#a7aa8d9dad4f9c5305f7fd344409ee0d6" />
+              <section title="resizerItems" ref="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946" />
+              <section title="rubberBand" ref="classImageEditor.html#a92ba20be2ef6bf550de2b570bd0a1425" />
+            </section>
+            <section title="Labeller" ref="classLabeller.html">
+              <section title="Labeller" ref="classLabeller.html#a8a87b87c8c43b4f85d9a8b50d5568bd4" />
+              <section title="~Labeller" ref="classLabeller.html#a86dd4e637f3c44b8a2ca8abd08535b8a" />
+              <section title="clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
+              <section title="createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
+              <section title="on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
+              <section title="on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
+              <section title="on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
+              <section title="on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
+              <section title="on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
+              <section title="on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
+              <section title="on_addNameItemButton_clicked" ref="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01" />
+              <section title="on_annotationBrowseButton_clicked" ref="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663" />
+              <section title="on_classBrowseButton_clicked" ref="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68" />
+              <section title="on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
+              <section title="on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
+              <section title="on_deleteClassItemButton_clicked" ref="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b" />
+              <section title="on_imageBrowseButton_clicked" ref="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a" />
+              <section title="on_imageList_clicked" ref="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3" />
+              <section title="on_restoreImages_clicked" ref="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744" />
+              <section title="on_saveButton_clicked" ref="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade" />
+              <section title="on_searchImages_clicked" ref="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472" />
+              <section title="on_sortClassAscButton_clicked" ref="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575" />
+              <section title="on_sortClassDscButton_clicked" ref="classLabeller.html#aa27142b813bf66d7f695f84853051b7d" />
+              <section title="on_sortImagesAsc_clicked" ref="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36" />
+              <section title="on_sortImagesdateAsc_clicked" ref="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579" />
+              <section title="on_sortImagesDateDsc_clicked" ref="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e" />
+              <section title="on_sortImagesDsc_clicked" ref="classLabeller.html#a1128543a1407b48c9afa50202b336df6" />
+              <section title="setAnnotationFile" ref="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0" />
+              <section title="setClassFile" ref="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d" />
+              <section title="setClassList" ref="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069" />
+              <section title="setCursorTypeLabel" ref="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66" />
+              <section title="setImageDir" ref="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc" />
+              <section title="setImageList" ref="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06" />
+              <section title="setImageListToResult" ref="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481" />
+              <section title="setSelectedImageFile" ref="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054" />
+              <section title="imageEditor" ref="classLabeller.html#a10a8d60561130914b59cc60c35d1e5f9" />
+              <section title="labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />
+              <section title="ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
+            </section>
+            <section title="LabellerModel" ref="classLabellerModel.html">
+              <section title="SortingType" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32">
+                <section title="NameAsc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa" />
+                <section title="NameDesc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f" />
+                <section title="DateAsc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a63f13912df2fded9b02b364fa948aa91" />
+                <section title="DateDesc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e" />
+                <section title="None" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72" />
+              </section>
+              <section title="LabellerModel" ref="classLabellerModel.html#a8ce58d5d39d8278e7dd82ea3f207f663" />
+              <section title="addClassName" ref="classLabellerModel.html#a727e984982fc9b8099d39f5bef3a6478" />
+              <section title="annotationFileChanged" ref="classLabellerModel.html#abae36e55ccd6517914c3fd3189d0840d" />
+              <section title="classFileChanged" ref="classLabellerModel.html#aa804a526d0ccd15b11039a010ee30b1f" />
+              <section title="classListChangedSorted" ref="classLabellerModel.html#abe7f7cbb80dc3d7c0f93d363163cd38b" />
+              <section title="classNamesChanged" ref="classLabellerModel.html#aa45825cc0fa3fcd585f6906702fecb33" />
+              <section title="clearClassItemLineEdit" ref="classLabellerModel.html#a37007b91ec12e44f7e779ada2ca0a779" />
+              <section title="getAnnotationFile" ref="classLabellerModel.html#aaed0c2907cd812511a774bf5394928b1" />
+              <section title="getClassListSorting" ref="classLabellerModel.html#a206d29135e6c353d48bcbbb631f6b733" />
+              <section title="getClassNames" ref="classLabellerModel.html#ae47b483c763d68be74ba544b3d6f8944" />
+              <section title="getImageDir" ref="classLabellerModel.html#a08c33edb9a1469ba43f10cb7baf86c2d" />
+              <section title="getImageFileResult" ref="classLabellerModel.html#aa3e76748f0dab5b8d4c227b2c01955ca" />
+              <section title="getImageFiles" ref="classLabellerModel.html#adcd9fa21ed9f4a494432077ca85f1553" />
+              <section title="getImageFilesSorting" ref="classLabellerModel.html#a08f11856309a198db66cf02483534738" />
+              <section title="getNameFile" ref="classLabellerModel.html#a288660912a27883ab7242db1138ad65d" />
+              <section title="getSelectedImageFile" ref="classLabellerModel.html#aaf2162e0043c3a725cfa8d8a6aea05c8" />
+              <section title="imageDirChanged" ref="classLabellerModel.html#a1d2312092edb0c61ef04c00699fb349f" />
+              <section title="imageFileResultChanged" ref="classLabellerModel.html#a8f8826eb7fd49cd056dd1ef91bff3201" />
+              <section title="imageFilesChanged" ref="classLabellerModel.html#aedca695c6bede47b116073d2ebb3a9c7" />
+              <section title="imageFilesChangedSorted" ref="classLabellerModel.html#a24dd2df7a125b45da788f260bc6e7b04" />
+              <section title="selectedImageFileChanged" ref="classLabellerModel.html#a35cd613c9bfd210eeb32d87d1fbcb2f7" />
+              <section title="updateAnnotationFile" ref="classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf" />
+              <section title="updateClassListSorting" ref="classLabellerModel.html#a7a7df19b8c27d1182d39c870305ab42a" />
+              <section title="updateClassNames" ref="classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda" />
+              <section title="updateimageDir" ref="classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907" />
+              <section title="updateImageFiles" ref="classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa" />
+              <section title="updateImageFiles" ref="classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f" />
+              <section title="updateImageFilesSorting" ref="classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f" />
+              <section title="updateNameFile" ref="classLabellerModel.html#a53d091ac03750ecf9083566345d64caa" />
+              <section title="updateSelectedImageFile" ref="classLabellerModel.html#a8a41825f1400708cf9521d7fc66a0fe1" />
+              <section title="annotationFile" ref="classLabellerModel.html#a4f3806c5f1c9a1998092de7f1cef32e9" />
+              <section title="classListSorting" ref="classLabellerModel.html#a177351afad036a657a147a43362e9ec8" />
+              <section title="classNames" ref="classLabellerModel.html#aa841785453bf06727d564df57708d53b" />
+              <section title="imageDir" ref="classLabellerModel.html#ac78ecd7c658d3428e8a0a0b0795bff31" />
+              <section title="imageFileResult" ref="classLabellerModel.html#ac9556a64561afca87d003fd1730e8a6f" />
+              <section title="imageFiles" ref="classLabellerModel.html#ad467d9a2b39ef17a4ea130fefc9b1bcd" />
+              <section title="imageFilesSorting" ref="classLabellerModel.html#adbcce001e285f1806d36e67f2cfaefa0" />
+              <section title="nameFile" ref="classLabellerModel.html#ac1ce3fb50725d0db3dbe799115a21c96" />
+              <section title="selectedImageFile" ref="classLabellerModel.html#a2861d615a6e936565e9ce0df0fde18b7" />
+            </section>
+            <section title="StringDateHash" ref="classStringDateHash.html">
+              <section title="StringDateHash" ref="classStringDateHash.html#a816f92507bb13056e4e8008ccc4f4f6f" />
+              <section title="~StringDateHash" ref="classStringDateHash.html#ac38e7eac420c112d3a4c19c8348003c2" />
+              <section title="StringDateHash" ref="classStringDateHash.html#a317feeb412f02c018d12911e07863812" />
+              <section title="get" ref="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776" />
+              <section title="getCapacity" ref="classStringDateHash.html#a4ae3a92247f6ba0fb3a7664cfa2a6b6e" />
+              <section title="getKeys" ref="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9" />
+              <section title="getSize" ref="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d" />
+              <section title="hashFunc" ref="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a" />
+              <section title="merge" ref="classStringDateHash.html#a7ed5017d2b84493381f171ee28f105cb" />
+              <section title="mergesort" ref="classStringDateHash.html#a07cc8156b6248d3f3c031e0454ff6090" />
+              <section title="operator=" ref="classStringDateHash.html#ad66c8e723d8beb1615e09a3784e4e2e5" />
+              <section title="put" ref="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3" />
+              <section title="remove" ref="classStringDateHash.html#a4663a497494184edefcb0fd268f13823" />
+              <section title="sortByDateAsc" ref="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b" />
+              <section title="sortByDateDesc" ref="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691" />
+              <section title="sortByKeyAsc" ref="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88" />
+              <section title="sortByKeyDesc" ref="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c" />
+              <section title="capacity" ref="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b" />
+              <section title="table" ref="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1" />
+            </section>
+          </section>
+          <section title="Class Index" ref="classes.html" />
+          <section title="Class Hierarchy" ref="hierarchy.html">
+            <section title="HashNode" ref="classHashNode.html" />
+            <section title="QGraphicsItem">
+              <section title="CustomResizer" ref="classCustomResizer.html" />
+            </section>
+            <section title="QGraphicsRectItem">
+              <section title="CustomResizer::HandleItem" ref="classCustomResizer_1_1HandleItem.html" />
+            </section>
+            <section title="QGraphicsScene">
+              <section title="ImageEditor" ref="classImageEditor.html" />
+            </section>
+            <section title="QMainWindow">
+              <section title="Labeller" ref="classLabeller.html" />
+            </section>
+            <section title="QObject">
+              <section title="LabellerModel" ref="classLabellerModel.html" />
+            </section>
+            <section title="StringDateHash" ref="classStringDateHash.html" />
+          </section>
+          <section title="Class Members" ref="functions.html">
+            <section title="All" ref="functions.html" />
+            <section title="Functions" ref="functions_func.html" />
+            <section title="Variables" ref="functions_vars.html" />
+            <section title="Enumerations" ref="functions_enum.html" />
+            <section title="Enumerator" ref="functions_eval.html" />
+          </section>
+        </section>
+        <section title="Files" ref="files.html">
+          <section title="File List" ref="files.html">
+            <section title="SRC" ref="dir_1e771ff450ae847412a8c28572c155bb.html">
+              <section title="custom_resizer.h" ref="custom__resizer_8h_source.html" />
+              <section title="image_editor.h" ref="image__editor_8h_source.html" />
+              <section title="labeller.h" ref="labeller_8h_source.html" />
+              <section title="labeller_model.h" ref="labeller__model_8h_source.html" />
+              <section title="string_date_hash.h" ref="string__date__hash_8h_source.html" />
+            </section>
+          </section>
+        </section>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="CustomResizer" id="CustomResizer" ref="classCustomResizer.html" />
+      <keyword name="CustomResizer" id="CustomResizer::CustomResizer" ref="classCustomResizer.html#a65f818fc1c2f3b89e0d3a1e573f19a79" />
+      <keyword name="boundingRect" id="CustomResizer::boundingRect" ref="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c" />
+      <keyword name="paint" id="CustomResizer::paint" ref="classCustomResizer.html#ac6f473800fce4c2b0eac8768d8fbcdf1" />
+      <keyword name="setTopLeft" id="CustomResizer::setTopLeft" ref="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c" />
+      <keyword name="setTopRight" id="CustomResizer::setTopRight" ref="classCustomResizer.html#aa93735b34295352a59b062fff47096e1" />
+      <keyword name="setBottomRight" id="CustomResizer::setBottomRight" ref="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b" />
+      <keyword name="setBottomLeft" id="CustomResizer::setBottomLeft" ref="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81" />
+      <keyword name="setTop" id="CustomResizer::setTop" ref="classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232" />
+      <keyword name="setRight" id="CustomResizer::setRight" ref="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb" />
+      <keyword name="setBottom" id="CustomResizer::setBottom" ref="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102" />
+      <keyword name="setLeft" id="CustomResizer::setLeft" ref="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb" />
+      <keyword name="type" id="CustomResizer::type" ref="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2" />
+      <keyword name="doResize" id="CustomResizer::doResize" ref="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990" />
+      <keyword name="updateHandleItemPositions" id="CustomResizer::updateHandleItemPositions" ref="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9" />
+      <keyword name="handleItems" id="CustomResizer::handleItems" ref="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7" />
+      <keyword name="rect" id="CustomResizer::rect" ref="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8" />
+      <keyword name="CustomResizer::HandleItem" id="CustomResizer::HandleItem" ref="classCustomResizer_1_1HandleItem.html" />
+      <keyword name="HandleItem" id="CustomResizer::HandleItem::HandleItem" ref="classCustomResizer_1_1HandleItem.html#a1322ef869972bdcea57e963a9c59b21c" />
+      <keyword name="getPositionFlags" id="CustomResizer::HandleItem::getPositionFlags" ref="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a" />
+      <keyword name="type" id="CustomResizer::HandleItem::type" ref="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c" />
+      <keyword name="itemChange" id="CustomResizer::HandleItem::itemChange" ref="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87" />
+      <keyword name="restrictPosition" id="CustomResizer::HandleItem::restrictPosition" ref="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282" />
+      <keyword name="parent" id="CustomResizer::HandleItem::parent" ref="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed" />
+      <keyword name="positionFlags" id="CustomResizer::HandleItem::positionFlags" ref="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e" />
+      <keyword name="HashNode" id="HashNode" ref="classHashNode.html" />
+      <keyword name="HashNode" id="HashNode::HashNode" ref="classHashNode.html#af205e606230d0e633ea32118750f91ed" />
+      <keyword name="getKey" id="HashNode::getKey" ref="classHashNode.html#a52f10503db7dc31b31244d730c121371" />
+      <keyword name="getValue" id="HashNode::getValue" ref="classHashNode.html#a42655deb1017df1e4a44d8188ac29e30" />
+      <keyword name="setValue" id="HashNode::setValue" ref="classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87" />
+      <keyword name="setNext" id="HashNode::setNext" ref="classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7" />
+      <keyword name="getNext" id="HashNode::getNext" ref="classHashNode.html#a1d22392c8286bedcb964bd50c241c007" />
+      <keyword name="key" id="HashNode::key" ref="classHashNode.html#a8891c69a3efc76946061e5605bfb2e3e" />
+      <keyword name="value" id="HashNode::value" ref="classHashNode.html#a30717a93c985a66a9cd306548c82a8b7" />
+      <keyword name="next" id="HashNode::next" ref="classHashNode.html#a667b4a191c9b6d08fcda0a162ce78012" />
+      <keyword name="operator&gt;" id="HashNode::operator&gt;" ref="classHashNode.html#a7a98b4bc5f2eb48f071e6808d1e366a2" />
+      <keyword name="operator&lt;" id="HashNode::operator&lt;" ref="classHashNode.html#a4ab8efaa9e75ab5bf2fe0f3c48be8cbf" />
+      <keyword name="ImageEditor" id="ImageEditor" ref="classImageEditor.html" />
+      <keyword name="deleteSelectedItem" id="ImageEditor::deleteSelectedItem" ref="classImageEditor.html#adba8cb9e2ce9de0ba679549c5f062c07" />
+      <keyword name="copySelectedItem" id="ImageEditor::copySelectedItem" ref="classImageEditor.html#a7b39d701944f2fc3972572c11238afa8" />
+      <keyword name="pasteSelectedItem" id="ImageEditor::pasteSelectedItem" ref="classImageEditor.html#a1a439d3b73b68d6517719bf543234cde" />
+      <keyword name="pasteSelectedItemInPlace" id="ImageEditor::pasteSelectedItemInPlace" ref="classImageEditor.html#a2070e3479702b26262222353e1d12377" />
+      <keyword name="cursorTypeChanged" id="ImageEditor::cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
+      <keyword name="setImage" id="ImageEditor::setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
+      <keyword name="updateCursorType" id="ImageEditor::updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
+      <keyword name="updateClassLabel" id="ImageEditor::updateClassLabel" ref="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8" />
+      <keyword name="createActions" id="ImageEditor::createActions" ref="classImageEditor.html#add222524e3faee21eec56abeb2b41ed6" />
+      <keyword name="clearItems" id="ImageEditor::clearItems" ref="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4" />
+      <keyword name="saveImageState" id="ImageEditor::saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
+      <keyword name="getApplicationRectState" id="ImageEditor::getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
+      <keyword name="getCursorType" id="ImageEditor::getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
+      <keyword name="mousePressEvent" id="ImageEditor::mousePressEvent" ref="classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a" />
+      <keyword name="mouseMoveEvent" id="ImageEditor::mouseMoveEvent" ref="classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c" />
+      <keyword name="mouseReleaseEvent" id="ImageEditor::mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
+      <keyword name="contextMenuEvent" id="ImageEditor::contextMenuEvent" ref="classImageEditor.html#a92e4b717ef8f3d9ba47fef61a9a17585" />
+      <keyword name="keyPressEvent" id="ImageEditor::keyPressEvent" ref="classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b" />
+      <keyword name="drawRectangle" id="ImageEditor::drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
+      <keyword name="drawText" id="ImageEditor::drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
+      <keyword name="openImage" id="ImageEditor::openImage" ref="classImageEditor.html#ad52e5e0927c367bca83d8b0c74219974" />
+      <keyword name="savedStateExists" id="ImageEditor::savedStateExists" ref="classImageEditor.html#aff34ce1abfe216be62ce72e95454c1a8" />
+      <keyword name="imageSet" id="ImageEditor::imageSet" ref="classImageEditor.html#a5ba34537c42ad7f57a9eed398d360aee" />
+      <keyword name="drawing" id="ImageEditor::drawing" ref="classImageEditor.html#af6bcc04b8fde6f0600f545af113b60aa" />
+      <keyword name="clipbord" id="ImageEditor::clipbord" ref="classImageEditor.html#a8bd0011bd75752c1d7d1fe67efd72b6f" />
+      <keyword name="cursorType" id="ImageEditor::cursorType" ref="classImageEditor.html#a7cc7b0f748c522ea1dc0e047d493c5ad" />
+      <keyword name="classLabel" id="ImageEditor::classLabel" ref="classImageEditor.html#a1e7ea34f1f876fc69864ba8a2e05bcdf" />
+      <keyword name="currFileName" id="ImageEditor::currFileName" ref="classImageEditor.html#abb395a59c68778495558677b04caf1d7" />
+      <keyword name="origin" id="ImageEditor::origin" ref="classImageEditor.html#a67761379e97907f6232473b6ae22ca05" />
+      <keyword name="lastPoint" id="ImageEditor::lastPoint" ref="classImageEditor.html#a2869fca3fc610a18e90c713aa15d4246" />
+      <keyword name="originF" id="ImageEditor::originF" ref="classImageEditor.html#a601196bdc1c4b1e66313bfae02de08fb" />
+      <keyword name="lastPointF" id="ImageEditor::lastPointF" ref="classImageEditor.html#aaf00b11bf66f5d8d92cec7f99c4ed984" />
+      <keyword name="clipbordText" id="ImageEditor::clipbordText" ref="classImageEditor.html#a25e4e09a5d02878601eb16fe35547dfd" />
+      <keyword name="clipbordPoint" id="ImageEditor::clipbordPoint" ref="classImageEditor.html#ac59bf651ace474b2030c0b22c5b169a3" />
+      <keyword name="clipbordClickPoint" id="ImageEditor::clipbordClickPoint" ref="classImageEditor.html#ac0153d4f0cc4f4cdc9c6c228979f86a4" />
+      <keyword name="clipbordHeight" id="ImageEditor::clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
+      <keyword name="clipbordWidth" id="ImageEditor::clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
+      <keyword name="copyAction" id="ImageEditor::copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
+      <keyword name="pasteAction" id="ImageEditor::pasteAction" ref="classImageEditor.html#a7aa8d9dad4f9c5305f7fd344409ee0d6" />
+      <keyword name="deleteAction" id="ImageEditor::deleteAction" ref="classImageEditor.html#af071bc217624330f8e9b1d978ebd54e5" />
+      <keyword name="rubberBand" id="ImageEditor::rubberBand" ref="classImageEditor.html#a92ba20be2ef6bf550de2b570bd0a1425" />
+      <keyword name="resizerItems" id="ImageEditor::resizerItems" ref="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946" />
+      <keyword name="applicationRectState" id="ImageEditor::applicationRectState" ref="classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d" />
+      <keyword name="applicationTextState" id="ImageEditor::applicationTextState" ref="classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d" />
+      <keyword name="Draw" id="ImageEditor::Draw" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236" />
+      <keyword name="Text" id="ImageEditor::Text" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840" />
+      <keyword name="Select" id="ImageEditor::Select" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce" />
+      <keyword name="Labeller" id="Labeller" ref="classLabeller.html" />
+      <keyword name="Labeller" id="Labeller::Labeller" ref="classLabeller.html#a8a87b87c8c43b4f85d9a8b50d5568bd4" />
+      <keyword name="setImageList" id="Labeller::setImageList" ref="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06" />
+      <keyword name="setImageListToResult" id="Labeller::setImageListToResult" ref="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481" />
+      <keyword name="setClassList" id="Labeller::setClassList" ref="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069" />
+      <keyword name="setImageDir" id="Labeller::setImageDir" ref="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc" />
+      <keyword name="setClassFile" id="Labeller::setClassFile" ref="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d" />
+      <keyword name="setAnnotationFile" id="Labeller::setAnnotationFile" ref="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0" />
+      <keyword name="setSelectedImageFile" id="Labeller::setSelectedImageFile" ref="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054" />
+      <keyword name="setCursorTypeLabel" id="Labeller::setCursorTypeLabel" ref="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66" />
+      <keyword name="clearClassItemLineEdit" id="Labeller::clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
+      <keyword name="on_actionMark_Object_triggered" id="Labeller::on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
+      <keyword name="on_actionAdd_Text_triggered" id="Labeller::on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
+      <keyword name="on_classList_clicked" id="Labeller::on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
+      <keyword name="on_actionSelect_triggered" id="Labeller::on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
+      <keyword name="on_actionDelete_triggered" id="Labeller::on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
+      <keyword name="on_actionCopy_triggered" id="Labeller::on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
+      <keyword name="on_actionPaste_triggered" id="Labeller::on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
+      <keyword name="on_clearButton_clicked" id="Labeller::on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
+      <keyword name="on_imageBrowseButton_clicked" id="Labeller::on_imageBrowseButton_clicked" ref="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a" />
+      <keyword name="on_classBrowseButton_clicked" id="Labeller::on_classBrowseButton_clicked" ref="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68" />
+      <keyword name="on_annotationBrowseButton_clicked" id="Labeller::on_annotationBrowseButton_clicked" ref="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663" />
+      <keyword name="on_addNameItemButton_clicked" id="Labeller::on_addNameItemButton_clicked" ref="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01" />
+      <keyword name="on_deleteClassItemButton_clicked" id="Labeller::on_deleteClassItemButton_clicked" ref="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b" />
+      <keyword name="on_sortClassAscButton_clicked" id="Labeller::on_sortClassAscButton_clicked" ref="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575" />
+      <keyword name="on_sortClassDscButton_clicked" id="Labeller::on_sortClassDscButton_clicked" ref="classLabeller.html#aa27142b813bf66d7f695f84853051b7d" />
+      <keyword name="on_imageList_clicked" id="Labeller::on_imageList_clicked" ref="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3" />
+      <keyword name="on_sortImagesAsc_clicked" id="Labeller::on_sortImagesAsc_clicked" ref="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36" />
+      <keyword name="on_sortImagesDsc_clicked" id="Labeller::on_sortImagesDsc_clicked" ref="classLabeller.html#a1128543a1407b48c9afa50202b336df6" />
+      <keyword name="on_sortImagesdateAsc_clicked" id="Labeller::on_sortImagesdateAsc_clicked" ref="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579" />
+      <keyword name="on_sortImagesDateDsc_clicked" id="Labeller::on_sortImagesDateDsc_clicked" ref="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e" />
+      <keyword name="on_searchImages_clicked" id="Labeller::on_searchImages_clicked" ref="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472" />
+      <keyword name="on_restoreImages_clicked" id="Labeller::on_restoreImages_clicked" ref="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744" />
+      <keyword name="on_saveButton_clicked" id="Labeller::on_saveButton_clicked" ref="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade" />
+      <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
+      <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
+      <keyword name="labellerModel" id="Labeller::labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />
+      <keyword name="imageEditor" id="Labeller::imageEditor" ref="classLabeller.html#a10a8d60561130914b59cc60c35d1e5f9" />
+      <keyword name="LabellerModel" id="LabellerModel" ref="classLabellerModel.html" />
+      <keyword name="imageFilesChanged" id="LabellerModel::imageFilesChanged" ref="classLabellerModel.html#aedca695c6bede47b116073d2ebb3a9c7" />
+      <keyword name="imageFileResultChanged" id="LabellerModel::imageFileResultChanged" ref="classLabellerModel.html#a8f8826eb7fd49cd056dd1ef91bff3201" />
+      <keyword name="classNamesChanged" id="LabellerModel::classNamesChanged" ref="classLabellerModel.html#aa45825cc0fa3fcd585f6906702fecb33" />
+      <keyword name="annotationFileChanged" id="LabellerModel::annotationFileChanged" ref="classLabellerModel.html#abae36e55ccd6517914c3fd3189d0840d" />
+      <keyword name="imageDirChanged" id="LabellerModel::imageDirChanged" ref="classLabellerModel.html#a1d2312092edb0c61ef04c00699fb349f" />
+      <keyword name="classFileChanged" id="LabellerModel::classFileChanged" ref="classLabellerModel.html#aa804a526d0ccd15b11039a010ee30b1f" />
+      <keyword name="classListChangedSorted" id="LabellerModel::classListChangedSorted" ref="classLabellerModel.html#abe7f7cbb80dc3d7c0f93d363163cd38b" />
+      <keyword name="imageFilesChangedSorted" id="LabellerModel::imageFilesChangedSorted" ref="classLabellerModel.html#a24dd2df7a125b45da788f260bc6e7b04" />
+      <keyword name="selectedImageFileChanged" id="LabellerModel::selectedImageFileChanged" ref="classLabellerModel.html#a35cd613c9bfd210eeb32d87d1fbcb2f7" />
+      <keyword name="clearClassItemLineEdit" id="LabellerModel::clearClassItemLineEdit" ref="classLabellerModel.html#a37007b91ec12e44f7e779ada2ca0a779" />
+      <keyword name="LabellerModel" id="LabellerModel::LabellerModel" ref="classLabellerModel.html#a8ce58d5d39d8278e7dd82ea3f207f663" />
+      <keyword name="getImageFiles" id="LabellerModel::getImageFiles" ref="classLabellerModel.html#adcd9fa21ed9f4a494432077ca85f1553" />
+      <keyword name="getClassNames" id="LabellerModel::getClassNames" ref="classLabellerModel.html#ae47b483c763d68be74ba544b3d6f8944" />
+      <keyword name="getAnnotationFile" id="LabellerModel::getAnnotationFile" ref="classLabellerModel.html#aaed0c2907cd812511a774bf5394928b1" />
+      <keyword name="getImageDir" id="LabellerModel::getImageDir" ref="classLabellerModel.html#a08c33edb9a1469ba43f10cb7baf86c2d" />
+      <keyword name="getNameFile" id="LabellerModel::getNameFile" ref="classLabellerModel.html#a288660912a27883ab7242db1138ad65d" />
+      <keyword name="getSelectedImageFile" id="LabellerModel::getSelectedImageFile" ref="classLabellerModel.html#aaf2162e0043c3a725cfa8d8a6aea05c8" />
+      <keyword name="getImageFileResult" id="LabellerModel::getImageFileResult" ref="classLabellerModel.html#aa3e76748f0dab5b8d4c227b2c01955ca" />
+      <keyword name="getClassListSorting" id="LabellerModel::getClassListSorting" ref="classLabellerModel.html#a206d29135e6c353d48bcbbb631f6b733" />
+      <keyword name="getImageFilesSorting" id="LabellerModel::getImageFilesSorting" ref="classLabellerModel.html#a08f11856309a198db66cf02483534738" />
+      <keyword name="updateImageFiles" id="LabellerModel::updateImageFiles" ref="classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa" />
+      <keyword name="updateImageFiles" id="LabellerModel::updateImageFiles" ref="classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f" />
+      <keyword name="updateClassNames" id="LabellerModel::updateClassNames" ref="classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda" />
+      <keyword name="addClassName" id="LabellerModel::addClassName" ref="classLabellerModel.html#a727e984982fc9b8099d39f5bef3a6478" />
+      <keyword name="updateAnnotationFile" id="LabellerModel::updateAnnotationFile" ref="classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf" />
+      <keyword name="updateimageDir" id="LabellerModel::updateimageDir" ref="classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907" />
+      <keyword name="updateNameFile" id="LabellerModel::updateNameFile" ref="classLabellerModel.html#a53d091ac03750ecf9083566345d64caa" />
+      <keyword name="updateSelectedImageFile" id="LabellerModel::updateSelectedImageFile" ref="classLabellerModel.html#a8a41825f1400708cf9521d7fc66a0fe1" />
+      <keyword name="updateClassListSorting" id="LabellerModel::updateClassListSorting" ref="classLabellerModel.html#a7a7df19b8c27d1182d39c870305ab42a" />
+      <keyword name="updateImageFilesSorting" id="LabellerModel::updateImageFilesSorting" ref="classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f" />
+      <keyword name="imageFiles" id="LabellerModel::imageFiles" ref="classLabellerModel.html#ad467d9a2b39ef17a4ea130fefc9b1bcd" />
+      <keyword name="classNames" id="LabellerModel::classNames" ref="classLabellerModel.html#aa841785453bf06727d564df57708d53b" />
+      <keyword name="annotationFile" id="LabellerModel::annotationFile" ref="classLabellerModel.html#a4f3806c5f1c9a1998092de7f1cef32e9" />
+      <keyword name="nameFile" id="LabellerModel::nameFile" ref="classLabellerModel.html#ac1ce3fb50725d0db3dbe799115a21c96" />
+      <keyword name="imageDir" id="LabellerModel::imageDir" ref="classLabellerModel.html#ac78ecd7c658d3428e8a0a0b0795bff31" />
+      <keyword name="selectedImageFile" id="LabellerModel::selectedImageFile" ref="classLabellerModel.html#a2861d615a6e936565e9ce0df0fde18b7" />
+      <keyword name="imageFileResult" id="LabellerModel::imageFileResult" ref="classLabellerModel.html#ac9556a64561afca87d003fd1730e8a6f" />
+      <keyword name="imageFilesSorting" id="LabellerModel::imageFilesSorting" ref="classLabellerModel.html#adbcce001e285f1806d36e67f2cfaefa0" />
+      <keyword name="classListSorting" id="LabellerModel::classListSorting" ref="classLabellerModel.html#a177351afad036a657a147a43362e9ec8" />
+      <keyword name="NameAsc" id="LabellerModel::NameAsc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa" />
+      <keyword name="NameDesc" id="LabellerModel::NameDesc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f" />
+      <keyword name="DateAsc" id="LabellerModel::DateAsc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a63f13912df2fded9b02b364fa948aa91" />
+      <keyword name="DateDesc" id="LabellerModel::DateDesc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e" />
+      <keyword name="None" id="LabellerModel::None" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72" />
+      <keyword name="StringDateHash" id="StringDateHash" ref="classStringDateHash.html" />
+      <keyword name="get" id="StringDateHash::get" ref="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776" />
+      <keyword name="put" id="StringDateHash::put" ref="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3" />
+      <keyword name="remove" id="StringDateHash::remove" ref="classStringDateHash.html#a4663a497494184edefcb0fd268f13823" />
+      <keyword name="getSize" id="StringDateHash::getSize" ref="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d" />
+      <keyword name="getCapacity" id="StringDateHash::getCapacity" ref="classStringDateHash.html#a4ae3a92247f6ba0fb3a7664cfa2a6b6e" />
+      <keyword name="getKeys" id="StringDateHash::getKeys" ref="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9" />
+      <keyword name="sortByKeyAsc" id="StringDateHash::sortByKeyAsc" ref="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88" />
+      <keyword name="sortByKeyDesc" id="StringDateHash::sortByKeyDesc" ref="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c" />
+      <keyword name="sortByDateAsc" id="StringDateHash::sortByDateAsc" ref="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b" />
+      <keyword name="sortByDateDesc" id="StringDateHash::sortByDateDesc" ref="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691" />
+      <keyword name="hashFunc" id="StringDateHash::hashFunc" ref="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a" />
+      <keyword name="merge" id="StringDateHash::merge" ref="classStringDateHash.html#a7ed5017d2b84493381f171ee28f105cb" />
+      <keyword name="mergesort" id="StringDateHash::mergesort" ref="classStringDateHash.html#a07cc8156b6248d3f3c031e0454ff6090" />
+      <keyword name="StringDateHash" id="StringDateHash::StringDateHash" ref="classStringDateHash.html#a317feeb412f02c018d12911e07863812" />
+      <keyword name="operator=" id="StringDateHash::operator=" ref="classStringDateHash.html#ad66c8e723d8beb1615e09a3784e4e2e5" />
+      <keyword name="capacity" id="StringDateHash::capacity" ref="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b" />
+      <keyword name="table" id="StringDateHash::table" ref="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1" />
+    </keywords>
+    <files>
+      <file>tabs.css</file>
+      <file>tab_a.png</file>
+      <file>tab_b.png</file>
+      <file>tab_h.png</file>
+      <file>tab_s.png</file>
+      <file>nav_h.png</file>
+      <file>nav_f.png</file>
+      <file>bc_s.png</file>
+      <file>doxygen.png</file>
+      <file>closed.png</file>
+      <file>open.png</file>
+      <file>bdwn.png</file>
+      <file>sync_on.png</file>
+      <file>sync_off.png</file>
+      <file>doxygen.css</file>
+      <file>jquery.js</file>
+      <file>dynsections.js</file>
+      <file>search/search_l.png</file>
+      <file>search/search_m.png</file>
+      <file>search/search_r.png</file>
+      <file>search/close.png</file>
+      <file>search/mag_sel.png</file>
+      <file>search/search.css</file>
+      <file>search/search.js</file>
+      <file>custom__resizer_8h_source.html</file>
+      <file>image__editor_8h_source.html</file>
+      <file>labeller_8h_source.html</file>
+      <file>labeller__model_8h_source.html</file>
+      <file>string__date__hash_8h_source.html</file>
+      <file>classCustomResizer.html</file>
+      <file>classCustomResizer.png</file>
+      <file>classCustomResizer-members.html</file>
+      <file>classCustomResizer_1_1HandleItem.html</file>
+      <file>classCustomResizer_1_1HandleItem.png</file>
+      <file>classCustomResizer_1_1HandleItem-members.html</file>
+      <file>classHashNode.html</file>
+      <file>classHashNode-members.html</file>
+      <file>classImageEditor.html</file>
+      <file>classImageEditor.png</file>
+      <file>classImageEditor-members.html</file>
+      <file>classLabeller.html</file>
+      <file>classLabeller.png</file>
+      <file>classLabeller-members.html</file>
+      <file>classLabellerModel.html</file>
+      <file>classLabellerModel.png</file>
+      <file>classLabellerModel-members.html</file>
+      <file>classStringDateHash.html</file>
+      <file>classStringDateHash-members.html</file>
+      <file>dir_1e771ff450ae847412a8c28572c155bb.html</file>
+      <file>index.html</file>
+      <file>annotated.html</file>
+      <file>classes.html</file>
+      <file>hierarchy.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_vars.html</file>
+      <file>functions_enum.html</file>
+      <file>functions_enum.html</file>
+      <file>functions_enum.html</file>
+      <file>functions_eval.html</file>
+      <file>functions_eval.html</file>
+      <file>functions_eval.html</file>
+      <file>functions_eval.html</file>
+      <file>files.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

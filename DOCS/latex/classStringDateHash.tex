@@ -1,0 +1,152 @@
+\hypertarget{classStringDateHash}{}\doxysection{String\+Date\+Hash Class Reference}
+\label{classStringDateHash}\index{StringDateHash@{StringDateHash}}
+
+
+Custom Hash table container with {\ttfamily Q\+String} as key and {\ttfamily Q\+Date} as value.  
+
+
+
+
+{\ttfamily \#include $<$string\+\_\+date\+\_\+hash.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classStringDateHash_ac65158fe777fda8740b11b1b6a2f6776}{get}} (const Q\+String \&key, Q\+Date\+Time \&value)
+\item 
+void \mbox{\hyperlink{classStringDateHash_aff45a0cfae3f2eeb08ff8c2935a13cd3}{put}} (const Q\+String \&key, const Q\+Date\+Time \&value)
+\item 
+void \mbox{\hyperlink{classStringDateHash_a4663a497494184edefcb0fd268f13823}{remove}} (const Q\+String \&key)
+\item 
+int \mbox{\hyperlink{classStringDateHash_aa645fda12ca67d34b3303fa2f81d063d}{get\+Size}} () const
+\item 
+int \mbox{\hyperlink{classStringDateHash_a4ae3a92247f6ba0fb3a7664cfa2a6b6e}{get\+Capacity}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classStringDateHash_afaca266408cad9637f4b99f1130200d9}{get\+Keys}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classStringDateHash_ad1e3379a9667b626bed7f6f58a318f88}{sort\+By\+Key\+Asc}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classStringDateHash_abfcef68abd0d19df80be665f06085f6c}{sort\+By\+Key\+Desc}} () const
+\item 
+Q\+String\+List \mbox{\hyperlink{classStringDateHash_a7b52d017df8b8bcd63613e8595319c5b}{sort\+By\+Date\+Asc}} ()
+\item 
+Q\+String\+List \mbox{\hyperlink{classStringDateHash_a785f8e449c42dc13f029f41f4c9d7691}{sort\+By\+Date\+Desc}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStringDateHash_a1bd703fbfb07c231590663c25a8c7c4a}\label{classStringDateHash_a1bd703fbfb07c231590663c25a8c7c4a}} 
+int \mbox{\hyperlink{classStringDateHash_a1bd703fbfb07c231590663c25a8c7c4a}{hash\+Func}} (const Q\+String \&key) const
+\begin{DoxyCompactList}\small\item\em Hash function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStringDateHash_a7ed5017d2b84493381f171ee28f105cb}\label{classStringDateHash_a7ed5017d2b84493381f171ee28f105cb}} 
+void {\bfseries merge} (\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$begin, \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$middle, \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$end, \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$res)
+\item 
+\mbox{\Hypertarget{classStringDateHash_a07cc8156b6248d3f3c031e0454ff6090}\label{classStringDateHash_a07cc8156b6248d3f3c031e0454ff6090}} 
+void {\bfseries mergesort} (\mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$begin, \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$end, \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$res)
+\item 
+\mbox{\Hypertarget{classStringDateHash_a317feeb412f02c018d12911e07863812}\label{classStringDateHash_a317feeb412f02c018d12911e07863812}} 
+{\bfseries String\+Date\+Hash} (const \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} \&other)
+\item 
+\mbox{\Hypertarget{classStringDateHash_ad66c8e723d8beb1615e09a3784e4e2e5}\label{classStringDateHash_ad66c8e723d8beb1615e09a3784e4e2e5}} 
+const \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} \& {\bfseries operator=} (const \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStringDateHash_a0171c44a3381e9a3a55d324a60735a8b}\label{classStringDateHash_a0171c44a3381e9a3a55d324a60735a8b}} 
+int \mbox{\hyperlink{classStringDateHash_a0171c44a3381e9a3a55d324a60735a8b}{capacity}} = 1
+\begin{DoxyCompactList}\small\item\em Container for total capacity of the table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStringDateHash_a26b83fcc05bf8b853fe9bc1caad901f1}\label{classStringDateHash_a26b83fcc05bf8b853fe9bc1caad901f1}} 
+std\+::vector$<$ \mbox{\hyperlink{classHashNode}{Hash\+Node}} $\ast$ $>$ \mbox{\hyperlink{classStringDateHash_a26b83fcc05bf8b853fe9bc1caad901f1}{table}}
+\begin{DoxyCompactList}\small\item\em Container for the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom Hash table container with {\ttfamily Q\+String} as key and {\ttfamily Q\+Date} as value. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStringDateHash_ac65158fe777fda8740b11b1b6a2f6776}\label{classStringDateHash_ac65158fe777fda8740b11b1b6a2f6776}} 
+\index{StringDateHash@{StringDateHash}!get@{get}}
+\index{get@{get}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily bool String\+Date\+Hash\+::get (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{key,  }\item[{Q\+Date\+Time \&}]{value }\end{DoxyParamCaption})}
+
+Returns if value exists 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStringDateHash_a4ae3a92247f6ba0fb3a7664cfa2a6b6e}\label{classStringDateHash_a4ae3a92247f6ba0fb3a7664cfa2a6b6e}} 
+\index{StringDateHash@{StringDateHash}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int String\+Date\+Hash\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily capacity} \mbox{\Hypertarget{classStringDateHash_afaca266408cad9637f4b99f1130200d9}\label{classStringDateHash_afaca266408cad9637f4b99f1130200d9}} 
+\index{StringDateHash@{StringDateHash}!getKeys@{getKeys}}
+\index{getKeys@{getKeys}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{getKeys()}{getKeys()}}
+{\footnotesize\ttfamily Q\+String\+List String\+Date\+Hash\+::get\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a list of all keys \mbox{\Hypertarget{classStringDateHash_aa645fda12ca67d34b3303fa2f81d063d}\label{classStringDateHash_aa645fda12ca67d34b3303fa2f81d063d}} 
+\index{StringDateHash@{StringDateHash}!getSize@{getSize}}
+\index{getSize@{getSize}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int String\+Date\+Hash\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns total number of values stored in the hash table \mbox{\Hypertarget{classStringDateHash_aff45a0cfae3f2eeb08ff8c2935a13cd3}\label{classStringDateHash_aff45a0cfae3f2eeb08ff8c2935a13cd3}} 
+\index{StringDateHash@{StringDateHash}!put@{put}}
+\index{put@{put}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void String\+Date\+Hash\+::put (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{key,  }\item[{const Q\+Date\+Time \&}]{value }\end{DoxyParamCaption})}
+
+Adds or updates an hashnode in the hash table 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStringDateHash_a4663a497494184edefcb0fd268f13823}\label{classStringDateHash_a4663a497494184edefcb0fd268f13823}} 
+\index{StringDateHash@{StringDateHash}!remove@{remove}}
+\index{remove@{remove}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void String\+Date\+Hash\+::remove (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{key }\end{DoxyParamCaption})}
+
+Removed hashnode in the table 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStringDateHash_a7b52d017df8b8bcd63613e8595319c5b}\label{classStringDateHash_a7b52d017df8b8bcd63613e8595319c5b}} 
+\index{StringDateHash@{StringDateHash}!sortByDateAsc@{sortByDateAsc}}
+\index{sortByDateAsc@{sortByDateAsc}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{sortByDateAsc()}{sortByDateAsc()}}
+{\footnotesize\ttfamily Q\+String\+List String\+Date\+Hash\+::sort\+By\+Date\+Asc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a list of all key values sorted by ascending order of dates \mbox{\Hypertarget{classStringDateHash_a785f8e449c42dc13f029f41f4c9d7691}\label{classStringDateHash_a785f8e449c42dc13f029f41f4c9d7691}} 
+\index{StringDateHash@{StringDateHash}!sortByDateDesc@{sortByDateDesc}}
+\index{sortByDateDesc@{sortByDateDesc}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{sortByDateDesc()}{sortByDateDesc()}}
+{\footnotesize\ttfamily Q\+String\+List String\+Date\+Hash\+::sort\+By\+Date\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a list of all key values sorted by descending order of dates \mbox{\Hypertarget{classStringDateHash_ad1e3379a9667b626bed7f6f58a318f88}\label{classStringDateHash_ad1e3379a9667b626bed7f6f58a318f88}} 
+\index{StringDateHash@{StringDateHash}!sortByKeyAsc@{sortByKeyAsc}}
+\index{sortByKeyAsc@{sortByKeyAsc}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{sortByKeyAsc()}{sortByKeyAsc()}}
+{\footnotesize\ttfamily Q\+String\+List String\+Date\+Hash\+::sort\+By\+Key\+Asc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a list of all key values sorted by ascending \mbox{\Hypertarget{classStringDateHash_abfcef68abd0d19df80be665f06085f6c}\label{classStringDateHash_abfcef68abd0d19df80be665f06085f6c}} 
+\index{StringDateHash@{StringDateHash}!sortByKeyDesc@{sortByKeyDesc}}
+\index{sortByKeyDesc@{sortByKeyDesc}!StringDateHash@{StringDateHash}}
+\doxysubsubsection{\texorpdfstring{sortByKeyDesc()}{sortByKeyDesc()}}
+{\footnotesize\ttfamily Q\+String\+List String\+Date\+Hash\+::sort\+By\+Key\+Desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a list of all key values sorted by descending 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/string\+\_\+date\+\_\+hash.\+h\item 
+S\+R\+C/string\+\_\+date\+\_\+hash.\+cpp\end{DoxyCompactItemize}

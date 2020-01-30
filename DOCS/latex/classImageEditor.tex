@@ -1,0 +1,363 @@
+\hypertarget{classImageEditor}{}\doxysection{Image\+Editor Class Reference}
+\label{classImageEditor}\index{ImageEditor@{ImageEditor}}
+
+
+Custom image editor component for annotating images and labelling images.  
+
+
+
+
+{\ttfamily \#include $<$image\+\_\+editor.\+h$>$}
+
+Inheritance diagram for Image\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classImageEditor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} \{ \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236}{Draw}}, 
+\mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840}{Text}}, 
+\mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce}{Select}}
+ \}
+\begin{DoxyCompactList}\small\item\em Cursor type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}{delete\+Selected\+Item}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a7b39d701944f2fc3972572c11238afa8}{copy\+Selected\+Item}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a1a439d3b73b68d6517719bf543234cde}{paste\+Selected\+Item}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a2070e3479702b26262222353e1d12377}{paste\+Selected\+Item\+In\+Place}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageEditor_a1a0faeeafdb9f9bdc7bfb7a4dcd628a9}{cursor\+Type\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageEditor_a0986a0acf551395d35a3d4d96f1f606c}{set\+Image}} (const Q\+String file\+Name)
+\item 
+void \mbox{\hyperlink{classImageEditor_a19d576141efaf65da9bdfddc75d5c805}{update\+Cursor\+Type}} (const \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} new\+Cursor\+Type)
+\item 
+void \mbox{\hyperlink{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}{update\+Class\+Label}} (const Q\+String new\+Class\+Label)
+\item 
+void \mbox{\hyperlink{classImageEditor_add222524e3faee21eec56abeb2b41ed6}{create\+Actions}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a98b81a7984589a6f472ec62cda5e3de4}{clear\+Items}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_ae93759b3cede9e9519ca4425e03d9a9c}{save\+Image\+State}} ()
+\item 
+Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+RectF $>$ $>$ \mbox{\hyperlink{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}{get\+Application\+Rect\+State}} () const
+\item 
+\mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} \mbox{\hyperlink{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}{get\+Cursor\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageEditor_a116954c5af1070cb3b5392f0dfb03d6a}{mouse\+Press\+Event}} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}{mouse\+Move\+Event}} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classImageEditor_ad728ada9f73a1287323a86e766212eec}{mouse\+Release\+Event}} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}{context\+Menu\+Event}} (Q\+Graphics\+Scene\+Context\+Menu\+Event $\ast$event) override
+\item 
+void \mbox{\hyperlink{classImageEditor_a89218dd7b0ce08875de40b61d1e12a6b}{key\+Press\+Event}} (Q\+Key\+Event $\ast$event) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageEditor_aad7a36a8341b4018fe6f7036db8a1f45}{draw\+Rectangle}} (const Q\+RectF new\+Rectangle)
+\item 
+void \mbox{\hyperlink{classImageEditor_a617c513c7caa63acd2ccd2382eb9106a}{draw\+Text}} (const Q\+String new\+Text, const Q\+PointF new\+Point)
+\item 
+void \mbox{\hyperlink{classImageEditor_ad52e5e0927c367bca83d8b0c74219974}{open\+Image}} (const Q\+String file\+Name)
+\item 
+bool \mbox{\hyperlink{classImageEditor_aff34ce1abfe216be62ce72e95454c1a8}{saved\+State\+Exists}} (const Q\+String file\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImageEditor_a5ba34537c42ad7f57a9eed398d360aee}\label{classImageEditor_a5ba34537c42ad7f57a9eed398d360aee}} 
+bool \mbox{\hyperlink{classImageEditor_a5ba34537c42ad7f57a9eed398d360aee}{image\+Set}}
+\begin{DoxyCompactList}\small\item\em Boolean for whether or not an image is set for better performance with comparisson operators. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_af6bcc04b8fde6f0600f545af113b60aa}\label{classImageEditor_af6bcc04b8fde6f0600f545af113b60aa}} 
+bool \mbox{\hyperlink{classImageEditor_af6bcc04b8fde6f0600f545af113b60aa}{drawing}}
+\begin{DoxyCompactList}\small\item\em Boolean for drawing state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a8bd0011bd75752c1d7d1fe67efd72b6f}\label{classImageEditor_a8bd0011bd75752c1d7d1fe67efd72b6f}} 
+bool \mbox{\hyperlink{classImageEditor_a8bd0011bd75752c1d7d1fe67efd72b6f}{clipbord}}
+\begin{DoxyCompactList}\small\item\em Boolean for for whether clipobord containers are empty or not for better performance with comparisson operators. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a7cc7b0f748c522ea1dc0e047d493c5ad}\label{classImageEditor_a7cc7b0f748c522ea1dc0e047d493c5ad}} 
+\mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} \mbox{\hyperlink{classImageEditor_a7cc7b0f748c522ea1dc0e047d493c5ad}{cursor\+Type}}
+\begin{DoxyCompactList}\small\item\em Container for cursor state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a1e7ea34f1f876fc69864ba8a2e05bcdf}\label{classImageEditor_a1e7ea34f1f876fc69864ba8a2e05bcdf}} 
+Q\+String \mbox{\hyperlink{classImageEditor_a1e7ea34f1f876fc69864ba8a2e05bcdf}{class\+Label}}
+\begin{DoxyCompactList}\small\item\em Container for class state (Text that would be added) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_abb395a59c68778495558677b04caf1d7}\label{classImageEditor_abb395a59c68778495558677b04caf1d7}} 
+Q\+String \mbox{\hyperlink{classImageEditor_abb395a59c68778495558677b04caf1d7}{curr\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Container for file name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a67761379e97907f6232473b6ae22ca05}\label{classImageEditor_a67761379e97907f6232473b6ae22ca05}} 
+Q\+Point \mbox{\hyperlink{classImageEditor_a67761379e97907f6232473b6ae22ca05}{origin}}
+\begin{DoxyCompactList}\small\item\em Point where mouse pressed used Q\+Rubber\+Band. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a2869fca3fc610a18e90c713aa15d4246}\label{classImageEditor_a2869fca3fc610a18e90c713aa15d4246}} 
+Q\+Point \mbox{\hyperlink{classImageEditor_a2869fca3fc610a18e90c713aa15d4246}{last\+Point}}
+\begin{DoxyCompactList}\small\item\em Point where mouse released used Q\+Rubber\+Band. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a601196bdc1c4b1e66313bfae02de08fb}\label{classImageEditor_a601196bdc1c4b1e66313bfae02de08fb}} 
+Q\+PointF \mbox{\hyperlink{classImageEditor_a601196bdc1c4b1e66313bfae02de08fb}{originF}}
+\begin{DoxyCompactList}\small\item\em Point where mouse pressed used by rectangle being drawn. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_aaf00b11bf66f5d8d92cec7f99c4ed984}\label{classImageEditor_aaf00b11bf66f5d8d92cec7f99c4ed984}} 
+Q\+PointF \mbox{\hyperlink{classImageEditor_aaf00b11bf66f5d8d92cec7f99c4ed984}{last\+PointF}}
+\begin{DoxyCompactList}\small\item\em Point where mouse released used by rectangle being drawn. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a25e4e09a5d02878601eb16fe35547dfd}\label{classImageEditor_a25e4e09a5d02878601eb16fe35547dfd}} 
+Q\+String \mbox{\hyperlink{classImageEditor_a25e4e09a5d02878601eb16fe35547dfd}{clipbord\+Text}}
+\begin{DoxyCompactList}\small\item\em Container for text copied by user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_ac59bf651ace474b2030c0b22c5b169a3}\label{classImageEditor_ac59bf651ace474b2030c0b22c5b169a3}} 
+Q\+PointF \mbox{\hyperlink{classImageEditor_ac59bf651ace474b2030c0b22c5b169a3}{clipbord\+Point}}
+\begin{DoxyCompactList}\small\item\em Container for position of item copied by user. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_ac0153d4f0cc4f4cdc9c6c228979f86a4}\label{classImageEditor_ac0153d4f0cc4f4cdc9c6c228979f86a4}} 
+Q\+PointF \mbox{\hyperlink{classImageEditor_ac0153d4f0cc4f4cdc9c6c228979f86a4}{clipbord\+Click\+Point}}
+\begin{DoxyCompactList}\small\item\em Container for position of mouse when context menu was created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a29525b2ae281ac2e562407be9b1e753f}\label{classImageEditor_a29525b2ae281ac2e562407be9b1e753f}} 
+qreal \mbox{\hyperlink{classImageEditor_a29525b2ae281ac2e562407be9b1e753f}{clipbord\+Height}}
+\begin{DoxyCompactList}\small\item\em Contaier for height of Q\+Graphics\+Item which was copied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a6160484624a9b50872566152ab283574}\label{classImageEditor_a6160484624a9b50872566152ab283574}} 
+qreal \mbox{\hyperlink{classImageEditor_a6160484624a9b50872566152ab283574}{clipbord\+Width}}
+\begin{DoxyCompactList}\small\item\em Contaier for width of Q\+Graphics\+Item which was copied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a97dfaf9d9c6efa87b3531efb44b82079}\label{classImageEditor_a97dfaf9d9c6efa87b3531efb44b82079}} 
+Q\+Action $\ast$ {\bfseries copy\+Action}
+\item 
+\mbox{\Hypertarget{classImageEditor_a7aa8d9dad4f9c5305f7fd344409ee0d6}\label{classImageEditor_a7aa8d9dad4f9c5305f7fd344409ee0d6}} 
+Q\+Action $\ast$ {\bfseries paste\+Action}
+\item 
+\mbox{\Hypertarget{classImageEditor_af071bc217624330f8e9b1d978ebd54e5}\label{classImageEditor_af071bc217624330f8e9b1d978ebd54e5}} 
+Q\+Action $\ast$ {\bfseries delete\+Action}
+\item 
+\mbox{\Hypertarget{classImageEditor_a92ba20be2ef6bf550de2b570bd0a1425}\label{classImageEditor_a92ba20be2ef6bf550de2b570bd0a1425}} 
+Q\+Rubber\+Band $\ast$ {\bfseries rubber\+Band}
+\item 
+\mbox{\Hypertarget{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}\label{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}} 
+Q\+List$<$ \mbox{\hyperlink{classCustomResizer}{Custom\+Resizer}} $\ast$ $>$ \mbox{\hyperlink{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}{resizer\+Items}}
+\begin{DoxyCompactList}\small\item\em A list of resize components associated with each shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_ab7e117e99fc0a196149e6bdeb5aa240d}\label{classImageEditor_ab7e117e99fc0a196149e6bdeb5aa240d}} 
+Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+RectF $>$ $>$ \mbox{\hyperlink{classImageEditor_ab7e117e99fc0a196149e6bdeb5aa240d}{application\+Rect\+State}}
+\begin{DoxyCompactList}\small\item\em A container for information on recatangles drawn on the image and information of the relevant image file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_a02375b47e3f027d3c743cbe598ed444d}\label{classImageEditor_a02375b47e3f027d3c743cbe598ed444d}} 
+Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+PointF $>$ $>$ $>$ \mbox{\hyperlink{classImageEditor_a02375b47e3f027d3c743cbe598ed444d}{application\+Text\+State}}
+\begin{DoxyCompactList}\small\item\em A container for information on texts added on the image and information of the relevant image file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom image editor component for annotating images and labelling images. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}\label{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}} 
+\index{ImageEditor@{ImageEditor}!CursorType@{CursorType}}
+\index{CursorType@{CursorType}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{CursorType}{CursorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Image\+Editor\+::\+Cursor\+Type}}}
+
+
+
+Cursor type enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Draw@{Draw}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Draw@{Draw}}}\mbox{\Hypertarget{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236}\label{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236}} 
+Draw&Cursor for drawing shapes \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text@{Text}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Text@{Text}}}\mbox{\Hypertarget{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840}\label{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840}} 
+Text&Cursor for adding text \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Select@{Select}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Select@{Select}}}\mbox{\Hypertarget{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce}\label{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce}} 
+Select&Cursor for moving, copying, pasting and deleting shapes and text \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classImageEditor_a98b81a7984589a6f472ec62cda5e3de4}\label{classImageEditor_a98b81a7984589a6f472ec62cda5e3de4}} 
+\index{ImageEditor@{ImageEditor}!clearItems@{clearItems}}
+\index{clearItems@{clearItems}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{clearItems()}{clearItems()}}
+{\footnotesize\ttfamily void Image\+Editor\+::clear\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all items on the scene except the image \mbox{\Hypertarget{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}\label{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}} 
+\index{ImageEditor@{ImageEditor}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void Image\+Editor\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#context\+Menu\+Event}}\mbox{\Hypertarget{classImageEditor_a7b39d701944f2fc3972572c11238afa8}\label{classImageEditor_a7b39d701944f2fc3972572c11238afa8}} 
+\index{ImageEditor@{ImageEditor}!copySelectedItem@{copySelectedItem}}
+\index{copySelectedItem@{copySelectedItem}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{copySelectedItem}{copySelectedItem}}
+{\footnotesize\ttfamily void Image\+Editor\+::copy\+Selected\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Stores information of selected item in relevant containers \mbox{\Hypertarget{classImageEditor_add222524e3faee21eec56abeb2b41ed6}\label{classImageEditor_add222524e3faee21eec56abeb2b41ed6}} 
+\index{ImageEditor@{ImageEditor}!createActions@{createActions}}
+\index{createActions@{createActions}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{createActions()}{createActions()}}
+{\footnotesize\ttfamily void Image\+Editor\+::create\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates copy, paste and delete actions which is attached to the context menu created on right click on the image editor \mbox{\Hypertarget{classImageEditor_a1a0faeeafdb9f9bdc7bfb7a4dcd628a9}\label{classImageEditor_a1a0faeeafdb9f9bdc7bfb7a4dcd628a9}} 
+\index{ImageEditor@{ImageEditor}!cursorTypeChanged@{cursorTypeChanged}}
+\index{cursorTypeChanged@{cursorTypeChanged}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{cursorTypeChanged}{cursorTypeChanged}}
+{\footnotesize\ttfamily void Image\+Editor\+::cursor\+Type\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sends a signal to labeller class when cursor type changes \mbox{\Hypertarget{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}\label{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}} 
+\index{ImageEditor@{ImageEditor}!deleteSelectedItem@{deleteSelectedItem}}
+\index{deleteSelectedItem@{deleteSelectedItem}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{deleteSelectedItem}{deleteSelectedItem}}
+{\footnotesize\ttfamily void Image\+Editor\+::delete\+Selected\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Deletes selected Qgraphics item \mbox{\Hypertarget{classImageEditor_aad7a36a8341b4018fe6f7036db8a1f45}\label{classImageEditor_aad7a36a8341b4018fe6f7036db8a1f45}} 
+\index{ImageEditor@{ImageEditor}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}}
+{\footnotesize\ttfamily void Image\+Editor\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{const Q\+RectF}]{new\+Rectangle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adds Q\+Graphics\+Rect\+Item on scene 
+\begin{DoxyParams}{Parameters}
+{\em new\+Rectangle} & \mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qrectf.\+html}}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a617c513c7caa63acd2ccd2382eb9106a}\label{classImageEditor_a617c513c7caa63acd2ccd2382eb9106a}} 
+\index{ImageEditor@{ImageEditor}!drawText@{drawText}}
+\index{drawText@{drawText}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{drawText()}{drawText()}}
+{\footnotesize\ttfamily void Image\+Editor\+::draw\+Text (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Text,  }\item[{const Q\+PointF}]{new\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adds text on scene 
+\begin{DoxyParams}{Parameters}
+{\em new\+Text} & Text to be added \\
+\hline
+{\em new\+Point} & Position of text to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}\label{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}} 
+\index{ImageEditor@{ImageEditor}!getApplicationRectState@{getApplicationRectState}}
+\index{getApplicationRectState@{getApplicationRectState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{getApplicationRectState()}{getApplicationRectState()}}
+{\footnotesize\ttfamily Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+RectF $>$ $>$ Image\+Editor\+::get\+Application\+Rect\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a Hash Table containing information on recatangles drawn on the image and information of the relevant image file \mbox{\Hypertarget{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}\label{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}} 
+\index{ImageEditor@{ImageEditor}!getCursorType@{getCursorType}}
+\index{getCursorType@{getCursorType}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{getCursorType()}{getCursorType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Image\+Editor\+::\+Cursor\+Type}} Image\+Editor\+::get\+Cursor\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current state of the cursor \mbox{\Hypertarget{classImageEditor_a89218dd7b0ce08875de40b61d1e12a6b}\label{classImageEditor_a89218dd7b0ce08875de40b61d1e12a6b}} 
+\index{ImageEditor@{ImageEditor}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Image\+Editor\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#key\+Press\+Event}}\mbox{\Hypertarget{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}\label{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}} 
+\index{ImageEditor@{ImageEditor}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void Image\+Editor\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#mouse\+Move\+Event}}\mbox{\Hypertarget{classImageEditor_a116954c5af1070cb3b5392f0dfb03d6a}\label{classImageEditor_a116954c5af1070cb3b5392f0dfb03d6a}} 
+\index{ImageEditor@{ImageEditor}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Image\+Editor\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#mouse\+Press\+Event}}\mbox{\Hypertarget{classImageEditor_ad728ada9f73a1287323a86e766212eec}\label{classImageEditor_ad728ada9f73a1287323a86e766212eec}} 
+\index{ImageEditor@{ImageEditor}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Image\+Editor\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#mouse\+Release\+Event}}\mbox{\Hypertarget{classImageEditor_ad52e5e0927c367bca83d8b0c74219974}\label{classImageEditor_ad52e5e0927c367bca83d8b0c74219974}} 
+\index{ImageEditor@{ImageEditor}!openImage@{openImage}}
+\index{openImage@{openImage}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{openImage()}{openImage()}}
+{\footnotesize\ttfamily void Image\+Editor\+::open\+Image (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adds image on scene 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a1a439d3b73b68d6517719bf543234cde}\label{classImageEditor_a1a439d3b73b68d6517719bf543234cde}} 
+\index{ImageEditor@{ImageEditor}!pasteSelectedItem@{pasteSelectedItem}}
+\index{pasteSelectedItem@{pasteSelectedItem}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{pasteSelectedItem}{pasteSelectedItem}}
+{\footnotesize\ttfamily void Image\+Editor\+::paste\+Selected\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Creates Q\+Graphics\+Item based on information from relevant containers \mbox{\Hypertarget{classImageEditor_a2070e3479702b26262222353e1d12377}\label{classImageEditor_a2070e3479702b26262222353e1d12377}} 
+\index{ImageEditor@{ImageEditor}!pasteSelectedItemInPlace@{pasteSelectedItemInPlace}}
+\index{pasteSelectedItemInPlace@{pasteSelectedItemInPlace}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{pasteSelectedItemInPlace}{pasteSelectedItemInPlace}}
+{\footnotesize\ttfamily void Image\+Editor\+::paste\+Selected\+Item\+In\+Place (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Creates Q\+Graphics\+Item based on information from relevant containers and additonaly the mouse position \mbox{\Hypertarget{classImageEditor_aff34ce1abfe216be62ce72e95454c1a8}\label{classImageEditor_aff34ce1abfe216be62ce72e95454c1a8}} 
+\index{ImageEditor@{ImageEditor}!savedStateExists@{savedStateExists}}
+\index{savedStateExists@{savedStateExists}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{savedStateExists()}{savedStateExists()}}
+{\footnotesize\ttfamily bool Image\+Editor\+::saved\+State\+Exists (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Checks if image has any existing annotation and labels 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Absolute path to image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_ae93759b3cede9e9519ca4425e03d9a9c}\label{classImageEditor_ae93759b3cede9e9519ca4425e03d9a9c}} 
+\index{ImageEditor@{ImageEditor}!saveImageState@{saveImageState}}
+\index{saveImageState@{saveImageState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{saveImageState()}{saveImageState()}}
+{\footnotesize\ttfamily void Image\+Editor\+::save\+Image\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Saves postions of the text and shape into relevant Hash Tables \mbox{\Hypertarget{classImageEditor_a0986a0acf551395d35a3d4d96f1f606c}\label{classImageEditor_a0986a0acf551395d35a3d4d96f1f606c}} 
+\index{ImageEditor@{ImageEditor}!setImage@{setImage}}
+\index{setImage@{setImage}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{setImage()}{setImage()}}
+{\footnotesize\ttfamily void Image\+Editor\+::set\+Image (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name }\end{DoxyParamCaption})}
+
+Sets image being viewed on the editor
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Absolute path to an image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}\label{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}} 
+\index{ImageEditor@{ImageEditor}!updateClassLabel@{updateClassLabel}}
+\index{updateClassLabel@{updateClassLabel}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{updateClassLabel()}{updateClassLabel()}}
+{\footnotesize\ttfamily void Image\+Editor\+::update\+Class\+Label (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Class\+Label }\end{DoxyParamCaption})}
+
+Updates the text used when adding text on the image 
+\begin{DoxyParams}{Parameters}
+{\em new\+Class\+Label} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a19d576141efaf65da9bdfddc75d5c805}\label{classImageEditor_a19d576141efaf65da9bdfddc75d5c805}} 
+\index{ImageEditor@{ImageEditor}!updateCursorType@{updateCursorType}}
+\index{updateCursorType@{updateCursorType}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{updateCursorType()}{updateCursorType()}}
+{\footnotesize\ttfamily void Image\+Editor\+::update\+Cursor\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}}}]{new\+Cursor\+Type }\end{DoxyParamCaption})}
+
+Updates cursor type 
+\begin{DoxyParams}{Parameters}
+{\em new\+Cursor\+Type} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/image\+\_\+editor.\+h\item 
+S\+R\+C/image\+\_\+editor.\+cpp\end{DoxyCompactItemize}
