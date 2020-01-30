@@ -25,6 +25,12 @@ public:
         Select /*!< Cursor for moving, copying, pasting and deleting shapes and text */
     };
 
+    //! Annotation Shape enum
+    enum AnnotationShapeType {
+        Rectangle, /*!< For drawing rectangles */
+        FreeHand /*!< For drawing free hand */
+    };
+
     /*!
      *  Sets image being viewed on the editor
 
@@ -33,10 +39,16 @@ public:
     void setImage(const QString fileName);
 
     /*!
-     *  Updates cursor type
+     *  Updates `cursorType`
      *  @param newCursorType
     */
     void updateCursorType(const CursorType newCursorType);
+
+    /*!
+     *  Updates `annotationShape`
+     *  @param newCursorType
+    */
+    void updateAnnotationShapeType(const AnnotationShapeType newAnnotationShape);
 
     /*!
      *  Updates the text used when adding text on the image
@@ -61,15 +73,24 @@ public:
     void saveImageState();
 
     /*!
-     *  Returns a Hash Table containing information on recatangles drawn on the image
-     *  and information of the relevant image file
+     *  Returns `applicationRectState`
     */
     QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
     /*!
-     *  Returns the current state of the cursor
+     *  Returns `applicationTextState`
+    */
+    QHash<QString, QList<QPair<QString, QPointF>>> getApplicationTextState() const;
+
+    /*!
+     *  Returns `cursorType`
     */
     CursorType getCursorType() const;
+
+    /*!
+     *  Returns `annotationShape`
+    */
+    AnnotationShapeType getAnnotationShapeType() const;
 
 public slots:
 
@@ -134,6 +155,9 @@ private:
     //! Container for cursor state
     CursorType cursorType;
 
+    //! Container for state of shape being drawn
+    AnnotationShapeType annotationShape;
+
     //! Container for class state (Text that would be added)
     QString classLabel;
 
@@ -172,6 +196,9 @@ private:
     QAction *deleteAction;
 
     QRubberBand *rubberBand;
+
+    // Remeber to dump everything
+    QList<QPointF> clickPoints;
 
     //! A list of resize components associated with each shape
     QList<CustomResizer *> resizerItems;
@@ -213,6 +240,11 @@ signals:
      *  Sends a signal to labeller class when cursor type changes
      */
     void cursorTypeChanged();
+
+    /*!
+     *  Sends a signal to labeller class when annotation shape changes
+     */
+    void annotationShapeChanged();
 };
 
 #endif // IMAGEEDITOR_H

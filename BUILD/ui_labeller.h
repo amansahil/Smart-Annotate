@@ -35,6 +35,8 @@ public:
     QAction *actionPaste;
     QAction *actionSelect;
     QAction *actionDelete;
+    QAction *actionRectangle;
+    QAction *actionSmart_annotate;
     QWidget *centralwidget;
     QPushButton *imageBrowseButton;
     QLabel *label;
@@ -66,9 +68,12 @@ public:
     QLabel *cursorLabel;
     QLabel *label_6;
     QPushButton *restoreImages;
+    QLabel *label_7;
+    QLabel *shapeLabel;
     QMenuBar *menubar;
     QMenu *menuLabel;
     QMenu *menuEdit;
+    QMenu *menuShape;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Labeller)
@@ -88,6 +93,10 @@ public:
         actionSelect->setObjectName(QString::fromUtf8("actionSelect"));
         actionDelete = new QAction(Labeller);
         actionDelete->setObjectName(QString::fromUtf8("actionDelete"));
+        actionRectangle = new QAction(Labeller);
+        actionRectangle->setObjectName(QString::fromUtf8("actionRectangle"));
+        actionSmart_annotate = new QAction(Labeller);
+        actionSmart_annotate->setObjectName(QString::fromUtf8("actionSmart_annotate"));
         centralwidget = new QWidget(Labeller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
@@ -176,13 +185,19 @@ public:
         graphicsView->setGeometry(QRect(500, 40, 781, 651));
         cursorLabel = new QLabel(centralwidget);
         cursorLabel->setObjectName(QString::fromUtf8("cursorLabel"));
-        cursorLabel->setGeometry(QRect(600, 10, 151, 21));
+        cursorLabel->setGeometry(QRect(600, 10, 131, 21));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(500, 10, 91, 21));
         restoreImages = new QPushButton(centralwidget);
         restoreImages->setObjectName(QString::fromUtf8("restoreImages"));
         restoreImages->setGeometry(QRect(340, 70, 89, 25));
+        label_7 = new QLabel(centralwidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(740, 10, 91, 21));
+        shapeLabel = new QLabel(centralwidget);
+        shapeLabel->setObjectName(QString::fromUtf8("shapeLabel"));
+        shapeLabel->setGeometry(QRect(840, 10, 131, 21));
         Labeller->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Labeller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -191,6 +206,8 @@ public:
         menuLabel->setObjectName(QString::fromUtf8("menuLabel"));
         menuEdit = new QMenu(menubar);
         menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
+        menuShape = new QMenu(menubar);
+        menuShape->setObjectName(QString::fromUtf8("menuShape"));
         Labeller->setMenuBar(menubar);
         statusbar = new QStatusBar(Labeller);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -198,12 +215,15 @@ public:
 
         menubar->addAction(menuLabel->menuAction());
         menubar->addAction(menuEdit->menuAction());
+        menubar->addAction(menuShape->menuAction());
         menuLabel->addAction(actionMark_Object);
         menuLabel->addAction(actionAdd_Text);
         menuLabel->addAction(actionSelect);
         menuEdit->addAction(actionCopy);
         menuEdit->addAction(actionPaste);
         menuEdit->addAction(actionDelete);
+        menuShape->addAction(actionRectangle);
+        menuShape->addAction(actionSmart_annotate);
 
         retranslateUi(Labeller);
 
@@ -219,6 +239,8 @@ public:
         actionPaste->setText(QApplication::translate("Labeller", "Paste (Ctrl + V)", nullptr));
         actionSelect->setText(QApplication::translate("Labeller", "Select", nullptr));
         actionDelete->setText(QApplication::translate("Labeller", "Delete (Del)", nullptr));
+        actionRectangle->setText(QApplication::translate("Labeller", "Rectangle", nullptr));
+        actionSmart_annotate->setText(QApplication::translate("Labeller", "Smart annotate", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
@@ -244,8 +266,11 @@ public:
         cursorLabel->setText(QApplication::translate("Labeller", "Select Mode", nullptr));
         label_6->setText(QApplication::translate("Labeller", "Cursor Mode:", nullptr));
         restoreImages->setText(QApplication::translate("Labeller", "Restore", nullptr));
+        label_7->setText(QApplication::translate("Labeller", "Shape Mode:", nullptr));
+        shapeLabel->setText(QApplication::translate("Labeller", "Rectangle", nullptr));
         menuLabel->setTitle(QApplication::translate("Labeller", "Label", nullptr));
         menuEdit->setTitle(QApplication::translate("Labeller", "Edit", nullptr));
+        menuShape->setTitle(QApplication::translate("Labeller", "Shape", nullptr));
     } // retranslateUi
 
 };

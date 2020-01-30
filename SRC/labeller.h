@@ -87,6 +87,11 @@ private slots:
     void setCursorTypeLabel();
 
     /*!
+     *  Sets text for `shapeLabel`
+     */
+    void setShapeTypeLabel();
+
+    /*!
      *  Clears value of `classItemLineEdit`
      */
     void clearClassItemLineEdit();
@@ -209,5 +214,7 @@ private slots
      *  Triggered when the `saveButton` is clicked
      */
     void on_saveButton_clicked();
+    void on_actionRectangle_triggered();
+    void on_actionSmart_annotate_triggered();
 };
 #endif // LABELLER_H

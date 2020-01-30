@@ -359,7 +359,7 @@
      <rect>
       <x>600</x>
       <y>10</y>
-      <width>151</width>
+      <width>131</width>
       <height>21</height>
      </rect>
     </property>
@@ -393,6 +393,32 @@
      <string>Restore</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>10</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Shape Mode:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="shapeLabel">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>10</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rectangle</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -419,8 +445,16 @@
     <addaction name="actionPaste"/>
     <addaction name="actionDelete"/>
    </widget>
+   <widget class="QMenu" name="menuShape">
+    <property name="title">
+     <string>Shape</string>
+    </property>
+    <addaction name="actionRectangle"/>
+    <addaction name="actionSmart_annotate"/>
+   </widget>
    <addaction name="menuLabel"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuShape"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMark_Object">
@@ -451,6 +485,16 @@
   <action name="actionDelete">
    <property name="text">
     <string>Delete (Del)</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actionSmart_annotate">
+   <property name="text">
+    <string>Smart annotate</string>
    </property>
   </action>
  </widget>

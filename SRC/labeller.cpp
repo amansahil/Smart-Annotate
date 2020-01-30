@@ -136,6 +136,20 @@ void Labeller::setCursorTypeLabel()
     }
 }
 
+void Labeller::setShapeTypeLabel()
+{
+    const ImageEditor::AnnotationShapeType annotationShapeType = imageEditor->getAnnotationShapeType();
+
+    if(annotationShapeType == ImageEditor::AnnotationShapeType::FreeHand)
+    {
+        ui->shapeLabel->setText("Smart Annotate");
+    }
+    else
+    {
+        ui->shapeLabel->setText("Reactangle");
+    }
+}
+
 void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Draw); }
 
 void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Text); }
@@ -169,6 +183,8 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(selectedImageFileChanged()), this, SLOT(setSelectedImageFile()));
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
     connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
+    connect(imageEditor, SIGNAL(annotationShapeChanged()), this, SLOT(setShapeTypeLabel()));
+
 }
 
 // Controller methods
@@ -348,3 +364,7 @@ void Labeller::on_saveButton_clicked()
 
     // Some magic to save to annotation file
 }
+
+void Labeller::on_actionRectangle_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::Rectangle); }
+
+void Labeller::on_actionSmart_annotate_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::FreeHand); }

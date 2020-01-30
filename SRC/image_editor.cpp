@@ -1,6 +1,6 @@
 ﻿#include "image_editor.h"
 
-ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType(CursorType::Select), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
+ImageEditor::ImageEditor() : imageSet(false), drawing(false), clipbord(false), cursorType(CursorType::Select), annotationShape(Rectangle), classLabel(""), currFileName(""), clipbordText(""), rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
 }
@@ -17,7 +17,9 @@ void ImageEditor::createActions()
     connect(pasteAction, SIGNAL(triggered()), this, SLOT(pasteSelectedItemInPlace()));
 }
 
-ImageEditor::CursorType ImageEditor::getCursorType() const { return cursorType; };
+ImageEditor::CursorType ImageEditor::getCursorType() const { return cursorType; }
+
+ImageEditor::AnnotationShapeType ImageEditor::getAnnotationShapeType() const { return annotationShape; }
 
 void ImageEditor::setImage(const QString fileName)
 {
@@ -112,12 +114,23 @@ bool ImageEditor::savedStateExists(const QString fileName)
 
 QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { return applicationRectState; }
 
+QHash<QString, QList<QPair<QString, QPointF>>> ImageEditor::getApplicationTextState() const { return applicationTextState; }
+
 void ImageEditor::updateCursorType(const ImageEditor::CursorType newCursorType)
 {
     if (imageSet && cursorType != newCursorType)
     {
         cursorType = newCursorType;
         emit cursorTypeChanged();
+    }
+}
+
+void ImageEditor::updateAnnotationShapeType(const AnnotationShapeType newAnnotationShape)
+{
+    if (annotationShape != newAnnotationShape)
+    {
+        annotationShape = newAnnotationShape;
+        emit annotationShapeChanged();
     }
 }
 
@@ -138,8 +151,34 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
-            rubberBand->setGeometry(QRect(origin, QSize()));
-            rubberBand->show();
+            if(annotationShape == AnnotationShapeType::Rectangle) {
+                rubberBand->setGeometry(QRect(origin, QSize()));
+                rubberBand->show();
+            }
+            else
+            {
+                clickPoints.append(event->scenePos());
+
+                if(clickPoints.size() == 8)
+                {
+                    for(int i = 0; i < 8; i++)
+                    {
+                        if(i == 7)
+                        {
+                            QLineF lineF(clickPoints[7], clickPoints[0]);
+                            QGraphicsLineItem* item = this->addLine(lineF);
+                        }
+                        else
+                        {
+                            QLineF lineF(clickPoints[i], clickPoints[i+1]);
+                            QGraphicsLineItem* item = this->addLine(lineF);
+
+                        }
+                    }
+
+                    clickPoints.clear();
+                }
+            }
         }
         else if (cursorType == CursorType::Text && classLabel != "")
         {
@@ -157,7 +196,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton))
+        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton) && annotationShape == AnnotationShapeType::Rectangle)
         {
             drawing = true;
 
@@ -178,7 +217,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton && drawing)
+        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton && drawing && annotationShape == AnnotationShapeType::Rectangle)
         {
             rubberBand->hide();
 
