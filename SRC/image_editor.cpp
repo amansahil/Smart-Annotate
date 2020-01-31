@@ -55,6 +55,12 @@ void ImageEditor::setImage(const QString fileName)
         {
             drawText(applicationTextState.value(fileName).at(i).first, applicationTextState.value(fileName).at(i).second);
         }
+
+        for (int i = 0; i < applicationPolygonState.value(fileName).count(); i++)
+        {
+            drawPolygon(applicationPolygonState.value(fileName).at(i));
+        }
+
     }
 }
 
@@ -74,10 +80,12 @@ void ImageEditor::saveImageState()
     if (imageSet && currFileName != "")
     {
         QList<QRectF> rectItems;
+        QList<QPolygonF> polygonItems;
         QList<QPair<QString, QPointF>> textItems;
 
         for (int i = 0; i < ImageEditor::items().count(); i++)
         {
+            QGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<QGraphicsPolygonItem *>(ImageEditor::items().at(i));
             QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem *>(ImageEditor::items().at(i));
             QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem *>(ImageEditor::items().at(i));
 
@@ -94,8 +102,13 @@ void ImageEditor::saveImageState()
 
                 textItems.append(newTextItem);
             }
+            else if(polygonItem != nullptr)
+            {
+                polygonItems.append(polygonItem->polygon());
+            }
         }
 
+        applicationPolygonState[currFileName] = polygonItems;
         applicationRectState[currFileName] = rectItems;
         applicationTextState[currFileName] = textItems;
     }
@@ -113,8 +126,6 @@ bool ImageEditor::savedStateExists(const QString fileName)
 }
 
 QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { return applicationRectState; }
-
-QHash<QString, QList<QPair<QString, QPointF>>> ImageEditor::getApplicationTextState() const { return applicationTextState; }
 
 void ImageEditor::updateCursorType(const ImageEditor::CursorType newCursorType)
 {
@@ -337,6 +348,8 @@ void ImageEditor::pasteSelectedItem()
 {
     if (imageSet && clipbord)
     {
+        qDebug() << "Header:" <<  clipbordPoint;
+
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
 
@@ -352,9 +365,6 @@ void ImageEditor::pasteSelectedItem()
         {
             // Workaround to change position of polygon
             QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem(clipbordPolygon);
-            polygon->setX(x);
-            polygon->setX(y);
-
             drawPolygon(polygon, QPointF(x, y));
         }
 
@@ -366,6 +376,8 @@ void ImageEditor::pasteSelectedItemInPlace()
 {
     if (imageSet && clipbord)
     {
+        qDebug() << "Click:" <<  clipbordClickPoint;
+
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
@@ -386,16 +398,15 @@ void ImageEditor::pasteSelectedItemInPlace()
 }
 
 void ImageEditor::drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position)
-{
+{    
     QPen pen;
     pen.setBrush(Qt::blue);
     pen.setWidth(2);
 
+    // Workaround to change position of polygon
     QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon->polygon(), pen);
     polygon->setPos(position);
     polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
-
-    ImageEditor::update();
 }
 
 void ImageEditor::drawPolygon(const QPolygonF newPolygon)
@@ -404,7 +415,6 @@ void ImageEditor::drawPolygon(const QPolygonF newPolygon)
     pen.setBrush(Qt::blue);
     pen.setWidth(2);
 
-    // Workaround to change position of polygon
     QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
     polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
@@ -442,6 +452,7 @@ void ImageEditor::clearItems()
 
         if (savedStateExists(currFileName))
         {
+            applicationPolygonState.remove(currFileName);
             applicationRectState.remove(currFileName);
             applicationTextState.remove(currFileName);
         }

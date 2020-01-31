@@ -78,11 +78,6 @@ public:
     QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
     /*!
-     *  Returns `applicationTextState`
-    */
-    QHash<QString, QList<QPair<QString, QPointF>>> getApplicationTextState() const;
-
-    /*!
      *  Returns `cursorType`
     */
     CursorType getCursorType() const;
@@ -192,15 +187,16 @@ private:
     //! Container for position of mouse when context menu was created
     QPointF clipbordClickPoint;
 
-    //! Contaier for height of QGraphicsRectItem which was copied
+    //! Container for height of QGraphicsRectItem which was copied
     qreal clipbordHeight;
 
-    //! Contaier for width of QGraphicsRectItem which was copied
+    //! Container for width of QGraphicsRectItem which was copied
     qreal clipbordWidth;
 
-    //! Contaier for polygon of QGraphicsRectItem which was copied
+    //! Container for polygon of QGraphicsRectItem which was copied
     QPolygonF clipbordPolygon;
 
+    //! Container to identify what item has been copied
     ClipbordContent clipbordContent;
 
     QAction *copyAction;
@@ -217,6 +213,9 @@ private:
 
     //! A list of resize components associated with each shape
     QList<CustomResizer *> resizerItems;
+
+    //! A container for information on polygons drawn on the image and information of the relevant image file
+    QHash<QString, QList<QPolygonF>> applicationPolygonState;
 
     //! A container for information on recatangles drawn on the image and information of the relevant image file
     QHash<QString, QList<QRectF>> applicationRectState;
