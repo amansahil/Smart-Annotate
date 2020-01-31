@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right_406',['Right',['../classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0ad4f31ab9531d8acabce9e4f67736a530',1,'CustomResizer']]]
+  ['select_335',['Select',['../classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce',1,'ImageEditor']]]
 ];

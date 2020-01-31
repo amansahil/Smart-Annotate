@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['nameasc_71',['NameAsc',['../classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa',1,'LabellerModel']]],
-  ['namedesc_72',['NameDesc',['../classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32ad0cc1c60db2c015739b45157d624123f',1,'LabellerModel']]],
-  ['namefile_73',['nameFile',['../classLabellerModel.html#ac1ce3fb50725d0db3dbe799115a21c96',1,'LabellerModel']]],
-  ['none_74',['None',['../classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72',1,'LabellerModel']]]
+  ['mousemoveevent_79',['mouseMoveEvent',['../classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c',1,'ImageEditor']]],
+  ['mousepressevent_80',['mousePressEvent',['../classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a',1,'ImageEditor']]],
+  ['mousereleaseevent_81',['mouseReleaseEvent',['../classImageEditor.html#ad728ada9f73a1287323a86e766212eec',1,'ImageEditor']]]
 ];

@@ -1,14 +1,6 @@
 var searchData=
 [
-  ['updateannotationfile_143',['updateAnnotationFile',['../classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf',1,'LabellerModel']]],
-  ['updateclasslabel_144',['updateClassLabel',['../classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8',1,'ImageEditor']]],
-  ['updateclasslistsorting_145',['updateClassListSorting',['../classLabellerModel.html#a7a7df19b8c27d1182d39c870305ab42a',1,'LabellerModel']]],
-  ['updateclassnames_146',['updateClassNames',['../classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda',1,'LabellerModel']]],
-  ['updatecursortype_147',['updateCursorType',['../classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805',1,'ImageEditor']]],
-  ['updatehandleitempositions_148',['updateHandleItemPositions',['../classCustomResizer.html#ab973df5ea081715d217073fe513de5c9',1,'CustomResizer']]],
-  ['updateimagedir_149',['updateimageDir',['../classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907',1,'LabellerModel']]],
-  ['updateimagefiles_150',['updateImageFiles',['../classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa',1,'LabellerModel::updateImageFiles(const QFileInfoList newImageFiles)'],['../classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f',1,'LabellerModel::updateImageFiles(const QString newImageFileResult)']]],
-  ['updateimagefilessorting_151',['updateImageFilesSorting',['../classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f',1,'LabellerModel']]],
-  ['updatenamefile_152',['updateNameFile',['../classLabellerModel.html#a53d091ac03750ecf9083566345d64caa',1,'LabellerModel']]],
-  ['updateselectedimagefile_153',['updateSelectedImageFile',['../classLabellerModel.html#a8a41825f1400708cf9521d7fc66a0fe1',1,'LabellerModel']]]
+  ['table_153',['table',['../classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1',1,'StringDateHash']]],
+  ['text_154',['Text',['../classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840',1,'ImageEditor']]],
+  ['type_155',['type',['../classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c',1,'CustomResizer::HandleItem::type()'],['../classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2',1,'CustomResizer::type()']]]
 ];

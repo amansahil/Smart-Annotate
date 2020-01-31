@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['mousemoveevent_68',['mouseMoveEvent',['../classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c',1,'ImageEditor']]],
-  ['mousepressevent_69',['mousePressEvent',['../classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a',1,'ImageEditor']]],
-  ['mousereleaseevent_70',['mouseReleaseEvent',['../classImageEditor.html#ad728ada9f73a1287323a86e766212eec',1,'ImageEditor']]]
+  ['labeller_75',['Labeller',['../classLabeller.html',1,'']]],
+  ['labellermodel_76',['LabellerModel',['../classLabellerModel.html',1,'']]],
+  ['lastpoint_77',['lastPoint',['../classImageEditor.html#a2869fca3fc610a18e90c713aa15d4246',1,'ImageEditor']]],
+  ['lastpointf_78',['lastPointF',['../classImageEditor.html#aaf00b11bf66f5d8d92cec7f99c4ed984',1,'ImageEditor']]]
 ];

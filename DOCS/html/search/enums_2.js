@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sortingtype_300',['SortingType',['../classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32',1,'LabellerModel']]]
+  ['position_325',['Position',['../classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0',1,'CustomResizer']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['customresizer_154',['CustomResizer',['../classCustomResizer.html',1,'']]]
+  ['customresizer_168',['CustomResizer',['../classCustomResizer.html',1,'']]]
 ];

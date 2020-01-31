@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cursortype_298',['CursorType',['../classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b',1,'ImageEditor']]]
+  ['annotationshapetype_323',['AnnotationShapeType',['../classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700',1,'ImageEditor']]]
 ];
