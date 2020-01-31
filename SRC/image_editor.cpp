@@ -158,26 +158,6 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
             else
             {
                 clickPoints.append(event->scenePos());
-
-                if(clickPoints.size() == 8)
-                {
-                    for(int i = 0; i < 8; i++)
-                    {
-                        if(i == 7)
-                        {
-                            QLineF lineF(clickPoints[7], clickPoints[0]);
-                            QGraphicsLineItem* item = this->addLine(lineF);
-                        }
-                        else
-                        {
-                            QLineF lineF(clickPoints[i], clickPoints[i+1]);
-                            QGraphicsLineItem* item = this->addLine(lineF);
-
-                        }
-                    }
-
-                    clickPoints.clear();
-                }
             }
         }
         else if (cursorType == CursorType::Text && classLabel != "")
@@ -196,14 +176,30 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton) && annotationShape == AnnotationShapeType::Rectangle)
+        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton))
         {
             drawing = true;
 
-            lastPoint = event->screenPos();
-            lastPointF = event->scenePos();
+            if(annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
+            {
+                lastPoint = event->screenPos();
+                lastPointF = event->scenePos();
 
-            rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
+                rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
+            }
+            else
+            {
+                clickPoints.append(event->scenePos());
+
+                QPen pen;
+                pen.setBrush(Qt::blue);
+                pen.setWidth(1);
+
+                QLineF lineF(clickPoints[clickPoints.size() - 2], clickPoints[clickPoints.size() - 1]);
+                QGraphicsLineItem* item = this->addLine(lineF, pen);
+
+                clickLines.append(item);
+            }
         }
 
         if (cursorType == CursorType::Select)
@@ -217,11 +213,35 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet)
     {
-        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton && drawing && annotationShape == AnnotationShapeType::Rectangle)
+        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
-            rubberBand->hide();
+            if(annotationShape == ImageEditor::AnnotationShapeType::Rectangle) {
+                rubberBand->hide();
 
-            drawRectangle(QRectF(originF, lastPointF));
+                drawRectangle(QRectF(originF, lastPointF));
+            }
+            else
+            {
+                QPolygonF polygon;
+
+                for(int i =0; i < clickPoints.size(); i++)
+                {
+                    if(clickPoints.size() - 1 == i)
+                    {
+                        polygon << clickPoints[i] << clickPoints[0];
+                    }
+                    else
+                    {
+                        polygon << clickPoints[i] << clickPoints[i+1];
+                    }
+                }
+
+                drawPolygon(polygon);
+
+                qDeleteAll(clickLines.begin(), clickLines.end());
+                clickLines.clear();
+                clickPoints.clear();
+            }
 
             drawing = false;
         }
@@ -283,21 +303,32 @@ void ImageEditor::copySelectedItem()
 
         QGraphicsTextItem *textItem = qgraphicsitem_cast<QGraphicsTextItem *>(selectedItem);
 
+        QGraphicsRectItem *rectItem = qgraphicsitem_cast<QGraphicsRectItem *>(selectedItem);
+
+        QGraphicsPolygonItem *polygonItem = qgraphicsitem_cast<QGraphicsPolygonItem *>(selectedItem);
+
         clipbord = true;
 
-        if (textItem == nullptr)
+        if (rectItem)
         {
             const QRectF selectedReactangle = selectedItem->sceneBoundingRect();
 
-            clipbordText = "";
+            clipbordContent = ClipbordContent::Rect;
             clipbordPoint = selectedReactangle.topLeft();
             clipbordHeight = selectedReactangle.height();
             clipbordWidth = selectedReactangle.width();
         }
-        else
+        else if(textItem)
         {
+            clipbordContent = ClipbordContent::Label;
             clipbordText = textItem->toPlainText();
             clipbordPoint = selectedItem->scenePos();
+        }
+        else
+        {
+            clipbordContent = ClipbordContent::Poly;
+            clipbordPoint = selectedItem->scenePos();
+            clipbordPolygon = polygonItem->polygon();
         }
     }
 }
@@ -309,13 +340,22 @@ void ImageEditor::pasteSelectedItem()
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
 
-        if (clipbordText == "")
+        if (clipbordContent == ClipbordContent::Rect)
         {
             drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
         }
-        else
+        else if(clipbordContent == ClipbordContent::Label)
         {
             drawText(clipbordText, QPointF(x, y));
+        }
+        else
+        {
+            // Workaround to change position of polygon
+            QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem(clipbordPolygon);
+            polygon->setX(x);
+            polygon->setX(y);
+
+            drawPolygon(polygon, QPointF(x, y));
         }
 
         updateCursorType(CursorType::Select);
@@ -329,15 +369,44 @@ void ImageEditor::pasteSelectedItemInPlace()
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
-        if (clipbordText == "")
+        if (clipbordContent == ClipbordContent::Rect)
         {
             drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
         }
-        else
+        else if(clipbordContent == ClipbordContent::Label)
         {
             drawText(clipbordText, QPointF(x, y));
         }
+        else
+        {
+            QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem(clipbordPolygon);
+            drawPolygon(polygon, QPointF(x, y));
+        }
     }
+}
+
+void ImageEditor::drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position)
+{
+    QPen pen;
+    pen.setBrush(Qt::blue);
+    pen.setWidth(2);
+
+    QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon->polygon(), pen);
+    polygon->setPos(position);
+    polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+
+    ImageEditor::update();
+}
+
+void ImageEditor::drawPolygon(const QPolygonF newPolygon)
+{
+    QPen pen;
+    pen.setBrush(Qt::blue);
+    pen.setWidth(2);
+
+    // Workaround to change position of polygon
+    QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
+    polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 
 void ImageEditor::drawRectangle(const QRectF newRectangle)

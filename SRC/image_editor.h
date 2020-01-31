@@ -143,6 +143,13 @@ protected:
 
 private:
 
+    enum ClipbordContent
+    {
+        Label,
+        Rect,
+        Poly
+    };
+
     //! Boolean for whether or not  an image is set for better performance with comparisson operators
     bool imageSet;
 
@@ -185,11 +192,16 @@ private:
     //! Container for position of mouse when context menu was created
     QPointF clipbordClickPoint;
 
-    //! Contaier for height of QGraphicsItem which was copied
+    //! Contaier for height of QGraphicsRectItem which was copied
     qreal clipbordHeight;
 
-    //! Contaier for width of QGraphicsItem which was copied
+    //! Contaier for width of QGraphicsRectItem which was copied
     qreal clipbordWidth;
+
+    //! Contaier for polygon of QGraphicsRectItem which was copied
+    QPolygonF clipbordPolygon;
+
+    ClipbordContent clipbordContent;
 
     QAction *copyAction;
     QAction *pasteAction;
@@ -197,8 +209,11 @@ private:
 
     QRubberBand *rubberBand;
 
-    // Remeber to dump everything
+    //! Container to store points marked by user to create a polygon
     QList<QPointF> clickPoints;
+
+    //! Container to store line markers used when creating a polygon
+    QList<QGraphicsLineItem*> clickLines;
 
     //! A list of resize components associated with each shape
     QList<CustomResizer *> resizerItems;
@@ -208,6 +223,20 @@ private:
 
     //! A container for information on texts added on the image and information of the relevant image file
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
+
+
+    /*!
+     *  Adds QGraphicsPolygonItem on scene
+     *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
+     */
+    void drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position);
+
+
+    /*!
+     *  Adds QGraphicsPolygonItem on scene
+     *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
+     */
+    void drawPolygon(const QPolygonF newPolygon);
 
     /*!
      *  Adds QGraphicsRectItem on scene
