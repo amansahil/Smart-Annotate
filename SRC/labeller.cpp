@@ -27,6 +27,10 @@ Labeller::Labeller(QWidget *parent)
     ui->graphicsView->setSceneRect(0, 0, 781, 651);
     ui->graphicsView->show();
 
+    // Hide connect button
+    ui->connectButton->setVisible(false);
+    ui->clearPoints->setVisible(false);
+
     createListeners();
 }
 
@@ -64,6 +68,7 @@ void Labeller::setImageList()
     {
         imageFiles = labellerModel->getImageFiles()->getKeys();
     }
+
     model->setStringList(imageFiles);
 
     ui->imageList->setModel(model);
@@ -143,10 +148,20 @@ void Labeller::setShapeTypeLabel()
     if(annotationShapeType == ImageEditor::AnnotationShapeType::FreeHand)
     {
         ui->shapeLabel->setText("Smart Annotate");
+        ui->connectButton->setVisible(false);
+        ui->clearPoints->setVisible(false);
+    }
+    else if(annotationShapeType == ImageEditor::AnnotationShapeType::Points)
+    {
+        ui->shapeLabel->setText("Smart Click");
+        ui->connectButton->setVisible(true);
+        ui->clearPoints->setVisible(true);
     }
     else
     {
         ui->shapeLabel->setText("Reactangle");
+        ui->connectButton->setVisible(false);
+        ui->clearPoints->setVisible(false);
     }
 }
 
@@ -368,3 +383,9 @@ void Labeller::on_saveButton_clicked()
 void Labeller::on_actionRectangle_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::Rectangle); }
 
 void Labeller::on_actionSmart_annotate_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::FreeHand); }
+
+void Labeller::on_actionSmart_Click_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::Points); }
+
+void Labeller::on_connectButton_clicked() { imageEditor->connectClickElipses(); }
+
+void Labeller::on_clearPoints_clicked() { imageEditor->deleteClickElipses(); }

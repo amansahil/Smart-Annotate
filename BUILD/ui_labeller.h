@@ -37,6 +37,7 @@ public:
     QAction *actionDelete;
     QAction *actionRectangle;
     QAction *actionSmart_annotate;
+    QAction *actionSmart_Click;
     QWidget *centralwidget;
     QPushButton *imageBrowseButton;
     QLabel *label;
@@ -70,6 +71,8 @@ public:
     QPushButton *restoreImages;
     QLabel *label_7;
     QLabel *shapeLabel;
+    QPushButton *connectButton;
+    QPushButton *clearPoints;
     QMenuBar *menubar;
     QMenu *menuLabel;
     QMenu *menuEdit;
@@ -97,6 +100,8 @@ public:
         actionRectangle->setObjectName(QString::fromUtf8("actionRectangle"));
         actionSmart_annotate = new QAction(Labeller);
         actionSmart_annotate->setObjectName(QString::fromUtf8("actionSmart_annotate"));
+        actionSmart_Click = new QAction(Labeller);
+        actionSmart_Click->setObjectName(QString::fromUtf8("actionSmart_Click"));
         centralwidget = new QWidget(Labeller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
@@ -197,7 +202,13 @@ public:
         label_7->setGeometry(QRect(740, 10, 91, 21));
         shapeLabel = new QLabel(centralwidget);
         shapeLabel->setObjectName(QString::fromUtf8("shapeLabel"));
-        shapeLabel->setGeometry(QRect(840, 10, 131, 21));
+        shapeLabel->setGeometry(QRect(840, 10, 81, 21));
+        connectButton = new QPushButton(centralwidget);
+        connectButton->setObjectName(QString::fromUtf8("connectButton"));
+        connectButton->setGeometry(QRect(940, 10, 89, 25));
+        clearPoints = new QPushButton(centralwidget);
+        clearPoints->setObjectName(QString::fromUtf8("clearPoints"));
+        clearPoints->setGeometry(QRect(1040, 10, 101, 25));
         Labeller->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Labeller);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -224,6 +235,7 @@ public:
         menuEdit->addAction(actionDelete);
         menuShape->addAction(actionRectangle);
         menuShape->addAction(actionSmart_annotate);
+        menuShape->addAction(actionSmart_Click);
 
         retranslateUi(Labeller);
 
@@ -241,6 +253,7 @@ public:
         actionDelete->setText(QApplication::translate("Labeller", "Delete (Del)", nullptr));
         actionRectangle->setText(QApplication::translate("Labeller", "Rectangle", nullptr));
         actionSmart_annotate->setText(QApplication::translate("Labeller", "Smart annotate", nullptr));
+        actionSmart_Click->setText(QApplication::translate("Labeller", "Smart Click", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
@@ -268,6 +281,8 @@ public:
         restoreImages->setText(QApplication::translate("Labeller", "Restore", nullptr));
         label_7->setText(QApplication::translate("Labeller", "Shape Mode:", nullptr));
         shapeLabel->setText(QApplication::translate("Labeller", "Rectangle", nullptr));
+        connectButton->setText(QApplication::translate("Labeller", "Connect", nullptr));
+        clearPoints->setText(QApplication::translate("Labeller", "Clear Points", nullptr));
         menuLabel->setTitle(QApplication::translate("Labeller", "Label", nullptr));
         menuEdit->setTitle(QApplication::translate("Labeller", "Edit", nullptr));
         menuShape->setTitle(QApplication::translate("Labeller", "Shape", nullptr));

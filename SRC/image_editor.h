@@ -28,7 +28,8 @@ public:
     //! Annotation Shape enum
     enum AnnotationShapeType {
         Rectangle, /*!< For drawing rectangles */
-        FreeHand /*!< For drawing free hand */
+        FreeHand, /*!< For drawing free hand */
+        Points /*!< For drawing with points */
     };
 
     /*!
@@ -90,49 +91,59 @@ public:
 public slots:
 
     /*!
-     * Deletes selected Qgraphics item
+     *  Deletes selected Qgraphics item
      */
     void deleteSelectedItem();
 
     /*!
-     * Stores information of selected item in relevant containers
+     *  Stores information of selected item in relevant containers
      */
     void copySelectedItem();
 
     /*!
-     * Creates QGraphicsItem based on information from relevant containers
+     *  Creates QGraphicsItem based on information from relevant containers
      */
     void pasteSelectedItem();
 
     /*!
-     * Creates QGraphicsItem based on information from relevant containers and
-     * additonaly the mouse position
+     *  Creates QGraphicsItem based on information from relevant containers and
+     *  additonaly the mouse position
      */
     void pasteSelectedItemInPlace();
 
+    /*!
+     *  Creates a polygon of `clickPoints`
+     */
+    void connectClickElipses();
+
+    /*!
+     *  Delete all `clickElipses`
+     */
+    void deleteClickElipses();
+
 protected:
     /*!
-     * @link https://doc.qt.io/qt-5/qgraphicsitem.html#mousePressEvent
+     *  @link https://doc.qt.io/qt-5/qgraphicsitem.html#mousePressEvent
     */
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 
     /*!
-     * @link https://doc.qt.io/qt-5/qgraphicsitem.html#mouseMoveEvent
+     *  @link https://doc.qt.io/qt-5/qgraphicsitem.html#mouseMoveEvent
     */
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
 
     /*!
-     * @link https://doc.qt.io/qt-5/qgraphicsitem.html#mouseReleaseEvent
+     *  @link https://doc.qt.io/qt-5/qgraphicsitem.html#mouseReleaseEvent
     */
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
 
     /*!
-     * @link https://doc.qt.io/qt-5/qgraphicsitem.html#contextMenuEvent
+     *  @link https://doc.qt.io/qt-5/qgraphicsitem.html#contextMenuEvent
     */
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event) override;
 
     /*!
-     * @link https://doc.qt.io/qt-5/qgraphicsitem.html#keyPressEvent
+     *  @link https://doc.qt.io/qt-5/qgraphicsitem.html#keyPressEvent
     */
     void keyPressEvent(QKeyEvent *event) override;
 
@@ -145,7 +156,7 @@ private:
         Poly
     };
 
-    //! Boolean for whether or not  an image is set for better performance with comparisson operators
+    //! Boolean for whether or not an image is set for better performance with comparisson operators
     bool imageSet;
 
     //! Boolean for drawing state
@@ -210,6 +221,9 @@ private:
 
     //! Container to store line markers used when creating a polygon
     QList<QGraphicsLineItem*> clickLines;
+
+    //! Container to store eplipse markers used when creating a polygon
+    QList<QGraphicsEllipseItem*> clickEplipses;
 
     //! A list of resize components associated with each shape
     QList<CustomResizer *> resizerItems;

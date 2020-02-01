@@ -143,6 +143,9 @@ void ImageEditor::updateAnnotationShapeType(const AnnotationShapeType newAnnotat
         annotationShape = newAnnotationShape;
         emit annotationShapeChanged();
     }
+
+    cursorType = CursorType::Draw;
+    emit cursorTypeChanged();
 }
 
 void ImageEditor::updateClassLabel(const QString newClassLabel)
@@ -166,9 +169,19 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
                 rubberBand->setGeometry(QRect(origin, QSize()));
                 rubberBand->show();
             }
+            else if(annotationShape == AnnotationShapeType::FreeHand)
+            {
+                clickPoints.append(originF);
+            }
             else
             {
-                clickPoints.append(event->scenePos());
+                QGraphicsEllipseItem* ellipseItem =new QGraphicsEllipseItem(QRectF(originF.x(), originF.y(), 10, 10));
+                ellipseItem->setBrush(Qt::blue);
+                ellipseItem->setPen(Qt::NoPen);
+                ellipseItem->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+                ImageEditor::addItem(ellipseItem);
+
+                clickEplipses.append(ellipseItem);
             }
         }
         else if (cursorType == CursorType::Text && classLabel != "")
@@ -198,7 +211,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
                 rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
             }
-            else
+            else if (annotationShape == ImageEditor::AnnotationShapeType::FreeHand)
             {
                 clickPoints.append(event->scenePos());
 
@@ -231,7 +244,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
                 drawRectangle(QRectF(originF, lastPointF));
             }
-            else
+            else if (annotationShape == ImageEditor::AnnotationShapeType::FreeHand)
             {
                 QPolygonF polygon;
 
@@ -246,8 +259,6 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                         polygon << clickPoints[i] << clickPoints[i+1];
                     }
                 }
-
-                drawPolygon(polygon);
 
                 qDeleteAll(clickLines.begin(), clickLines.end());
                 clickLines.clear();
@@ -302,7 +313,16 @@ void ImageEditor::deleteSelectedItem()
 {
     if (ImageEditor::selectedItems().size() > 0)
     {
-        delete ImageEditor::selectedItems().at(0);
+        QGraphicsItem *selectedItem = ImageEditor::selectedItems().at(0);
+
+        QGraphicsEllipseItem *elipseItem = qgraphicsitem_cast<QGraphicsEllipseItem *>(selectedItem);
+
+        delete selectedItem;
+
+        if(elipseItem)
+        {
+            clickEplipses.removeOne(elipseItem);
+        }
     }
 }
 
@@ -348,8 +368,6 @@ void ImageEditor::pasteSelectedItem()
 {
     if (imageSet && clipbord)
     {
-        qDebug() << "Header:" <<  clipbordPoint;
-
         const qreal x = clipbordPoint.x() + 4.0;
         const qreal y = clipbordPoint.y() - 8.0;
 
@@ -376,8 +394,6 @@ void ImageEditor::pasteSelectedItemInPlace()
 {
     if (imageSet && clipbord)
     {
-        qDebug() << "Click:" <<  clipbordClickPoint;
-
         const qreal x = clipbordClickPoint.x() + 4.0;
         const qreal y = clipbordClickPoint.y() - 8.0;
 
@@ -397,6 +413,38 @@ void ImageEditor::pasteSelectedItemInPlace()
     }
 }
 
+void ImageEditor::connectClickElipses()
+{
+
+    if(clickEplipses.size() <= 2)
+    {
+        QMessageBox::warning(nullptr, "Error", "You need to mark at least three points");
+        return;
+    }
+
+    QPolygonF polygon;
+
+    for(int i =0; i < clickEplipses.size(); i++)
+    {
+        if(clickEplipses.size() - 1 == i)
+        {
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();;
+        }
+        else
+        {
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[i+1]->rect().topLeft();
+        }
+    }
+
+    drawPolygon(polygon);
+    deleteClickElipses();
+}
+
+void ImageEditor::deleteClickElipses()
+{
+    qDeleteAll(clickEplipses.begin(), clickEplipses.end());
+    clickEplipses.clear();
+}
 void ImageEditor::drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position)
 {    
     QPen pen;

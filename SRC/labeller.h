@@ -214,7 +214,22 @@ private slots
      *  Triggered when the `saveButton` is clicked
      */
     void on_saveButton_clicked();
+
+    /*!
+     *  Triggered when Rectangle is clicked from the menu
+     */
     void on_actionRectangle_triggered();
+
+    /*!
+     *  Triggered when Smart Annotate is clicked from the menu
+     */
     void on_actionSmart_annotate_triggered();
+
+    /*!
+     *  Triggered when Smart Click is clicked from the menu
+     */
+    void on_actionSmart_Click_triggered();
+    void on_connectButton_clicked();
+    void on_clearPoints_clicked();
 };
 #endif // LABELLER_H
