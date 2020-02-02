@@ -237,19 +237,17 @@ private:
     //! A container for information on texts added on the image and information of the relevant image file
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
-
-    /*!
-     *  Adds QGraphicsPolygonItem on scene
-     *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
-     */
-    void drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position);
-
-
     /*!
      *  Adds QGraphicsPolygonItem on scene
      *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
      */
     void drawPolygon(const QPolygonF newPolygon);
+
+    /*!
+     *  Adds QGraphicsPolygonItem on scene
+     *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
+     */
+    void drawPolygon(const QPolygonF newPolygon, const QPointF position);
 
     /*!
      *  Adds QGraphicsRectItem on scene

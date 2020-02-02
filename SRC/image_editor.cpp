@@ -104,7 +104,7 @@ void ImageEditor::saveImageState()
             }
             else if(polygonItem != nullptr)
             {
-                polygonItems.append(polygonItem->polygon());
+                polygonItems.append(polygonItem->polygon().translated(polygonItem->scenePos()));
             }
         }
 
@@ -260,6 +260,8 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                     }
                 }
 
+                drawPolygon(polygon);
+
                 qDeleteAll(clickLines.begin(), clickLines.end());
                 clickLines.clear();
                 clickPoints.clear();
@@ -382,8 +384,8 @@ void ImageEditor::pasteSelectedItem()
         else
         {
             // Workaround to change position of polygon
-            QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem(clipbordPolygon);
-            drawPolygon(polygon, QPointF(x, y));
+            QPolygonF polygon = clipbordPolygon.translated(QPointF(x, y));
+            drawPolygon(polygon);
         }
 
         updateCursorType(CursorType::Select);
@@ -407,7 +409,8 @@ void ImageEditor::pasteSelectedItemInPlace()
         }
         else
         {
-            QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem(clipbordPolygon);
+            // Workaround to change position of polygon
+            QPolygonF polygon = clipbordPolygon.translated(QPointF(x, y));
             drawPolygon(polygon, QPointF(x, y));
         }
     }
@@ -445,17 +448,6 @@ void ImageEditor::deleteClickElipses()
     qDeleteAll(clickEplipses.begin(), clickEplipses.end());
     clickEplipses.clear();
 }
-void ImageEditor::drawPolygon(const QGraphicsPolygonItem *newPolygon, const QPointF position)
-{    
-    QPen pen;
-    pen.setBrush(Qt::blue);
-    pen.setWidth(2);
-
-    // Workaround to change position of polygon
-    QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon->polygon(), pen);
-    polygon->setPos(position);
-    polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
-}
 
 void ImageEditor::drawPolygon(const QPolygonF newPolygon)
 {
@@ -464,6 +456,17 @@ void ImageEditor::drawPolygon(const QPolygonF newPolygon)
     pen.setWidth(2);
 
     QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
+    polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+}
+
+void ImageEditor::drawPolygon(const QPolygonF newPolygon, const QPointF position)
+{
+    QPen pen;
+    pen.setBrush(Qt::blue);
+    pen.setWidth(2);
+
+    QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
+    polygon->setPos(position);
     polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 

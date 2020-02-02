@@ -202,7 +202,7 @@ public:
         label_7->setGeometry(QRect(740, 10, 91, 21));
         shapeLabel = new QLabel(centralwidget);
         shapeLabel->setObjectName(QString::fromUtf8("shapeLabel"));
-        shapeLabel->setGeometry(QRect(840, 10, 81, 21));
+        shapeLabel->setGeometry(QRect(840, 10, 151, 21));
         connectButton = new QPushButton(centralwidget);
         connectButton->setObjectName(QString::fromUtf8("connectButton"));
         connectButton->setGeometry(QRect(940, 10, 89, 25));
