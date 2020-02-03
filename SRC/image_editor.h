@@ -20,8 +20,8 @@ public:
     //! Cursor type enum
     enum CursorType
     {
-        Draw, /*!< Cursor for drawing shapes */
-        Text, /*!< Cursor for adding text */
+        Draw,  /*!< Cursor for drawing shapes */
+        Text,  /*!< Cursor for adding text */
         Select /*!< Cursor for moving, copying, pasting and deleting shapes and text */
     };
 
@@ -121,7 +121,6 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 private:
-
     //! Boolean for whether or not  an image is set for better performance with comparisson operators
     bool imageSet;
 

@@ -8,7 +8,6 @@
 #include <QString>
 #include <QtEndian>
 
-
 //! A node for `StringDateHash`
 class HashNode
 {
@@ -53,7 +52,6 @@ private:
     // next bucket with the same key
     HashNode *next;
 };
-
 
 //! Custom Hash table container with `QString` as key and `QDate` as value
 
@@ -119,7 +117,6 @@ public:
     QStringList sortByDateDesc();
 
 private:
-
     //! Container for total capacity of the table
     int capacity = 1;
 
