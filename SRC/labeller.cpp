@@ -165,26 +165,6 @@ void Labeller::setShapeTypeLabel()
     }
 }
 
-void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Draw); }
-
-void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Text); }
-
-void Labeller::on_classList_clicked()
-{
-    imageEditor->updateCursorType(ImageEditor::CursorType::Text);
-    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
-}
-
-void Labeller::on_actionSelect_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Select); }
-
-void Labeller::on_actionDelete_triggered() { imageEditor->deleteSelectedItem(); }
-
-void Labeller::on_actionCopy_triggered() { imageEditor->copySelectedItem(); }
-
-void Labeller::on_actionPaste_triggered() { imageEditor->pasteSelectedItem(); }
-
-void Labeller::on_clearButton_clicked() { imageEditor->clearItems(); }
-
 void Labeller::createListeners()
 {
     connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
@@ -379,6 +359,26 @@ void Labeller::on_saveButton_clicked()
 
     // Some magic to save to annotation file
 }
+
+void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Draw); }
+
+void Labeller::on_actionAdd_Text_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Text); }
+
+void Labeller::on_classList_clicked()
+{
+    imageEditor->updateCursorType(ImageEditor::CursorType::Text);
+    imageEditor->updateClassLabel(ui->classList->currentIndex().data().toString());
+}
+
+void Labeller::on_actionSelect_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Select); }
+
+void Labeller::on_actionDelete_triggered() { imageEditor->deleteSelectedItem(); }
+
+void Labeller::on_actionCopy_triggered() { imageEditor->copySelectedItem(); }
+
+void Labeller::on_actionPaste_triggered() { imageEditor->pasteSelectedItem(); }
+
+void Labeller::on_clearButton_clicked() { imageEditor->clearItems(); }
 
 void Labeller::on_actionRectangle_triggered() { imageEditor->updateAnnotationShapeType(ImageEditor::AnnotationShapeType::Rectangle); }
 

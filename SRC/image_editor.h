@@ -209,7 +209,7 @@ private:
     QPolygonF clipbordPolygon;
 
     //! Container for QGraphicsPolygonItem which was copied
-    QGraphicsPolygonItem* clipbordPolygonItem;
+    QPointF clipbordPolygonItemPoint;
 
     //! Container to identify what item has been copied
     ClipbordContent clipbordContent;

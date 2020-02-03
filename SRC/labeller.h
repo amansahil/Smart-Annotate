@@ -96,46 +96,6 @@ private slots:
      */
     void clearClassItemLineEdit();
 
-    /*!
-     *  Triggered when the mark object option is selected from menu
-     */
-    void on_actionMark_Object_triggered();
-
-    /*!
-     *  Triggered when the add text option is selected from menu
-     */
-    void on_actionAdd_Text_triggered();
-
-    /*!
-     *  Triggered when `classList` is clicked
-     */
-    void on_classList_clicked();
-
-    /*!
-     *  Triggered when the select option is selected from menu
-     */
-    void on_actionSelect_triggered();
-
-    /*!
-     *  Triggered when the delete option is selected from menu
-     */
-    void on_actionDelete_triggered();
-
-    /*!
-     *  Triggered when the copy option is selected from menu
-     */
-    void on_actionCopy_triggered();
-
-    /*!
-     *  Triggered when the paste option is selected from menu
-     */
-    void on_actionPaste_triggered();
-
-    /*!
-     *  Triggered when the `clearButton` is clicked
-     */
-    void on_clearButton_clicked();
-
     // Controller methods
 
 private slots
@@ -229,7 +189,56 @@ private slots
      *  Triggered when Smart Click is clicked from the menu
      */
     void on_actionSmart_Click_triggered();
+
+    /*!
+     *  Triggered when `connectButton` is clicked
+     */
     void on_connectButton_clicked();
+
+    /*!
+     *  Triggered when `clearPoints` is clicked
+     */
     void on_clearPoints_clicked();
+
+    /*!
+     *  Triggered when the mark object option is selected from menu
+     */
+    void on_actionMark_Object_triggered();
+
+    /*!
+     *  Triggered when the add text option is selected from menu
+     */
+    void on_actionAdd_Text_triggered();
+
+    /*!
+     *  Triggered when `classList` is clicked
+     */
+    void on_classList_clicked();
+
+    /*!
+     *  Triggered when the select option is selected from menu
+     */
+    void on_actionSelect_triggered();
+
+    /*!
+     *  Triggered when the delete option is selected from menu
+     */
+    void on_actionDelete_triggered();
+
+    /*!
+     *  Triggered when the copy option is selected from menu
+     */
+    void on_actionCopy_triggered();
+
+    /*!
+     *  Triggered when the paste option is selected from menu
+     */
+    void on_actionPaste_triggered();
+
+    /*!
+     *  Triggered when the `clearButton` is clicked
+     */
+    void on_clearButton_clicked();
+
 };
 #endif // LABELLER_H

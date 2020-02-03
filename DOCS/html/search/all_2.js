@@ -15,7 +15,7 @@ var searchData=
   ['clipbordheight_21',['clipbordHeight',['../classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f',1,'ImageEditor']]],
   ['clipbordpoint_22',['clipbordPoint',['../classImageEditor.html#ac59bf651ace474b2030c0b22c5b169a3',1,'ImageEditor']]],
   ['clipbordpolygon_23',['clipbordPolygon',['../classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6',1,'ImageEditor']]],
-  ['clipbordpolygonitem_24',['clipbordPolygonItem',['../classImageEditor.html#aa72622c2477b5fd8233239eff5751635',1,'ImageEditor']]],
+  ['clipbordpolygonitempoint_24',['clipbordPolygonItemPoint',['../classImageEditor.html#a0765b78bea7617a497db522ca0a6ad43',1,'ImageEditor']]],
   ['clipbordtext_25',['clipbordText',['../classImageEditor.html#a25e4e09a5d02878601eb16fe35547dfd',1,'ImageEditor']]],
   ['clipbordwidth_26',['clipbordWidth',['../classImageEditor.html#a6160484624a9b50872566152ab283574',1,'ImageEditor']]],
   ['connectclickelipses_27',['connectClickElipses',['../classImageEditor.html#a1d994b6c6f0640f69ed7ecf8a5cd8710',1,'ImageEditor']]],

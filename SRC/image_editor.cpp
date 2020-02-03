@@ -168,7 +168,9 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
-            if(annotationShape == AnnotationShapeType::Rectangle) {
+            if(annotationShape == AnnotationShapeType::Rectangle)
+            {
+                // Creates a boundry indicater
                 rubberBand->setGeometry(QRect(origin, QSize()));
                 rubberBand->show();
             }
@@ -213,6 +215,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
                 lastPoint = event->screenPos();
                 lastPointF = event->scenePos();
 
+                // Dynamically adjusts border indicater
                 rubberBand->setGeometry(QRect(origin, lastPoint).normalized());
             }
             else if (annotationShape == ImageEditor::AnnotationShapeType::FreeHand)
@@ -252,6 +255,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             {
                 QPolygonF polygon;
 
+                // Connects all points and connects last point to the first one
                 for(int i =0; i < clickPoints.size(); i++)
                 {
                     if(clickPoints.size() - 1 == i)
@@ -266,6 +270,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
                 drawPolygon(polygon);
 
+                // Clears line indicators and point list
                 qDeleteAll(clickLines.begin(), clickLines.end());
                 clickLines.clear();
                 clickPoints.clear();
@@ -366,7 +371,7 @@ void ImageEditor::copySelectedItem()
             clipbordContent = ClipbordContent::Poly;
             clipbordPoint = selectedItem->scenePos();
             clipbordPolygon = polygonItem->polygon();
-            clipbordPolygonItem = polygonItem;
+            clipbordPolygonItemPoint = polygonItem->sceneBoundingRect().topLeft();
         }
     }
 }
@@ -414,7 +419,7 @@ void ImageEditor::pasteSelectedItemInPlace()
         else
         {
             // Workaround to change position of polygon
-            QPolygonF polygon = clipbordPolygon.translated(clipbordClickPoint - clipbordPolygonItem->sceneBoundingRect().topLeft());
+            QPolygonF polygon = clipbordPolygon.translated(clipbordClickPoint - clipbordPolygonItemPoint);
             drawPolygon(polygon);
         }
     }

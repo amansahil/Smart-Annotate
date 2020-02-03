@@ -121,7 +121,7 @@
               <section title="clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
               <section title="clipbordPoint" ref="classImageEditor.html#ac59bf651ace474b2030c0b22c5b169a3" />
               <section title="clipbordPolygon" ref="classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6" />
-              <section title="clipbordPolygonItem" ref="classImageEditor.html#aa72622c2477b5fd8233239eff5751635" />
+              <section title="clipbordPolygonItemPoint" ref="classImageEditor.html#a0765b78bea7617a497db522ca0a6ad43" />
               <section title="clipbordText" ref="classImageEditor.html#a25e4e09a5d02878601eb16fe35547dfd" />
               <section title="clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
               <section title="copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
@@ -379,7 +379,7 @@
       <keyword name="clipbordHeight" id="ImageEditor::clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
       <keyword name="clipbordWidth" id="ImageEditor::clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
       <keyword name="clipbordPolygon" id="ImageEditor::clipbordPolygon" ref="classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6" />
-      <keyword name="clipbordPolygonItem" id="ImageEditor::clipbordPolygonItem" ref="classImageEditor.html#aa72622c2477b5fd8233239eff5751635" />
+      <keyword name="clipbordPolygonItemPoint" id="ImageEditor::clipbordPolygonItemPoint" ref="classImageEditor.html#a0765b78bea7617a497db522ca0a6ad43" />
       <keyword name="clipbordContent" id="ImageEditor::clipbordContent" ref="classImageEditor.html#abc89ecced59353dad78dbed1967536f3" />
       <keyword name="copyAction" id="ImageEditor::copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
       <keyword name="pasteAction" id="ImageEditor::pasteAction" ref="classImageEditor.html#a7aa8d9dad4f9c5305f7fd344409ee0d6" />
@@ -413,14 +413,6 @@
       <keyword name="setCursorTypeLabel" id="Labeller::setCursorTypeLabel" ref="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66" />
       <keyword name="setShapeTypeLabel" id="Labeller::setShapeTypeLabel" ref="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c" />
       <keyword name="clearClassItemLineEdit" id="Labeller::clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
-      <keyword name="on_actionMark_Object_triggered" id="Labeller::on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
-      <keyword name="on_actionAdd_Text_triggered" id="Labeller::on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
-      <keyword name="on_classList_clicked" id="Labeller::on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
-      <keyword name="on_actionSelect_triggered" id="Labeller::on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
-      <keyword name="on_actionDelete_triggered" id="Labeller::on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
-      <keyword name="on_actionCopy_triggered" id="Labeller::on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
-      <keyword name="on_actionPaste_triggered" id="Labeller::on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
-      <keyword name="on_clearButton_clicked" id="Labeller::on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
       <keyword name="on_imageBrowseButton_clicked" id="Labeller::on_imageBrowseButton_clicked" ref="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a" />
       <keyword name="on_classBrowseButton_clicked" id="Labeller::on_classBrowseButton_clicked" ref="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68" />
       <keyword name="on_annotationBrowseButton_clicked" id="Labeller::on_annotationBrowseButton_clicked" ref="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663" />
@@ -441,6 +433,14 @@
       <keyword name="on_actionSmart_Click_triggered" id="Labeller::on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
       <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
       <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
+      <keyword name="on_actionMark_Object_triggered" id="Labeller::on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
+      <keyword name="on_actionAdd_Text_triggered" id="Labeller::on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
+      <keyword name="on_classList_clicked" id="Labeller::on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
+      <keyword name="on_actionSelect_triggered" id="Labeller::on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
+      <keyword name="on_actionDelete_triggered" id="Labeller::on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
+      <keyword name="on_actionCopy_triggered" id="Labeller::on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
+      <keyword name="on_actionPaste_triggered" id="Labeller::on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
+      <keyword name="on_clearButton_clicked" id="Labeller::on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
       <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
       <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
       <keyword name="labellerModel" id="Labeller::labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />
