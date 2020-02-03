@@ -80,78 +80,75 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QtEndian&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classHashNode.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHashNode.html">HashNode</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a>(<span class="keyword">const</span> QString &amp;key, <span class="keyword">const</span> QDateTime &amp;value);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QString <a class="code" href="classHashNode.html#a52f10503db7dc31b31244d730c121371">getKey</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QDateTime <a class="code" href="classHashNode.html#a42655deb1017df1e4a44d8188ac29e30">getValue</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87">setValue</a>(QDateTime value);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7">setNext</a>(<a class="code" href="classHashNode.html">HashNode</a> *next);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a> *<a class="code" href="classHashNode.html#a1d22392c8286bedcb964bd50c241c007">getNext</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;left, <a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;right);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;left, <a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;right);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QString key;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QDateTime value;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// next bucket with the same key</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a> *next;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classHashNode.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHashNode.html">HashNode</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a>(<span class="keyword">const</span> QString &amp;key, <span class="keyword">const</span> QDateTime &amp;value);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QString <a class="code" href="classHashNode.html#a52f10503db7dc31b31244d730c121371">getKey</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QDateTime <a class="code" href="classHashNode.html#a42655deb1017df1e4a44d8188ac29e30">getValue</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87">setValue</a>(QDateTime value);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7">setNext</a>(<a class="code" href="classHashNode.html">HashNode</a> *next);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a> *<a class="code" href="classHashNode.html#a1d22392c8286bedcb964bd50c241c007">getNext</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;left, <a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;right);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;left, <a class="code" href="classHashNode.html">HashNode</a> <span class="keyword">const</span> &amp;right);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    QString key;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QDateTime value;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// next bucket with the same key</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classHashNode.html">HashNode</a> *next;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classStringDateHash.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStringDateHash.html">StringDateHash</a></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classStringDateHash.html">StringDateHash</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ~<a class="code" href="classStringDateHash.html">StringDateHash</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776">get</a>(<span class="keyword">const</span> QString &amp;key, QDateTime &amp;value);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3">put</a>(<span class="keyword">const</span> QString &amp;key, <span class="keyword">const</span> QDateTime &amp;value);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringDateHash.html#a4663a497494184edefcb0fd268f13823">remove</a>(<span class="keyword">const</span> QString &amp;key);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d">getSize</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a4ae3a92247f6ba0fb3a7664cfa2a6b6e">getCapacity</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9">getKeys</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88">sortByKeyAsc</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c">sortByKeyDesc</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b">sortByDateAsc</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691">sortByDateDesc</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classStringDateHash.html">   58</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStringDateHash.html">StringDateHash</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classStringDateHash.html">StringDateHash</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ~<a class="code" href="classStringDateHash.html">StringDateHash</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776">get</a>(<span class="keyword">const</span> QString &amp;key, QDateTime &amp;value);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3">put</a>(<span class="keyword">const</span> QString &amp;key, <span class="keyword">const</span> QDateTime &amp;value);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStringDateHash.html#a4663a497494184edefcb0fd268f13823">remove</a>(<span class="keyword">const</span> QString &amp;key);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d">getSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a4ae3a92247f6ba0fb3a7664cfa2a6b6e">getCapacity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9">getKeys</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88">sortByKeyAsc</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c">sortByKeyDesc</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b">sortByDateAsc</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    QStringList <a class="code" href="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691">sortByDateDesc</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">  121</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">capacity</a> = 1;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">  124</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">capacity</a> = 1;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">  124</a></span>&#160;    std::vector&lt;HashNode *&gt; <a class="code" href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">table</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">  127</a></span>&#160;    std::vector&lt;HashNode *&gt; <a class="code" href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">table</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a">hashFunc</a>(<span class="keyword">const</span> QString &amp;key) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a">hashFunc</a>(<span class="keyword">const</span> QString &amp;key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> merge(<a class="code" href="classHashNode.html">HashNode</a> *begin, <a class="code" href="classHashNode.html">HashNode</a> *middle, <a class="code" href="classHashNode.html">HashNode</a> *end, <a class="code" href="classHashNode.html">HashNode</a> *res);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> mergesort(<a class="code" href="classHashNode.html">HashNode</a> *begin, <a class="code" href="classHashNode.html">HashNode</a> *end, <a class="code" href="classHashNode.html">HashNode</a> *res);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> merge(<a class="code" href="classHashNode.html">HashNode</a> *begin, <a class="code" href="classHashNode.html">HashNode</a> *middle, <a class="code" href="classHashNode.html">HashNode</a> *end, <a class="code" href="classHashNode.html">HashNode</a> *res);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> mergesort(<a class="code" href="classHashNode.html">HashNode</a> *begin, <a class="code" href="classHashNode.html">HashNode</a> *end, <a class="code" href="classHashNode.html">HashNode</a> *res);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classStringDateHash.html">StringDateHash</a>(<span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;other);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;other);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif // STRINGDATEHASH_H</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="classStringDateHash.html">StringDateHash</a>(<span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;other);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classStringDateHash.html">StringDateHash</a> &amp;other);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif // STRINGDATEHASH_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassStringDateHash_html_afaca266408cad9637f4b99f1130200d9"><div class="ttname"><a href="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9">StringDateHash::getKeys</a></div><div class="ttdeci">QStringList getKeys() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:184</div></div>
 <div class="ttc" id="aclassStringDateHash_html_a4663a497494184edefcb0fd268f13823"><div class="ttname"><a href="classStringDateHash.html#a4663a497494184edefcb0fd268f13823">StringDateHash::remove</a></div><div class="ttdeci">void remove(const QString &amp;key)</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:129</div></div>
@@ -160,17 +157,17 @@ $(function() {
 <div class="ttc" id="aclassHashNode_html_ae4ac85b1bba0c86e3a254c78411a6f87"><div class="ttname"><a href="classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87">HashNode::setValue</a></div><div class="ttdeci">void setValue(QDateTime value)</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:13</div></div>
 <div class="ttc" id="aclassStringDateHash_html_ac65158fe777fda8740b11b1b6a2f6776"><div class="ttname"><a href="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776">StringDateHash::get</a></div><div class="ttdeci">bool get(const QString &amp;key, QDateTime &amp;value)</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:49</div></div>
 <div class="ttc" id="aclassHashNode_html_a42655deb1017df1e4a44d8188ac29e30"><div class="ttname"><a href="classHashNode.html#a42655deb1017df1e4a44d8188ac29e30">HashNode::getValue</a></div><div class="ttdeci">QDateTime getValue() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:11</div></div>
-<div class="ttc" id="aclassStringDateHash_html"><div class="ttname"><a href="classStringDateHash.html">StringDateHash</a></div><div class="ttdoc">Custom Hash table container with QString as key and QDate as value.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:60</div></div>
+<div class="ttc" id="aclassStringDateHash_html"><div class="ttname"><a href="classStringDateHash.html">StringDateHash</a></div><div class="ttdoc">Custom Hash table container with QString as key and QDate as value.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:58</div></div>
 <div class="ttc" id="aclassStringDateHash_html_abfcef68abd0d19df80be665f06085f6c"><div class="ttname"><a href="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c">StringDateHash::sortByKeyDesc</a></div><div class="ttdeci">QStringList sortByKeyDesc() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:209</div></div>
-<div class="ttc" id="aclassStringDateHash_html_a0171c44a3381e9a3a55d324a60735a8b"><div class="ttname"><a href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">StringDateHash::capacity</a></div><div class="ttdeci">int capacity</div><div class="ttdoc">Container for total capacity of the table.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:124</div></div>
+<div class="ttc" id="aclassStringDateHash_html_a0171c44a3381e9a3a55d324a60735a8b"><div class="ttname"><a href="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b">StringDateHash::capacity</a></div><div class="ttdeci">int capacity</div><div class="ttdoc">Container for total capacity of the table.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:121</div></div>
 <div class="ttc" id="aclassStringDateHash_html_a785f8e449c42dc13f029f41f4c9d7691"><div class="ttname"><a href="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691">StringDateHash::sortByDateDesc</a></div><div class="ttdeci">QStringList sortByDateDesc()</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:250</div></div>
 <div class="ttc" id="aclassStringDateHash_html_ad1e3379a9667b626bed7f6f58a318f88"><div class="ttname"><a href="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88">StringDateHash::sortByKeyAsc</a></div><div class="ttdeci">QStringList sortByKeyAsc() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:202</div></div>
-<div class="ttc" id="aclassHashNode_html"><div class="ttname"><a href="classHashNode.html">HashNode</a></div><div class="ttdoc">A node for StringDateHash</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:13</div></div>
+<div class="ttc" id="aclassHashNode_html"><div class="ttname"><a href="classHashNode.html">HashNode</a></div><div class="ttdoc">A node for StringDateHash</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:12</div></div>
 <div class="ttc" id="aclassHashNode_html_a1d22392c8286bedcb964bd50c241c007"><div class="ttname"><a href="classHashNode.html#a1d22392c8286bedcb964bd50c241c007">HashNode::getNext</a></div><div class="ttdeci">HashNode * getNext() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:15</div></div>
 <div class="ttc" id="aclassStringDateHash_html_a7b52d017df8b8bcd63613e8595319c5b"><div class="ttname"><a href="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b">StringDateHash::sortByDateAsc</a></div><div class="ttdeci">QStringList sortByDateAsc()</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:221</div></div>
 <div class="ttc" id="aclassStringDateHash_html_a1bd703fbfb07c231590663c25a8c7c4a"><div class="ttname"><a href="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a">StringDateHash::hashFunc</a></div><div class="ttdeci">int hashFunc(const QString &amp;key) const</div><div class="ttdoc">Hash function.</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:280</div></div>
 <div class="ttc" id="aclassHashNode_html_a52f10503db7dc31b31244d730c121371"><div class="ttname"><a href="classHashNode.html#a52f10503db7dc31b31244d730c121371">HashNode::getKey</a></div><div class="ttdeci">QString getKey() const</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:9</div></div>
-<div class="ttc" id="aclassStringDateHash_html_a26b83fcc05bf8b853fe9bc1caad901f1"><div class="ttname"><a href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">StringDateHash::table</a></div><div class="ttdeci">std::vector&lt; HashNode * &gt; table</div><div class="ttdoc">Container for the table.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:127</div></div>
+<div class="ttc" id="aclassStringDateHash_html_a26b83fcc05bf8b853fe9bc1caad901f1"><div class="ttname"><a href="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1">StringDateHash::table</a></div><div class="ttdeci">std::vector&lt; HashNode * &gt; table</div><div class="ttdoc">Container for the table.</div><div class="ttdef"><b>Definition:</b> string_date_hash.h:124</div></div>
 <div class="ttc" id="aclassHashNode_html_a021b603bd6f58a1b54e53ceb65441fb7"><div class="ttname"><a href="classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7">HashNode::setNext</a></div><div class="ttdeci">void setNext(HashNode *next)</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:17</div></div>
 <div class="ttc" id="aclassStringDateHash_html_aff45a0cfae3f2eeb08ff8c2935a13cd3"><div class="ttname"><a href="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3">StringDateHash::put</a></div><div class="ttdeci">void put(const QString &amp;key, const QDateTime &amp;value)</div><div class="ttdef"><b>Definition:</b> string_date_hash.cpp:73</div></div>
 <!-- start footer part -->

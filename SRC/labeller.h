@@ -97,8 +97,8 @@ private slots:
 
     // Controller methods
 
-private slots
-    :
+private slots:
+
     /*!
      *  Triggered when the `imageBrowseButton` is clicked
      */

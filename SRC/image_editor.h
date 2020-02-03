@@ -219,6 +219,7 @@ private:
     QAction *pasteAction;
     QAction *deleteAction;
 
+    //! @link https://doc.qt.io/qt-5/qrubberband.html
     QRubberBand *rubberBand;
 
     //! Container to store points marked by user to create a polygon
