@@ -145,13 +145,13 @@ void Labeller::setShapeTypeLabel()
 {
     const ImageEditor::AnnotationShapeType annotationShapeType = imageEditor->getAnnotationShapeType();
 
-    if(annotationShapeType == ImageEditor::AnnotationShapeType::FreeHand)
+    if (annotationShapeType == ImageEditor::AnnotationShapeType::FreeHand)
     {
         ui->shapeLabel->setText("Smart Annotate");
         ui->connectButton->setVisible(false);
         ui->clearPoints->setVisible(false);
     }
-    else if(annotationShapeType == ImageEditor::AnnotationShapeType::Points)
+    else if (annotationShapeType == ImageEditor::AnnotationShapeType::Points)
     {
         ui->shapeLabel->setText("Smart Click");
         ui->connectButton->setVisible(true);
@@ -179,7 +179,6 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
     connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
     connect(imageEditor, SIGNAL(annotationShapeChanged()), this, SLOT(setShapeTypeLabel()));
-
 }
 
 // Controller methods

@@ -26,10 +26,11 @@ public:
     };
 
     //! Annotation Shape enum for identifying the current state of shape being drawn
-    enum AnnotationShapeType {
+    enum AnnotationShapeType
+    {
         Rectangle, /*!< For drawing rectangles */
-        FreeHand, /*!< For drawing free hand */
-        Points /*!< For drawing with points */
+        FreeHand,  /*!< For drawing free hand */
+        Points     /*!< For drawing with points */
     };
 
     /*!
@@ -149,20 +150,19 @@ protected:
 
 private:
 <<<<<<< HEAD
-
     //! Clipbord content enum for for identifying the current content held by the clipbord
     enum ClipbordContent
     {
         Label, /*!< Clipbord contains a text item */
-        Rect, /*!< Clipbord contains a rectangle */
-        Poly /*!< Clipbord contains a polygon */
+        Rect,  /*!< Clipbord contains a rectangle */
+        Poly   /*!< Clipbord contains a polygon */
     };
 
     //! Boolean for whether or not an image is set for better performance with comparisson operators
-=======
-    //! Boolean for whether or not  an image is set for better performance with comparisson operators
+    == == == =
+                 //! Boolean for whether or not  an image is set for better performance with comparisson operators
 >>>>>>> 94ebe9b39cfaa255086c8a1b96c90d5c08101199
-    bool imageSet;
+        bool imageSet;
 
     //! Boolean for drawing state
     bool drawing;
@@ -228,10 +228,10 @@ private:
     QList<QPointF> clickPoints;
 
     //! Container to store line markers used when creating a polygon
-    QList<QGraphicsLineItem*> clickLines;
+    QList<QGraphicsLineItem *> clickLines;
 
     //! Container to store eplipse markers used when creating a polygon
-    QList<QGraphicsEllipseItem*> clickEplipses;
+    QList<QGraphicsEllipseItem *> clickEplipses;
 
     //! A list of resize components associated with each shape
     QList<CustomResizer *> resizerItems;

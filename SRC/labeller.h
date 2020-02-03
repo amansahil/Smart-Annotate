@@ -238,6 +238,5 @@ private slots
      *  Triggered when the `clearButton` is clicked
      */
     void on_clearButton_clicked();
-
 };
 #endif // LABELLER_H

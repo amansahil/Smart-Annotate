@@ -63,7 +63,6 @@ void ImageEditor::setImage(const QString fileName)
         {
             drawPolygon(applicationPolygonState.value(fileName).at(i));
         }
-
     }
 }
 
@@ -105,7 +104,7 @@ void ImageEditor::saveImageState()
 
                 textItems.append(newTextItem);
             }
-            else if(polygonItem != nullptr)
+            else if (polygonItem != nullptr)
             {
                 polygonItems.append(polygonItem->polygon().translated(polygonItem->scenePos()));
             }
@@ -168,19 +167,19 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
-            if(annotationShape == AnnotationShapeType::Rectangle)
+            if (annotationShape == AnnotationShapeType::Rectangle)
             {
                 // Creates a boundry indicater
                 rubberBand->setGeometry(QRect(origin, QSize()));
                 rubberBand->show();
             }
-            else if(annotationShape == AnnotationShapeType::FreeHand)
+            else if (annotationShape == AnnotationShapeType::FreeHand)
             {
                 clickPoints.append(originF);
             }
             else
             {
-                QGraphicsEllipseItem* ellipseItem =new QGraphicsEllipseItem(QRectF(originF.x(), originF.y(), 10, 10));
+                QGraphicsEllipseItem *ellipseItem = new QGraphicsEllipseItem(QRectF(originF.x(), originF.y(), 10, 10));
                 ellipseItem->setBrush(Qt::blue);
                 ellipseItem->setPen(Qt::NoPen);
                 ellipseItem->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
@@ -210,7 +209,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         {
             drawing = true;
 
-            if(annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
+            if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
             {
                 lastPoint = event->screenPos();
                 lastPointF = event->scenePos();
@@ -227,7 +226,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
                 pen.setWidth(1);
 
                 QLineF lineF(clickPoints[clickPoints.size() - 2], clickPoints[clickPoints.size() - 1]);
-                QGraphicsLineItem* item = this->addLine(lineF, pen);
+                QGraphicsLineItem *item = this->addLine(lineF, pen);
 
                 clickLines.append(item);
             }
@@ -246,7 +245,8 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     {
         if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
-            if(annotationShape == ImageEditor::AnnotationShapeType::Rectangle) {
+            if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
+            {
                 rubberBand->hide();
 
                 drawRectangle(QRectF(originF, lastPointF));
@@ -256,15 +256,15 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
                 QPolygonF polygon;
 
                 // Connects all points and connects last point to the first one
-                for(int i =0; i < clickPoints.size(); i++)
+                for (int i = 0; i < clickPoints.size(); i++)
                 {
-                    if(clickPoints.size() - 1 == i)
+                    if (clickPoints.size() - 1 == i)
                     {
                         polygon << clickPoints[i] << clickPoints[0];
                     }
                     else
                     {
-                        polygon << clickPoints[i] << clickPoints[i+1];
+                        polygon << clickPoints[i] << clickPoints[i + 1];
                     }
                 }
 
@@ -330,7 +330,7 @@ void ImageEditor::deleteSelectedItem()
 
         delete selectedItem;
 
-        if(elipseItem)
+        if (elipseItem)
         {
             clickEplipses.removeOne(elipseItem);
         }
@@ -360,7 +360,7 @@ void ImageEditor::copySelectedItem()
             clipbordHeight = selectedReactangle.height();
             clipbordWidth = selectedReactangle.width();
         }
-        else if(textItem)
+        else if (textItem)
         {
             clipbordContent = ClipbordContent::Label;
             clipbordText = textItem->toPlainText();
@@ -387,7 +387,7 @@ void ImageEditor::pasteSelectedItem()
         {
             drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
         }
-        else if(clipbordContent == ClipbordContent::Label)
+        else if (clipbordContent == ClipbordContent::Label)
         {
             drawText(clipbordText, QPointF(x, y));
         }
@@ -412,7 +412,7 @@ void ImageEditor::pasteSelectedItemInPlace()
         {
             drawRectangle(QRectF(QPointF(x, y), QSizeF(clipbordWidth, clipbordHeight)));
         }
-        else if(clipbordContent == ClipbordContent::Label)
+        else if (clipbordContent == ClipbordContent::Label)
         {
             drawText(clipbordText, QPointF(x, y));
         }
@@ -428,7 +428,7 @@ void ImageEditor::pasteSelectedItemInPlace()
 void ImageEditor::connectClickElipses()
 {
 
-    if(clickEplipses.size() <= 2)
+    if (clickEplipses.size() <= 2)
     {
         QMessageBox::warning(nullptr, "Error", "You need to mark at least three points");
         return;
@@ -436,15 +436,16 @@ void ImageEditor::connectClickElipses()
 
     QPolygonF polygon;
 
-    for(int i =0; i < clickEplipses.size(); i++)
+    for (int i = 0; i < clickEplipses.size(); i++)
     {
-        if(clickEplipses.size() - 1 == i)
+        if (clickEplipses.size() - 1 == i)
         {
-            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();;
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();
+            ;
         }
         else
         {
-            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[i+1]->rect().topLeft();
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[i + 1]->rect().topLeft();
         }
     }
 
