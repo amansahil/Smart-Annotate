@@ -179,7 +179,7 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
             }
             else
             {
-                QGraphicsEllipseItem *ellipseItem = new QGraphicsEllipseItem(QRectF(originF.x(), originF.y(), 10, 10));
+                QGraphicsEllipseItem *ellipseItem = new QGraphicsEllipseItem(QRectF(originF.x() - 5, originF.y() - 5, 10, 10));
                 ellipseItem->setBrush(Qt::blue);
                 ellipseItem->setPen(Qt::NoPen);
                 ellipseItem->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
@@ -366,7 +366,7 @@ void ImageEditor::copySelectedItem()
             clipbordText = textItem->toPlainText();
             clipbordPoint = selectedItem->scenePos();
         }
-        else
+        else if(polygonItem)
         {
             clipbordContent = ClipbordContent::Poly;
             clipbordPoint = selectedItem->scenePos();
@@ -391,7 +391,7 @@ void ImageEditor::pasteSelectedItem()
         {
             drawText(clipbordText, QPointF(x, y));
         }
-        else
+        else if (clipbordContent == ClipbordContent::Poly)
         {
             QPolygonF polygon = clipbordPolygon.translated(QPointF(x, y));
             drawPolygon(polygon);
@@ -416,7 +416,7 @@ void ImageEditor::pasteSelectedItemInPlace()
         {
             drawText(clipbordText, QPointF(x, y));
         }
-        else
+        else if (clipbordContent == ClipbordContent::Poly)
         {
             // Workaround to change position of polygon
             QPolygonF polygon = clipbordPolygon.translated(clipbordClickPoint - clipbordPolygonItemPoint);
@@ -441,7 +441,6 @@ void ImageEditor::connectClickElipses()
         if (clickEplipses.size() - 1 == i)
         {
             polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();
-            ;
         }
         else
         {
