@@ -20,8 +20,8 @@ public:
     //! Cursor type enum for identifying the current state of the cursor
     enum CursorType
     {
-        Draw, /*!< Cursor for drawing shapes */
-        Text, /*!< Cursor for adding text */
+        Draw,  /*!< Cursor for drawing shapes */
+        Text,  /*!< Cursor for adding text */
         Select /*!< Cursor for moving, copying, pasting and deleting shapes and text */
     };
 
@@ -148,6 +148,7 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 private:
+<<<<<<< HEAD
 
     //! Clipbord content enum for for identifying the current content held by the clipbord
     enum ClipbordContent
@@ -158,6 +159,9 @@ private:
     };
 
     //! Boolean for whether or not an image is set for better performance with comparisson operators
+=======
+    //! Boolean for whether or not  an image is set for better performance with comparisson operators
+>>>>>>> 94ebe9b39cfaa255086c8a1b96c90d5c08101199
     bool imageSet;
 
     //! Boolean for drawing state

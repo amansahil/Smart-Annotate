@@ -9,12 +9,10 @@
 class CustomResizer : public QGraphicsItem
 {
 private:
-
     //! Class for the resizer item
     class HandleItem : public QGraphicsRectItem
     {
     public:
-
         //! Custom type value used by QGraphicsRectItem to indentify the item type
         enum
         {
@@ -22,12 +20,10 @@ private:
         };
 
     protected:
-
         //! @link https://doc.qt.io/qt-5/qgraphicsitem.html#itemChange
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
     private:
-
         //! Container for pointer to the parent resizer class
         CustomResizer *parent;
 
@@ -51,7 +47,6 @@ private:
     };
 
 public:
-
     //! Used by QGraphicsRectItem to indentify the item type
     enum
     {
@@ -111,7 +106,6 @@ public:
     int type() const override;
 
 private:
-
     //! Enum to represent position of resizer item
     enum Position
     {

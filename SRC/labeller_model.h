@@ -15,15 +15,14 @@ class LabellerModel : public QObject
     Q_OBJECT
 
 public:
-
     //! Sorting type enum
     enum SortingType
     {
-        NameAsc, /*!< Sort by name ascended */
+        NameAsc,  /*!< Sort by name ascended */
         NameDesc, /*!< Sort by name descended */
-        DateAsc, /*!< Sort by date ascended */
+        DateAsc,  /*!< Sort by date ascended */
         DateDesc, /*!< Sort by date descended */
-        None /*!< No sorting */
+        None      /*!< No sorting */
     };
 
     explicit LabellerModel(QObject *parent = 0);
@@ -89,7 +88,6 @@ public:
      *  @param newClassNames
     */
     void updateClassNames(const QStringList newClassNames);
-
 
     /*!
      *  Adds item to `classNames`

@@ -19,7 +19,6 @@ QT_END_NAMESPACE
 class LabellerModel;
 class ImageEditor;
 
-
 //! Class for UI and controller methods for the main page
 
 class Labeller : public QMainWindow
