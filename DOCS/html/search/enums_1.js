@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cursortype_324',['CursorType',['../classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b',1,'ImageEditor']]]
+  ['clipbordcontent_341',['ClipbordContent',['../classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e',1,'ImageEditor']]],
+  ['cursortype_342',['CursorType',['../classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b',1,'ImageEditor']]]
 ];

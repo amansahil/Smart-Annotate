@@ -26,6 +26,9 @@ void ImageEditor::setImage(const QString fileName)
     // Save previous image details
     saveImageState();
 
+    // Delete any smart annotation points from previous image
+    deleteClickElipses();
+
     // Open new selected image
     try
     {
@@ -179,6 +182,7 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
                 ellipseItem->setBrush(Qt::blue);
                 ellipseItem->setPen(Qt::NoPen);
                 ellipseItem->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
+
                 ImageEditor::addItem(ellipseItem);
 
                 clickEplipses.append(ellipseItem);
@@ -362,6 +366,7 @@ void ImageEditor::copySelectedItem()
             clipbordContent = ClipbordContent::Poly;
             clipbordPoint = selectedItem->scenePos();
             clipbordPolygon = polygonItem->polygon();
+            clipbordPolygonItem = polygonItem;
         }
     }
 }
@@ -383,7 +388,6 @@ void ImageEditor::pasteSelectedItem()
         }
         else
         {
-            // Workaround to change position of polygon
             QPolygonF polygon = clipbordPolygon.translated(QPointF(x, y));
             drawPolygon(polygon);
         }
@@ -410,8 +414,8 @@ void ImageEditor::pasteSelectedItemInPlace()
         else
         {
             // Workaround to change position of polygon
-            QPolygonF polygon = clipbordPolygon.translated(QPointF(x, y));
-            drawPolygon(polygon, QPointF(x, y));
+            QPolygonF polygon = clipbordPolygon.translated(clipbordClickPoint - clipbordPolygonItem->sceneBoundingRect().topLeft());
+            drawPolygon(polygon);
         }
     }
 }
@@ -456,17 +460,6 @@ void ImageEditor::drawPolygon(const QPolygonF newPolygon)
     pen.setWidth(2);
 
     QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
-    polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
-}
-
-void ImageEditor::drawPolygon(const QPolygonF newPolygon, const QPointF position)
-{
-    QPen pen;
-    pen.setBrush(Qt::blue);
-    pen.setWidth(2);
-
-    QGraphicsPolygonItem *polygon = ImageEditor::addPolygon(newPolygon, pen);
-    polygon->setPos(position);
     polygon->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 }
 

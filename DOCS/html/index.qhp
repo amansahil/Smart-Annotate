@@ -66,6 +66,7 @@
               <section title="AnnotationShapeType" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700">
                 <section title="Rectangle" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a" />
                 <section title="FreeHand" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d" />
+                <section title="Points" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe" />
               </section>
               <section title="ClipbordContent" ref="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e">
                 <section title="Label" ref="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92" />
@@ -80,12 +81,13 @@
               <section title="ImageEditor" ref="classImageEditor.html#a66e021d837c2f15e026e045dc3fbdcc5" />
               <section title="annotationShapeChanged" ref="classImageEditor.html#a18aae92548253be1acb384a52db952b9" />
               <section title="clearItems" ref="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4" />
+              <section title="connectClickElipses" ref="classImageEditor.html#a1d994b6c6f0640f69ed7ecf8a5cd8710" />
               <section title="contextMenuEvent" ref="classImageEditor.html#a92e4b717ef8f3d9ba47fef61a9a17585" />
               <section title="copySelectedItem" ref="classImageEditor.html#a7b39d701944f2fc3972572c11238afa8" />
               <section title="createActions" ref="classImageEditor.html#add222524e3faee21eec56abeb2b41ed6" />
               <section title="cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
+              <section title="deleteClickElipses" ref="classImageEditor.html#aa5ce92d810af70cc61e353963ddcb312" />
               <section title="deleteSelectedItem" ref="classImageEditor.html#adba8cb9e2ce9de0ba679549c5f062c07" />
-              <section title="drawPolygon" ref="classImageEditor.html#ab1dff65023c94c119c221d01753d47f3" />
               <section title="drawPolygon" ref="classImageEditor.html#a854578e1f9d99aa44855676a73fd390c" />
               <section title="drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
               <section title="drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
@@ -110,6 +112,7 @@
               <section title="applicationRectState" ref="classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d" />
               <section title="applicationTextState" ref="classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d" />
               <section title="classLabel" ref="classImageEditor.html#a1e7ea34f1f876fc69864ba8a2e05bcdf" />
+              <section title="clickEplipses" ref="classImageEditor.html#adb40b3d5fd820542d18906747dc067aa" />
               <section title="clickLines" ref="classImageEditor.html#a7f6a480106fbc3a4af4e60abf349e61e" />
               <section title="clickPoints" ref="classImageEditor.html#a7712be1067da4d1d9a5d5351928ddd7e" />
               <section title="clipbord" ref="classImageEditor.html#a8bd0011bd75752c1d7d1fe67efd72b6f" />
@@ -118,6 +121,7 @@
               <section title="clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
               <section title="clipbordPoint" ref="classImageEditor.html#ac59bf651ace474b2030c0b22c5b169a3" />
               <section title="clipbordPolygon" ref="classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6" />
+              <section title="clipbordPolygonItem" ref="classImageEditor.html#aa72622c2477b5fd8233239eff5751635" />
               <section title="clipbordText" ref="classImageEditor.html#a25e4e09a5d02878601eb16fe35547dfd" />
               <section title="clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
               <section title="copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
@@ -147,11 +151,14 @@
               <section title="on_actionRectangle_triggered" ref="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b" />
               <section title="on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
               <section title="on_actionSmart_annotate_triggered" ref="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c" />
+              <section title="on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
               <section title="on_addNameItemButton_clicked" ref="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01" />
               <section title="on_annotationBrowseButton_clicked" ref="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663" />
               <section title="on_classBrowseButton_clicked" ref="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68" />
               <section title="on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
               <section title="on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
+              <section title="on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
+              <section title="on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
               <section title="on_deleteClassItemButton_clicked" ref="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b" />
               <section title="on_imageBrowseButton_clicked" ref="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a" />
               <section title="on_imageList_clicked" ref="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3" />
@@ -331,6 +338,8 @@
       <keyword name="copySelectedItem" id="ImageEditor::copySelectedItem" ref="classImageEditor.html#a7b39d701944f2fc3972572c11238afa8" />
       <keyword name="pasteSelectedItem" id="ImageEditor::pasteSelectedItem" ref="classImageEditor.html#a1a439d3b73b68d6517719bf543234cde" />
       <keyword name="pasteSelectedItemInPlace" id="ImageEditor::pasteSelectedItemInPlace" ref="classImageEditor.html#a2070e3479702b26262222353e1d12377" />
+      <keyword name="connectClickElipses" id="ImageEditor::connectClickElipses" ref="classImageEditor.html#a1d994b6c6f0640f69ed7ecf8a5cd8710" />
+      <keyword name="deleteClickElipses" id="ImageEditor::deleteClickElipses" ref="classImageEditor.html#aa5ce92d810af70cc61e353963ddcb312" />
       <keyword name="cursorTypeChanged" id="ImageEditor::cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
       <keyword name="annotationShapeChanged" id="ImageEditor::annotationShapeChanged" ref="classImageEditor.html#a18aae92548253be1acb384a52db952b9" />
       <keyword name="setImage" id="ImageEditor::setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
@@ -348,7 +357,6 @@
       <keyword name="mouseReleaseEvent" id="ImageEditor::mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
       <keyword name="contextMenuEvent" id="ImageEditor::contextMenuEvent" ref="classImageEditor.html#a92e4b717ef8f3d9ba47fef61a9a17585" />
       <keyword name="keyPressEvent" id="ImageEditor::keyPressEvent" ref="classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b" />
-      <keyword name="drawPolygon" id="ImageEditor::drawPolygon" ref="classImageEditor.html#ab1dff65023c94c119c221d01753d47f3" />
       <keyword name="drawPolygon" id="ImageEditor::drawPolygon" ref="classImageEditor.html#a854578e1f9d99aa44855676a73fd390c" />
       <keyword name="drawRectangle" id="ImageEditor::drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
       <keyword name="drawText" id="ImageEditor::drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
@@ -371,6 +379,7 @@
       <keyword name="clipbordHeight" id="ImageEditor::clipbordHeight" ref="classImageEditor.html#a29525b2ae281ac2e562407be9b1e753f" />
       <keyword name="clipbordWidth" id="ImageEditor::clipbordWidth" ref="classImageEditor.html#a6160484624a9b50872566152ab283574" />
       <keyword name="clipbordPolygon" id="ImageEditor::clipbordPolygon" ref="classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6" />
+      <keyword name="clipbordPolygonItem" id="ImageEditor::clipbordPolygonItem" ref="classImageEditor.html#aa72622c2477b5fd8233239eff5751635" />
       <keyword name="clipbordContent" id="ImageEditor::clipbordContent" ref="classImageEditor.html#abc89ecced59353dad78dbed1967536f3" />
       <keyword name="copyAction" id="ImageEditor::copyAction" ref="classImageEditor.html#a97dfaf9d9c6efa87b3531efb44b82079" />
       <keyword name="pasteAction" id="ImageEditor::pasteAction" ref="classImageEditor.html#a7aa8d9dad4f9c5305f7fd344409ee0d6" />
@@ -378,12 +387,17 @@
       <keyword name="rubberBand" id="ImageEditor::rubberBand" ref="classImageEditor.html#a92ba20be2ef6bf550de2b570bd0a1425" />
       <keyword name="clickPoints" id="ImageEditor::clickPoints" ref="classImageEditor.html#a7712be1067da4d1d9a5d5351928ddd7e" />
       <keyword name="clickLines" id="ImageEditor::clickLines" ref="classImageEditor.html#a7f6a480106fbc3a4af4e60abf349e61e" />
+      <keyword name="clickEplipses" id="ImageEditor::clickEplipses" ref="classImageEditor.html#adb40b3d5fd820542d18906747dc067aa" />
       <keyword name="resizerItems" id="ImageEditor::resizerItems" ref="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946" />
       <keyword name="applicationPolygonState" id="ImageEditor::applicationPolygonState" ref="classImageEditor.html#a302cb8abfd965fe7555fe0f04244e010" />
       <keyword name="applicationRectState" id="ImageEditor::applicationRectState" ref="classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d" />
       <keyword name="applicationTextState" id="ImageEditor::applicationTextState" ref="classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d" />
       <keyword name="Rectangle" id="ImageEditor::Rectangle" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a" />
       <keyword name="FreeHand" id="ImageEditor::FreeHand" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d" />
+      <keyword name="Points" id="ImageEditor::Points" ref="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe" />
+      <keyword name="Label" id="ImageEditor::Label" ref="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92" />
+      <keyword name="Rect" id="ImageEditor::Rect" ref="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe" />
+      <keyword name="Poly" id="ImageEditor::Poly" ref="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d" />
       <keyword name="Draw" id="ImageEditor::Draw" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236" />
       <keyword name="Text" id="ImageEditor::Text" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840" />
       <keyword name="Select" id="ImageEditor::Select" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce" />
@@ -424,6 +438,9 @@
       <keyword name="on_saveButton_clicked" id="Labeller::on_saveButton_clicked" ref="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade" />
       <keyword name="on_actionRectangle_triggered" id="Labeller::on_actionRectangle_triggered" ref="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b" />
       <keyword name="on_actionSmart_annotate_triggered" id="Labeller::on_actionSmart_annotate_triggered" ref="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c" />
+      <keyword name="on_actionSmart_Click_triggered" id="Labeller::on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
+      <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
+      <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
       <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
       <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
       <keyword name="labellerModel" id="Labeller::labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />
@@ -595,6 +612,8 @@
       <file>functions_enum.html</file>
       <file>functions_enum.html</file>
       <file>functions_enum.html</file>
+      <file>functions_eval.html</file>
+      <file>functions_eval.html</file>
       <file>functions_eval.html</file>
       <file>functions_eval.html</file>
       <file>functions_eval.html</file>

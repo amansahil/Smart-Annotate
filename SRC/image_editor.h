@@ -17,7 +17,7 @@ class ImageEditor : public QGraphicsScene
 public:
     ImageEditor();
 
-    //! Cursor type enum
+    //! Cursor type enum for identifying the current state of the cursor
     enum CursorType
     {
         Draw, /*!< Cursor for drawing shapes */
@@ -25,7 +25,7 @@ public:
         Select /*!< Cursor for moving, copying, pasting and deleting shapes and text */
     };
 
-    //! Annotation Shape enum
+    //! Annotation Shape enum for identifying the current state of shape being drawn
     enum AnnotationShapeType {
         Rectangle, /*!< For drawing rectangles */
         FreeHand, /*!< For drawing free hand */
@@ -149,11 +149,12 @@ protected:
 
 private:
 
+    //! Clipbord content enum for for identifying the current content held by the clipbord
     enum ClipbordContent
     {
-        Label,
-        Rect,
-        Poly
+        Label, /*!< Clipbord contains a text item */
+        Rect, /*!< Clipbord contains a rectangle */
+        Poly /*!< Clipbord contains a polygon */
     };
 
     //! Boolean for whether or not an image is set for better performance with comparisson operators
@@ -204,8 +205,11 @@ private:
     //! Container for width of QGraphicsRectItem which was copied
     qreal clipbordWidth;
 
-    //! Container for polygon of QGraphicsRectItem which was copied
+    //! Container for polygon of QGraphicsPolygonItem which was copied
     QPolygonF clipbordPolygon;
+
+    //! Container for QGraphicsPolygonItem which was copied
+    QGraphicsPolygonItem* clipbordPolygonItem;
 
     //! Container to identify what item has been copied
     ClipbordContent clipbordContent;
@@ -242,12 +246,6 @@ private:
      *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
      */
     void drawPolygon(const QPolygonF newPolygon);
-
-    /*!
-     *  Adds QGraphicsPolygonItem on scene
-     *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
-     */
-    void drawPolygon(const QPolygonF newPolygon, const QPointF position);
 
     /*!
      *  Adds QGraphicsRectItem on scene

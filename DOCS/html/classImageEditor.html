@@ -94,12 +94,13 @@ Public Types</h2></td></tr>
 <a class="el" href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840">Text</a>, 
 <a class="el" href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce">Select</a>
  }</td></tr>
-<tr class="memdesc:ae1465fedd17e408c7a423ccebb0e0d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cursor type enum.  <a href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b">More...</a><br /></td></tr>
+<tr class="memdesc:ae1465fedd17e408c7a423ccebb0e0d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cursor type enum for identifying the current state of the cursor.  <a href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b">More...</a><br /></td></tr>
 <tr class="separator:ae1465fedd17e408c7a423ccebb0e0d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4f7e36a44ada440acb5fb3fa35ad700"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700">AnnotationShapeType</a> { <a class="el" href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a">Rectangle</a>, 
-<a class="el" href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d">FreeHand</a>
+<a class="el" href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d">FreeHand</a>, 
+<a class="el" href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe">Points</a>
  }</td></tr>
-<tr class="memdesc:aa4f7e36a44ada440acb5fb3fa35ad700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Annotation Shape enum.  <a href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700">More...</a><br /></td></tr>
+<tr class="memdesc:aa4f7e36a44ada440acb5fb3fa35ad700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Annotation Shape enum for identifying the current state of shape being drawn.  <a href="classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700">More...</a><br /></td></tr>
 <tr class="separator:aa4f7e36a44ada440acb5fb3fa35ad700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
@@ -112,6 +113,10 @@ Public Slots</h2></td></tr>
 <tr class="separator:a1a439d3b73b68d6517719bf543234cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2070e3479702b26262222353e1d12377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a2070e3479702b26262222353e1d12377">pasteSelectedItemInPlace</a> ()</td></tr>
 <tr class="separator:a2070e3479702b26262222353e1d12377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d994b6c6f0640f69ed7ecf8a5cd8710"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a1d994b6c6f0640f69ed7ecf8a5cd8710">connectClickElipses</a> ()</td></tr>
+<tr class="separator:a1d994b6c6f0640f69ed7ecf8a5cd8710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ce92d810af70cc61e353963ddcb312"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#aa5ce92d810af70cc61e353963ddcb312">deleteClickElipses</a> ()</td></tr>
+<tr class="separator:aa5ce92d810af70cc61e353963ddcb312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -158,16 +163,15 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a6f1e6c47144654eef24fbbb3d8539c8e"><td class="memItemLeft" align="right" valign="top"><a id="a6f1e6c47144654eef24fbbb3d8539c8e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ClipbordContent</b> { <b>Label</b>, 
-<b>Rect</b>, 
-<b>Poly</b>
+<tr class="memitem:a6f1e6c47144654eef24fbbb3d8539c8e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e">ClipbordContent</a> { <a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92">Label</a>, 
+<a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe">Rect</a>, 
+<a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d">Poly</a>
  }</td></tr>
+<tr class="memdesc:a6f1e6c47144654eef24fbbb3d8539c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clipbord content enum for for identifying the current content held by the clipbord.  <a href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e">More...</a><br /></td></tr>
 <tr class="separator:a6f1e6c47144654eef24fbbb3d8539c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab1dff65023c94c119c221d01753d47f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ab1dff65023c94c119c221d01753d47f3">drawPolygon</a> (const QGraphicsPolygonItem *newPolygon, const QPointF position)</td></tr>
-<tr class="separator:ab1dff65023c94c119c221d01753d47f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a854578e1f9d99aa44855676a73fd390c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a854578e1f9d99aa44855676a73fd390c">drawPolygon</a> (const QPolygonF newPolygon)</td></tr>
 <tr class="separator:a854578e1f9d99aa44855676a73fd390c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad7a36a8341b4018fe6f7036db8a1f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45">drawRectangle</a> (const QRectF newRectangle)</td></tr>
@@ -247,10 +251,14 @@ qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <tr class="separator:a6160484624a9b50872566152ab283574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad682967267ce667e9db4ddb53afbc3a6"><td class="memItemLeft" align="right" valign="top"><a id="ad682967267ce667e9db4ddb53afbc3a6"></a>
 QPolygonF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ad682967267ce667e9db4ddb53afbc3a6">clipbordPolygon</a></td></tr>
-<tr class="memdesc:ad682967267ce667e9db4ddb53afbc3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for polygon of QGraphicsRectItem which was copied. <br /></td></tr>
+<tr class="memdesc:ad682967267ce667e9db4ddb53afbc3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for polygon of QGraphicsPolygonItem which was copied. <br /></td></tr>
 <tr class="separator:ad682967267ce667e9db4ddb53afbc3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72622c2477b5fd8233239eff5751635"><td class="memItemLeft" align="right" valign="top"><a id="aa72622c2477b5fd8233239eff5751635"></a>
+QGraphicsPolygonItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#aa72622c2477b5fd8233239eff5751635">clipbordPolygonItem</a></td></tr>
+<tr class="memdesc:aa72622c2477b5fd8233239eff5751635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for QGraphicsPolygonItem which was copied. <br /></td></tr>
+<tr class="separator:aa72622c2477b5fd8233239eff5751635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc89ecced59353dad78dbed1967536f3"><td class="memItemLeft" align="right" valign="top"><a id="abc89ecced59353dad78dbed1967536f3"></a>
-ClipbordContent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#abc89ecced59353dad78dbed1967536f3">clipbordContent</a></td></tr>
+<a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e">ClipbordContent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#abc89ecced59353dad78dbed1967536f3">clipbordContent</a></td></tr>
 <tr class="memdesc:abc89ecced59353dad78dbed1967536f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container to identify what item has been copied. <br /></td></tr>
 <tr class="separator:abc89ecced59353dad78dbed1967536f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97dfaf9d9c6efa87b3531efb44b82079"><td class="memItemLeft" align="right" valign="top"><a id="a97dfaf9d9c6efa87b3531efb44b82079"></a>
@@ -273,6 +281,10 @@ QList&lt; QPointF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a cla
 QList&lt; QGraphicsLineItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a7f6a480106fbc3a4af4e60abf349e61e">clickLines</a></td></tr>
 <tr class="memdesc:a7f6a480106fbc3a4af4e60abf349e61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container to store line markers used when creating a polygon. <br /></td></tr>
 <tr class="separator:a7f6a480106fbc3a4af4e60abf349e61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb40b3d5fd820542d18906747dc067aa"><td class="memItemLeft" align="right" valign="top"><a id="adb40b3d5fd820542d18906747dc067aa"></a>
+QList&lt; QGraphicsEllipseItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#adb40b3d5fd820542d18906747dc067aa">clickEplipses</a></td></tr>
+<tr class="memdesc:adb40b3d5fd820542d18906747dc067aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container to store eplipse markers used when creating a polygon. <br /></td></tr>
+<tr class="separator:adb40b3d5fd820542d18906747dc067aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec7058a868aa6a598089d4c025ec946"><td class="memItemLeft" align="right" valign="top"><a id="a1ec7058a868aa6a598089d4c025ec946"></a>
 QList&lt; <a class="el" href="classCustomResizer.html">CustomResizer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946">resizerItems</a></td></tr>
 <tr class="memdesc:a1ec7058a868aa6a598089d4c025ec946"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of resize components associated with each shape. <br /></td></tr>
@@ -305,11 +317,45 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
       </table>
 </div><div class="memdoc">
 
-<p>Annotation Shape enum. </p>
+<p>Annotation Shape enum for identifying the current state of shape being drawn. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a"></a>Rectangle&#160;</td><td class="fielddoc"><p>For drawing rectangles </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d"></a>FreeHand&#160;</td><td class="fielddoc"><p>For drawing free hand </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe"></a>Points&#160;</td><td class="fielddoc"><p>For drawing with points </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a6f1e6c47144654eef24fbbb3d8539c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1e6c47144654eef24fbbb3d8539c8e">&#9670;&nbsp;</a></span>ClipbordContent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classImageEditor.html#a6f1e6c47144654eef24fbbb3d8539c8e">ImageEditor::ClipbordContent</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clipbord content enum for for identifying the current content held by the clipbord. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92"></a>Label&#160;</td><td class="fielddoc"><p>Clipbord contains a text item </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe"></a>Rect&#160;</td><td class="fielddoc"><p>Clipbord contains a rectangle </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d"></a>Poly&#160;</td><td class="fielddoc"><p>Clipbord contains a polygon </p>
 </td></tr>
 </table>
 
@@ -327,7 +373,7 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
       </table>
 </div><div class="memdoc">
 
-<p>Cursor type enum. </p>
+<p>Cursor type enum for identifying the current state of the cursor. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236"></a>Draw&#160;</td><td class="fielddoc"><p>Cursor for drawing shapes </p>
 </td></tr>
@@ -381,6 +427,32 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
       </table>
 </div><div class="memdoc">
 <p>Clears all items on the scene except the image </p>
+
+</div>
+</div>
+<a id="a1d994b6c6f0640f69ed7ecf8a5cd8710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d994b6c6f0640f69ed7ecf8a5cd8710">&#9670;&nbsp;</a></span>connectClickElipses</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::connectClickElipses </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a polygon of <code>clickPoints</code> </p>
 
 </div>
 </div>
@@ -481,6 +553,32 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 
 </div>
 </div>
+<a id="aa5ce92d810af70cc61e353963ddcb312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ce92d810af70cc61e353963ddcb312">&#9670;&nbsp;</a></span>deleteClickElipses</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::deleteClickElipses </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Delete all <code>clickElipses</code> </p>
+
+</div>
+</div>
 <a id="adba8cb9e2ce9de0ba679549c5f062c07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adba8cb9e2ce9de0ba679549c5f062c07">&#9670;&nbsp;</a></span>deleteSelectedItem</h2>
 
@@ -507,50 +605,8 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 
 </div>
 </div>
-<a id="ab1dff65023c94c119c221d01753d47f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1dff65023c94c119c221d01753d47f3">&#9670;&nbsp;</a></span>drawPolygon() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ImageEditor::drawPolygon </td>
-          <td>(</td>
-          <td class="paramtype">const QGraphicsPolygonItem *&#160;</td>
-          <td class="paramname"><em>newPolygon</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QPointF&#160;</td>
-          <td class="paramname"><em>position</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Adds QGraphicsPolygonItem on scene </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">QPolygonF</td><td><a class="el" href="">https://doc.qt.io/qt-5/qpolygonf.html</a></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a854578e1f9d99aa44855676a73fd390c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a854578e1f9d99aa44855676a73fd390c">&#9670;&nbsp;</a></span>drawPolygon() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a854578e1f9d99aa44855676a73fd390c">&#9670;&nbsp;</a></span>drawPolygon()</h2>
 
 <div class="memitem">
 <div class="memproto">

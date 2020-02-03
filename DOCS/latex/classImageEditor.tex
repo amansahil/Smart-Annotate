@@ -22,11 +22,12 @@ enum \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor
 \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840}{Text}}, 
 \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce}{Select}}
  \}
-\begin{DoxyCompactList}\small\item\em Cursor type enum. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cursor type enum for identifying the current state of the cursor. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700}{Annotation\+Shape\+Type}} \{ \mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a}{Rectangle}}, 
-\mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d}{Free\+Hand}}
+\mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d}{Free\+Hand}}, 
+\mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe}{Points}}
  \}
-\begin{DoxyCompactList}\small\item\em Annotation Shape enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Annotation Shape enum for identifying the current state of shape being drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,6 +38,10 @@ void \mbox{\hyperlink{classImageEditor_a7b39d701944f2fc3972572c11238afa8}{copy\+
 void \mbox{\hyperlink{classImageEditor_a1a439d3b73b68d6517719bf543234cde}{paste\+Selected\+Item}} ()
 \item 
 void \mbox{\hyperlink{classImageEditor_a2070e3479702b26262222353e1d12377}{paste\+Selected\+Item\+In\+Place}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a1d994b6c6f0640f69ed7ecf8a5cd8710}{connect\+Click\+Elipses}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_aa5ce92d810af70cc61e353963ddcb312}{delete\+Click\+Elipses}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
@@ -84,16 +89,13 @@ void \mbox{\hyperlink{classImageEditor_a89218dd7b0ce08875de40b61d1e12a6b}{key\+P
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}\label{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}} 
-enum {\bfseries Clipbord\+Content} \{ {\bfseries Label}, 
-{\bfseries Rect}, 
-{\bfseries Poly}
+enum \mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}{Clipbord\+Content}} \{ \mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92}{Label}}, 
+\mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe}{Rect}}, 
+\mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d}{Poly}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clipbord content enum for for identifying the current content held by the clipbord. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classImageEditor_ab1dff65023c94c119c221d01753d47f3}{draw\+Polygon}} (const Q\+Graphics\+Polygon\+Item $\ast$new\+Polygon, const Q\+PointF position)
 \item 
 void \mbox{\hyperlink{classImageEditor_a854578e1f9d99aa44855676a73fd390c}{draw\+Polygon}} (const Q\+PolygonF new\+Polygon)
 \item 
@@ -158,9 +160,12 @@ qreal \mbox{\hyperlink{classImageEditor_a6160484624a9b50872566152ab283574}{clipb
 \begin{DoxyCompactList}\small\item\em Container for width of Q\+Graphics\+Rect\+Item which was copied. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classImageEditor_ad682967267ce667e9db4ddb53afbc3a6}\label{classImageEditor_ad682967267ce667e9db4ddb53afbc3a6}} 
 Q\+PolygonF \mbox{\hyperlink{classImageEditor_ad682967267ce667e9db4ddb53afbc3a6}{clipbord\+Polygon}}
-\begin{DoxyCompactList}\small\item\em Container for polygon of Q\+Graphics\+Rect\+Item which was copied. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for polygon of Q\+Graphics\+Polygon\+Item which was copied. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_aa72622c2477b5fd8233239eff5751635}\label{classImageEditor_aa72622c2477b5fd8233239eff5751635}} 
+Q\+Graphics\+Polygon\+Item $\ast$ \mbox{\hyperlink{classImageEditor_aa72622c2477b5fd8233239eff5751635}{clipbord\+Polygon\+Item}}
+\begin{DoxyCompactList}\small\item\em Container for Q\+Graphics\+Polygon\+Item which was copied. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classImageEditor_abc89ecced59353dad78dbed1967536f3}\label{classImageEditor_abc89ecced59353dad78dbed1967536f3}} 
-Clipbord\+Content \mbox{\hyperlink{classImageEditor_abc89ecced59353dad78dbed1967536f3}{clipbord\+Content}}
+\mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}{Clipbord\+Content}} \mbox{\hyperlink{classImageEditor_abc89ecced59353dad78dbed1967536f3}{clipbord\+Content}}
 \begin{DoxyCompactList}\small\item\em Container to identify what item has been copied. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classImageEditor_a97dfaf9d9c6efa87b3531efb44b82079}\label{classImageEditor_a97dfaf9d9c6efa87b3531efb44b82079}} 
 Q\+Action $\ast$ {\bfseries copy\+Action}
@@ -180,6 +185,9 @@ Q\+List$<$ Q\+PointF $>$ \mbox{\hyperlink{classImageEditor_a7712be1067da4d1d9a5d
 \mbox{\Hypertarget{classImageEditor_a7f6a480106fbc3a4af4e60abf349e61e}\label{classImageEditor_a7f6a480106fbc3a4af4e60abf349e61e}} 
 Q\+List$<$ Q\+Graphics\+Line\+Item $\ast$ $>$ \mbox{\hyperlink{classImageEditor_a7f6a480106fbc3a4af4e60abf349e61e}{click\+Lines}}
 \begin{DoxyCompactList}\small\item\em Container to store line markers used when creating a polygon. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImageEditor_adb40b3d5fd820542d18906747dc067aa}\label{classImageEditor_adb40b3d5fd820542d18906747dc067aa}} 
+Q\+List$<$ Q\+Graphics\+Ellipse\+Item $\ast$ $>$ \mbox{\hyperlink{classImageEditor_adb40b3d5fd820542d18906747dc067aa}{click\+Eplipses}}
+\begin{DoxyCompactList}\small\item\em Container to store eplipse markers used when creating a polygon. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}\label{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}} 
 Q\+List$<$ \mbox{\hyperlink{classCustomResizer}{Custom\+Resizer}} $\ast$ $>$ \mbox{\hyperlink{classImageEditor_a1ec7058a868aa6a598089d4c025ec946}{resizer\+Items}}
 \begin{DoxyCompactList}\small\item\em A list of resize components associated with each shape. \end{DoxyCompactList}\item 
@@ -206,7 +214,7 @@ Custom image editor component for annotating images and labelling images.
 
 
 
-Annotation Shape enum. 
+Annotation Shape enum for identifying the current state of shape being drawn. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Rectangle@{Rectangle}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Rectangle@{Rectangle}}}\mbox{\Hypertarget{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a}\label{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a07fe7d543a013713e10ba9b913ec218a}} 
@@ -215,6 +223,34 @@ Rectangle&For drawing rectangles \\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{FreeHand@{FreeHand}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!FreeHand@{FreeHand}}}\mbox{\Hypertarget{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d}\label{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a4073527c649176abd160d6f34ec4691d}} 
 Free\+Hand&For drawing free hand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Points@{Points}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Points@{Points}}}\mbox{\Hypertarget{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe}\label{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700a52bbaef5af35e92770e64581016920fe}} 
+Points&For drawing with points \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}\label{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}} 
+\index{ImageEditor@{ImageEditor}!ClipbordContent@{ClipbordContent}}
+\index{ClipbordContent@{ClipbordContent}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{ClipbordContent}{ClipbordContent}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8e}{Image\+Editor\+::\+Clipbord\+Content}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Clipbord content enum for for identifying the current content held by the clipbord. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Label@{Label}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Label@{Label}}}\mbox{\Hypertarget{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92}\label{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea12f22cb57fd790a8918fabcb6c3c3e92}} 
+Label&Clipbord contains a text item \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rect@{Rect}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Rect@{Rect}}}\mbox{\Hypertarget{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe}\label{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea7329f5feb6d192c89cc0376ccce25dbe}} 
+Rect&Clipbord contains a rectangle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Poly@{Poly}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Poly@{Poly}}}\mbox{\Hypertarget{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d}\label{classImageEditor_a6f1e6c47144654eef24fbbb3d8539c8ea193d58abe54d55ba4e22573862a3220d}} 
+Poly&Clipbord contains a polygon \\
 \hline
 
 \end{DoxyEnumFields}
@@ -226,7 +262,7 @@ Free\+Hand&For drawing free hand \\
 
 
 
-Cursor type enum. 
+Cursor type enum for identifying the current state of the cursor. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Draw@{Draw}!ImageEditor@{ImageEditor}}\index{ImageEditor@{ImageEditor}!Draw@{Draw}}}\mbox{\Hypertarget{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236}\label{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9bad946da1d0704fcc868b6870413d1e236}} 
@@ -257,7 +293,13 @@ Sends a signal to labeller class when annotation shape changes \mbox{\Hypertarge
 \doxysubsubsection{\texorpdfstring{clearItems()}{clearItems()}}
 {\footnotesize\ttfamily void Image\+Editor\+::clear\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Clears all items on the scene except the image \mbox{\Hypertarget{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}\label{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}} 
+Clears all items on the scene except the image \mbox{\Hypertarget{classImageEditor_a1d994b6c6f0640f69ed7ecf8a5cd8710}\label{classImageEditor_a1d994b6c6f0640f69ed7ecf8a5cd8710}} 
+\index{ImageEditor@{ImageEditor}!connectClickElipses@{connectClickElipses}}
+\index{connectClickElipses@{connectClickElipses}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{connectClickElipses}{connectClickElipses}}
+{\footnotesize\ttfamily void Image\+Editor\+::connect\+Click\+Elipses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Creates a polygon of {\ttfamily click\+Points} \mbox{\Hypertarget{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}\label{classImageEditor_a92e4b717ef8f3d9ba47fef61a9a17585}} 
 \index{ImageEditor@{ImageEditor}!contextMenuEvent@{contextMenuEvent}}
 \index{contextMenuEvent@{contextMenuEvent}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
@@ -281,27 +323,22 @@ Creates copy, paste and delete actions which is attached to the context menu cre
 \doxysubsubsection{\texorpdfstring{cursorTypeChanged}{cursorTypeChanged}}
 {\footnotesize\ttfamily void Image\+Editor\+::cursor\+Type\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Sends a signal to labeller class when cursor type changes \mbox{\Hypertarget{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}\label{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}} 
+Sends a signal to labeller class when cursor type changes \mbox{\Hypertarget{classImageEditor_aa5ce92d810af70cc61e353963ddcb312}\label{classImageEditor_aa5ce92d810af70cc61e353963ddcb312}} 
+\index{ImageEditor@{ImageEditor}!deleteClickElipses@{deleteClickElipses}}
+\index{deleteClickElipses@{deleteClickElipses}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{deleteClickElipses}{deleteClickElipses}}
+{\footnotesize\ttfamily void Image\+Editor\+::delete\+Click\+Elipses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Delete all {\ttfamily click\+Elipses} \mbox{\Hypertarget{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}\label{classImageEditor_adba8cb9e2ce9de0ba679549c5f062c07}} 
 \index{ImageEditor@{ImageEditor}!deleteSelectedItem@{deleteSelectedItem}}
 \index{deleteSelectedItem@{deleteSelectedItem}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{deleteSelectedItem}{deleteSelectedItem}}
 {\footnotesize\ttfamily void Image\+Editor\+::delete\+Selected\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-Deletes selected Qgraphics item \mbox{\Hypertarget{classImageEditor_ab1dff65023c94c119c221d01753d47f3}\label{classImageEditor_ab1dff65023c94c119c221d01753d47f3}} 
+Deletes selected Qgraphics item \mbox{\Hypertarget{classImageEditor_a854578e1f9d99aa44855676a73fd390c}\label{classImageEditor_a854578e1f9d99aa44855676a73fd390c}} 
 \index{ImageEditor@{ImageEditor}!drawPolygon@{drawPolygon}}
 \index{drawPolygon@{drawPolygon}!ImageEditor@{ImageEditor}}
-\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Image\+Editor\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const Q\+Graphics\+Polygon\+Item $\ast$}]{new\+Polygon,  }\item[{const Q\+PointF}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-Adds Q\+Graphics\+Polygon\+Item on scene 
-\begin{DoxyParams}{Parameters}
-{\em Q\+PolygonF} & \mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qpolygonf.\+html}}\\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classImageEditor_a854578e1f9d99aa44855676a73fd390c}\label{classImageEditor_a854578e1f9d99aa44855676a73fd390c}} 
-\index{ImageEditor@{ImageEditor}!drawPolygon@{drawPolygon}}
-\index{drawPolygon@{drawPolygon}!ImageEditor@{ImageEditor}}
-\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}}
 {\footnotesize\ttfamily void Image\+Editor\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const Q\+PolygonF}]{new\+Polygon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Adds Q\+Graphics\+Polygon\+Item on scene 
