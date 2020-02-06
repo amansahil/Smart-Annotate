@@ -55,22 +55,22 @@ QT_MOC_LITERAL(20, 416, 24), // "on_sortImagesAsc_clicked"
 QT_MOC_LITERAL(21, 441, 24), // "on_sortImagesDsc_clicked"
 QT_MOC_LITERAL(22, 466, 28), // "on_sortImagesdateAsc_clicked"
 QT_MOC_LITERAL(23, 495, 28), // "on_sortImagesDateDsc_clicked"
-QT_MOC_LITERAL(24, 524, 23), // "on_searchImages_clicked"
-QT_MOC_LITERAL(25, 548, 24), // "on_restoreImages_clicked"
+QT_MOC_LITERAL(24, 524, 24), // "on_restoreImages_clicked"
+QT_MOC_LITERAL(25, 549, 23), // "on_searchImages_clicked"
 QT_MOC_LITERAL(26, 573, 21), // "on_saveButton_clicked"
-QT_MOC_LITERAL(27, 595, 28), // "on_actionRectangle_triggered"
-QT_MOC_LITERAL(28, 624, 33), // "on_actionSmart_annotate_trigg..."
-QT_MOC_LITERAL(29, 658, 30), // "on_actionSmart_Click_triggered"
-QT_MOC_LITERAL(30, 689, 24), // "on_connectButton_clicked"
-QT_MOC_LITERAL(31, 714, 22), // "on_clearPoints_clicked"
-QT_MOC_LITERAL(32, 737, 30), // "on_actionMark_Object_triggered"
-QT_MOC_LITERAL(33, 768, 27), // "on_actionAdd_Text_triggered"
-QT_MOC_LITERAL(34, 796, 20), // "on_classList_clicked"
-QT_MOC_LITERAL(35, 817, 25), // "on_actionSelect_triggered"
-QT_MOC_LITERAL(36, 843, 25), // "on_actionDelete_triggered"
-QT_MOC_LITERAL(37, 869, 23), // "on_actionCopy_triggered"
-QT_MOC_LITERAL(38, 893, 24), // "on_actionPaste_triggered"
-QT_MOC_LITERAL(39, 918, 22) // "on_clearButton_clicked"
+QT_MOC_LITERAL(27, 595, 30), // "on_actionMark_Object_triggered"
+QT_MOC_LITERAL(28, 626, 27), // "on_actionAdd_Text_triggered"
+QT_MOC_LITERAL(29, 654, 25), // "on_actionSelect_triggered"
+QT_MOC_LITERAL(30, 680, 25), // "on_actionDelete_triggered"
+QT_MOC_LITERAL(31, 706, 23), // "on_actionCopy_triggered"
+QT_MOC_LITERAL(32, 730, 24), // "on_actionPaste_triggered"
+QT_MOC_LITERAL(33, 755, 22), // "on_clearButton_clicked"
+QT_MOC_LITERAL(34, 778, 20), // "on_classList_clicked"
+QT_MOC_LITERAL(35, 799, 28), // "on_actionRectangle_triggered"
+QT_MOC_LITERAL(36, 828, 33), // "on_actionSmart_annotate_trigg..."
+QT_MOC_LITERAL(37, 862, 30), // "on_actionSmart_Click_triggered"
+QT_MOC_LITERAL(38, 893, 24), // "on_connectButton_clicked"
+QT_MOC_LITERAL(39, 918, 22) // "on_clearPoints_clicked"
 
     },
     "Labeller\0setImageList\0\0setImageListToResult\0"
@@ -89,20 +89,20 @@ QT_MOC_LITERAL(39, 918, 22) // "on_clearButton_clicked"
     "on_sortImagesDsc_clicked\0"
     "on_sortImagesdateAsc_clicked\0"
     "on_sortImagesDateDsc_clicked\0"
-    "on_searchImages_clicked\0"
-    "on_restoreImages_clicked\0on_saveButton_clicked\0"
+    "on_restoreImages_clicked\0"
+    "on_searchImages_clicked\0on_saveButton_clicked\0"
+    "on_actionMark_Object_triggered\0"
+    "on_actionAdd_Text_triggered\0"
+    "on_actionSelect_triggered\0"
+    "on_actionDelete_triggered\0"
+    "on_actionCopy_triggered\0"
+    "on_actionPaste_triggered\0"
+    "on_clearButton_clicked\0on_classList_clicked\0"
     "on_actionRectangle_triggered\0"
     "on_actionSmart_annotate_triggered\0"
     "on_actionSmart_Click_triggered\0"
     "on_connectButton_clicked\0"
-    "on_clearPoints_clicked\0"
-    "on_actionMark_Object_triggered\0"
-    "on_actionAdd_Text_triggered\0"
-    "on_classList_clicked\0on_actionSelect_triggered\0"
-    "on_actionDelete_triggered\0"
-    "on_actionCopy_triggered\0"
-    "on_actionPaste_triggered\0"
-    "on_clearButton_clicked"
+    "on_clearPoints_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -230,22 +230,22 @@ void Labeller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 19: _t->on_sortImagesDsc_clicked(); break;
         case 20: _t->on_sortImagesdateAsc_clicked(); break;
         case 21: _t->on_sortImagesDateDsc_clicked(); break;
-        case 22: _t->on_searchImages_clicked(); break;
-        case 23: _t->on_restoreImages_clicked(); break;
+        case 22: _t->on_restoreImages_clicked(); break;
+        case 23: _t->on_searchImages_clicked(); break;
         case 24: _t->on_saveButton_clicked(); break;
-        case 25: _t->on_actionRectangle_triggered(); break;
-        case 26: _t->on_actionSmart_annotate_triggered(); break;
-        case 27: _t->on_actionSmart_Click_triggered(); break;
-        case 28: _t->on_connectButton_clicked(); break;
-        case 29: _t->on_clearPoints_clicked(); break;
-        case 30: _t->on_actionMark_Object_triggered(); break;
-        case 31: _t->on_actionAdd_Text_triggered(); break;
+        case 25: _t->on_actionMark_Object_triggered(); break;
+        case 26: _t->on_actionAdd_Text_triggered(); break;
+        case 27: _t->on_actionSelect_triggered(); break;
+        case 28: _t->on_actionDelete_triggered(); break;
+        case 29: _t->on_actionCopy_triggered(); break;
+        case 30: _t->on_actionPaste_triggered(); break;
+        case 31: _t->on_clearButton_clicked(); break;
         case 32: _t->on_classList_clicked(); break;
-        case 33: _t->on_actionSelect_triggered(); break;
-        case 34: _t->on_actionDelete_triggered(); break;
-        case 35: _t->on_actionCopy_triggered(); break;
-        case 36: _t->on_actionPaste_triggered(); break;
-        case 37: _t->on_clearButton_clicked(); break;
+        case 33: _t->on_actionRectangle_triggered(); break;
+        case 34: _t->on_actionSmart_annotate_triggered(); break;
+        case 35: _t->on_actionSmart_Click_triggered(); break;
+        case 36: _t->on_connectButton_clicked(); break;
+        case 37: _t->on_clearPoints_clicked(); break;
         default: ;
         }
     }

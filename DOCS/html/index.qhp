@@ -423,22 +423,22 @@
       <keyword name="on_sortImagesDsc_clicked" id="Labeller::on_sortImagesDsc_clicked" ref="classLabeller.html#a1128543a1407b48c9afa50202b336df6" />
       <keyword name="on_sortImagesdateAsc_clicked" id="Labeller::on_sortImagesdateAsc_clicked" ref="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579" />
       <keyword name="on_sortImagesDateDsc_clicked" id="Labeller::on_sortImagesDateDsc_clicked" ref="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e" />
-      <keyword name="on_searchImages_clicked" id="Labeller::on_searchImages_clicked" ref="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472" />
       <keyword name="on_restoreImages_clicked" id="Labeller::on_restoreImages_clicked" ref="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744" />
+      <keyword name="on_searchImages_clicked" id="Labeller::on_searchImages_clicked" ref="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472" />
       <keyword name="on_saveButton_clicked" id="Labeller::on_saveButton_clicked" ref="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade" />
-      <keyword name="on_actionRectangle_triggered" id="Labeller::on_actionRectangle_triggered" ref="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b" />
-      <keyword name="on_actionSmart_annotate_triggered" id="Labeller::on_actionSmart_annotate_triggered" ref="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c" />
-      <keyword name="on_actionSmart_Click_triggered" id="Labeller::on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
-      <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
-      <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
       <keyword name="on_actionMark_Object_triggered" id="Labeller::on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
       <keyword name="on_actionAdd_Text_triggered" id="Labeller::on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
-      <keyword name="on_classList_clicked" id="Labeller::on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
       <keyword name="on_actionSelect_triggered" id="Labeller::on_actionSelect_triggered" ref="classLabeller.html#aab60959afdd88f6b47965559d423b166" />
       <keyword name="on_actionDelete_triggered" id="Labeller::on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
       <keyword name="on_actionCopy_triggered" id="Labeller::on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
       <keyword name="on_actionPaste_triggered" id="Labeller::on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
       <keyword name="on_clearButton_clicked" id="Labeller::on_clearButton_clicked" ref="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa" />
+      <keyword name="on_classList_clicked" id="Labeller::on_classList_clicked" ref="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e" />
+      <keyword name="on_actionRectangle_triggered" id="Labeller::on_actionRectangle_triggered" ref="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b" />
+      <keyword name="on_actionSmart_annotate_triggered" id="Labeller::on_actionSmart_annotate_triggered" ref="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c" />
+      <keyword name="on_actionSmart_Click_triggered" id="Labeller::on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
+      <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
+      <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
       <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
       <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
       <keyword name="labellerModel" id="Labeller::labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />

@@ -20,7 +20,6 @@ class LabellerModel;
 class ImageEditor;
 
 //! Class for UI and controller methods for the main page
-
 class Labeller : public QMainWindow
 {
     Q_OBJECT
@@ -160,44 +159,19 @@ private slots:
     void on_sortImagesDateDsc_clicked();
 
     /*!
-     *  Triggered when the `searchImages` is clicked
-     */
-    void on_searchImages_clicked();
-
-    /*!
      *  Triggered when the `restoreImages` is clicked
      */
     void on_restoreImages_clicked();
 
     /*!
+     *  Triggered when the `searchImages` is clicked
+     */
+    void on_searchImages_clicked();
+
+    /*!
      *  Triggered when the `saveButton` is clicked
      */
     void on_saveButton_clicked();
-
-    /*!
-     *  Triggered when Rectangle is clicked from the menu
-     */
-    void on_actionRectangle_triggered();
-
-    /*!
-     *  Triggered when Smart Annotate is clicked from the menu
-     */
-    void on_actionSmart_annotate_triggered();
-
-    /*!
-     *  Triggered when Smart Click is clicked from the menu
-     */
-    void on_actionSmart_Click_triggered();
-
-    /*!
-     *  Triggered when `connectButton` is clicked
-     */
-    void on_connectButton_clicked();
-
-    /*!
-     *  Triggered when `clearPoints` is clicked
-     */
-    void on_clearPoints_clicked();
 
     /*!
      *  Triggered when the mark object option is selected from menu
@@ -208,11 +182,6 @@ private slots:
      *  Triggered when the add text option is selected from menu
      */
     void on_actionAdd_Text_triggered();
-
-    /*!
-     *  Triggered when `classList` is clicked
-     */
-    void on_classList_clicked();
 
     /*!
      *  Triggered when the select option is selected from menu
@@ -238,5 +207,35 @@ private slots:
      *  Triggered when the `clearButton` is clicked
      */
     void on_clearButton_clicked();
+
+    /*!
+     *  Triggered when `classList` is clicked
+     */
+    void on_classList_clicked();
+
+    /*!
+     *  Triggered when Rectangle is clicked from the menu
+     */
+    void on_actionRectangle_triggered();
+
+    /*!
+     *  Triggered when Smart Annotate is clicked from the menu
+     */
+    void on_actionSmart_annotate_triggered();
+
+    /*!
+     *  Triggered when Smart Click is clicked from the menu
+     */
+    void on_actionSmart_Click_triggered();
+
+    /*!
+     *  Triggered when `connectButton` is clicked
+     */
+    void on_connectButton_clicked();
+
+    /*!
+     *  Triggered when `clearPoints` is clicked
+     */
+    void on_clearPoints_clicked();
 };
 #endif // LABELLER_H

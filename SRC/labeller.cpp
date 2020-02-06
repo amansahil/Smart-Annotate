@@ -117,8 +117,6 @@ void Labeller::setAnnotationFile() { ui->annotationDirLabel->setText(labellerMod
 
 void Labeller::setSelectedImageFile() { imageEditor->setImage(labellerModel->getSelectedImageFile()); }
 
-void Labeller::clearClassItemLineEdit() { ui->classItemLineEdit->clear(); }
-
 void Labeller::setCursorTypeLabel()
 {
     const ImageEditor::CursorType cursorType = imageEditor->getCursorType();
@@ -164,6 +162,8 @@ void Labeller::setShapeTypeLabel()
         ui->clearPoints->setVisible(false);
     }
 }
+
+void Labeller::clearClassItemLineEdit() { ui->classItemLineEdit->clear(); }
 
 void Labeller::createListeners()
 {
