@@ -12,38 +12,42 @@ private:
     //! Class for the resizer item
     class HandleItem : public QGraphicsRectItem
     {
-    public:
+    public:        
+        HandleItem(int positionFlags, CustomResizer *parent);
+
         //! Custom type value used by QGraphicsRectItem to indentify the item type
         enum
         {
             Type = UserType + 1
         };
 
+        /*!
+         *  Returns custom type value
+         */
+        int type() const override;
+
+        /*!
+         *  Returns `positionFlags`
+         */
+        int getPositionFlags() const;
+
+
     protected:
         //! @link https://doc.qt.io/qt-5/qgraphicsitem.html#itemChange
-        virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+        virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
 
     private:
         //! Container for pointer to the parent resizer class
         CustomResizer *parent;
+
+        //! int to represent position of resizer reative to related containers
+        int positionFlags;
 
         /*!
          *  Returns QPointF based on position flag
          *  \param newPos
          */
         QPointF restrictPosition(const QPointF &newPos);
-
-        //! int to represent position of resizer reative to related containers
-        int positionFlags;
-
-    public:
-        HandleItem(int positionFlags, CustomResizer *parent);
-
-        //! Returns `positionFlags`
-        int getPositionFlags() const;
-
-        //! Returns custom type value
-        int type() const override;
     };
 
 public:
@@ -57,10 +61,15 @@ public:
     virtual ~CustomResizer();
 
     /*!
+     *  Returns custom type value
+     */
+    int type() const override;
+
+    /*!
      * Returns `rect`
      */
-    virtual QRectF boundingRect() const;
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
+    virtual QRectF boundingRect() const override;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0) override;
 
     /*!
      * Sets top left resizer item
@@ -102,11 +111,8 @@ public:
      */
     void setLeft(qreal x);
 
-    //! Returns custom type value
-    int type() const override;
-
 private:
-    //! Enum to represent position of resizer item
+    //! Enum to represent the position of resizer item
     enum Position
     {
         Top = 0x1,
@@ -119,6 +125,12 @@ private:
         BottomRight = Bottom | Right
     };
 
+    //! List of individual resizer items
+    QList<HandleItem *> handleItems;
+
+    //! Bounding rectangle
+    QRectF rect;
+
     /*!
      *  Upadtes postions of necessary resizer items and updates size of QGraphicsItem
      */
@@ -128,12 +140,6 @@ private:
      *  Upadtes postions of individual resizer items
      */
     void updateHandleItemPositions();
-
-    //! List of individual resizer items
-    QList<HandleItem *> handleItems;
-
-    //! Bounding rectangle
-    QRectF rect;
 };
 
 #endif // CUSTOMRESIZER_H

@@ -260,12 +260,12 @@ void ImageEditor::pasteSelectedItemInPlace()
 
 void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (imageSet && event->button() == Qt::LeftButton)
+    if (imageSet)
     {
         origin = event->screenPos();
         originF = event->scenePos();
 
-        if (cursorType == CursorType::Draw)
+        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
         {
             if (annotationShape == AnnotationShapeType::Rectangle)
             {
@@ -440,7 +440,7 @@ void ImageEditor::openImage(const QString fileName)
     QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(smallImage));
 
     ImageEditor::addItem(item);
-    ImageEditor::update();
+    ImageEditor::up
 }
 
 bool ImageEditor::savedStateExists(const QString fileName)

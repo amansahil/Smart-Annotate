@@ -1,15 +1,14 @@
 #ifndef IMAGEEDITOR_H
 #define IMAGEEDITOR_H
 
-#include <custom_resizer.h>
-
 #include <QHash>
 #include <QRubberBand>
 #include <QtWidgets>
 #include <QWidget>
 
-//! Custom image editor component for annotating images and labelling images
+#include <custom_resizer.h>
 
+//! Custom image editor component for annotating images and labelling image
 class ImageEditor : public QGraphicsScene
 {
     Q_OBJECT
@@ -22,10 +21,10 @@ public:
     {
         Draw,  /*!< Cursor for drawing shapes */
         Text,  /*!< Cursor for adding text */
-        Select /*!< Cursor for moving, copying, pasting and deleting shapes and text */
+        Select /*!< Cursor for moving, resizing, copying, pasting and deleting shapes and text */
     };
 
-    //! Annotation Shape enum for identifying the current state of shape being drawn
+    //! Annotation shape enum for identifying the current state of the shape being drawn
     enum AnnotationShapeType
     {
         Rectangle, /*!< For drawing rectangles */
@@ -39,6 +38,11 @@ public:
         @param fileName Absolute path to an image
     */
     void setImage(const QString fileName);
+
+    /*!
+     *  Saves information of the text and shapes on the image into relevant hash tables
+    */
+    void saveImageState();
 
     /*!
      *  Updates `cursorType`
@@ -59,25 +63,9 @@ public:
     void updateClassLabel(const QString newClassLabel);
 
     /*!
-     *  Creates copy, paste and delete actions which is attached to the context menu
-     *  created on right click on the image editor
-    */
-    void createActions();
-
-    /*!
      *  Clears all items on the scene except the image
     */
     void clearItems();
-
-    /*!
-     *  Saves postions of the text and shape into relevant Hash Tables
-    */
-    void saveImageState();
-
-    /*!
-     *  Returns `applicationRectState`
-    */
-    QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
     /*!
      *  Returns `cursorType`
@@ -88,6 +76,11 @@ public:
      *  Returns `annotationShape`
     */
     AnnotationShapeType getAnnotationShapeType() const;
+
+    /*!
+     *  Returns `applicationRectState`
+    */
+    QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
 public slots:
 
@@ -242,6 +235,12 @@ private:
 
     //! A container for information on texts added on the image and information of the relevant image file
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
+
+    /*!
+     *  Creates copy, paste and delete actions which is attached to the context menu
+     *  created when user right clicks on the image editor
+    */
+    void createActions();
 
     /*!
      *  Adds QGraphicsPolygonItem on scene
