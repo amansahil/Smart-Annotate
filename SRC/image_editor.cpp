@@ -29,7 +29,7 @@ void ImageEditor::setImage(const QString fileName)
     {
         openImage(fileName);
     }
-    catch (QException e)
+    catch (QException &e)
     {
         QMessageBox::warning(nullptr, "Error", "Could not open image");
     }
@@ -133,7 +133,7 @@ void ImageEditor::clearItems()
         {
             openImage(currFileName);
         }
-        catch (QException e)
+        catch (QException &e)
         {
             QMessageBox::warning(nullptr, "Error", "There was a problem reloading the image");
         }
@@ -384,7 +384,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             {
                 rubberBand->hide();
 
-                drawRectangle(QRectF(originF, lastPointF));
+                drawRectangle(QRectF(originF, lastPointF).normalized());
             }
             else if (annotationShape == ImageEditor::AnnotationShapeType::FreeHand)
             {
@@ -508,7 +508,7 @@ void ImageEditor::drawRectangle(const QRectF newRectangle)
     QGraphicsRectItem *rectangle = ImageEditor::addRect(newRectangle, pen);
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 
-    CustomResizer *rectSizeGripItem = new CustomResizer(rectangle);
+    new CustomResizer(rectangle);
 }
 
 void ImageEditor::drawText(const QString newText, const QPointF newPoint)
