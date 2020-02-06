@@ -1,8 +1,11 @@
 #include "string_date_hash.h"
 
-HashNode::HashNode() {}
+HashNode::HashNode(): next(NULL) {}
 
-HashNode::HashNode(const QString &key, const QDateTime &value) : key(key), value(value), next(NULL)
+HashNode::HashNode(const QString &key, const QDateTime &value) :
+    key(key),
+    value(value),
+    next(NULL)
 {
 }
 
@@ -46,7 +49,7 @@ StringDateHash::~StringDateHash()
     }
 }
 
-bool StringDateHash::get(const QString &key, QDateTime &value)
+bool StringDateHash::get(const QString &key, QDateTime &value) const
 {
     int hashValue = hashFunc(key);
 
@@ -67,6 +70,7 @@ bool StringDateHash::get(const QString &key, QDateTime &value)
 
         entry = entry->getNext();
     }
+
     return false;
 }
 
@@ -218,10 +222,15 @@ QStringList StringDateHash::sortByKeyDesc() const
     return dscKeyList;
 }
 
-QStringList StringDateHash::sortByDateAsc()
+QStringList StringDateHash::sortByDateAsc() const
 {
     QStringList keyList;
+
     const int size = StringDateHash::getSize();
+
+    if(size <= 1)
+        return getKeys();
+
     HashNode list[size];
     HashNode sortedList[size];
 
@@ -237,6 +246,7 @@ QStringList StringDateHash::sortByDateAsc()
             entry = entry->getNext();
         }
     }
+
     mergesort(list, list + size, sortedList);
 
     for (int i = 0; i < size; i++)
@@ -247,10 +257,14 @@ QStringList StringDateHash::sortByDateAsc()
     return keyList;
 }
 
-QStringList StringDateHash::sortByDateDesc()
+QStringList StringDateHash::sortByDateDesc() const
 {
     QStringList keyList;
+
     const int size = StringDateHash::getSize();
+
+    if(size <= 1)
+        return getKeys();
 
     HashNode list[size];
     HashNode sortedList[size];
@@ -267,6 +281,7 @@ QStringList StringDateHash::sortByDateDesc()
             entry = entry->getNext();
         }
     }
+
     mergesort(list, list + size, sortedList);
 
     for (int i = size - 1; i >= 0; i--)

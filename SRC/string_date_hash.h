@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QString>
 #include <QtEndian>
+#include <QDebug>
 
 //! A node for `StringDateHash`
 class HashNode
@@ -54,7 +55,6 @@ private:
 };
 
 //! Custom Hash table container with `QString` as key and `QDate` as value
-
 class StringDateHash
 {
 public:
@@ -66,7 +66,7 @@ public:
      *  \param key
      *  \param value
      */
-    bool get(const QString &key, QDateTime &value);
+    bool get(const QString &key, QDateTime &value) const;
 
     /*!
      *  Adds or updates an hashnode in the hash table
@@ -109,12 +109,12 @@ public:
     /*!
      *  Returns a list of all key values sorted by ascending order of dates
      */
-    QStringList sortByDateAsc();
+    QStringList sortByDateAsc() const;
 
     /*!
      *  Returns a list of all key values sorted by descending order of dates
      */
-    QStringList sortByDateDesc();
+    QStringList sortByDateDesc() const;
 
 private:
     //! Container for total capacity of the table
@@ -126,8 +126,8 @@ private:
     //! Hash function
     int hashFunc(const QString &key) const;
 
-    void merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res);
-    void mergesort(HashNode *begin, HashNode *end, HashNode *res);
+    static void merge(HashNode *begin, HashNode *middle, HashNode *end, HashNode *res);
+    static void mergesort(HashNode *begin, HashNode *end, HashNode *res);
 
     StringDateHash(const StringDateHash &other);
     const StringDateHash &operator=(const StringDateHash &other);
