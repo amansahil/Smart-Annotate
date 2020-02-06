@@ -6,5 +6,5 @@ var searchData=
   ['imagefiles_74',['imageFiles',['../classLabellerModel.html#ad467d9a2b39ef17a4ea130fefc9b1bcd',1,'LabellerModel']]],
   ['imagefilessorting_75',['imageFilesSorting',['../classLabellerModel.html#adbcce001e285f1806d36e67f2cfaefa0',1,'LabellerModel']]],
   ['imageset_76',['imageSet',['../classImageEditor.html#a5ba34537c42ad7f57a9eed398d360aee',1,'ImageEditor']]],
-  ['itemchange_77',['itemChange',['../classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87',1,'CustomResizer::HandleItem']]]
+  ['itemchange_77',['itemChange',['../classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc',1,'CustomResizer::HandleItem']]]
 ];

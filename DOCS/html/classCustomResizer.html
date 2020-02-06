@@ -104,11 +104,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a65f818fc1c2f3b89e0d3a1e573f19a79"><td class="memItemLeft" align="right" valign="top"><a id="a65f818fc1c2f3b89e0d3a1e573f19a79"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CustomResizer</b> (QGraphicsItem *parent=0)</td></tr>
 <tr class="separator:a65f818fc1c2f3b89e0d3a1e573f19a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b4905c5fcedfc6032029017307fb8c"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c">boundingRect</a> () const</td></tr>
-<tr class="separator:a01b4905c5fcedfc6032029017307fb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6f473800fce4c2b0eac8768d8fbcdf1"><td class="memItemLeft" align="right" valign="top"><a id="ac6f473800fce4c2b0eac8768d8fbcdf1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>paint</b> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</td></tr>
-<tr class="separator:ac6f473800fce4c2b0eac8768d8fbcdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d4498371f0f060ec2a27d793b4ccf2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">type</a> () const override</td></tr>
+<tr class="separator:ad4d4498371f0f060ec2a27d793b4ccf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2282af693302b98c8e367bc9efa47415"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#a2282af693302b98c8e367bc9efa47415">boundingRect</a> () const override</td></tr>
+<tr class="separator:a2282af693302b98c8e367bc9efa47415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f061cb4e68a581ad22459b8c3aacea6"><td class="memItemLeft" align="right" valign="top"><a id="a9f061cb4e68a581ad22459b8c3aacea6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>paint</b> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0) override</td></tr>
+<tr class="separator:a9f061cb4e68a581ad22459b8c3aacea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f1074a1b6bb8c550510a53315c6d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c">setTopLeft</a> (const QPointF &amp;pos)</td></tr>
 <tr class="separator:a27f1074a1b6bb8c550510a53315c6d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93735b34295352a59b062fff47096e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#aa93735b34295352a59b062fff47096e1">setTopRight</a> (const QPointF &amp;pos)</td></tr>
@@ -125,10 +127,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>paint</b> (QP
 <tr class="separator:aaa77dc88be5420eedf0a60d8605ea102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cef835ceceb2c3a5c3d1b1846543cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb">setLeft</a> (qreal x)</td></tr>
 <tr class="separator:a72cef835ceceb2c3a5c3d1b1846543cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4d4498371f0f060ec2a27d793b4ccf2"><td class="memItemLeft" align="right" valign="top"><a id="ad4d4498371f0f060ec2a27d793b4ccf2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">type</a> () const override</td></tr>
-<tr class="memdesc:ad4d4498371f0f060ec2a27d793b4ccf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns custom type value. <br /></td></tr>
-<tr class="separator:ad4d4498371f0f060ec2a27d793b4ccf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -144,7 +142,7 @@ Private Types</h2></td></tr>
 <b>BottomRight</b> = Bottom | Right
 <br />
  }</td></tr>
-<tr class="memdesc:aa6c24ba703fe7e3f5ab763bca4392da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to represent position of resizer item. <br /></td></tr>
+<tr class="memdesc:aa6c24ba703fe7e3f5ab763bca4392da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to represent the position of resizer item. <br /></td></tr>
 <tr class="separator:aa6c24ba703fe7e3f5ab763bca4392da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -168,8 +166,8 @@ QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for the resizer box. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a01b4905c5fcedfc6032029017307fb8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b4905c5fcedfc6032029017307fb8c">&#9670;&nbsp;</a></span>boundingRect()</h2>
+<a id="a2282af693302b98c8e367bc9efa47415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2282af693302b98c8e367bc9efa47415">&#9670;&nbsp;</a></span>boundingRect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +184,7 @@ QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -369,6 +367,32 @@ QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
       </table>
 </div><div class="memdoc">
 <p>Sets top right resizer item </p>
+
+</div>
+</div>
+<a id="ad4d4498371f0f060ec2a27d793b4ccf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d4498371f0f060ec2a27d793b4ccf2">&#9670;&nbsp;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CustomResizer::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns custom type value </p>
 
 </div>
 </div>

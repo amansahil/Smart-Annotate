@@ -509,7 +509,6 @@ void ImageEditor::drawRectangle(const QRectF newRectangle)
     rectangle->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsMovable);
 
     CustomResizer *rectSizeGripItem = new CustomResizer(rectangle);
-    resizerItems.append(rectSizeGripItem);
 }
 
 void ImageEditor::drawText(const QString newText, const QPointF newPoint)

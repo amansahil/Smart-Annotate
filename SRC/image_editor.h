@@ -160,52 +160,52 @@ private:
     //! Boolean for  for whether clipobord containers are empty or not for better performance with comparisson operators
     bool clipbord;
 
-    //! Container for cursor state
+    //! Container for the cursor state
     CursorType cursorType;
 
-    //! Container for state of shape being drawn
+    //! Container for the state of shape being drawn
     AnnotationShapeType annotationShape;
 
-    //! Container for class state (Text that would be added)
+    //! Container for the class state (Text that would be added)
     QString classLabel;
 
-    //! Container for file name
+    //! Container for the file name
     QString currFileName;
 
-    //! Point where mouse pressed used QRubberBand
+    //! Point where mouse was pressed, used QRubberBand
     QPoint origin;
 
-    //! Point where mouse released used QRubberBand
+    //! Point where mouse was released, used QRubberBand
     QPoint lastPoint;
 
-    //! Point where mouse pressed used by rectangle being drawn
+    //! Point where the mouse was pressed, used by shape being drawn
     QPointF originF;
 
-    //! Point where mouse released used by rectangle being drawn
+    //! Point where the mouse was released, used by shape being drawn
     QPointF lastPointF;
 
-    //! Container for text copied by user
+    //! Container for the text copied by user
     QString clipbordText;
 
-    //! Container for position of item copied by user
+    //! Container for the position of item copied by user
     QPointF clipbordPoint;
 
-    //! Container for position of mouse when context menu was created
+    //! Container for position of the mouse when the context menu was created
     QPointF clipbordClickPoint;
 
-    //! Container for height of QGraphicsRectItem which was copied
+    //! Container for height of the QGraphicsRectItem which was copied
     qreal clipbordHeight;
 
-    //! Container for width of QGraphicsRectItem which was copied
+    //! Container for width of the QGraphicsRectItem which was copied
     qreal clipbordWidth;
 
-    //! Container for polygon of QGraphicsPolygonItem which was copied
+    //! Container for the polygon of the QGraphicsPolygonItem which was copied
     QPolygonF clipbordPolygon;
 
-    //! Container for QGraphicsPolygonItem which was copied
+    //! Container for the position of the QGraphicsPolygonItem which was copied
     QPointF clipbordPolygonItemPoint;
 
-    //! Container to identify what item has been copied
+    //! Container to identify the type of item that has been copied
     ClipbordContent clipbordContent;
 
     QAction *copyAction;
@@ -215,7 +215,7 @@ private:
     //! @link https://doc.qt.io/qt-5/qrubberband.html
     QRubberBand *rubberBand;
 
-    //! Container to store points marked by user to create a polygon
+    //! Container to store points marked by the user to create a polygon
     QList<QPointF> clickPoints;
 
     //! Container to store line markers used when creating a polygon
@@ -224,16 +224,13 @@ private:
     //! Container to store eplipse markers used when creating a polygon
     QList<QGraphicsEllipseItem *> clickEplipses;
 
-    //! A list of resize components associated with each shape
-    QList<CustomResizer *> resizerItems;
-
-    //! A container for information on polygons drawn on the image and information of the relevant image file
+    //! A container for the information on the polygons drawn on the image and the relevant image file path
     QHash<QString, QList<QPolygonF>> applicationPolygonState;
 
-    //! A container for information on recatangles drawn on the image and information of the relevant image file
+    //! A container for the information on the recatangles drawn on the image and the relevant image file path
     QHash<QString, QList<QRectF>> applicationRectState;
 
-    //! A container for information on texts added on the image and information of the relevant image file
+    //! A container for the information on the text boxes added on the image and the relevant image file path
     QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState;
 
     /*!
@@ -262,8 +259,8 @@ private:
 
     /*!
      *  Adds text on scene
-     *  \param newText Text to be added
-     *  \param newPoint Position of text to be added
+     *  \param newText
+     *  \param newPoint
      */
     void drawText(const QString newText, const QPointF newPoint);
 
@@ -276,12 +273,12 @@ private:
 signals:
 
     /*!
-     *  Sends a signal to labeller class when cursor type changes
+     *  Sends a signal to the labeller class when cursor type changes
      */
     void cursorTypeChanged();
 
     /*!
-     *  Sends a signal to labeller class when annotation shape changes
+     *  Sends a signal to the labeller class when annotation shape changes
      */
     void annotationShapeChanged();
 };

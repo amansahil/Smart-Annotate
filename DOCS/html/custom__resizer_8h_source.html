@@ -82,107 +82,107 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCustomResizer_1_1HandleItem.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classCustomResizer_1_1HandleItem.html">HandleItem</a> : <span class="keyword">public</span> QGraphicsRectItem</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">enum</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Type = UserType + 1</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> QVariant <a class="code" href="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87">itemChange</a>(GraphicsItemChange change, <span class="keyword">const</span> QVariant &amp;value);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">   28</a></span>&#160;        <a class="code" href="classCustomResizer.html">CustomResizer</a> *<a class="code" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">parent</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        QPointF <a class="code" href="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282">restrictPosition</a>(<span class="keyword">const</span> QPointF &amp;newPos);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">   37</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">positionFlags</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:        </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classCustomResizer_1_1HandleItem.html">HandleItem</a>(<span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">positionFlags</a>, <a class="code" href="classCustomResizer.html">CustomResizer</a> *<a class="code" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">parent</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">enum</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            Type = UserType + 1</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        };</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c">type</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a">getPositionFlags</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">virtual</span> QVariant <a class="code" href="classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc">itemChange</a>(GraphicsItemChange change, <span class="keyword">const</span> QVariant &amp;value) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classCustomResizer_1_1HandleItem.html">HandleItem</a>(<span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">positionFlags</a>, <a class="code" href="classCustomResizer.html">CustomResizer</a> *<a class="code" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">parent</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a">getPositionFlags</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c">type</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">enum</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Type = UserType</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classCustomResizer.html">CustomResizer</a>(QGraphicsItem *parent = 0);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classCustomResizer.html">CustomResizer</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> QRectF <a class="code" href="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c">boundingRect</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget = 0);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c">setTopLeft</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aa93735b34295352a59b062fff47096e1">setTopRight</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b">setBottomRight</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81">setBottomLeft</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232">setTop</a>(qreal y);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb">setRight</a>(qreal x);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102">setBottom</a>(qreal y);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb">setLeft</a>(qreal x);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">type</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">  110</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">Position</a></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        Top = 0x1,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        Bottom = 0x2,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        Left = 0x4,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        TopLeft = Top | Left,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        BottomLeft = Bottom | Left,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        Right = 0x8,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        TopRight = Top | Right,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        BottomRight = Bottom | Right</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990">doResize</a>();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9">updateHandleItemPositions</a>();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">  133</a></span>&#160;    QList&lt;HandleItem *&gt; <a class="code" href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">handleItems</a>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">  136</a></span>&#160;    QRectF <a class="code" href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">rect</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">   41</a></span>&#160;        <a class="code" href="classCustomResizer.html">CustomResizer</a> *<a class="code" href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">parent</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">   44</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">positionFlags</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        QPointF <a class="code" href="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282">restrictPosition</a>(<span class="keyword">const</span> QPointF &amp;newPos);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">enum</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Type = UserType</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCustomResizer.html">CustomResizer</a>(QGraphicsItem *parent = 0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classCustomResizer.html">CustomResizer</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">type</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> QRectF <a class="code" href="classCustomResizer.html#a2282af693302b98c8e367bc9efa47415">boundingRect</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget = 0) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c">setTopLeft</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aa93735b34295352a59b062fff47096e1">setTopRight</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b">setBottomRight</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81">setBottomLeft</a>(<span class="keyword">const</span> QPointF &amp;pos);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232">setTop</a>(qreal y);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb">setRight</a>(qreal x);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102">setBottom</a>(qreal y);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb">setLeft</a>(qreal x);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">  116</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">Position</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        Top = 0x1,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        Bottom = 0x2,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Left = 0x4,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        TopLeft = Top | Left,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        BottomLeft = Bottom | Left,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        Right = 0x8,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        TopRight = Top | Right,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        BottomRight = Bottom | Right</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    };</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">  129</a></span>&#160;    QList&lt;HandleItem *&gt; <a class="code" href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">handleItems</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">  132</a></span>&#160;    QRectF <a class="code" href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">rect</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990">doResize</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif // CUSTOMRESIZER_H</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9">updateHandleItemPositions</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;};</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif // CUSTOMRESIZER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassCustomResizer_html_a01b4905c5fcedfc6032029017307fb8c"><div class="ttname"><a href="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c">CustomResizer::boundingRect</a></div><div class="ttdeci">virtual QRectF boundingRect() const</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:102</div></div>
-<div class="ttc" id="aclassCustomResizer_html_ab0f521467414387b0a410143c08be6a7"><div class="ttname"><a href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">CustomResizer::handleItems</a></div><div class="ttdeci">QList&lt; HandleItem * &gt; handleItems</div><div class="ttdoc">List of individual resizer items.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:133</div></div>
+<div class="ttc" id="aclassCustomResizer_html_ab0f521467414387b0a410143c08be6a7"><div class="ttname"><a href="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7">CustomResizer::handleItems</a></div><div class="ttdeci">QList&lt; HandleItem * &gt; handleItems</div><div class="ttdoc">List of individual resizer items.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:129</div></div>
 <div class="ttc" id="aclassCustomResizer_html_aaa77dc88be5420eedf0a60d8605ea102"><div class="ttname"><a href="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102">CustomResizer::setBottom</a></div><div class="ttdeci">void setBottom(qreal y)</div></div>
 <div class="ttc" id="aclassCustomResizer_html_a27f1074a1b6bb8c550510a53315c6d6c"><div class="ttname"><a href="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c">CustomResizer::setTopLeft</a></div><div class="ttdeci">void setTopLeft(const QPointF &amp;pos)</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_abc37a1ea465f04243aa15d5d73e49b3c"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c">CustomResizer::HandleItem::type</a></div><div class="ttdeci">int type() const override</div><div class="ttdoc">Returns custom type value.</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:10</div></div>
-<div class="ttc" id="aclassCustomResizer_html_aa6c24ba703fe7e3f5ab763bca4392da0"><div class="ttname"><a href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">CustomResizer::Position</a></div><div class="ttdeci">Position</div><div class="ttdoc">Enum to represent position of resizer item.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:110</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_a8bbde4bb5c6e46402aaf84bae9b448fc"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc">CustomResizer::HandleItem::itemChange</a></div><div class="ttdeci">virtual QVariant itemChange(GraphicsItemChange change, const QVariant &amp;value) override</div><div class="ttdoc">https://doc.qt.io/qt-5/qgraphicsitem.html#itemChange</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:17</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_abc37a1ea465f04243aa15d5d73e49b3c"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c">CustomResizer::HandleItem::type</a></div><div class="ttdeci">int type() const override</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:13</div></div>
+<div class="ttc" id="aclassCustomResizer_html_aa6c24ba703fe7e3f5ab763bca4392da0"><div class="ttname"><a href="classCustomResizer.html#aa6c24ba703fe7e3f5ab763bca4392da0">CustomResizer::Position</a></div><div class="ttdeci">Position</div><div class="ttdoc">Enum to represent the position of resizer item.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:116</div></div>
 <div class="ttc" id="aclassCustomResizer_html_aa93735b34295352a59b062fff47096e1"><div class="ttname"><a href="classCustomResizer.html#aa93735b34295352a59b062fff47096e1">CustomResizer::setTopRight</a></div><div class="ttdeci">void setTopRight(const QPointF &amp;pos)</div></div>
 <div class="ttc" id="aclassCustomResizer_html_a485c56feed632676b8c32f9c54ccb0bb"><div class="ttname"><a href="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb">CustomResizer::setRight</a></div><div class="ttdeci">void setRight(qreal x)</div></div>
-<div class="ttc" id="aclassCustomResizer_html_ad4d4498371f0f060ec2a27d793b4ccf2"><div class="ttname"><a href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">CustomResizer::type</a></div><div class="ttdeci">int type() const override</div><div class="ttdoc">Returns custom type value.</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:100</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_a47c916f7f767ae92af972b01a98e8c87"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87">CustomResizer::HandleItem::itemChange</a></div><div class="ttdeci">virtual QVariant itemChange(GraphicsItemChange change, const QVariant &amp;value)</div><div class="ttdoc">https://doc.qt.io/qt-5/qgraphicsitem.html#itemChange</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:14</div></div>
+<div class="ttc" id="aclassCustomResizer_html_ad4d4498371f0f060ec2a27d793b4ccf2"><div class="ttname"><a href="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2">CustomResizer::type</a></div><div class="ttdeci">int type() const override</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:104</div></div>
 <div class="ttc" id="aclassCustomResizer_1_1HandleItem_html"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html">CustomResizer::HandleItem</a></div><div class="ttdoc">Class for the resizer item.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:13</div></div>
 <div class="ttc" id="aclassCustomResizer_html_ac92bf413d338fa94e076a8b5c4b1036b"><div class="ttname"><a href="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b">CustomResizer::setBottomRight</a></div><div class="ttdeci">void setBottomRight(const QPointF &amp;pos)</div></div>
 <div class="ttc" id="aclassCustomResizer_html_a72cef835ceceb2c3a5c3d1b1846543cb"><div class="ttname"><a href="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb">CustomResizer::setLeft</a></div><div class="ttdeci">void setLeft(qreal x)</div></div>
-<div class="ttc" id="aclassCustomResizer_html_ad76dada54c42c138dbc1fbf52864d990"><div class="ttname"><a href="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990">CustomResizer::doResize</a></div><div class="ttdeci">void doResize()</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:124</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_ae3c377e6bf9512a9ecf3712ea3f95c6e"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">CustomResizer::HandleItem::positionFlags</a></div><div class="ttdeci">int positionFlags</div><div class="ttdoc">int to represent position of resizer reative to related containers</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:37</div></div>
+<div class="ttc" id="aclassCustomResizer_html_ad76dada54c42c138dbc1fbf52864d990"><div class="ttname"><a href="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990">CustomResizer::doResize</a></div><div class="ttdeci">void doResize()</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:128</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_ae3c377e6bf9512a9ecf3712ea3f95c6e"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e">CustomResizer::HandleItem::positionFlags</a></div><div class="ttdeci">int positionFlags</div><div class="ttdoc">int to represent the position of the resizer reative to related containers</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:44</div></div>
 <div class="ttc" id="aclassCustomResizer_html"><div class="ttname"><a href="classCustomResizer.html">CustomResizer</a></div><div class="ttdoc">Class for the resizer box.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:9</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_ae5652eafa04784ccca0594766b210282"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282">CustomResizer::HandleItem::restrictPosition</a></div><div class="ttdeci">QPointF restrictPosition(const QPointF &amp;newPos)</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:58</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_afc1c56ee6292616bbfb0d160dfba388a"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a">CustomResizer::HandleItem::getPositionFlags</a></div><div class="ttdeci">int getPositionFlags() const</div><div class="ttdoc">Returns positionFlags</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:12</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_ae5652eafa04784ccca0594766b210282"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282">CustomResizer::HandleItem::restrictPosition</a></div><div class="ttdeci">QPointF restrictPosition(const QPointF &amp;newPos)</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:61</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_afc1c56ee6292616bbfb0d160dfba388a"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a">CustomResizer::HandleItem::getPositionFlags</a></div><div class="ttdeci">int getPositionFlags() const</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:15</div></div>
 <div class="ttc" id="aclassCustomResizer_html_aea92d2679fe56ead0fd36d62593c9232"><div class="ttname"><a href="classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232">CustomResizer::setTop</a></div><div class="ttdeci">void setTop(qreal y)</div></div>
-<div class="ttc" id="aclassCustomResizer_html_a26750895c71f502d12983b98e2e881f8"><div class="ttname"><a href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">CustomResizer::rect</a></div><div class="ttdeci">QRectF rect</div><div class="ttdoc">Bounding rectangle.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:136</div></div>
+<div class="ttc" id="aclassCustomResizer_html_a26750895c71f502d12983b98e2e881f8"><div class="ttname"><a href="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8">CustomResizer::rect</a></div><div class="ttdeci">QRectF rect</div><div class="ttdoc">Bounding rectangle.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:132</div></div>
+<div class="ttc" id="aclassCustomResizer_html_a2282af693302b98c8e367bc9efa47415"><div class="ttname"><a href="classCustomResizer.html#a2282af693302b98c8e367bc9efa47415">CustomResizer::boundingRect</a></div><div class="ttdeci">virtual QRectF boundingRect() const override</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:106</div></div>
 <div class="ttc" id="aclassCustomResizer_html_aff990d4ce7225aed98de6799b17e0f81"><div class="ttname"><a href="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81">CustomResizer::setBottomLeft</a></div><div class="ttdeci">void setBottomLeft(const QPointF &amp;pos)</div></div>
-<div class="ttc" id="aclassCustomResizer_html_ab973df5ea081715d217073fe513de5c9"><div class="ttname"><a href="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9">CustomResizer::updateHandleItemPositions</a></div><div class="ttdeci">void updateHandleItemPositions()</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:136</div></div>
-<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_acd3cd5b9a63da403ea5771ee07786fed"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">CustomResizer::HandleItem::parent</a></div><div class="ttdeci">CustomResizer * parent</div><div class="ttdoc">Container for pointer to the parent resizer class.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:28</div></div>
+<div class="ttc" id="aclassCustomResizer_html_ab973df5ea081715d217073fe513de5c9"><div class="ttname"><a href="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9">CustomResizer::updateHandleItemPositions</a></div><div class="ttdeci">void updateHandleItemPositions()</div><div class="ttdef"><b>Definition:</b> custom_resizer.cpp:140</div></div>
+<div class="ttc" id="aclassCustomResizer_1_1HandleItem_html_acd3cd5b9a63da403ea5771ee07786fed"><div class="ttname"><a href="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed">CustomResizer::HandleItem::parent</a></div><div class="ttdeci">CustomResizer * parent</div><div class="ttdoc">Container for the pointer to the parent resizer class.</div><div class="ttdef"><b>Definition:</b> custom_resizer.h:41</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

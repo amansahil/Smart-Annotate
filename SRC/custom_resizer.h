@@ -37,14 +37,14 @@ private:
         virtual QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
 
     private:
-        //! Container for pointer to the parent resizer class
+        //! Container for the pointer to the parent resizer class
         CustomResizer *parent;
 
-        //! int to represent position of resizer reative to related containers
+        //! int to represent the position of the resizer reative to related containers
         int positionFlags;
 
         /*!
-         *  Returns QPointF based on position flag
+         *  Returns QPointF based on the position flag
          *  \param newPos
          */
         QPointF restrictPosition(const QPointF &newPos);
@@ -57,7 +57,7 @@ public:
         Type = UserType
     };
 
-    CustomResizer(QGraphicsItem *parent = 0);
+    explicit CustomResizer(QGraphicsItem *parent = 0);
     virtual ~CustomResizer();
 
     /*!

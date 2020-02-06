@@ -13,7 +13,7 @@
                 <section title="Type" ref="classCustomResizer_1_1HandleItem.html#a1e5bf3f95d050d2a1c58a7b8e09e3293ae829c8eef8df58778f6497388eefb083" />
                 <section title="HandleItem" ref="classCustomResizer_1_1HandleItem.html#a1322ef869972bdcea57e963a9c59b21c" />
                 <section title="getPositionFlags" ref="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a" />
-                <section title="itemChange" ref="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87" />
+                <section title="itemChange" ref="classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc" />
                 <section title="restrictPosition" ref="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282" />
                 <section title="type" ref="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c" />
                 <section title="parent" ref="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed" />
@@ -32,9 +32,9 @@
               </section>
               <section title="CustomResizer" ref="classCustomResizer.html#a65f818fc1c2f3b89e0d3a1e573f19a79" />
               <section title="~CustomResizer" ref="classCustomResizer.html#af02d376e7aa43d50bc7bb58ae0195cd1" />
-              <section title="boundingRect" ref="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c" />
+              <section title="boundingRect" ref="classCustomResizer.html#a2282af693302b98c8e367bc9efa47415" />
               <section title="doResize" ref="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990" />
-              <section title="paint" ref="classCustomResizer.html#ac6f473800fce4c2b0eac8768d8fbcdf1" />
+              <section title="paint" ref="classCustomResizer.html#a9f061cb4e68a581ad22459b8c3aacea6" />
               <section title="setBottom" ref="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102" />
               <section title="setBottomLeft" ref="classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81" />
               <section title="setBottomRight" ref="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b" />
@@ -135,7 +135,6 @@
               <section title="origin" ref="classImageEditor.html#a67761379e97907f6232473b6ae22ca05" />
               <section title="originF" ref="classImageEditor.html#a601196bdc1c4b1e66313bfae02de08fb" />
               <section title="pasteAction" ref="classImageEditor.html#a7aa8d9dad4f9c5305f7fd344409ee0d6" />
-              <section title="resizerItems" ref="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946" />
               <section title="rubberBand" ref="classImageEditor.html#a92ba20be2ef6bf550de2b570bd0a1425" />
             </section>
             <section title="Labeller" ref="classLabeller.html">
@@ -298,8 +297,9 @@
     <keywords>
       <keyword name="CustomResizer" id="CustomResizer" ref="classCustomResizer.html" />
       <keyword name="CustomResizer" id="CustomResizer::CustomResizer" ref="classCustomResizer.html#a65f818fc1c2f3b89e0d3a1e573f19a79" />
-      <keyword name="boundingRect" id="CustomResizer::boundingRect" ref="classCustomResizer.html#a01b4905c5fcedfc6032029017307fb8c" />
-      <keyword name="paint" id="CustomResizer::paint" ref="classCustomResizer.html#ac6f473800fce4c2b0eac8768d8fbcdf1" />
+      <keyword name="type" id="CustomResizer::type" ref="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2" />
+      <keyword name="boundingRect" id="CustomResizer::boundingRect" ref="classCustomResizer.html#a2282af693302b98c8e367bc9efa47415" />
+      <keyword name="paint" id="CustomResizer::paint" ref="classCustomResizer.html#a9f061cb4e68a581ad22459b8c3aacea6" />
       <keyword name="setTopLeft" id="CustomResizer::setTopLeft" ref="classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c" />
       <keyword name="setTopRight" id="CustomResizer::setTopRight" ref="classCustomResizer.html#aa93735b34295352a59b062fff47096e1" />
       <keyword name="setBottomRight" id="CustomResizer::setBottomRight" ref="classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b" />
@@ -308,16 +308,15 @@
       <keyword name="setRight" id="CustomResizer::setRight" ref="classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb" />
       <keyword name="setBottom" id="CustomResizer::setBottom" ref="classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102" />
       <keyword name="setLeft" id="CustomResizer::setLeft" ref="classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb" />
-      <keyword name="type" id="CustomResizer::type" ref="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2" />
       <keyword name="doResize" id="CustomResizer::doResize" ref="classCustomResizer.html#ad76dada54c42c138dbc1fbf52864d990" />
       <keyword name="updateHandleItemPositions" id="CustomResizer::updateHandleItemPositions" ref="classCustomResizer.html#ab973df5ea081715d217073fe513de5c9" />
       <keyword name="handleItems" id="CustomResizer::handleItems" ref="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7" />
       <keyword name="rect" id="CustomResizer::rect" ref="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8" />
       <keyword name="CustomResizer::HandleItem" id="CustomResizer::HandleItem" ref="classCustomResizer_1_1HandleItem.html" />
       <keyword name="HandleItem" id="CustomResizer::HandleItem::HandleItem" ref="classCustomResizer_1_1HandleItem.html#a1322ef869972bdcea57e963a9c59b21c" />
-      <keyword name="getPositionFlags" id="CustomResizer::HandleItem::getPositionFlags" ref="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a" />
       <keyword name="type" id="CustomResizer::HandleItem::type" ref="classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c" />
-      <keyword name="itemChange" id="CustomResizer::HandleItem::itemChange" ref="classCustomResizer_1_1HandleItem.html#a47c916f7f767ae92af972b01a98e8c87" />
+      <keyword name="getPositionFlags" id="CustomResizer::HandleItem::getPositionFlags" ref="classCustomResizer_1_1HandleItem.html#afc1c56ee6292616bbfb0d160dfba388a" />
+      <keyword name="itemChange" id="CustomResizer::HandleItem::itemChange" ref="classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc" />
       <keyword name="restrictPosition" id="CustomResizer::HandleItem::restrictPosition" ref="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282" />
       <keyword name="parent" id="CustomResizer::HandleItem::parent" ref="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed" />
       <keyword name="positionFlags" id="CustomResizer::HandleItem::positionFlags" ref="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e" />
@@ -343,24 +342,24 @@
       <keyword name="cursorTypeChanged" id="ImageEditor::cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
       <keyword name="annotationShapeChanged" id="ImageEditor::annotationShapeChanged" ref="classImageEditor.html#a18aae92548253be1acb384a52db952b9" />
       <keyword name="setImage" id="ImageEditor::setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
+      <keyword name="saveImageState" id="ImageEditor::saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
       <keyword name="updateCursorType" id="ImageEditor::updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
       <keyword name="updateAnnotationShapeType" id="ImageEditor::updateAnnotationShapeType" ref="classImageEditor.html#aecd8aa36fa9b51abb8cc600e6ca42af9" />
       <keyword name="updateClassLabel" id="ImageEditor::updateClassLabel" ref="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8" />
-      <keyword name="createActions" id="ImageEditor::createActions" ref="classImageEditor.html#add222524e3faee21eec56abeb2b41ed6" />
       <keyword name="clearItems" id="ImageEditor::clearItems" ref="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4" />
-      <keyword name="saveImageState" id="ImageEditor::saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
-      <keyword name="getApplicationRectState" id="ImageEditor::getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
       <keyword name="getCursorType" id="ImageEditor::getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
       <keyword name="getAnnotationShapeType" id="ImageEditor::getAnnotationShapeType" ref="classImageEditor.html#afd8af03b9d22ad0b9cce340e6e0e663e" />
+      <keyword name="getApplicationRectState" id="ImageEditor::getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
       <keyword name="mousePressEvent" id="ImageEditor::mousePressEvent" ref="classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a" />
       <keyword name="mouseMoveEvent" id="ImageEditor::mouseMoveEvent" ref="classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c" />
       <keyword name="mouseReleaseEvent" id="ImageEditor::mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
       <keyword name="contextMenuEvent" id="ImageEditor::contextMenuEvent" ref="classImageEditor.html#a92e4b717ef8f3d9ba47fef61a9a17585" />
       <keyword name="keyPressEvent" id="ImageEditor::keyPressEvent" ref="classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b" />
+      <keyword name="createActions" id="ImageEditor::createActions" ref="classImageEditor.html#add222524e3faee21eec56abeb2b41ed6" />
+      <keyword name="openImage" id="ImageEditor::openImage" ref="classImageEditor.html#ad52e5e0927c367bca83d8b0c74219974" />
       <keyword name="drawPolygon" id="ImageEditor::drawPolygon" ref="classImageEditor.html#a854578e1f9d99aa44855676a73fd390c" />
       <keyword name="drawRectangle" id="ImageEditor::drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
       <keyword name="drawText" id="ImageEditor::drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
-      <keyword name="openImage" id="ImageEditor::openImage" ref="classImageEditor.html#ad52e5e0927c367bca83d8b0c74219974" />
       <keyword name="savedStateExists" id="ImageEditor::savedStateExists" ref="classImageEditor.html#aff34ce1abfe216be62ce72e95454c1a8" />
       <keyword name="imageSet" id="ImageEditor::imageSet" ref="classImageEditor.html#a5ba34537c42ad7f57a9eed398d360aee" />
       <keyword name="drawing" id="ImageEditor::drawing" ref="classImageEditor.html#af6bcc04b8fde6f0600f545af113b60aa" />
@@ -388,7 +387,6 @@
       <keyword name="clickPoints" id="ImageEditor::clickPoints" ref="classImageEditor.html#a7712be1067da4d1d9a5d5351928ddd7e" />
       <keyword name="clickLines" id="ImageEditor::clickLines" ref="classImageEditor.html#ae3ce2aaf0661aef247c43ebcedae8d74" />
       <keyword name="clickEplipses" id="ImageEditor::clickEplipses" ref="classImageEditor.html#a22e0af7c13151103d329e9bac42a050f" />
-      <keyword name="resizerItems" id="ImageEditor::resizerItems" ref="classImageEditor.html#a1ec7058a868aa6a598089d4c025ec946" />
       <keyword name="applicationPolygonState" id="ImageEditor::applicationPolygonState" ref="classImageEditor.html#a302cb8abfd965fe7555fe0f04244e010" />
       <keyword name="applicationRectState" id="ImageEditor::applicationRectState" ref="classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d" />
       <keyword name="applicationTextState" id="ImageEditor::applicationTextState" ref="classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d" />
