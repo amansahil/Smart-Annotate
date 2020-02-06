@@ -215,7 +215,7 @@
               <section title="updateAnnotationFile" ref="classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf" />
               <section title="updateClassListSorting" ref="classLabellerModel.html#a7a7df19b8c27d1182d39c870305ab42a" />
               <section title="updateClassNames" ref="classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda" />
-              <section title="updateimageDir" ref="classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907" />
+              <section title="updateImageDir" ref="classLabellerModel.html#ab48e41d051e7b089378ed74f8e31dd19" />
               <section title="updateImageFiles" ref="classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa" />
               <section title="updateImageFiles" ref="classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f" />
               <section title="updateImageFilesSorting" ref="classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f" />
@@ -456,22 +456,22 @@
       <keyword name="clearClassItemLineEdit" id="LabellerModel::clearClassItemLineEdit" ref="classLabellerModel.html#a37007b91ec12e44f7e779ada2ca0a779" />
       <keyword name="LabellerModel" id="LabellerModel::LabellerModel" ref="classLabellerModel.html#a8ce58d5d39d8278e7dd82ea3f207f663" />
       <keyword name="getImageFiles" id="LabellerModel::getImageFiles" ref="classLabellerModel.html#adcd9fa21ed9f4a494432077ca85f1553" />
-      <keyword name="getClassNames" id="LabellerModel::getClassNames" ref="classLabellerModel.html#ae47b483c763d68be74ba544b3d6f8944" />
+      <keyword name="getSelectedImageFile" id="LabellerModel::getSelectedImageFile" ref="classLabellerModel.html#aaf2162e0043c3a725cfa8d8a6aea05c8" />
+      <keyword name="getImageFileResult" id="LabellerModel::getImageFileResult" ref="classLabellerModel.html#aa3e76748f0dab5b8d4c227b2c01955ca" />
       <keyword name="getAnnotationFile" id="LabellerModel::getAnnotationFile" ref="classLabellerModel.html#aaed0c2907cd812511a774bf5394928b1" />
       <keyword name="getImageDir" id="LabellerModel::getImageDir" ref="classLabellerModel.html#a08c33edb9a1469ba43f10cb7baf86c2d" />
       <keyword name="getNameFile" id="LabellerModel::getNameFile" ref="classLabellerModel.html#a288660912a27883ab7242db1138ad65d" />
-      <keyword name="getSelectedImageFile" id="LabellerModel::getSelectedImageFile" ref="classLabellerModel.html#aaf2162e0043c3a725cfa8d8a6aea05c8" />
-      <keyword name="getImageFileResult" id="LabellerModel::getImageFileResult" ref="classLabellerModel.html#aa3e76748f0dab5b8d4c227b2c01955ca" />
+      <keyword name="getClassNames" id="LabellerModel::getClassNames" ref="classLabellerModel.html#ae47b483c763d68be74ba544b3d6f8944" />
       <keyword name="getClassListSorting" id="LabellerModel::getClassListSorting" ref="classLabellerModel.html#a206d29135e6c353d48bcbbb631f6b733" />
       <keyword name="getImageFilesSorting" id="LabellerModel::getImageFilesSorting" ref="classLabellerModel.html#a08f11856309a198db66cf02483534738" />
       <keyword name="updateImageFiles" id="LabellerModel::updateImageFiles" ref="classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa" />
       <keyword name="updateImageFiles" id="LabellerModel::updateImageFiles" ref="classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f" />
+      <keyword name="updateSelectedImageFile" id="LabellerModel::updateSelectedImageFile" ref="classLabellerModel.html#a8a41825f1400708cf9521d7fc66a0fe1" />
+      <keyword name="updateAnnotationFile" id="LabellerModel::updateAnnotationFile" ref="classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf" />
+      <keyword name="updateImageDir" id="LabellerModel::updateImageDir" ref="classLabellerModel.html#ab48e41d051e7b089378ed74f8e31dd19" />
+      <keyword name="updateNameFile" id="LabellerModel::updateNameFile" ref="classLabellerModel.html#a53d091ac03750ecf9083566345d64caa" />
       <keyword name="updateClassNames" id="LabellerModel::updateClassNames" ref="classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda" />
       <keyword name="addClassName" id="LabellerModel::addClassName" ref="classLabellerModel.html#a727e984982fc9b8099d39f5bef3a6478" />
-      <keyword name="updateAnnotationFile" id="LabellerModel::updateAnnotationFile" ref="classLabellerModel.html#a4e33c681cd7f6ed1de118509b2099bcf" />
-      <keyword name="updateimageDir" id="LabellerModel::updateimageDir" ref="classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907" />
-      <keyword name="updateNameFile" id="LabellerModel::updateNameFile" ref="classLabellerModel.html#a53d091ac03750ecf9083566345d64caa" />
-      <keyword name="updateSelectedImageFile" id="LabellerModel::updateSelectedImageFile" ref="classLabellerModel.html#a8a41825f1400708cf9521d7fc66a0fe1" />
       <keyword name="updateClassListSorting" id="LabellerModel::updateClassListSorting" ref="classLabellerModel.html#a7a7df19b8c27d1182d39c870305ab42a" />
       <keyword name="updateImageFilesSorting" id="LabellerModel::updateImageFilesSorting" ref="classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f" />
       <keyword name="imageFiles" id="LabellerModel::imageFiles" ref="classLabellerModel.html#ad467d9a2b39ef17a4ea130fefc9b1bcd" />

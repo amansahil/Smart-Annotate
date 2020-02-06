@@ -15,7 +15,9 @@ class LabellerModel : public QObject
     Q_OBJECT
 
 public:
-    //! Sorting type enum
+    explicit LabellerModel(QObject *parent = 0);
+
+    //! Sorting type enum to identify type of sorting
     enum SortingType
     {
         NameAsc,  /*!< Sort by name ascended */
@@ -25,17 +27,20 @@ public:
         None      /*!< No sorting */
     };
 
-    explicit LabellerModel(QObject *parent = 0);
-
     /*!
      *  Returns `imageFiles`
     */
     StringDateHash *getImageFiles() const;
 
     /*!
-     *  Returns `classNames`
+     *  Returns `selectedImageFile`
     */
-    QStringList getClassNames() const;
+    QString getSelectedImageFile() const;
+
+    /*!
+     *  Returns `imageFileResult`
+    */
+    QString getImageFileResult() const;
 
     /*!
      *  Returns `annotationFile`
@@ -53,14 +58,9 @@ public:
     QString getNameFile() const;
 
     /*!
-     *  Returns `selectedImageFile`
+     *  Returns `classNames`
     */
-    QString getSelectedImageFile() const;
-
-    /*!
-     *  Returns `imageFileResult`
-    */
-    QString getImageFileResult() const;
+    QStringList getClassNames() const;
 
     /*!
      *  Returns `imageFilesSorting`
@@ -84,16 +84,10 @@ public:
     void updateImageFiles(const QString newImageFileResult);
 
     /*!
-     *  Updates `classNames`
-     *  @param newClassNames
+     *  Updates `selectedImageFile`
+     *  @param newSelectedImageFile
     */
-    void updateClassNames(const QStringList newClassNames);
-
-    /*!
-     *  Adds item to `classNames`
-     *  @param newClassName
-    */
-    void addClassName(const QString newClassName);
+    void updateSelectedImageFile(const QString newSelectedImageFile);
 
     /*!
      *  Updates `annotationFile`
@@ -105,7 +99,7 @@ public:
      *  Updates `imageDir`
      *  @param newImageDir
     */
-    void updateimageDir(const QString newImageDir);
+    void updateImageDir(const QString newImageDir);
 
     /*!
      *  Updates `nameFile`
@@ -114,10 +108,16 @@ public:
     void updateNameFile(const QString newNameFile);
 
     /*!
-     *  Updates `selectedImageFile`
-     *  @param newSelectedImageFile
+     *  Updates `classNames`
+     *  @param newClassNames
     */
-    void updateSelectedImageFile(const QString newSelectedImageFile);
+    void updateClassNames(const QStringList newClassNames);
+
+    /*!
+     *  Adds item to `classNames`
+     *  @param newClassName
+    */
+    void addClassName(const QString newClassName);
 
     /*!
      *  Updates `classListSorting`
@@ -144,31 +144,31 @@ signals:
     void clearClassItemLineEdit();
 
 private:
-    //! Container for image files from selected directory
+    //! Container for the image files from selected directory
     StringDateHash *imageFiles;
 
-    //! Container for class names from selected class file
+    //! Container for the class names from selected class file
     QStringList classNames;
 
-    //! Container for annotation file path
+    //! Container for the annotation file path
     QString annotationFile;
 
-    //! Container for class file path
+    //! Container for the class file path
     QString nameFile;
 
-    //! Container for image directory path
+    //! Container for the image directory path
     QString imageDir;
 
-    //! Container for selected image file path
+    //! Container for the selected image file path
     QString selectedImageFile;
 
-    //! Container for image search list
+    //! Container for the image search list
     QString imageFileResult;
 
-    //! Container for selected image file sorting
+    //! Container for the selected image file sorting
     SortingType imageFilesSorting;
 
-    //! Container for selected class list sorting
+    //! Container for the selected class list sorting
     SortingType classListSorting;
 };
 

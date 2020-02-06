@@ -324,6 +324,7 @@ void StringDateHash::merge(HashNode *begin, HashNode *middle, HashNode *end, Has
 void StringDateHash::mergesort(HashNode *begin, HashNode *end, HashNode *res)
 {
     int s = end - begin;
+
     if (s > 1)
     {
         HashNode *middle = begin + s / 2;

@@ -26,7 +26,7 @@ enum \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sort
 \newline
 \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72}{None}}
  \}
-\begin{DoxyCompactList}\small\item\em Sorting type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sorting type enum to identify type of sorting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,7 +68,9 @@ void {\bfseries clear\+Class\+Item\+Line\+Edit} ()
 \item 
 \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} $\ast$ \mbox{\hyperlink{classLabellerModel_adcd9fa21ed9f4a494432077ca85f1553}{get\+Image\+Files}} () const
 \item 
-Q\+String\+List \mbox{\hyperlink{classLabellerModel_ae47b483c763d68be74ba544b3d6f8944}{get\+Class\+Names}} () const
+Q\+String \mbox{\hyperlink{classLabellerModel_aaf2162e0043c3a725cfa8d8a6aea05c8}{get\+Selected\+Image\+File}} () const
+\item 
+Q\+String \mbox{\hyperlink{classLabellerModel_aa3e76748f0dab5b8d4c227b2c01955ca}{get\+Image\+File\+Result}} () const
 \item 
 Q\+String \mbox{\hyperlink{classLabellerModel_aaed0c2907cd812511a774bf5394928b1}{get\+Annotation\+File}} () const
 \item 
@@ -76,9 +78,7 @@ Q\+String \mbox{\hyperlink{classLabellerModel_a08c33edb9a1469ba43f10cb7baf86c2d}
 \item 
 Q\+String \mbox{\hyperlink{classLabellerModel_a288660912a27883ab7242db1138ad65d}{get\+Name\+File}} () const
 \item 
-Q\+String \mbox{\hyperlink{classLabellerModel_aaf2162e0043c3a725cfa8d8a6aea05c8}{get\+Selected\+Image\+File}} () const
-\item 
-Q\+String \mbox{\hyperlink{classLabellerModel_aa3e76748f0dab5b8d4c227b2c01955ca}{get\+Image\+File\+Result}} () const
+Q\+String\+List \mbox{\hyperlink{classLabellerModel_ae47b483c763d68be74ba544b3d6f8944}{get\+Class\+Names}} () const
 \item 
 \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_a206d29135e6c353d48bcbbb631f6b733}{get\+Class\+List\+Sorting}} () const
 \item 
@@ -88,17 +88,17 @@ void \mbox{\hyperlink{classLabellerModel_a559b17d5bde669055bd34af099c8cfaa}{upda
 \item 
 void \mbox{\hyperlink{classLabellerModel_a458e554e484fc6381187d8c8e41c487f}{update\+Image\+Files}} (const Q\+String new\+Image\+File\+Result)
 \item 
-void \mbox{\hyperlink{classLabellerModel_ae7c0cdd90c3e96a35921500c1baddfda}{update\+Class\+Names}} (const Q\+String\+List new\+Class\+Names)
-\item 
-void \mbox{\hyperlink{classLabellerModel_a727e984982fc9b8099d39f5bef3a6478}{add\+Class\+Name}} (const Q\+String new\+Class\+Name)
+void \mbox{\hyperlink{classLabellerModel_a8a41825f1400708cf9521d7fc66a0fe1}{update\+Selected\+Image\+File}} (const Q\+String new\+Selected\+Image\+File)
 \item 
 void \mbox{\hyperlink{classLabellerModel_a4e33c681cd7f6ed1de118509b2099bcf}{update\+Annotation\+File}} (const Q\+String new\+Annotation\+File)
 \item 
-void \mbox{\hyperlink{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}{updateimage\+Dir}} (const Q\+String new\+Image\+Dir)
+void \mbox{\hyperlink{classLabellerModel_ab48e41d051e7b089378ed74f8e31dd19}{update\+Image\+Dir}} (const Q\+String new\+Image\+Dir)
 \item 
 void \mbox{\hyperlink{classLabellerModel_a53d091ac03750ecf9083566345d64caa}{update\+Name\+File}} (const Q\+String new\+Name\+File)
 \item 
-void \mbox{\hyperlink{classLabellerModel_a8a41825f1400708cf9521d7fc66a0fe1}{update\+Selected\+Image\+File}} (const Q\+String new\+Selected\+Image\+File)
+void \mbox{\hyperlink{classLabellerModel_ae7c0cdd90c3e96a35921500c1baddfda}{update\+Class\+Names}} (const Q\+String\+List new\+Class\+Names)
+\item 
+void \mbox{\hyperlink{classLabellerModel_a727e984982fc9b8099d39f5bef3a6478}{add\+Class\+Name}} (const Q\+String new\+Class\+Name)
 \item 
 void \mbox{\hyperlink{classLabellerModel_a7a7df19b8c27d1182d39c870305ab42a}{update\+Class\+List\+Sorting}} (const \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} new\+Class\+List\+Sorting)
 \item 
@@ -109,31 +109,31 @@ void \mbox{\hyperlink{classLabellerModel_aed9cde8b6f170a5c60cf5cada11e113f}{upda
 \item 
 \mbox{\Hypertarget{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}\label{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}} 
 \mbox{\hyperlink{classStringDateHash}{String\+Date\+Hash}} $\ast$ \mbox{\hyperlink{classLabellerModel_ad467d9a2b39ef17a4ea130fefc9b1bcd}{image\+Files}}
-\begin{DoxyCompactList}\small\item\em Container for image files from selected directory. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the image files from selected directory. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_aa841785453bf06727d564df57708d53b}\label{classLabellerModel_aa841785453bf06727d564df57708d53b}} 
 Q\+String\+List \mbox{\hyperlink{classLabellerModel_aa841785453bf06727d564df57708d53b}{class\+Names}}
-\begin{DoxyCompactList}\small\item\em Container for class names from selected class file. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the class names from selected class file. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}\label{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}} 
 Q\+String \mbox{\hyperlink{classLabellerModel_a4f3806c5f1c9a1998092de7f1cef32e9}{annotation\+File}}
-\begin{DoxyCompactList}\small\item\em Container for annotation file path. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the annotation file path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}\label{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}} 
 Q\+String \mbox{\hyperlink{classLabellerModel_ac1ce3fb50725d0db3dbe799115a21c96}{name\+File}}
-\begin{DoxyCompactList}\small\item\em Container for class file path. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the class file path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}\label{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}} 
 Q\+String \mbox{\hyperlink{classLabellerModel_ac78ecd7c658d3428e8a0a0b0795bff31}{image\+Dir}}
-\begin{DoxyCompactList}\small\item\em Container for image directory path. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the image directory path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}\label{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}} 
 Q\+String \mbox{\hyperlink{classLabellerModel_a2861d615a6e936565e9ce0df0fde18b7}{selected\+Image\+File}}
-\begin{DoxyCompactList}\small\item\em Container for selected image file path. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the selected image file path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}\label{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}} 
 Q\+String \mbox{\hyperlink{classLabellerModel_ac9556a64561afca87d003fd1730e8a6f}{image\+File\+Result}}
-\begin{DoxyCompactList}\small\item\em Container for image search list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the image search list. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}\label{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}} 
 \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_adbcce001e285f1806d36e67f2cfaefa0}{image\+Files\+Sorting}}
-\begin{DoxyCompactList}\small\item\em Container for selected image file sorting. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Container for the selected image file sorting. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classLabellerModel_a177351afad036a657a147a43362e9ec8}\label{classLabellerModel_a177351afad036a657a147a43362e9ec8}} 
 \mbox{\hyperlink{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32}{Sorting\+Type}} \mbox{\hyperlink{classLabellerModel_a177351afad036a657a147a43362e9ec8}{class\+List\+Sorting}}
-\begin{DoxyCompactList}\small\item\em Container for selected class list sorting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Container for the selected class list sorting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -148,7 +148,7 @@ Class for model methods for the main page.
 
 
 
-Sorting type enum. 
+Sorting type enum to identify type of sorting. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NameAsc@{NameAsc}!LabellerModel@{LabellerModel}}\index{LabellerModel@{LabellerModel}!NameAsc@{NameAsc}}}\mbox{\Hypertarget{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa}\label{classLabellerModel_a61b9730d2b7fba9d4bba9b271f4fae32af1a51b6ff803f016e8363414930df1aa}} 
@@ -273,11 +273,11 @@ Updates {\ttfamily class\+Names}
 {\em new\+Class\+Names} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}\label{classLabellerModel_a3b7873f02529c74630eea81d2d1ff907}} 
-\index{LabellerModel@{LabellerModel}!updateimageDir@{updateimageDir}}
-\index{updateimageDir@{updateimageDir}!LabellerModel@{LabellerModel}}
-\doxysubsubsection{\texorpdfstring{updateimageDir()}{updateimageDir()}}
-{\footnotesize\ttfamily void Labeller\+Model\+::updateimage\+Dir (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Image\+Dir }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classLabellerModel_ab48e41d051e7b089378ed74f8e31dd19}\label{classLabellerModel_ab48e41d051e7b089378ed74f8e31dd19}} 
+\index{LabellerModel@{LabellerModel}!updateImageDir@{updateImageDir}}
+\index{updateImageDir@{updateImageDir}!LabellerModel@{LabellerModel}}
+\doxysubsubsection{\texorpdfstring{updateImageDir()}{updateImageDir()}}
+{\footnotesize\ttfamily void Labeller\+Model\+::update\+Image\+Dir (\begin{DoxyParamCaption}\item[{const Q\+String}]{new\+Image\+Dir }\end{DoxyParamCaption})}
 
 Updates {\ttfamily image\+Dir} 
 \begin{DoxyParams}{Parameters}

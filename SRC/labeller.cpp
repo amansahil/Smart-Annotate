@@ -187,7 +187,7 @@ void Labeller::on_imageBrowseButton_clicked()
 {
     const QString imageDirectory = QFileDialog::getExistingDirectory(this, "Select Directory");
 
-    labellerModel->updateimageDir(imageDirectory);
+    labellerModel->updateImageDir(imageDirectory);
 
     const QDir directory(imageDirectory);
 

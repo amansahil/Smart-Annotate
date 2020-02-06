@@ -7,7 +7,7 @@ var searchData=
   ['updateclassnames_172',['updateClassNames',['../classLabellerModel.html#ae7c0cdd90c3e96a35921500c1baddfda',1,'LabellerModel']]],
   ['updatecursortype_173',['updateCursorType',['../classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805',1,'ImageEditor']]],
   ['updatehandleitempositions_174',['updateHandleItemPositions',['../classCustomResizer.html#ab973df5ea081715d217073fe513de5c9',1,'CustomResizer']]],
-  ['updateimagedir_175',['updateimageDir',['../classLabellerModel.html#a3b7873f02529c74630eea81d2d1ff907',1,'LabellerModel']]],
+  ['updateimagedir_175',['updateImageDir',['../classLabellerModel.html#ab48e41d051e7b089378ed74f8e31dd19',1,'LabellerModel']]],
   ['updateimagefiles_176',['updateImageFiles',['../classLabellerModel.html#a559b17d5bde669055bd34af099c8cfaa',1,'LabellerModel::updateImageFiles(const QFileInfoList newImageFiles)'],['../classLabellerModel.html#a458e554e484fc6381187d8c8e41c487f',1,'LabellerModel::updateImageFiles(const QString newImageFileResult)']]],
   ['updateimagefilessorting_177',['updateImageFilesSorting',['../classLabellerModel.html#aed9cde8b6f170a5c60cf5cada11e113f',1,'LabellerModel']]],
   ['updatenamefile_178',['updateNameFile',['../classLabellerModel.html#a53d091ac03750ecf9083566345d64caa',1,'LabellerModel']]],

@@ -4,19 +4,19 @@ LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(new 
 {
 }
 
-QStringList LabellerModel::getClassNames() const { return classNames; }
-
 StringDateHash *LabellerModel::getImageFiles() const { return imageFiles; }
+
+QString LabellerModel::getSelectedImageFile() const { return selectedImageFile; }
 
 QString LabellerModel::getImageFileResult() const { return imageFileResult; }
 
 QString LabellerModel::getAnnotationFile() const { return annotationFile; }
 
-QString LabellerModel::getNameFile() const { return nameFile; }
-
 QString LabellerModel::getImageDir() const { return imageDir; }
 
-QString LabellerModel::getSelectedImageFile() const { return selectedImageFile; }
+QString LabellerModel::getNameFile() const { return nameFile; }
+
+QStringList LabellerModel::getClassNames() const { return classNames; }
 
 LabellerModel::SortingType LabellerModel::getClassListSorting() const { return classListSorting; }
 
@@ -43,16 +43,25 @@ void LabellerModel::updateImageFiles(const QString newImageFileResult)
     }
 }
 
-void LabellerModel::updateClassNames(const QStringList newClassNames)
+void LabellerModel::updateSelectedImageFile(const QString newSelectedImageFile)
 {
-    if (classNames != newClassNames)
+    if (selectedImageFile != newSelectedImageFile)
     {
-        classNames = newClassNames;
-        emit classNamesChanged();
+        selectedImageFile = newSelectedImageFile;
+        emit selectedImageFileChanged();
     }
 }
 
-void LabellerModel::updateimageDir(const QString newImageDir)
+void LabellerModel::updateAnnotationFile(const QString newAnnotationFile)
+{
+    if (annotationFile != newAnnotationFile)
+    {
+        annotationFile = newAnnotationFile;
+        emit annotationFileChanged();
+    }
+}
+
+void LabellerModel::updateImageDir(const QString newImageDir)
 {
     if (imageDir != newImageDir)
     {
@@ -70,13 +79,20 @@ void LabellerModel::updateNameFile(const QString newNameFile)
     }
 }
 
-void LabellerModel::updateAnnotationFile(const QString newAnnotationFile)
+void LabellerModel::updateClassNames(const QStringList newClassNames)
 {
-    if (annotationFile != newAnnotationFile)
+    if (classNames != newClassNames)
     {
-        annotationFile = newAnnotationFile;
-        emit annotationFileChanged();
+        classNames = newClassNames;
+        emit classNamesChanged();
     }
+}
+
+void LabellerModel::addClassName(const QString newClassName)
+{
+    classNames.append(newClassName);
+    emit classNamesChanged();
+    emit clearClassItemLineEdit();
 }
 
 void LabellerModel::updateClassListSorting(const SortingType newClassListSorting)
@@ -97,18 +113,3 @@ void LabellerModel::updateImageFilesSorting(const SortingType newImageFilesSorti
     }
 }
 
-void LabellerModel::updateSelectedImageFile(const QString newSelectedImageFile)
-{
-    if (selectedImageFile != newSelectedImageFile)
-    {
-        selectedImageFile = newSelectedImageFile;
-        emit selectedImageFileChanged();
-    }
-}
-
-void LabellerModel::addClassName(const QString newClassName)
-{
-    classNames.append(newClassName);
-    emit classNamesChanged();
-    emit clearClassItemLineEdit();
-}
