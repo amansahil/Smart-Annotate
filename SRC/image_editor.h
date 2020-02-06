@@ -142,7 +142,6 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 private:
-
     //! Clipbord content enum for for identifying the current content held by the clipbord
     enum ClipbordContent
     {

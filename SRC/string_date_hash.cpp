@@ -1,11 +1,10 @@
 #include "string_date_hash.h"
 
-HashNode::HashNode(): next(NULL) {}
+HashNode::HashNode() : next(NULL) {}
 
-HashNode::HashNode(const QString &key, const QDateTime &value) :
-    key(key),
-    value(value),
-    next(NULL)
+HashNode::HashNode(const QString &key, const QDateTime &value) : key(key),
+                                                                 value(value),
+                                                                 next(NULL)
 {
 }
 
@@ -228,7 +227,7 @@ QStringList StringDateHash::sortByDateAsc() const
 
     const int size = StringDateHash::getSize();
 
-    if(size <= 1)
+    if (size <= 1)
         return getKeys();
 
     HashNode list[size];
@@ -263,7 +262,7 @@ QStringList StringDateHash::sortByDateDesc() const
 
     const int size = StringDateHash::getSize();
 
-    if(size <= 1)
+    if (size <= 1)
         return getKeys();
 
     HashNode list[size];

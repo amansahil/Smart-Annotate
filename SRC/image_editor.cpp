@@ -1,15 +1,14 @@
 ﻿#include "image_editor.h"
 
-ImageEditor::ImageEditor() :
-    imageSet(false),
-    drawing(false),
-    clipbord(false),
-    cursorType(CursorType::Select),
-    annotationShape(Rectangle),
-    classLabel(""),
-    currFileName(""),
-    clipbordText(""),
-    rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
+ImageEditor::ImageEditor() : imageSet(false),
+                             drawing(false),
+                             clipbord(false),
+                             cursorType(CursorType::Select),
+                             annotationShape(Rectangle),
+                             classLabel(""),
+                             currFileName(""),
+                             clipbordText(""),
+                             rubberBand(new QRubberBand(QRubberBand::Rectangle, nullptr))
 {
     createActions();
 }
@@ -199,7 +198,7 @@ void ImageEditor::copySelectedItem()
             clipbordText = textItem->toPlainText();
             clipbordPoint = selectedItem->scenePos();
         }
-        else if(polygonItem)
+        else if (polygonItem)
         {
             clipbordContent = ClipbordContent::Poly;
             clipbordPoint = selectedItem->scenePos();
@@ -365,7 +364,7 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
                 clickLines.append(item);
             }
         }
-        else if(cursorType == CursorType::Select)
+        else if (cursorType == CursorType::Select)
         {
             QGraphicsScene::mouseMoveEvent(event);
         }
@@ -378,7 +377,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet && event->button() == Qt::LeftButton)
     {
-        if (cursorType == CursorType::Draw  && drawing)
+        if (cursorType == CursorType::Draw && drawing)
         {
             if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
             {
@@ -413,7 +412,7 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
             drawing = false;
         }
-        else if(cursorType == CursorType::Select)
+        else if (cursorType == CursorType::Select)
         {
             QGraphicsScene::mouseReleaseEvent(event);
         }

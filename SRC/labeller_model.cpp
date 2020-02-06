@@ -112,4 +112,3 @@ void LabellerModel::updateImageFilesSorting(const SortingType newImageFilesSorti
         emit imageFilesChangedSorted();
     }
 }
-
