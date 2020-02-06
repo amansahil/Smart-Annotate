@@ -243,6 +243,12 @@ private:
     void createActions();
 
     /*!
+     *  Adds image on scene
+     *  \param fileName
+     */
+    void openImage(const QString fileName);
+
+    /*!
      *  Adds QGraphicsPolygonItem on scene
      *  \param QPolygonF @link https://doc.qt.io/qt-5/qpolygonf.html
      */
@@ -260,12 +266,6 @@ private:
      *  \param newPoint Position of text to be added
      */
     void drawText(const QString newText, const QPointF newPoint);
-
-    /*!
-     *  Adds image on scene
-     *  \param fileName
-     */
-    void openImage(const QString fileName);
 
     /*!
      *  Checks if image has any existing annotation and labels

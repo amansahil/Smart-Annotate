@@ -258,6 +258,39 @@ void ImageEditor::pasteSelectedItemInPlace()
     }
 }
 
+void ImageEditor::connectClickElipses()
+{
+
+    if (clickEplipses.size() <= 2)
+    {
+        QMessageBox::warning(nullptr, "Error", "You need to mark at least three points");
+        return;
+    }
+
+    QPolygonF polygon;
+
+    for (int i = 0; i < clickEplipses.size(); i++)
+    {
+        if (clickEplipses.size() - 1 == i)
+        {
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();
+        }
+        else
+        {
+            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[i + 1]->rect().topLeft();
+        }
+    }
+
+    drawPolygon(polygon);
+    deleteClickElipses();
+}
+
+void ImageEditor::deleteClickElipses()
+{
+    qDeleteAll(clickEplipses.begin(), clickEplipses.end());
+    clickEplipses.clear();
+}
+
 void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (imageSet && event->button() == Qt::LeftButton)
@@ -267,17 +300,7 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
         if (cursorType == CursorType::Draw)
         {
-            if (annotationShape == AnnotationShapeType::Rectangle)
-            {
-                // Creates a boundry indicater
-                rubberBand->setGeometry(QRect(origin, QSize()));
-                rubberBand->show();
-            }
-            else if (annotationShape == AnnotationShapeType::FreeHand)
-            {
-                clickPoints.append(originF);
-            }
-            else
+            if (annotationShape == AnnotationShapeType::Points)
             {
                 QGraphicsEllipseItem *ellipseItem = new QGraphicsEllipseItem(QRectF(originF.x() - 5, originF.y() - 5, 10, 10));
                 ellipseItem->setBrush(Qt::blue);
@@ -288,14 +311,25 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
                 clickEplipses.append(ellipseItem);
             }
+            else if (annotationShape == AnnotationShapeType::FreeHand)
+            {
+                clickPoints.append(originF);
+            }
+            else
+            {
+                // Creates a boundry indicater
+                rubberBand->setGeometry(QRect(origin, QSize()));
+                rubberBand->show();
+            }
         }
         else if (cursorType == CursorType::Text && classLabel != "")
         {
             drawText(classLabel, originF);
         }
-
-        if (cursorType == CursorType::Select)
+        else
+        {
             QGraphicsScene::mousePressEvent(event);
+        }
 
         ImageEditor::update();
     }
@@ -303,9 +337,9 @@ void ImageEditor::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (imageSet)
+    if (imageSet && (event->buttons() & Qt::LeftButton))
     {
-        if (cursorType == CursorType::Draw && (event->buttons() & Qt::LeftButton))
+        if (cursorType == CursorType::Draw)
         {
             drawing = true;
 
@@ -331,9 +365,10 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
                 clickLines.append(item);
             }
         }
-
-        if (cursorType == CursorType::Select)
+        else if(cursorType == CursorType::Select)
+        {
             QGraphicsScene::mouseMoveEvent(event);
+        }
 
         ImageEditor::update();
     }
@@ -341,9 +376,9 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (imageSet)
+    if (imageSet && event->button() == Qt::LeftButton)
     {
-        if (cursorType == CursorType::Draw && event->button() == Qt::LeftButton)
+        if (cursorType == CursorType::Draw  && drawing)
         {
             if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
             {
@@ -378,9 +413,10 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
             drawing = false;
         }
-
-        if (cursorType == CursorType::Select)
+        else if(cursorType == CursorType::Select)
+        {
             QGraphicsScene::mouseReleaseEvent(event);
+        }
 
         ImageEditor::update();
     }
@@ -451,39 +487,6 @@ bool ImageEditor::savedStateExists(const QString fileName)
         return false;
 
     return true;
-}
-
-void ImageEditor::connectClickElipses()
-{
-
-    if (clickEplipses.size() <= 2)
-    {
-        QMessageBox::warning(nullptr, "Error", "You need to mark at least three points");
-        return;
-    }
-
-    QPolygonF polygon;
-
-    for (int i = 0; i < clickEplipses.size(); i++)
-    {
-        if (clickEplipses.size() - 1 == i)
-        {
-            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[0]->rect().topLeft();
-        }
-        else
-        {
-            polygon << clickEplipses[i]->rect().topLeft() << clickEplipses[i + 1]->rect().topLeft();
-        }
-    }
-
-    drawPolygon(polygon);
-    deleteClickElipses();
-}
-
-void ImageEditor::deleteClickElipses()
-{
-    qDeleteAll(clickEplipses.begin(), clickEplipses.end());
-    clickEplipses.clear();
 }
 
 void ImageEditor::drawPolygon(const QPolygonF newPolygon)
