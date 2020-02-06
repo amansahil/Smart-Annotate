@@ -235,7 +235,7 @@
               <section title="StringDateHash" ref="classStringDateHash.html#a816f92507bb13056e4e8008ccc4f4f6f" />
               <section title="~StringDateHash" ref="classStringDateHash.html#ac38e7eac420c112d3a4c19c8348003c2" />
               <section title="StringDateHash" ref="classStringDateHash.html#a317feeb412f02c018d12911e07863812" />
-              <section title="get" ref="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776" />
+              <section title="get" ref="classStringDateHash.html#a1363b491d8d5f176918da7aae9345380" />
               <section title="getCapacity" ref="classStringDateHash.html#a4ae3a92247f6ba0fb3a7664cfa2a6b6e" />
               <section title="getKeys" ref="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9" />
               <section title="getSize" ref="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d" />
@@ -245,8 +245,8 @@
               <section title="operator=" ref="classStringDateHash.html#ad66c8e723d8beb1615e09a3784e4e2e5" />
               <section title="put" ref="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3" />
               <section title="remove" ref="classStringDateHash.html#a4663a497494184edefcb0fd268f13823" />
-              <section title="sortByDateAsc" ref="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b" />
-              <section title="sortByDateDesc" ref="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691" />
+              <section title="sortByDateAsc" ref="classStringDateHash.html#a998862e112c8047f9d2832975d1cb6ee" />
+              <section title="sortByDateDesc" ref="classStringDateHash.html#aedd93047769eba3e15bb97650ed227b9" />
               <section title="sortByKeyAsc" ref="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88" />
               <section title="sortByKeyDesc" ref="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c" />
               <section title="capacity" ref="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b" />
@@ -489,7 +489,7 @@
       <keyword name="DateDesc" id="LabellerModel::DateDesc" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a230318dc119c7c96c9fc43911ce4d68e" />
       <keyword name="None" id="LabellerModel::None" ref="classLabellerModel.html#a61b9730d2b7fba9d4bba9b271f4fae32a5c185dd387d4f3691d0a9e66f3657e72" />
       <keyword name="StringDateHash" id="StringDateHash" ref="classStringDateHash.html" />
-      <keyword name="get" id="StringDateHash::get" ref="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776" />
+      <keyword name="get" id="StringDateHash::get" ref="classStringDateHash.html#a1363b491d8d5f176918da7aae9345380" />
       <keyword name="put" id="StringDateHash::put" ref="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3" />
       <keyword name="remove" id="StringDateHash::remove" ref="classStringDateHash.html#a4663a497494184edefcb0fd268f13823" />
       <keyword name="getSize" id="StringDateHash::getSize" ref="classStringDateHash.html#aa645fda12ca67d34b3303fa2f81d063d" />
@@ -497,13 +497,13 @@
       <keyword name="getKeys" id="StringDateHash::getKeys" ref="classStringDateHash.html#afaca266408cad9637f4b99f1130200d9" />
       <keyword name="sortByKeyAsc" id="StringDateHash::sortByKeyAsc" ref="classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88" />
       <keyword name="sortByKeyDesc" id="StringDateHash::sortByKeyDesc" ref="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c" />
-      <keyword name="sortByDateAsc" id="StringDateHash::sortByDateAsc" ref="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b" />
-      <keyword name="sortByDateDesc" id="StringDateHash::sortByDateDesc" ref="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691" />
+      <keyword name="sortByDateAsc" id="StringDateHash::sortByDateAsc" ref="classStringDateHash.html#a998862e112c8047f9d2832975d1cb6ee" />
+      <keyword name="sortByDateDesc" id="StringDateHash::sortByDateDesc" ref="classStringDateHash.html#aedd93047769eba3e15bb97650ed227b9" />
       <keyword name="hashFunc" id="StringDateHash::hashFunc" ref="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a" />
-      <keyword name="merge" id="StringDateHash::merge" ref="classStringDateHash.html#a7ed5017d2b84493381f171ee28f105cb" />
-      <keyword name="mergesort" id="StringDateHash::mergesort" ref="classStringDateHash.html#a07cc8156b6248d3f3c031e0454ff6090" />
       <keyword name="StringDateHash" id="StringDateHash::StringDateHash" ref="classStringDateHash.html#a317feeb412f02c018d12911e07863812" />
       <keyword name="operator=" id="StringDateHash::operator=" ref="classStringDateHash.html#ad66c8e723d8beb1615e09a3784e4e2e5" />
+      <keyword name="merge" id="StringDateHash::merge" ref="classStringDateHash.html#a7ed5017d2b84493381f171ee28f105cb" />
+      <keyword name="mergesort" id="StringDateHash::mergesort" ref="classStringDateHash.html#a07cc8156b6248d3f3c031e0454ff6090" />
       <keyword name="capacity" id="StringDateHash::capacity" ref="classStringDateHash.html#a0171c44a3381e9a3a55d324a60735a8b" />
       <keyword name="table" id="StringDateHash::table" ref="classStringDateHash.html#a26b83fcc05bf8b853fe9bc1caad901f1" />
     </keywords>

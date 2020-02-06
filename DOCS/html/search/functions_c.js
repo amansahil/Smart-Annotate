@@ -22,8 +22,8 @@ var searchData=
   ['settopleft_283',['setTopLeft',['../classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c',1,'CustomResizer']]],
   ['settopright_284',['setTopRight',['../classCustomResizer.html#aa93735b34295352a59b062fff47096e1',1,'CustomResizer']]],
   ['setvalue_285',['setValue',['../classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87',1,'HashNode']]],
-  ['sortbydateasc_286',['sortByDateAsc',['../classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b',1,'StringDateHash']]],
-  ['sortbydatedesc_287',['sortByDateDesc',['../classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691',1,'StringDateHash']]],
+  ['sortbydateasc_286',['sortByDateAsc',['../classStringDateHash.html#a998862e112c8047f9d2832975d1cb6ee',1,'StringDateHash']]],
+  ['sortbydatedesc_287',['sortByDateDesc',['../classStringDateHash.html#aedd93047769eba3e15bb97650ed227b9',1,'StringDateHash']]],
   ['sortbykeyasc_288',['sortByKeyAsc',['../classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88',1,'StringDateHash']]],
   ['sortbykeydesc_289',['sortByKeyDesc',['../classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c',1,'StringDateHash']]]
 ];

@@ -7,7 +7,6 @@
 #include <QMessageBox>
 #include <QString>
 #include <QtEndian>
-#include <QDebug>
 
 //! A node for `StringDateHash`
 class HashNode
@@ -33,7 +32,7 @@ public:
     void setValue(QDateTime value);
 
     /*!
-     *  Sets addtional value for node with key that returns same hash value
+     *  Sets addtional value for the node with a key that returns same hash value
      *  @param next
      */
     void setNext(HashNode *next);
@@ -76,7 +75,7 @@ public:
     void put(const QString &key, const QDateTime &value);
 
     /*!
-     *  Removed hashnode in the table
+     *  Removes hashnode in the table
      *  \param key
      */
     void remove(const QString &key);

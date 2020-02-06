@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classStringDateHash-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -79,8 +80,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac65158fe777fda8740b11b1b6a2f6776"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#ac65158fe777fda8740b11b1b6a2f6776">get</a> (const QString &amp;key, QDateTime &amp;value)</td></tr>
-<tr class="separator:ac65158fe777fda8740b11b1b6a2f6776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1363b491d8d5f176918da7aae9345380"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a1363b491d8d5f176918da7aae9345380">get</a> (const QString &amp;key, QDateTime &amp;value) const</td></tr>
+<tr class="separator:a1363b491d8d5f176918da7aae9345380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff45a0cfae3f2eeb08ff8c2935a13cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#aff45a0cfae3f2eeb08ff8c2935a13cd3">put</a> (const QString &amp;key, const QDateTime &amp;value)</td></tr>
 <tr class="separator:aff45a0cfae3f2eeb08ff8c2935a13cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4663a497494184edefcb0fd268f13823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a4663a497494184edefcb0fd268f13823">remove</a> (const QString &amp;key)</td></tr>
@@ -95,10 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1e3379a9667b626bed7f6f58a318f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfcef68abd0d19df80be665f06085f6c"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c">sortByKeyDesc</a> () const</td></tr>
 <tr class="separator:abfcef68abd0d19df80be665f06085f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b52d017df8b8bcd63613e8595319c5b"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a7b52d017df8b8bcd63613e8595319c5b">sortByDateAsc</a> ()</td></tr>
-<tr class="separator:a7b52d017df8b8bcd63613e8595319c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a785f8e449c42dc13f029f41f4c9d7691"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a785f8e449c42dc13f029f41f4c9d7691">sortByDateDesc</a> ()</td></tr>
-<tr class="separator:a785f8e449c42dc13f029f41f4c9d7691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998862e112c8047f9d2832975d1cb6ee"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a998862e112c8047f9d2832975d1cb6ee">sortByDateAsc</a> () const</td></tr>
+<tr class="separator:a998862e112c8047f9d2832975d1cb6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd93047769eba3e15bb97650ed227b9"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#aedd93047769eba3e15bb97650ed227b9">sortByDateDesc</a> () const</td></tr>
+<tr class="separator:aedd93047769eba3e15bb97650ed227b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -106,18 +107,21 @@ Private Member Functions</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStringDateHash.html#a1bd703fbfb07c231590663c25a8c7c4a">hashFunc</a> (const QString &amp;key) const</td></tr>
 <tr class="memdesc:a1bd703fbfb07c231590663c25a8c7c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash function. <br /></td></tr>
 <tr class="separator:a1bd703fbfb07c231590663c25a8c7c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ed5017d2b84493381f171ee28f105cb"><td class="memItemLeft" align="right" valign="top"><a id="a7ed5017d2b84493381f171ee28f105cb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>merge</b> (<a class="el" href="classHashNode.html">HashNode</a> *begin, <a class="el" href="classHashNode.html">HashNode</a> *middle, <a class="el" href="classHashNode.html">HashNode</a> *end, <a class="el" href="classHashNode.html">HashNode</a> *res)</td></tr>
-<tr class="separator:a7ed5017d2b84493381f171ee28f105cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cc8156b6248d3f3c031e0454ff6090"><td class="memItemLeft" align="right" valign="top"><a id="a07cc8156b6248d3f3c031e0454ff6090"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mergesort</b> (<a class="el" href="classHashNode.html">HashNode</a> *begin, <a class="el" href="classHashNode.html">HashNode</a> *end, <a class="el" href="classHashNode.html">HashNode</a> *res)</td></tr>
-<tr class="separator:a07cc8156b6248d3f3c031e0454ff6090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317feeb412f02c018d12911e07863812"><td class="memItemLeft" align="right" valign="top"><a id="a317feeb412f02c018d12911e07863812"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>StringDateHash</b> (const <a class="el" href="classStringDateHash.html">StringDateHash</a> &amp;other)</td></tr>
 <tr class="separator:a317feeb412f02c018d12911e07863812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad66c8e723d8beb1615e09a3784e4e2e5"><td class="memItemLeft" align="right" valign="top"><a id="ad66c8e723d8beb1615e09a3784e4e2e5"></a>
 const <a class="el" href="classStringDateHash.html">StringDateHash</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classStringDateHash.html">StringDateHash</a> &amp;other)</td></tr>
 <tr class="separator:ad66c8e723d8beb1615e09a3784e4e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a7ed5017d2b84493381f171ee28f105cb"><td class="memItemLeft" align="right" valign="top"><a id="a7ed5017d2b84493381f171ee28f105cb"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>merge</b> (<a class="el" href="classHashNode.html">HashNode</a> *begin, <a class="el" href="classHashNode.html">HashNode</a> *middle, <a class="el" href="classHashNode.html">HashNode</a> *end, <a class="el" href="classHashNode.html">HashNode</a> *res)</td></tr>
+<tr class="separator:a7ed5017d2b84493381f171ee28f105cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07cc8156b6248d3f3c031e0454ff6090"><td class="memItemLeft" align="right" valign="top"><a id="a07cc8156b6248d3f3c031e0454ff6090"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>mergesort</b> (<a class="el" href="classHashNode.html">HashNode</a> *begin, <a class="el" href="classHashNode.html">HashNode</a> *end, <a class="el" href="classHashNode.html">HashNode</a> *res)</td></tr>
+<tr class="separator:a07cc8156b6248d3f3c031e0454ff6090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -133,8 +137,8 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Custom Hash table container with <code>QString</code> as key and <code>QDate</code> as value. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac65158fe777fda8740b11b1b6a2f6776"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac65158fe777fda8740b11b1b6a2f6776">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a1363b491d8d5f176918da7aae9345380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1363b491d8d5f176918da7aae9345380">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +158,7 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -272,7 +276,7 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removed hashnode in the table </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Removes hashnode in the table </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td></td></tr>
   </table>
@@ -281,8 +285,8 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
 
 </div>
 </div>
-<a id="a7b52d017df8b8bcd63613e8595319c5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b52d017df8b8bcd63613e8595319c5b">&#9670;&nbsp;</a></span>sortByDateAsc()</h2>
+<a id="a998862e112c8047f9d2832975d1cb6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998862e112c8047f9d2832975d1cb6ee">&#9670;&nbsp;</a></span>sortByDateAsc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +295,7 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
           <td class="memname">QStringList StringDateHash::sortByDateAsc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -299,8 +303,8 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
 
 </div>
 </div>
-<a id="a785f8e449c42dc13f029f41f4c9d7691"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a785f8e449c42dc13f029f41f4c9d7691">&#9670;&nbsp;</a></span>sortByDateDesc()</h2>
+<a id="aedd93047769eba3e15bb97650ed227b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd93047769eba3e15bb97650ed227b9">&#9670;&nbsp;</a></span>sortByDateDesc()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +313,7 @@ std::vector&lt; <a class="el" href="classHashNode.html">HashNode</a> * &gt;&#160
           <td class="memname">QStringList StringDateHash::sortByDateDesc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
