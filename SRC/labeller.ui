@@ -23,6 +23,9 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="text">
      <string>Browse</string>
     </property>
@@ -352,6 +355,9 @@
       <width>781</width>
       <height>651</height>
      </rect>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>CrossCursor</cursorShape>
     </property>
    </widget>
    <widget class="QLabel" name="cursorLabel">

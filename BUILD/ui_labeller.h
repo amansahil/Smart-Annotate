@@ -107,6 +107,7 @@ public:
         imageBrowseButton = new QPushButton(centralwidget);
         imageBrowseButton->setObjectName(QString::fromUtf8("imageBrowseButton"));
         imageBrowseButton->setGeometry(QRect(70, 40, 89, 25));
+        imageBrowseButton->setAutoFillBackground(false);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 40, 67, 21));
@@ -188,6 +189,7 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(500, 40, 781, 651));
+        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
         cursorLabel = new QLabel(centralwidget);
         cursorLabel->setObjectName(QString::fromUtf8("cursorLabel"));
         cursorLabel->setGeometry(QRect(600, 10, 131, 21));
