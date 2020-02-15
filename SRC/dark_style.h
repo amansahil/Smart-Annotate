@@ -7,10 +7,11 @@
 #include <QProxyStyle>
 #include <QStyleFactory>
 
-class DarkStyle : public QProxyStyle {
+class DarkStyle : public QProxyStyle
+{
   Q_OBJECT
 
- public:
+public:
   DarkStyle();
   explicit DarkStyle(QStyle *style);
 
@@ -19,7 +20,7 @@ class DarkStyle : public QProxyStyle {
   void polish(QPalette &palette) override;
   void polish(QApplication *app) override;
 
- private:
+private:
   QStyle *styleBase(QStyle *style = Q_NULLPTR) const;
 };
 

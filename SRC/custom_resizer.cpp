@@ -1,9 +1,8 @@
 #include "custom_resizer.h"
 
-CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent) :
-    QGraphicsRectItem(-4, -4, 8, 8, parent),
-    parent(parent),
-    positionFlags(positionFlags)
+CustomResizer::HandleItem::HandleItem(int positionFlags, CustomResizer *parent) : QGraphicsRectItem(-4, -4, 8, 8, parent),
+                                                                                  parent(parent),
+                                                                                  positionFlags(positionFlags)
 {
     setBrush(QBrush(Qt::lightGray));
     setFlag(ItemIsMovable);
@@ -81,8 +80,7 @@ QPointF CustomResizer::HandleItem::restrictPosition(const QPointF &newPos)
     return retVal;
 }
 
-CustomResizer::CustomResizer(QGraphicsItem *parent) :
-    QGraphicsItem(parent)
+CustomResizer::CustomResizer(QGraphicsItem *parent) : QGraphicsItem(parent)
 {
     if (parentItem())
         rect = parentItem()->boundingRect();

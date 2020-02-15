@@ -12,7 +12,7 @@ private:
     //! Class for the resizer item
     class HandleItem : public QGraphicsRectItem
     {
-    public:        
+    public:
         HandleItem(int positionFlags, CustomResizer *parent);
 
         //! Custom type value used by QGraphicsRectItem to indentify the item type
@@ -30,7 +30,6 @@ private:
          *  Returns `positionFlags`
          */
         int getPositionFlags() const;
-
 
     protected:
         //! @link https://doc.qt.io/qt-5/qgraphicsitem.html#itemChange
