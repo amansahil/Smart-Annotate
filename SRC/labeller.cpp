@@ -27,7 +27,6 @@ Labeller::Labeller(QWidget *parent)
     ui->graphicsView->setSceneRect(0, 0, 781, 651);
     ui->graphicsView->show();
 
-
     // Hide connect button
     ui->connectButton->setVisible(false);
     ui->clearPoints->setVisible(false);

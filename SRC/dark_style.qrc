@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>darkstyle/darkstyle.qss</file>
+        <file>darkstyle/icon_checkbox_checked.png</file>
+        <file>darkstyle/icon_checkbox_unchecked.png</file>
+        <file>darkstyle/icon_radiobutton_checked.png</file>
+        <file>darkstyle/icon_radiobutton_unchecked.png</file>
+    </qresource>
+</RCC>

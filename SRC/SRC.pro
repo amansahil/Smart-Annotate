@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     custom_resizer.cpp \
+    dark_style.cpp \
     image_editor.cpp \
     labeller_model.cpp \
     main.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     custom_resizer.h \
+    dark_style.h \
     image_editor.h \
     labeller.h \
     labeller_model.h \
@@ -38,4 +40,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    dark_style.qrc
