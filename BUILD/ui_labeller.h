@@ -106,7 +106,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
         imageBrowseButton->setObjectName(QString::fromUtf8("imageBrowseButton"));
-        imageBrowseButton->setGeometry(QRect(70, 40, 89, 25));
+        imageBrowseButton->setGeometry(QRect(74, 39, 89, 25));
         imageBrowseButton->setAutoFillBackground(false);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -119,7 +119,7 @@ public:
         imageList->setGeometry(QRect(10, 180, 451, 171));
         classBrowseButton = new QPushButton(centralwidget);
         classBrowseButton->setObjectName(QString::fromUtf8("classBrowseButton"));
-        classBrowseButton->setGeometry(QRect(70, 360, 89, 25));
+        classBrowseButton->setGeometry(QRect(75, 359, 89, 25));
         classList = new QListView(centralwidget);
         classList->setObjectName(QString::fromUtf8("classList"));
         classList->setGeometry(QRect(10, 500, 451, 151));
@@ -133,7 +133,7 @@ public:
         label_4->setGeometry(QRect(10, 360, 67, 21));
         annotationBrowseButton = new QPushButton(centralwidget);
         annotationBrowseButton->setObjectName(QString::fromUtf8("annotationBrowseButton"));
-        annotationBrowseButton->setGeometry(QRect(140, 660, 89, 25));
+        annotationBrowseButton->setGeometry(QRect(140, 659, 89, 25));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(10, 650, 121, 41));
@@ -142,7 +142,7 @@ public:
         saveButton->setGeometry(QRect(370, 690, 89, 25));
         clearButton = new QPushButton(centralwidget);
         clearButton->setObjectName(QString::fromUtf8("clearButton"));
-        clearButton->setGeometry(QRect(1190, 10, 89, 25));
+        clearButton->setGeometry(QRect(1190, 9, 89, 25));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/imgs/redo-128.png"), QSize(), QIcon::Normal, QIcon::Off);
         clearButton->setIcon(icon);
@@ -214,10 +214,10 @@ public:
         shapeLabel->setGeometry(QRect(850, 10, 151, 21));
         connectButton = new QPushButton(centralwidget);
         connectButton->setObjectName(QString::fromUtf8("connectButton"));
-        connectButton->setGeometry(QRect(960, 10, 89, 25));
+        connectButton->setGeometry(QRect(960, 9, 89, 25));
         clearPoints = new QPushButton(centralwidget);
         clearPoints->setObjectName(QString::fromUtf8("clearPoints"));
-        clearPoints->setGeometry(QRect(1070, 10, 101, 25));
+        clearPoints->setGeometry(QRect(1070, 9, 101, 25));
         Labeller->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Labeller);
         menubar->setObjectName(QString::fromUtf8("menubar"));

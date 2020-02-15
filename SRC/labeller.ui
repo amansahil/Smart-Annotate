@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="imageBrowseButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>40</y>
+      <x>74</x>
+      <y>39</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -66,8 +66,8 @@
    <widget class="QPushButton" name="classBrowseButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>360</y>
+      <x>75</x>
+      <y>359</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -109,7 +109,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>660</y>
+      <y>659</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -148,7 +148,7 @@
     <property name="geometry">
      <rect>
       <x>1190</x>
-      <y>10</y>
+      <y>9</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -441,7 +441,7 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>10</y>
+      <y>9</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -454,7 +454,7 @@
     <property name="geometry">
      <rect>
       <x>1070</x>
-      <y>10</y>
+      <y>9</y>
       <width>101</width>
       <height>25</height>
      </rect>
