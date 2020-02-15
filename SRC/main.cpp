@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     Labeller w;
 
     a.setStyle(new DarkStyle);
+
     QScrollArea area;
     area.setWidget(&w);
     area.show();
