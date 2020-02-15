@@ -49,6 +49,10 @@ void \mbox{\hyperlink{classImageEditor_aa5ce92d810af70cc61e353963ddcb312}{delete
 void \mbox{\hyperlink{classImageEditor_a1a0faeeafdb9f9bdc7bfb7a4dcd628a9}{cursor\+Type\+Changed}} ()
 \item 
 void \mbox{\hyperlink{classImageEditor_a18aae92548253be1acb384a52db952b9}{annotation\+Shape\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_ab743be4820527f63d4b0d41174d780ea}{drawing\+Rectangle}} ()
+\item 
+void \mbox{\hyperlink{classImageEditor_a24a1d8b71f3ba545ba66be21fecb74cf}{finished\+Drawing\+Rectangle}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -332,7 +336,13 @@ Delete all {\ttfamily click\+Elipses} \mbox{\Hypertarget{classImageEditor_adba8c
 \doxysubsubsection{\texorpdfstring{deleteSelectedItem}{deleteSelectedItem}}
 {\footnotesize\ttfamily void Image\+Editor\+::delete\+Selected\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-Deletes selected Qgraphics item \mbox{\Hypertarget{classImageEditor_a854578e1f9d99aa44855676a73fd390c}\label{classImageEditor_a854578e1f9d99aa44855676a73fd390c}} 
+Deletes selected Qgraphics item \mbox{\Hypertarget{classImageEditor_ab743be4820527f63d4b0d41174d780ea}\label{classImageEditor_ab743be4820527f63d4b0d41174d780ea}} 
+\index{ImageEditor@{ImageEditor}!drawingRectangle@{drawingRectangle}}
+\index{drawingRectangle@{drawingRectangle}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{drawingRectangle}{drawingRectangle}}
+{\footnotesize\ttfamily void Image\+Editor\+::drawing\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sends a signal to the labeller class when a rectangle is being drawn \mbox{\Hypertarget{classImageEditor_a854578e1f9d99aa44855676a73fd390c}\label{classImageEditor_a854578e1f9d99aa44855676a73fd390c}} 
 \index{ImageEditor@{ImageEditor}!drawPolygon@{drawPolygon}}
 \index{drawPolygon@{drawPolygon}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}}
@@ -367,7 +377,13 @@ Adds text on scene
 {\em new\+Point} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}\label{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}} 
+\mbox{\Hypertarget{classImageEditor_a24a1d8b71f3ba545ba66be21fecb74cf}\label{classImageEditor_a24a1d8b71f3ba545ba66be21fecb74cf}} 
+\index{ImageEditor@{ImageEditor}!finishedDrawingRectangle@{finishedDrawingRectangle}}
+\index{finishedDrawingRectangle@{finishedDrawingRectangle}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{finishedDrawingRectangle}{finishedDrawingRectangle}}
+{\footnotesize\ttfamily void Image\+Editor\+::finished\+Drawing\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sends a signal to the labeller class when a rectangle is finished being drawn \mbox{\Hypertarget{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}\label{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}} 
 \index{ImageEditor@{ImageEditor}!getAnnotationShapeType@{getAnnotationShapeType}}
 \index{getAnnotationShapeType@{getAnnotationShapeType}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{getAnnotationShapeType()}{getAnnotationShapeType()}}

@@ -124,6 +124,10 @@ Signals</h2></td></tr>
 <tr class="separator:a1a0faeeafdb9f9bdc7bfb7a4dcd628a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18aae92548253be1acb384a52db952b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a18aae92548253be1acb384a52db952b9">annotationShapeChanged</a> ()</td></tr>
 <tr class="separator:a18aae92548253be1acb384a52db952b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab743be4820527f63d4b0d41174d780ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ab743be4820527f63d4b0d41174d780ea">drawingRectangle</a> ()</td></tr>
+<tr class="separator:ab743be4820527f63d4b0d41174d780ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a1d8b71f3ba545ba66be21fecb74cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a24a1d8b71f3ba545ba66be21fecb74cf">finishedDrawingRectangle</a> ()</td></tr>
+<tr class="separator:a24a1d8b71f3ba545ba66be21fecb74cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -610,6 +614,32 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 
 </div>
 </div>
+<a id="ab743be4820527f63d4b0d41174d780ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab743be4820527f63d4b0d41174d780ea">&#9670;&nbsp;</a></span>drawingRectangle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::drawingRectangle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sends a signal to the labeller class when a rectangle is being drawn </p>
+
+</div>
+</div>
 <a id="a854578e1f9d99aa44855676a73fd390c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a854578e1f9d99aa44855676a73fd390c">&#9670;&nbsp;</a></span>drawPolygon()</h2>
 
@@ -714,6 +744,32 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a24a1d8b71f3ba545ba66be21fecb74cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a1d8b71f3ba545ba66be21fecb74cf">&#9670;&nbsp;</a></span>finishedDrawingRectangle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::finishedDrawingRectangle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sends a signal to the labeller class when a rectangle is finished being drawn </p>
 
 </div>
 </div>

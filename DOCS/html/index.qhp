@@ -48,6 +48,14 @@
               <section title="handleItems" ref="classCustomResizer.html#ab0f521467414387b0a410143c08be6a7" />
               <section title="rect" ref="classCustomResizer.html#a26750895c71f502d12983b98e2e881f8" />
             </section>
+            <section title="DarkStyle" ref="classDarkStyle.html">
+              <section title="DarkStyle" ref="classDarkStyle.html#aab8e01ad4fc1f604cc3af5e49632bf34" />
+              <section title="DarkStyle" ref="classDarkStyle.html#a4a8a8fafd23d02f5e4df919a5d01c29e" />
+              <section title="baseStyle" ref="classDarkStyle.html#aabaab25c8b3acad0d9d7c022937b09c7" />
+              <section title="polish" ref="classDarkStyle.html#ac7850fd9b718965136c4661690fb34a3" />
+              <section title="polish" ref="classDarkStyle.html#a45187b163d639bab57a51ba80a1971aa" />
+              <section title="styleBase" ref="classDarkStyle.html#ac74ed1a6db60495e7fe32fd6ee34ca99" />
+            </section>
             <section title="HashNode" ref="classHashNode.html">
               <section title="HashNode" ref="classHashNode.html#a90063c7c68cbc38916c1e3903de40212" />
               <section title="HashNode" ref="classHashNode.html#af205e606230d0e633ea32118750f91ed" />
@@ -88,9 +96,11 @@
               <section title="cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
               <section title="deleteClickElipses" ref="classImageEditor.html#aa5ce92d810af70cc61e353963ddcb312" />
               <section title="deleteSelectedItem" ref="classImageEditor.html#adba8cb9e2ce9de0ba679549c5f062c07" />
+              <section title="drawingRectangle" ref="classImageEditor.html#ab743be4820527f63d4b0d41174d780ea" />
               <section title="drawPolygon" ref="classImageEditor.html#a854578e1f9d99aa44855676a73fd390c" />
               <section title="drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
               <section title="drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
+              <section title="finishedDrawingRectangle" ref="classImageEditor.html#a24a1d8b71f3ba545ba66be21fecb74cf" />
               <section title="getAnnotationShapeType" ref="classImageEditor.html#afd8af03b9d22ad0b9cce340e6e0e663e" />
               <section title="getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
               <section title="getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
@@ -173,6 +183,8 @@
               <section title="setAnnotationFile" ref="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0" />
               <section title="setClassFile" ref="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d" />
               <section title="setClassList" ref="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069" />
+              <section title="setCursorToArrow" ref="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea" />
+              <section title="setCursorToCross" ref="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73" />
               <section title="setCursorTypeLabel" ref="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66" />
               <section title="setImageDir" ref="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc" />
               <section title="setImageList" ref="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06" />
@@ -271,6 +283,9 @@
             <section title="QObject">
               <section title="LabellerModel" ref="classLabellerModel.html" />
             </section>
+            <section title="QProxyStyle">
+              <section title="DarkStyle" ref="classDarkStyle.html" />
+            </section>
             <section title="StringDateHash" ref="classStringDateHash.html" />
           </section>
           <section title="Class Members" ref="functions.html">
@@ -285,6 +300,7 @@
           <section title="File List" ref="files.html">
             <section title="SRC" ref="dir_1e771ff450ae847412a8c28572c155bb.html">
               <section title="custom_resizer.h" ref="custom__resizer_8h_source.html" />
+              <section title="dark_style.h" ref="dark__style_8h_source.html" />
               <section title="image_editor.h" ref="image__editor_8h_source.html" />
               <section title="labeller.h" ref="labeller_8h_source.html" />
               <section title="labeller_model.h" ref="labeller__model_8h_source.html" />
@@ -320,6 +336,12 @@
       <keyword name="restrictPosition" id="CustomResizer::HandleItem::restrictPosition" ref="classCustomResizer_1_1HandleItem.html#ae5652eafa04784ccca0594766b210282" />
       <keyword name="parent" id="CustomResizer::HandleItem::parent" ref="classCustomResizer_1_1HandleItem.html#acd3cd5b9a63da403ea5771ee07786fed" />
       <keyword name="positionFlags" id="CustomResizer::HandleItem::positionFlags" ref="classCustomResizer_1_1HandleItem.html#ae3c377e6bf9512a9ecf3712ea3f95c6e" />
+      <keyword name="DarkStyle" id="DarkStyle" ref="classDarkStyle.html" />
+      <keyword name="DarkStyle" id="DarkStyle::DarkStyle" ref="classDarkStyle.html#a4a8a8fafd23d02f5e4df919a5d01c29e" />
+      <keyword name="baseStyle" id="DarkStyle::baseStyle" ref="classDarkStyle.html#aabaab25c8b3acad0d9d7c022937b09c7" />
+      <keyword name="polish" id="DarkStyle::polish" ref="classDarkStyle.html#a45187b163d639bab57a51ba80a1971aa" />
+      <keyword name="polish" id="DarkStyle::polish" ref="classDarkStyle.html#ac7850fd9b718965136c4661690fb34a3" />
+      <keyword name="styleBase" id="DarkStyle::styleBase" ref="classDarkStyle.html#ac74ed1a6db60495e7fe32fd6ee34ca99" />
       <keyword name="HashNode" id="HashNode" ref="classHashNode.html" />
       <keyword name="HashNode" id="HashNode::HashNode" ref="classHashNode.html#af205e606230d0e633ea32118750f91ed" />
       <keyword name="getKey" id="HashNode::getKey" ref="classHashNode.html#a52f10503db7dc31b31244d730c121371" />
@@ -341,6 +363,8 @@
       <keyword name="deleteClickElipses" id="ImageEditor::deleteClickElipses" ref="classImageEditor.html#aa5ce92d810af70cc61e353963ddcb312" />
       <keyword name="cursorTypeChanged" id="ImageEditor::cursorTypeChanged" ref="classImageEditor.html#a1a0faeeafdb9f9bdc7bfb7a4dcd628a9" />
       <keyword name="annotationShapeChanged" id="ImageEditor::annotationShapeChanged" ref="classImageEditor.html#a18aae92548253be1acb384a52db952b9" />
+      <keyword name="drawingRectangle" id="ImageEditor::drawingRectangle" ref="classImageEditor.html#ab743be4820527f63d4b0d41174d780ea" />
+      <keyword name="finishedDrawingRectangle" id="ImageEditor::finishedDrawingRectangle" ref="classImageEditor.html#a24a1d8b71f3ba545ba66be21fecb74cf" />
       <keyword name="setImage" id="ImageEditor::setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
       <keyword name="saveImageState" id="ImageEditor::saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
       <keyword name="updateCursorType" id="ImageEditor::updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
@@ -411,6 +435,8 @@
       <keyword name="setCursorTypeLabel" id="Labeller::setCursorTypeLabel" ref="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66" />
       <keyword name="setShapeTypeLabel" id="Labeller::setShapeTypeLabel" ref="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c" />
       <keyword name="clearClassItemLineEdit" id="Labeller::clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
+      <keyword name="setCursorToCross" id="Labeller::setCursorToCross" ref="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73" />
+      <keyword name="setCursorToArrow" id="Labeller::setCursorToArrow" ref="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea" />
       <keyword name="on_imageBrowseButton_clicked" id="Labeller::on_imageBrowseButton_clicked" ref="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a" />
       <keyword name="on_classBrowseButton_clicked" id="Labeller::on_classBrowseButton_clicked" ref="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68" />
       <keyword name="on_annotationBrowseButton_clicked" id="Labeller::on_annotationBrowseButton_clicked" ref="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663" />
@@ -533,6 +559,7 @@
       <file>search/search.css</file>
       <file>search/search.js</file>
       <file>custom__resizer_8h_source.html</file>
+      <file>dark__style_8h_source.html</file>
       <file>image__editor_8h_source.html</file>
       <file>labeller_8h_source.html</file>
       <file>labeller__model_8h_source.html</file>
@@ -543,6 +570,9 @@
       <file>classCustomResizer_1_1HandleItem.html</file>
       <file>classCustomResizer_1_1HandleItem.png</file>
       <file>classCustomResizer_1_1HandleItem-members.html</file>
+      <file>classDarkStyle.html</file>
+      <file>classDarkStyle.png</file>
+      <file>classDarkStyle-members.html</file>
       <file>classHashNode.html</file>
       <file>classHashNode-members.html</file>
       <file>classImageEditor.html</file>
@@ -579,6 +609,7 @@
       <file>functions.html</file>
       <file>functions.html</file>
       <file>functions.html</file>
+      <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>

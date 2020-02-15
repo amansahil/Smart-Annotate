@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keypressevent_226',['keyPressEvent',['../classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b',1,'ImageEditor']]]
+  ['itemchange_233',['itemChange',['../classCustomResizer_1_1HandleItem.html#a8bbde4bb5c6e46402aaf84bae9b448fc',1,'CustomResizer::HandleItem']]]
 ];
