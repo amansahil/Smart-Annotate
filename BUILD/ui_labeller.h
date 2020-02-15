@@ -189,7 +189,7 @@ public:
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(500, 40, 781, 651));
-        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
+        graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
         cursorLabel = new QLabel(centralwidget);
         cursorLabel->setObjectName(QString::fromUtf8("cursorLabel"));
         cursorLabel->setGeometry(QRect(600, 10, 131, 21));

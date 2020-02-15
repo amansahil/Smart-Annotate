@@ -27,6 +27,7 @@ Labeller::Labeller(QWidget *parent)
     ui->graphicsView->setSceneRect(0, 0, 781, 651);
     ui->graphicsView->show();
 
+
     // Hide connect button
     ui->connectButton->setVisible(false);
     ui->clearPoints->setVisible(false);
@@ -165,6 +166,10 @@ void Labeller::setShapeTypeLabel()
 
 void Labeller::clearClassItemLineEdit() { ui->classItemLineEdit->clear(); }
 
+void Labeller::setCursorToCross() { ui->graphicsView->viewport()->setCursor(Qt::CrossCursor); }
+
+void Labeller::setCursorToArrow() { ui->graphicsView->viewport()->setCursor(Qt::ArrowCursor); }
+
 void Labeller::createListeners()
 {
     connect(labellerModel, SIGNAL(imageFilesChanged()), this, SLOT(setImageList()));
@@ -179,6 +184,8 @@ void Labeller::createListeners()
     connect(labellerModel, SIGNAL(clearClassItemLineEdit()), this, SLOT(clearClassItemLineEdit()));
     connect(imageEditor, SIGNAL(cursorTypeChanged()), this, SLOT(setCursorTypeLabel()));
     connect(imageEditor, SIGNAL(annotationShapeChanged()), this, SLOT(setShapeTypeLabel()));
+    connect(imageEditor, SIGNAL(drawingRectangle()), this, SLOT(setCursorToCross()));
+    connect(imageEditor, SIGNAL(finishedDrawingRectangle()), this, SLOT(setCursorToArrow()));
 }
 
 // Controller methods

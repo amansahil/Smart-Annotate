@@ -94,6 +94,16 @@ private slots:
      */
     void clearClassItemLineEdit();
 
+    /*!
+     *  Sets cursor shape cross cursor
+     */
+    void setCursorToCross();
+
+    /*!
+     *  Sets cursor shape arrow cursor
+     */
+    void setCursorToArrow();
+
     // Controller methods
 
 private slots:

@@ -280,6 +280,16 @@ signals:
      *  Sends a signal to the labeller class when annotation shape changes
      */
     void annotationShapeChanged();
+
+    /*!
+     *  Sends a signal to the labeller class when a rectangle is being drawn
+     */
+    void drawingRectangle();
+
+    /*!
+     *  Sends a signal to the labeller class when a rectangle is finished being drawn
+     */
+    void finishedDrawingRectangle();
 };
 
 #endif // IMAGEEDITOR_H

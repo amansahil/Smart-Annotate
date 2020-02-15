@@ -125,6 +125,9 @@ void ImageEditor::clearItems()
 {
     if (imageSet)
     {
+        // Delete any smart annotation points from image
+        deleteClickElipses();
+
         ImageEditor::clear();
 
         // ImageEditor::clear method clears the image too so the image needs to be openned again
@@ -344,6 +347,8 @@ void ImageEditor::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
             if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
             {
+                emit drawingRectangle();
+
                 lastPoint = event->screenPos();
                 lastPointF = event->scenePos();
 
@@ -381,6 +386,8 @@ void ImageEditor::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         {
             if (annotationShape == ImageEditor::AnnotationShapeType::Rectangle)
             {
+                emit finishedDrawingRectangle();
+
                 rubberBand->hide();
 
                 drawRectangle(QRectF(originF, lastPointF).normalized());
