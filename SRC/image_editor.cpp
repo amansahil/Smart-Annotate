@@ -1,5 +1,8 @@
 ﻿#include "image_editor.h"
 
+#define SCENE_WIDTH 781
+#define SCENE_HEIGHT 651
+
 ImageEditor::ImageEditor() : imageSet(false),
                              drawing(false),
                              clipbord(false),
@@ -477,12 +480,15 @@ void ImageEditor::createActions()
 void ImageEditor::openImage(const QString fileName)
 {
     const QImage image(fileName);
-    const QImage smallImage = image.scaled(781, 651, Qt::KeepAspectRatio);
+    const QImage smallImage = image.scaled(SCENE_WIDTH, SCENE_HEIGHT, Qt::KeepAspectRatio);
 
     QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(smallImage));
 
     ImageEditor::addItem(item);
     ImageEditor::update();
+
+    // Center Image
+    ImageEditor::setSceneRect(0, 0, smallImage.width(), smallImage.height());
 }
 
 bool ImageEditor::savedStateExists(const QString fileName)
