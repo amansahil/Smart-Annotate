@@ -27,7 +27,7 @@ class Labeller : public QMainWindow
     // Listeners & UI Methods
 
 public:
-    Labeller(QWidget *parent = nullptr);
+    explicit Labeller(QWidget *parent = nullptr);
     ~Labeller();
 
 private:

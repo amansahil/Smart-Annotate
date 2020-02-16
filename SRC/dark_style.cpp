@@ -6,8 +6,8 @@ DarkStyle::DarkStyle(QStyle *style) : QProxyStyle(style) {}
 
 QStyle *DarkStyle::styleBase(QStyle *style) const
 {
-  static QStyle *base =
-      !style ? QStyleFactory::create(QStringLiteral("Fusion")) : style;
+  static QStyle *base = !style ? QStyleFactory::create(QStringLiteral("Fusion")) : style;
+
   return base;
 }
 

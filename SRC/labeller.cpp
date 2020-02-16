@@ -190,7 +190,7 @@ QPointF Labeller::parsePoint(QString point)
 {
     point.remove(QRegularExpression("[()*]"));
 
-    QStringList points = point.split(",");
+    const QStringList points = point.split(",");
 
     return points.size() == 2 ? QPointF(points[0].toInt(), points[1].toInt()) : QPointF(0,0);
 }
@@ -250,7 +250,6 @@ void Labeller::on_annotationBrowseButton_clicked()
     const QString annotationFile = QFileDialog::getOpenFileName(this, "Select an annotation file", nullptr, "Annotation files (*.annotations)");
     labellerModel->updateAnnotationFile(annotationFile);
 
-
     // Open and load file conents
     QFile file(annotationFile);
     if(!file.open(QIODevice::ReadOnly | QFile::Text))
@@ -259,13 +258,13 @@ void Labeller::on_annotationBrowseButton_clicked()
         return;
     }
 
-    QString values = file.readAll();
+    const QString values = file.readAll();
     file.close();
 
-    QJsonDocument document = QJsonDocument::fromJson(values.toUtf8());
-    QJsonObject jsonObject = document.object();
+    const QJsonDocument document = QJsonDocument::fromJson(values.toUtf8());
+    const QJsonObject jsonObject = document.object();
 
-    QJsonArray imagesArray = jsonObject["Images"].toArray();
+    const QJsonArray imagesArray = jsonObject["Images"].toArray();
 
     for(const QJsonValue &image: imagesArray)
     {
@@ -273,12 +272,12 @@ void Labeller::on_annotationBrowseButton_clicked()
         QList<QPolygonF> polygonItems;
         QList<QPair<QString, QPointF>> textItems;
 
-        QString fileName = image["File Name"].toString();
-        QJsonArray shapesArray = image["Shapes"].toArray();
+        const QString fileName = image["File Name"].toString();
+        const QJsonArray shapesArray = image["Shapes"].toArray();
 
         for(const QJsonValue &shape: shapesArray)
         {
-            QString shapeType = shape["Shape Type"].toString();
+            const QString shapeType = shape["Shape Type"].toString();
 
             if(shapeType == "Rectangle")
             {
@@ -301,7 +300,7 @@ void Labeller::on_annotationBrowseButton_clicked()
             {
                 QPolygonF newPolygonItem;
 
-                QJsonArray pointsArray = shape["Points"].toArray();
+                const QJsonArray pointsArray = shape["Points"].toArray();
 
                 for(const QJsonValue &point: pointsArray)
                 {
@@ -475,12 +474,13 @@ void Labeller::on_saveButton_clicked()
         {
 
             QJsonObject shapeObject;
-            QRectF currRect = applicationRectState.value(fileName).at(i);
 
-            QString topLeft = "(" + QString::number(currRect.topLeft().x()) + ","+ QString::number(currRect.topLeft().y()) + ")";
-            QString topRight = "(" + QString::number(currRect.topRight().x()) + ","+ QString::number(currRect.topRight().y()) + ")";
-            QString bottomLeft = "(" + QString::number(currRect.bottomLeft().x()) + ","+ QString::number(currRect.bottomLeft().y()) + ")";
-            QString bottomRight = "(" + QString::number(currRect.bottomRight().x()) + ","+ QString::number(currRect.bottomRight().y()) + ")";
+            const QRectF currRect = applicationRectState.value(fileName).at(i);
+
+            const QString topLeft = "(" + QString::number(currRect.topLeft().x()) + ","+ QString::number(currRect.topLeft().y()) + ")";
+            const QString topRight = "(" + QString::number(currRect.topRight().x()) + ","+ QString::number(currRect.topRight().y()) + ")";
+            const QString bottomLeft = "(" + QString::number(currRect.bottomLeft().x()) + ","+ QString::number(currRect.bottomLeft().y()) + ")";
+            const QString bottomRight = "(" + QString::number(currRect.bottomRight().x()) + ","+ QString::number(currRect.bottomRight().y()) + ")";
 
             shapeObject.insert("Shape Type", QJsonValue::fromVariant("Rectangle"));
             shapeObject.insert("Point_1", QJsonValue::fromVariant(topLeft));
@@ -494,9 +494,10 @@ void Labeller::on_saveButton_clicked()
         for (int i = 0; i < applicationTextState.value(fileName).count(); i++)
         {
             QJsonObject shapeObject;
-            QPair<QString, QPointF> currText = applicationTextState.value(fileName).at(i);
 
-            QString pos = "(" + QString::number(currText.second.x()) + ","+ QString::number(currText.second.y()) + ")";
+            const QPair<QString, QPointF> currText = applicationTextState.value(fileName).at(i);
+
+            const QString pos = "(" + QString::number(currText.second.x()) + ","+ QString::number(currText.second.y()) + ")";
 
             shapeObject.insert("Shape Type", QJsonValue::fromVariant("Text"));
             shapeObject.insert("Text", QJsonValue::fromVariant(currText.first));
@@ -508,23 +509,21 @@ void Labeller::on_saveButton_clicked()
         for (int i = 0; i < applicationPolygonState.value(fileName).count(); i++)
         {
             QJsonObject shapeObject;
-            QPolygonF currPoly = applicationPolygonState.value(fileName).at(i);
+
+            const QPolygonF currPoly = applicationPolygonState.value(fileName).at(i);
 
             shapeObject.insert("Shape Type", QJsonValue::fromVariant("Polygon"));
 
             QJsonArray pointArray;
 
-
-            int j = 1;
             for(const QPointF &point: currPoly)
             {
                 QJsonObject pointObject;
-                QString pos = "(" + QString::number(point.x()) + ","+ QString::number(point.y()) + ")";
+
+                const QString pos = "(" + QString::number(point.x()) + ","+ QString::number(point.y()) + ")";
 
                 pointArray.push_back(pos);
                 shapeObject.insert("Points", pointArray);
-
-                j++;
             }
 
             shapesArray.push_back(shapeObject);
@@ -547,7 +546,7 @@ void Labeller::on_saveButton_clicked()
     else
     {
         // Define path, name and default file type
-        QString initialPath = QDir::currentPath() + "/untitled.annotations";
+        const QString initialPath = QDir::currentPath() + "/untitled.annotations";
 
         fileName = QFileDialog::getSaveFileName(this, tr("Save As"), initialPath);
 
@@ -566,6 +565,7 @@ void Labeller::on_saveButton_clicked()
             QMessageBox::warning(this, "Warning", "Cannot save to file : " + jsonFile.errorString());
             return;
         }
+
         jsonFile.write(document.toJson());
         jsonFile.close();
     }

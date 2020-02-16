@@ -7,6 +7,7 @@
 #include <QProxyStyle>
 #include <QStyleFactory>
 
+//! Proxy style class to implement a dark theme on the app
 class DarkStyle : public QProxyStyle
 {
   Q_OBJECT
