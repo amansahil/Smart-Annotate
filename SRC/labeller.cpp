@@ -483,8 +483,13 @@ void Labeller::on_saveButton_clicked()
     else
     {
         QFile jsonFile(fileName);
-        jsonFile.open(QFile::WriteOnly);
+        if(!jsonFile.open(QIODevice::WriteOnly | QFile::Text))
+        {
+            QMessageBox::warning(this, "Warning", "Cannot save to file : " + jsonFile.errorString());
+            return;
+        }
         jsonFile.write(document.toJson());
+        jsonFile.close();
     }
 }
 
