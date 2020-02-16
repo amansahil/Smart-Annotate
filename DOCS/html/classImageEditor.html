@@ -133,6 +133,8 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0986a0acf551395d35a3d4d96f1f606c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c">setImage</a> (const QString fileName)</td></tr>
 <tr class="separator:a0986a0acf551395d35a3d4d96f1f606c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada28c1b2ba430479fadf2e70bb331ab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ada28c1b2ba430479fadf2e70bb331ab2">loadAnnotations</a> ()</td></tr>
+<tr class="separator:ada28c1b2ba430479fadf2e70bb331ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae93759b3cede9e9519ca4425e03d9a9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c">saveImageState</a> ()</td></tr>
 <tr class="separator:ae93759b3cede9e9519ca4425e03d9a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19d576141efaf65da9bdfddc75d5c805"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805">updateCursorType</a> (const <a class="el" href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b">CursorType</a> newCursorType)</td></tr>
@@ -141,6 +143,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aecd8aa36fa9b51abb8cc600e6ca42af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c46bf75a99e2361adfcd1ef8d4b2ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8">updateClassLabel</a> (const QString newClassLabel)</td></tr>
 <tr class="separator:a7c46bf75a99e2361adfcd1ef8d4b2ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608f599667f07987d305da0a21437b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a608f599667f07987d305da0a21437b32">updateApplicationRectState</a> (const QString fileName, const QList&lt; QRectF &gt; rectItems)</td></tr>
+<tr class="separator:a608f599667f07987d305da0a21437b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439c4f1b8c737977293ef34efc38f4bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a439c4f1b8c737977293ef34efc38f4bc">updateApplicationPolygonState</a> (const QString fileName, const QList&lt; QPolygonF &gt; polygonItems)</td></tr>
+<tr class="separator:a439c4f1b8c737977293ef34efc38f4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56cc153495544777f12cf31d063c13c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ab56cc153495544777f12cf31d063c13c">updateApplicationTextState</a> (const QString fileName, const QList&lt; QPair&lt; QString, QPointF &gt;&gt; textItems)</td></tr>
+<tr class="separator:ab56cc153495544777f12cf31d063c13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98b81a7984589a6f472ec62cda5e3de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4">clearItems</a> ()</td></tr>
 <tr class="separator:a98b81a7984589a6f472ec62cda5e3de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2db02b4df6e584c6ab1c9e2a6f6ed763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9b">CursorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763">getCursorType</a> () const</td></tr>
@@ -149,6 +157,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd8af03b9d22ad0b9cce340e6e0e663e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5670b5b2e6d292b99846a7f8a68ca9c2"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, QList&lt; QRectF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2">getApplicationRectState</a> () const</td></tr>
 <tr class="separator:a5670b5b2e6d292b99846a7f8a68ca9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3062aeaa3a990d3a100b0b14a0d5098"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, QList&lt; QPolygonF &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#ae3062aeaa3a990d3a100b0b14a0d5098">getApplicationPolygonState</a> () const</td></tr>
+<tr class="separator:ae3062aeaa3a990d3a100b0b14a0d5098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11feb7e6618a89a117f276490d46c9c6"><td class="memItemLeft" align="right" valign="top">QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a11feb7e6618a89a117f276490d46c9c6">getApplicationTextState</a> () const</td></tr>
+<tr class="separator:a11feb7e6618a89a117f276490d46c9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6659906c4b83562ee52a4ec92d7ec652"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageEditor.html#a6659906c4b83562ee52a4ec92d7ec652">forceReload</a> ()</td></tr>
+<tr class="separator:a6659906c4b83562ee52a4ec92d7ec652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -773,6 +787,24 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 
 </div>
 </div>
+<a id="a6659906c4b83562ee52a4ec92d7ec652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6659906c4b83562ee52a4ec92d7ec652">&#9670;&nbsp;</a></span>forceReload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::forceReload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Force reloads curent image to load any annotations from the annotation file </p>
+
+</div>
+</div>
 <a id="afd8af03b9d22ad0b9cce340e6e0e663e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd8af03b9d22ad0b9cce340e6e0e663e">&#9670;&nbsp;</a></span>getAnnotationShapeType()</h2>
 
@@ -791,6 +823,24 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 
 </div>
 </div>
+<a id="ae3062aeaa3a990d3a100b0b14a0d5098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3062aeaa3a990d3a100b0b14a0d5098">&#9670;&nbsp;</a></span>getApplicationPolygonState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt; QString, QList&lt; QPolygonF &gt; &gt; ImageEditor::getApplicationPolygonState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns <code>applicationPolygonState</code> </p>
+
+</div>
+</div>
 <a id="a5670b5b2e6d292b99846a7f8a68ca9c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5670b5b2e6d292b99846a7f8a68ca9c2">&#9670;&nbsp;</a></span>getApplicationRectState()</h2>
 
@@ -806,6 +856,24 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
       </table>
 </div><div class="memdoc">
 <p>Returns <code>applicationRectState</code> </p>
+
+</div>
+</div>
+<a id="a11feb7e6618a89a117f276490d46c9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11feb7e6618a89a117f276490d46c9c6">&#9670;&nbsp;</a></span>getApplicationTextState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt; ImageEditor::getApplicationTextState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns <code>applicationTextState</code> </p>
 
 </div>
 </div>
@@ -851,6 +919,24 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 </table>
 </div><div class="memdoc">
 <p><a class="el" href="">https://doc.qt.io/qt-5/qgraphicsitem.html#keyPressEvent</a></p>
+
+</div>
+</div>
+<a id="ada28c1b2ba430479fadf2e70bb331ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada28c1b2ba430479fadf2e70bb331ab2">&#9670;&nbsp;</a></span>loadAnnotations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::loadAnnotations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Loads saved state annotations onto image if any exists </p>
 
 </div>
 </div>
@@ -1112,6 +1198,111 @@ QHash&lt; QString, QList&lt; QPair&lt; QString, QPointF &gt; &gt; &gt;&#160;</td
 <p>Updates <code>annotationShape</code> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newCursorType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a439c4f1b8c737977293ef34efc38f4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439c4f1b8c737977293ef34efc38f4bc">&#9670;&nbsp;</a></span>updateApplicationPolygonState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::updateApplicationPolygonState </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPolygonF &gt;&#160;</td>
+          <td class="paramname"><em>polygonItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates <code>applicationPolygonState</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td></td></tr>
+    <tr><td class="paramname">polygonItems</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a608f599667f07987d305da0a21437b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608f599667f07987d305da0a21437b32">&#9670;&nbsp;</a></span>updateApplicationRectState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::updateApplicationRectState </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QRectF &gt;&#160;</td>
+          <td class="paramname"><em>rectItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates <code>applicationRectState</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td></td></tr>
+    <tr><td class="paramname">rectItems</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab56cc153495544777f12cf31d063c13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56cc153495544777f12cf31d063c13c">&#9670;&nbsp;</a></span>updateApplicationTextState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageEditor::updateApplicationTextState </td>
+          <td>(</td>
+          <td class="paramtype">const QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; QPair&lt; QString, QPointF &gt;&gt;&#160;</td>
+          <td class="paramname"><em>textItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates <code>applicationTextState</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td></td></tr>
+    <tr><td class="paramname">textItems</td><td></td></tr>
   </table>
   </dd>
 </dl>

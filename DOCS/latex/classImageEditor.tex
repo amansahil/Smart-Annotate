@@ -59,6 +59,8 @@ void \mbox{\hyperlink{classImageEditor_a24a1d8b71f3ba545ba66be21fecb74cf}{finish
 \item 
 void \mbox{\hyperlink{classImageEditor_a0986a0acf551395d35a3d4d96f1f606c}{set\+Image}} (const Q\+String file\+Name)
 \item 
+void \mbox{\hyperlink{classImageEditor_ada28c1b2ba430479fadf2e70bb331ab2}{load\+Annotations}} ()
+\item 
 void \mbox{\hyperlink{classImageEditor_ae93759b3cede9e9519ca4425e03d9a9c}{save\+Image\+State}} ()
 \item 
 void \mbox{\hyperlink{classImageEditor_a19d576141efaf65da9bdfddc75d5c805}{update\+Cursor\+Type}} (const \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} new\+Cursor\+Type)
@@ -67,6 +69,12 @@ void \mbox{\hyperlink{classImageEditor_aecd8aa36fa9b51abb8cc600e6ca42af9}{update
 \item 
 void \mbox{\hyperlink{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}{update\+Class\+Label}} (const Q\+String new\+Class\+Label)
 \item 
+void \mbox{\hyperlink{classImageEditor_a608f599667f07987d305da0a21437b32}{update\+Application\+Rect\+State}} (const Q\+String file\+Name, const Q\+List$<$ Q\+RectF $>$ rect\+Items)
+\item 
+void \mbox{\hyperlink{classImageEditor_a439c4f1b8c737977293ef34efc38f4bc}{update\+Application\+Polygon\+State}} (const Q\+String file\+Name, const Q\+List$<$ Q\+PolygonF $>$ polygon\+Items)
+\item 
+void \mbox{\hyperlink{classImageEditor_ab56cc153495544777f12cf31d063c13c}{update\+Application\+Text\+State}} (const Q\+String file\+Name, const Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+PointF $>$$>$ text\+Items)
+\item 
 void \mbox{\hyperlink{classImageEditor_a98b81a7984589a6f472ec62cda5e3de4}{clear\+Items}} ()
 \item 
 \mbox{\hyperlink{classImageEditor_ae1465fedd17e408c7a423ccebb0e0d9b}{Cursor\+Type}} \mbox{\hyperlink{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}{get\+Cursor\+Type}} () const
@@ -74,6 +82,12 @@ void \mbox{\hyperlink{classImageEditor_a98b81a7984589a6f472ec62cda5e3de4}{clear\
 \mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700}{Annotation\+Shape\+Type}} \mbox{\hyperlink{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}{get\+Annotation\+Shape\+Type}} () const
 \item 
 Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+RectF $>$ $>$ \mbox{\hyperlink{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}{get\+Application\+Rect\+State}} () const
+\item 
+Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+PolygonF $>$ $>$ \mbox{\hyperlink{classImageEditor_ae3062aeaa3a990d3a100b0b14a0d5098}{get\+Application\+Polygon\+State}} () const
+\item 
+Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+PointF $>$ $>$ $>$ \mbox{\hyperlink{classImageEditor_a11feb7e6618a89a117f276490d46c9c6}{get\+Application\+Text\+State}} () const
+\item 
+void \mbox{\hyperlink{classImageEditor_a6659906c4b83562ee52a4ec92d7ec652}{force\+Reload}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -383,19 +397,37 @@ Adds text on scene
 \doxysubsubsection{\texorpdfstring{finishedDrawingRectangle}{finishedDrawingRectangle}}
 {\footnotesize\ttfamily void Image\+Editor\+::finished\+Drawing\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Sends a signal to the labeller class when a rectangle is finished being drawn \mbox{\Hypertarget{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}\label{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}} 
+Sends a signal to the labeller class when a rectangle is finished being drawn \mbox{\Hypertarget{classImageEditor_a6659906c4b83562ee52a4ec92d7ec652}\label{classImageEditor_a6659906c4b83562ee52a4ec92d7ec652}} 
+\index{ImageEditor@{ImageEditor}!forceReload@{forceReload}}
+\index{forceReload@{forceReload}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{forceReload()}{forceReload()}}
+{\footnotesize\ttfamily void Image\+Editor\+::force\+Reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Force reloads curent image to load any annotations from the annotation file \mbox{\Hypertarget{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}\label{classImageEditor_afd8af03b9d22ad0b9cce340e6e0e663e}} 
 \index{ImageEditor@{ImageEditor}!getAnnotationShapeType@{getAnnotationShapeType}}
 \index{getAnnotationShapeType@{getAnnotationShapeType}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{getAnnotationShapeType()}{getAnnotationShapeType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classImageEditor_aa4f7e36a44ada440acb5fb3fa35ad700}{Image\+Editor\+::\+Annotation\+Shape\+Type}} Image\+Editor\+::get\+Annotation\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns {\ttfamily annotation\+Shape} \mbox{\Hypertarget{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}\label{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}} 
+Returns {\ttfamily annotation\+Shape} \mbox{\Hypertarget{classImageEditor_ae3062aeaa3a990d3a100b0b14a0d5098}\label{classImageEditor_ae3062aeaa3a990d3a100b0b14a0d5098}} 
+\index{ImageEditor@{ImageEditor}!getApplicationPolygonState@{getApplicationPolygonState}}
+\index{getApplicationPolygonState@{getApplicationPolygonState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{getApplicationPolygonState()}{getApplicationPolygonState()}}
+{\footnotesize\ttfamily Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+PolygonF $>$ $>$ Image\+Editor\+::get\+Application\+Polygon\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily application\+Polygon\+State} \mbox{\Hypertarget{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}\label{classImageEditor_a5670b5b2e6d292b99846a7f8a68ca9c2}} 
 \index{ImageEditor@{ImageEditor}!getApplicationRectState@{getApplicationRectState}}
 \index{getApplicationRectState@{getApplicationRectState}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{getApplicationRectState()}{getApplicationRectState()}}
 {\footnotesize\ttfamily Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+RectF $>$ $>$ Image\+Editor\+::get\+Application\+Rect\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns {\ttfamily application\+Rect\+State} \mbox{\Hypertarget{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}\label{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}} 
+Returns {\ttfamily application\+Rect\+State} \mbox{\Hypertarget{classImageEditor_a11feb7e6618a89a117f276490d46c9c6}\label{classImageEditor_a11feb7e6618a89a117f276490d46c9c6}} 
+\index{ImageEditor@{ImageEditor}!getApplicationTextState@{getApplicationTextState}}
+\index{getApplicationTextState@{getApplicationTextState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{getApplicationTextState()}{getApplicationTextState()}}
+{\footnotesize\ttfamily Q\+Hash$<$ Q\+String, Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+PointF $>$ $>$ $>$ Image\+Editor\+::get\+Application\+Text\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily application\+Text\+State} \mbox{\Hypertarget{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}\label{classImageEditor_a2db02b4df6e584c6ab1c9e2a6f6ed763}} 
 \index{ImageEditor@{ImageEditor}!getCursorType@{getCursorType}}
 \index{getCursorType@{getCursorType}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{getCursorType()}{getCursorType()}}
@@ -407,7 +439,13 @@ Returns {\ttfamily cursor\+Type} \mbox{\Hypertarget{classImageEditor_a89218dd7b0
 \doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
 {\footnotesize\ttfamily void Image\+Editor\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#key\+Press\+Event}}\mbox{\Hypertarget{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}\label{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}} 
+\mbox{\hyperlink{}{https\+://doc.\+qt.\+io/qt-\/5/qgraphicsitem.\+html\#key\+Press\+Event}}\mbox{\Hypertarget{classImageEditor_ada28c1b2ba430479fadf2e70bb331ab2}\label{classImageEditor_ada28c1b2ba430479fadf2e70bb331ab2}} 
+\index{ImageEditor@{ImageEditor}!loadAnnotations@{loadAnnotations}}
+\index{loadAnnotations@{loadAnnotations}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{loadAnnotations()}{loadAnnotations()}}
+{\footnotesize\ttfamily void Image\+Editor\+::load\+Annotations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Loads saved state annotations onto image if any exists \mbox{\Hypertarget{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}\label{classImageEditor_ad532d2e673f5cc78a59e5e5a2306d21c}} 
 \index{ImageEditor@{ImageEditor}!mouseMoveEvent@{mouseMoveEvent}}
 \index{mouseMoveEvent@{mouseMoveEvent}!ImageEditor@{ImageEditor}}
 \doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
@@ -487,6 +525,45 @@ Sets image being viewed on the editor
 Updates {\ttfamily annotation\+Shape} 
 \begin{DoxyParams}{Parameters}
 {\em new\+Cursor\+Type} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a439c4f1b8c737977293ef34efc38f4bc}\label{classImageEditor_a439c4f1b8c737977293ef34efc38f4bc}} 
+\index{ImageEditor@{ImageEditor}!updateApplicationPolygonState@{updateApplicationPolygonState}}
+\index{updateApplicationPolygonState@{updateApplicationPolygonState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{updateApplicationPolygonState()}{updateApplicationPolygonState()}}
+{\footnotesize\ttfamily void Image\+Editor\+::update\+Application\+Polygon\+State (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name,  }\item[{const Q\+List$<$ Q\+PolygonF $>$}]{polygon\+Items }\end{DoxyParamCaption})}
+
+Updates {\ttfamily application\+Polygon\+State} 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+{\em polygon\+Items} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_a608f599667f07987d305da0a21437b32}\label{classImageEditor_a608f599667f07987d305da0a21437b32}} 
+\index{ImageEditor@{ImageEditor}!updateApplicationRectState@{updateApplicationRectState}}
+\index{updateApplicationRectState@{updateApplicationRectState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{updateApplicationRectState()}{updateApplicationRectState()}}
+{\footnotesize\ttfamily void Image\+Editor\+::update\+Application\+Rect\+State (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name,  }\item[{const Q\+List$<$ Q\+RectF $>$}]{rect\+Items }\end{DoxyParamCaption})}
+
+Updates {\ttfamily application\+Rect\+State} 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+{\em rect\+Items} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImageEditor_ab56cc153495544777f12cf31d063c13c}\label{classImageEditor_ab56cc153495544777f12cf31d063c13c}} 
+\index{ImageEditor@{ImageEditor}!updateApplicationTextState@{updateApplicationTextState}}
+\index{updateApplicationTextState@{updateApplicationTextState}!ImageEditor@{ImageEditor}}
+\doxysubsubsection{\texorpdfstring{updateApplicationTextState()}{updateApplicationTextState()}}
+{\footnotesize\ttfamily void Image\+Editor\+::update\+Application\+Text\+State (\begin{DoxyParamCaption}\item[{const Q\+String}]{file\+Name,  }\item[{const Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+PointF $>$$>$}]{text\+Items }\end{DoxyParamCaption})}
+
+Updates {\ttfamily application\+Text\+State} 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+{\em text\+Items} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}\label{classImageEditor_a7c46bf75a99e2361adfcd1ef8d4b2ec8}} 

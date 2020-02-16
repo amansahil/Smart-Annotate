@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['type_300',['type',['../classCustomResizer_1_1HandleItem.html#abc37a1ea465f04243aa15d5d73e49b3c',1,'CustomResizer::HandleItem::type()'],['../classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2',1,'CustomResizer::type()']]]
+  ['savedstateexists_285',['savedStateExists',['../classImageEditor.html#aff34ce1abfe216be62ce72e95454c1a8',1,'ImageEditor']]],
+  ['saveimagestate_286',['saveImageState',['../classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c',1,'ImageEditor']]],
+  ['setannotationfile_287',['setAnnotationFile',['../classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0',1,'Labeller']]],
+  ['setbottom_288',['setBottom',['../classCustomResizer.html#aaa77dc88be5420eedf0a60d8605ea102',1,'CustomResizer']]],
+  ['setbottomleft_289',['setBottomLeft',['../classCustomResizer.html#aff990d4ce7225aed98de6799b17e0f81',1,'CustomResizer']]],
+  ['setbottomright_290',['setBottomRight',['../classCustomResizer.html#ac92bf413d338fa94e076a8b5c4b1036b',1,'CustomResizer']]],
+  ['setclassfile_291',['setClassFile',['../classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d',1,'Labeller']]],
+  ['setclasslist_292',['setClassList',['../classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069',1,'Labeller']]],
+  ['setcursortoarrow_293',['setCursorToArrow',['../classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea',1,'Labeller']]],
+  ['setcursortocross_294',['setCursorToCross',['../classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73',1,'Labeller']]],
+  ['setcursortypelabel_295',['setCursorTypeLabel',['../classLabeller.html#a0f65c95e70317cd11f41d90966f89b66',1,'Labeller']]],
+  ['setimage_296',['setImage',['../classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c',1,'ImageEditor']]],
+  ['setimagedir_297',['setImageDir',['../classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc',1,'Labeller']]],
+  ['setimagelist_298',['setImageList',['../classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06',1,'Labeller']]],
+  ['setimagelisttoresult_299',['setImageListToResult',['../classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481',1,'Labeller']]],
+  ['setleft_300',['setLeft',['../classCustomResizer.html#a72cef835ceceb2c3a5c3d1b1846543cb',1,'CustomResizer']]],
+  ['setnext_301',['setNext',['../classHashNode.html#a021b603bd6f58a1b54e53ceb65441fb7',1,'HashNode']]],
+  ['setright_302',['setRight',['../classCustomResizer.html#a485c56feed632676b8c32f9c54ccb0bb',1,'CustomResizer']]],
+  ['setselectedimagefile_303',['setSelectedImageFile',['../classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054',1,'Labeller']]],
+  ['setshapetypelabel_304',['setShapeTypeLabel',['../classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c',1,'Labeller']]],
+  ['settop_305',['setTop',['../classCustomResizer.html#aea92d2679fe56ead0fd36d62593c9232',1,'CustomResizer']]],
+  ['settopleft_306',['setTopLeft',['../classCustomResizer.html#a27f1074a1b6bb8c550510a53315c6d6c',1,'CustomResizer']]],
+  ['settopright_307',['setTopRight',['../classCustomResizer.html#aa93735b34295352a59b062fff47096e1',1,'CustomResizer']]],
+  ['setvalue_308',['setValue',['../classHashNode.html#ae4ac85b1bba0c86e3a254c78411a6f87',1,'HashNode']]],
+  ['sortbydateasc_309',['sortByDateAsc',['../classStringDateHash.html#a998862e112c8047f9d2832975d1cb6ee',1,'StringDateHash']]],
+  ['sortbydatedesc_310',['sortByDateDesc',['../classStringDateHash.html#aedd93047769eba3e15bb97650ed227b9',1,'StringDateHash']]],
+  ['sortbykeyasc_311',['sortByKeyAsc',['../classStringDateHash.html#ad1e3379a9667b626bed7f6f58a318f88',1,'StringDateHash']]],
+  ['sortbykeydesc_312',['sortByKeyDesc',['../classStringDateHash.html#abfcef68abd0d19df80be665f06085f6c',1,'StringDateHash']]]
 ];

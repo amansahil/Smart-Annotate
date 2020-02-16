@@ -101,10 +101,14 @@
               <section title="drawRectangle" ref="classImageEditor.html#aad7a36a8341b4018fe6f7036db8a1f45" />
               <section title="drawText" ref="classImageEditor.html#a617c513c7caa63acd2ccd2382eb9106a" />
               <section title="finishedDrawingRectangle" ref="classImageEditor.html#a24a1d8b71f3ba545ba66be21fecb74cf" />
+              <section title="forceReload" ref="classImageEditor.html#a6659906c4b83562ee52a4ec92d7ec652" />
               <section title="getAnnotationShapeType" ref="classImageEditor.html#afd8af03b9d22ad0b9cce340e6e0e663e" />
+              <section title="getApplicationPolygonState" ref="classImageEditor.html#ae3062aeaa3a990d3a100b0b14a0d5098" />
               <section title="getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
+              <section title="getApplicationTextState" ref="classImageEditor.html#a11feb7e6618a89a117f276490d46c9c6" />
               <section title="getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
               <section title="keyPressEvent" ref="classImageEditor.html#a89218dd7b0ce08875de40b61d1e12a6b" />
+              <section title="loadAnnotations" ref="classImageEditor.html#ada28c1b2ba430479fadf2e70bb331ab2" />
               <section title="mouseMoveEvent" ref="classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c" />
               <section title="mousePressEvent" ref="classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a" />
               <section title="mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
@@ -115,6 +119,9 @@
               <section title="saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
               <section title="setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
               <section title="updateAnnotationShapeType" ref="classImageEditor.html#aecd8aa36fa9b51abb8cc600e6ca42af9" />
+              <section title="updateApplicationPolygonState" ref="classImageEditor.html#a439c4f1b8c737977293ef34efc38f4bc" />
+              <section title="updateApplicationRectState" ref="classImageEditor.html#a608f599667f07987d305da0a21437b32" />
+              <section title="updateApplicationTextState" ref="classImageEditor.html#ab56cc153495544777f12cf31d063c13c" />
               <section title="updateClassLabel" ref="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8" />
               <section title="updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
               <section title="annotationShape" ref="classImageEditor.html#ad24ca410bdf5e758185d8e98b058aa28" />
@@ -180,6 +187,7 @@
               <section title="on_sortImagesdateAsc_clicked" ref="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579" />
               <section title="on_sortImagesDateDsc_clicked" ref="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e" />
               <section title="on_sortImagesDsc_clicked" ref="classLabeller.html#a1128543a1407b48c9afa50202b336df6" />
+              <section title="parsePoint" ref="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582" />
               <section title="setAnnotationFile" ref="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0" />
               <section title="setClassFile" ref="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d" />
               <section title="setClassList" ref="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069" />
@@ -366,14 +374,21 @@
       <keyword name="drawingRectangle" id="ImageEditor::drawingRectangle" ref="classImageEditor.html#ab743be4820527f63d4b0d41174d780ea" />
       <keyword name="finishedDrawingRectangle" id="ImageEditor::finishedDrawingRectangle" ref="classImageEditor.html#a24a1d8b71f3ba545ba66be21fecb74cf" />
       <keyword name="setImage" id="ImageEditor::setImage" ref="classImageEditor.html#a0986a0acf551395d35a3d4d96f1f606c" />
+      <keyword name="loadAnnotations" id="ImageEditor::loadAnnotations" ref="classImageEditor.html#ada28c1b2ba430479fadf2e70bb331ab2" />
       <keyword name="saveImageState" id="ImageEditor::saveImageState" ref="classImageEditor.html#ae93759b3cede9e9519ca4425e03d9a9c" />
       <keyword name="updateCursorType" id="ImageEditor::updateCursorType" ref="classImageEditor.html#a19d576141efaf65da9bdfddc75d5c805" />
       <keyword name="updateAnnotationShapeType" id="ImageEditor::updateAnnotationShapeType" ref="classImageEditor.html#aecd8aa36fa9b51abb8cc600e6ca42af9" />
       <keyword name="updateClassLabel" id="ImageEditor::updateClassLabel" ref="classImageEditor.html#a7c46bf75a99e2361adfcd1ef8d4b2ec8" />
+      <keyword name="updateApplicationRectState" id="ImageEditor::updateApplicationRectState" ref="classImageEditor.html#a608f599667f07987d305da0a21437b32" />
+      <keyword name="updateApplicationPolygonState" id="ImageEditor::updateApplicationPolygonState" ref="classImageEditor.html#a439c4f1b8c737977293ef34efc38f4bc" />
+      <keyword name="updateApplicationTextState" id="ImageEditor::updateApplicationTextState" ref="classImageEditor.html#ab56cc153495544777f12cf31d063c13c" />
       <keyword name="clearItems" id="ImageEditor::clearItems" ref="classImageEditor.html#a98b81a7984589a6f472ec62cda5e3de4" />
       <keyword name="getCursorType" id="ImageEditor::getCursorType" ref="classImageEditor.html#a2db02b4df6e584c6ab1c9e2a6f6ed763" />
       <keyword name="getAnnotationShapeType" id="ImageEditor::getAnnotationShapeType" ref="classImageEditor.html#afd8af03b9d22ad0b9cce340e6e0e663e" />
       <keyword name="getApplicationRectState" id="ImageEditor::getApplicationRectState" ref="classImageEditor.html#a5670b5b2e6d292b99846a7f8a68ca9c2" />
+      <keyword name="getApplicationPolygonState" id="ImageEditor::getApplicationPolygonState" ref="classImageEditor.html#ae3062aeaa3a990d3a100b0b14a0d5098" />
+      <keyword name="getApplicationTextState" id="ImageEditor::getApplicationTextState" ref="classImageEditor.html#a11feb7e6618a89a117f276490d46c9c6" />
+      <keyword name="forceReload" id="ImageEditor::forceReload" ref="classImageEditor.html#a6659906c4b83562ee52a4ec92d7ec652" />
       <keyword name="mousePressEvent" id="ImageEditor::mousePressEvent" ref="classImageEditor.html#a116954c5af1070cb3b5392f0dfb03d6a" />
       <keyword name="mouseMoveEvent" id="ImageEditor::mouseMoveEvent" ref="classImageEditor.html#ad532d2e673f5cc78a59e5e5a2306d21c" />
       <keyword name="mouseReleaseEvent" id="ImageEditor::mouseReleaseEvent" ref="classImageEditor.html#ad728ada9f73a1287323a86e766212eec" />
@@ -466,6 +481,7 @@
       <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
       <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
       <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
+      <keyword name="parsePoint" id="Labeller::parsePoint" ref="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582" />
       <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
       <keyword name="labellerModel" id="Labeller::labellerModel" ref="classLabeller.html#a1e1ecf2d95c5b878f144042fd4798948" />
       <keyword name="imageEditor" id="Labeller::imageEditor" ref="classLabeller.html#a10a8d60561130914b59cc60c35d1e5f9" />
@@ -609,6 +625,7 @@
       <file>functions.html</file>
       <file>functions.html</file>
       <file>functions.html</file>
+      <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
