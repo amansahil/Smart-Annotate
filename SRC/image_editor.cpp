@@ -158,6 +158,10 @@ ImageEditor::AnnotationShapeType ImageEditor::getAnnotationShapeType() const { r
 
 QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { return applicationRectState; }
 
+QHash<QString, QList<QPolygonF>> ImageEditor::getApplicationPolygonState() const { return applicationPolygonState; }
+
+QHash<QString, QList<QPair<QString, QPointF>>> ImageEditor::getApplicationTextState() const { return applicationTextState; }
+
 void ImageEditor::deleteSelectedItem()
 {
     if (ImageEditor::selectedItems().size() > 0)

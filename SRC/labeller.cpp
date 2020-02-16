@@ -361,7 +361,131 @@ void Labeller::on_saveButton_clicked()
 
     QHash<QString, QList<QRectF>> applicationRectState = imageEditor->getApplicationRectState();
 
-    // Some magic to save to annotation file
+    QHash<QString, QList<QPolygonF>> applicationPolygonState = imageEditor->getApplicationPolygonState();
+
+    QHash<QString, QList<QPair<QString, QPointF>>> applicationTextState = imageEditor->getApplicationTextState();
+
+    QList<QString> allNames;
+
+    // Get all files names
+    allNames.append(applicationRectState.keys());
+    allNames.append(applicationPolygonState.keys());
+    allNames.append(applicationTextState.keys());
+
+    QSet<QString> uniqueNames;
+
+    // Populates container with only unique filenames to avoid overlap
+    for(const QString &e: allNames) {
+        uniqueNames.insert(e);
+    }
+
+    QJsonObject annotationsRecord;
+    annotationsRecord.insert("Number of annotated image", QJsonValue::fromVariant(uniqueNames.size()));
+
+    QJsonArray imagesArray;
+
+    for(const QString &fileName: uniqueNames) {
+        QJsonObject imageObject;
+        const int numberOfObjects = applicationRectState.value(fileName).count() + applicationTextState.value(fileName).count() + applicationPolygonState.value(fileName).count();
+
+        imageObject.insert("File Name", QJsonValue::fromVariant(fileName));
+        imageObject.insert("Number of shapes", QJsonValue::fromVariant(numberOfObjects));
+
+        QJsonArray shapesArray;
+
+        for (int i = 0; i < applicationRectState.value(fileName).count(); i++)
+        {
+
+            QJsonObject shapeObject;
+            QRectF currRect = applicationRectState.value(fileName).at(i);
+
+            QString topLeft = "(" + QString::number(currRect.topLeft().x()) + ","+ QString::number(currRect.topLeft().y()) + ")";
+            QString topRight = "(" + QString::number(currRect.topRight().x()) + ","+ QString::number(currRect.topRight().y()) + ")";
+            QString bottomLeft = "(" + QString::number(currRect.bottomLeft().x()) + ","+ QString::number(currRect.bottomLeft().y()) + ")";
+            QString bottomRight = "(" + QString::number(currRect.bottomRight().x()) + ","+ QString::number(currRect.bottomRight().y()) + ")";
+
+            shapeObject.insert("Shape Type", QJsonValue::fromVariant("Rectangle"));
+            shapeObject.insert("Point_1", QJsonValue::fromVariant(topLeft));
+            shapeObject.insert("Point_2", QJsonValue::fromVariant(topRight));
+            shapeObject.insert("Point_3", QJsonValue::fromVariant(bottomLeft));
+            shapeObject.insert("Point_4", QJsonValue::fromVariant(bottomRight));
+
+            shapesArray.push_back(shapeObject);
+        }
+
+        for (int i = 0; i < applicationTextState.value(fileName).count(); i++)
+        {
+            QJsonObject shapeObject;
+            QPair<QString, QPointF> currText = applicationTextState.value(fileName).at(i);
+
+            QString pos = "(" + QString::number(currText.second.x()) + ","+ QString::number(currText.second.y()) + ")";
+
+            shapeObject.insert("Shape Type", QJsonValue::fromVariant("Text"));
+            shapeObject.insert("Text", QJsonValue::fromVariant(currText.first));
+            shapeObject.insert("Point", QJsonValue::fromVariant(pos));
+
+            shapesArray.push_back(shapeObject);
+        }
+
+        for (int i = 0; i < applicationPolygonState.value(fileName).count(); i++)
+        {
+            QJsonObject shapeObject;
+            QPolygonF currPoly = applicationPolygonState.value(fileName).at(i);
+
+            shapeObject.insert("Shape Type", QJsonValue::fromVariant("Polygon"));
+
+            QJsonArray pointArray;
+
+
+            int j = 1;
+            for(const QPointF &point: currPoly)
+            {
+                QJsonObject pointObject;
+                QString pos = "(" + QString::number(point.x()) + ","+ QString::number(point.y()) + ")";
+
+                pointArray.push_back(pos);
+                shapeObject.insert("Points", pointArray);
+
+                j++;
+            }
+
+            shapesArray.push_back(shapeObject);
+        }
+
+        imageObject.insert("Shapes", shapesArray);
+        imagesArray.push_back(imageObject);
+    }
+
+    annotationsRecord.insert("Images", imagesArray);
+
+    QJsonDocument document(annotationsRecord);
+
+    QString fileName;
+
+    if(!labellerModel->getAnnotationFile().isEmpty() && !labellerModel->getAnnotationFile().isNull())
+    {
+        fileName = labellerModel->getAnnotationFile();
+    }
+    else
+    {
+        // Define path, name and default file type
+        QString initialPath = QDir::currentPath() + "/untitled.annotations";
+
+        fileName = QFileDialog::getSaveFileName(this, tr("Save As"), initialPath);
+
+        labellerModel->updateAnnotationFile(fileName);
+    }
+
+    if(fileName.isEmpty())
+    {
+        return;
+    }
+    else
+    {
+        QFile jsonFile(fileName);
+        jsonFile.open(QFile::WriteOnly);
+        jsonFile.write(document.toJson());
+    }
 }
 
 void Labeller::on_actionMark_Object_triggered() { imageEditor->updateCursorType(ImageEditor::CursorType::Draw); }

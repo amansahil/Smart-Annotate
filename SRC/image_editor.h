@@ -82,6 +82,16 @@ public:
     */
     QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
+    /*!
+     *  Returns `applicationPolygonState`
+    */
+    QHash<QString, QList<QPolygonF>> getApplicationPolygonState() const;
+
+    /*!
+     *  Returns `applicationTextState`
+    */
+    QHash<QString, QList<QPair<QString, QPointF>>> getApplicationTextState() const;
+
 public slots:
 
     /*!

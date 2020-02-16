@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="imageBrowseButton">
     <property name="geometry">
      <rect>
-      <x>74</x>
+      <x>72</x>
       <y>39</y>
       <width>89</width>
       <height>25</height>
@@ -66,7 +66,7 @@
    <widget class="QPushButton" name="classBrowseButton">
     <property name="geometry">
      <rect>
-      <x>75</x>
+      <x>72</x>
       <y>359</y>
       <width>89</width>
       <height>25</height>
@@ -108,7 +108,7 @@
    <widget class="QPushButton" name="annotationBrowseButton">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>659</y>
       <width>89</width>
       <height>25</height>
@@ -164,7 +164,7 @@
    <widget class="QLabel" name="imageDirLabel">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>172</x>
       <y>40</y>
       <width>281</width>
       <height>21</height>
@@ -177,7 +177,7 @@
    <widget class="QLabel" name="classFileLabel">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>172</x>
       <y>350</y>
       <width>271</width>
       <height>41</height>

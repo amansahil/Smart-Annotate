@@ -106,7 +106,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
         imageBrowseButton->setObjectName(QString::fromUtf8("imageBrowseButton"));
-        imageBrowseButton->setGeometry(QRect(74, 39, 89, 25));
+        imageBrowseButton->setGeometry(QRect(72, 39, 89, 25));
         imageBrowseButton->setAutoFillBackground(false);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -119,7 +119,7 @@ public:
         imageList->setGeometry(QRect(10, 180, 451, 171));
         classBrowseButton = new QPushButton(centralwidget);
         classBrowseButton->setObjectName(QString::fromUtf8("classBrowseButton"));
-        classBrowseButton->setGeometry(QRect(75, 359, 89, 25));
+        classBrowseButton->setGeometry(QRect(72, 359, 89, 25));
         classList = new QListView(centralwidget);
         classList->setObjectName(QString::fromUtf8("classList"));
         classList->setGeometry(QRect(10, 500, 451, 151));
@@ -133,7 +133,7 @@ public:
         label_4->setGeometry(QRect(10, 360, 67, 21));
         annotationBrowseButton = new QPushButton(centralwidget);
         annotationBrowseButton->setObjectName(QString::fromUtf8("annotationBrowseButton"));
-        annotationBrowseButton->setGeometry(QRect(140, 659, 89, 25));
+        annotationBrowseButton->setGeometry(QRect(130, 659, 89, 25));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(10, 650, 121, 41));
@@ -148,10 +148,10 @@ public:
         clearButton->setIcon(icon);
         imageDirLabel = new QLabel(centralwidget);
         imageDirLabel->setObjectName(QString::fromUtf8("imageDirLabel"));
-        imageDirLabel->setGeometry(QRect(170, 40, 281, 21));
+        imageDirLabel->setGeometry(QRect(172, 40, 281, 21));
         classFileLabel = new QLabel(centralwidget);
         classFileLabel->setObjectName(QString::fromUtf8("classFileLabel"));
-        classFileLabel->setGeometry(QRect(180, 350, 271, 41));
+        classFileLabel->setGeometry(QRect(172, 350, 271, 41));
         searchImages = new QPushButton(centralwidget);
         searchImages->setObjectName(QString::fromUtf8("searchImages"));
         searchImages->setGeometry(QRect(240, 70, 89, 25));
