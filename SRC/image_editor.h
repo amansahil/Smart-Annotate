@@ -88,7 +88,6 @@ public:
      */
     void updateApplicationTextState(const QString fileName, const QList<QPair<QString, QPointF>> textItems);
 
-
     /*!
      *  Clears all items on the scene except the image
      */
