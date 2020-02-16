@@ -41,22 +41,27 @@ void ImageEditor::setImage(const QString fileName)
 
     updateCursorType(CursorType::Draw);
 
-    // Load any annotation and lables on image if it exists
-    if (savedStateExists(fileName))
+    // Load any annotations and lables on image if it exists
+    loadAnnotations();
+}
+
+void ImageEditor::loadAnnotations()
+{
+    if (savedStateExists(currFileName))
     {
-        for (int i = 0; i < applicationRectState.value(fileName).count(); i++)
+        for (int i = 0; i < applicationRectState.value(currFileName).count(); i++)
         {
-            drawRectangle(applicationRectState.value(fileName).at(i));
+            drawRectangle(applicationRectState.value(currFileName).at(i));
         }
 
-        for (int i = 0; i < applicationTextState.value(fileName).count(); i++)
+        for (int i = 0; i < applicationTextState.value(currFileName).count(); i++)
         {
-            drawText(applicationTextState.value(fileName).at(i).first, applicationTextState.value(fileName).at(i).second);
+            drawText(applicationTextState.value(currFileName).at(i).first, applicationTextState.value(currFileName).at(i).second);
         }
 
-        for (int i = 0; i < applicationPolygonState.value(fileName).count(); i++)
+        for (int i = 0; i < applicationPolygonState.value(currFileName).count(); i++)
         {
-            drawPolygon(applicationPolygonState.value(fileName).at(i));
+            drawPolygon(applicationPolygonState.value(currFileName).at(i));
         }
     }
 }
@@ -124,6 +129,12 @@ void ImageEditor::updateAnnotationShapeType(const AnnotationShapeType newAnnotat
 
 void ImageEditor::updateClassLabel(const QString newClassLabel) { classLabel = newClassLabel; }
 
+void ImageEditor::updateApplicationRectState(const QString fileName, const QList<QRectF> rectItems) { applicationRectState[fileName] = rectItems; }
+
+void ImageEditor::updateApplicationPolygonState(const QString fileName, const QList<QPolygonF> polygonItems) { applicationPolygonState[fileName] = polygonItems; }
+
+void ImageEditor::updateApplicationTextState(const QString fileName, const QList<QPair<QString, QPointF>> textItems) { applicationTextState[fileName] = textItems; }
+
 void ImageEditor::clearItems()
 {
     if (imageSet)
@@ -161,6 +172,8 @@ QHash<QString, QList<QRectF>> ImageEditor::getApplicationRectState() const { ret
 QHash<QString, QList<QPolygonF>> ImageEditor::getApplicationPolygonState() const { return applicationPolygonState; }
 
 QHash<QString, QList<QPair<QString, QPointF>>> ImageEditor::getApplicationTextState() const { return applicationTextState; }
+
+void ImageEditor::forceReload() { loadAnnotations(); }
 
 void ImageEditor::deleteSelectedItem()
 {

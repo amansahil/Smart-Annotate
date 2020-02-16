@@ -42,6 +42,11 @@ private:
      */
     void createListeners();
 
+    /*!
+     *  Parses point string from .annotations file to QPointF
+     */
+    QPointF parsePoint(QString point);
+
 private slots:
 
     /*!

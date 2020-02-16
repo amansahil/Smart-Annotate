@@ -186,6 +186,15 @@ void Labeller::createListeners()
     connect(imageEditor, SIGNAL(finishedDrawingRectangle()), this, SLOT(setCursorToArrow()));
 }
 
+QPointF Labeller::parsePoint(QString point)
+{
+    point.remove(QRegularExpression("[()*]"));
+
+    QStringList points = point.split(",");
+
+    return points.size() == 2 ? QPointF(points[0].toInt(), points[1].toInt()) : QPointF(0,0);
+}
+
 // Controller methods
 
 void Labeller::on_imageBrowseButton_clicked()
@@ -240,6 +249,75 @@ void Labeller::on_annotationBrowseButton_clicked()
 {
     const QString annotationFile = QFileDialog::getOpenFileName(this, "Select an annotation file", nullptr, "Annotation files (*.annotations)");
     labellerModel->updateAnnotationFile(annotationFile);
+
+
+    // Open and load file conents
+    QFile file(annotationFile);
+    if(!file.open(QIODevice::ReadOnly | QFile::Text))
+    {
+        QMessageBox::warning(this, "Warning", "Cannot open file : " + file.errorString());
+        return;
+    }
+
+    QString values = file.readAll();
+    file.close();
+
+    QJsonDocument document = QJsonDocument::fromJson(values.toUtf8());
+    QJsonObject jsonObject = document.object();
+
+    QJsonArray imagesArray = jsonObject["Images"].toArray();
+
+    for(const QJsonValue &image: imagesArray)
+    {
+        QList<QRectF> rectItems;
+        QList<QPolygonF> polygonItems;
+        QList<QPair<QString, QPointF>> textItems;
+
+        QString fileName = image["File Name"].toString();
+        QJsonArray shapesArray = image["Shapes"].toArray();
+
+        for(const QJsonValue &shape: shapesArray)
+        {
+            QString shapeType = shape["Shape Type"].toString();
+
+            if(shapeType == "Rectangle")
+            {
+                const QPointF topLeft = parsePoint(shape["Point_1"].toString());
+                const QPointF bottomRight = parsePoint(shape["Point_4"].toString());
+
+                const QRectF newRectItem(topLeft, bottomRight);
+                rectItems.append(newRectItem);
+            }
+            else if(shapeType == "Text")
+            {
+                QPair<QString, QPointF> newTextItem;
+
+                newTextItem.first = shape["Text"].toString();
+                newTextItem.second = parsePoint(shape["Point"].toString());
+
+                textItems.append(newTextItem);
+            }
+            else if(shapeType == "Polygon")
+            {
+                QPolygonF newPolygonItem;
+
+                QJsonArray pointsArray = shape["Points"].toArray();
+
+                for(const QJsonValue &point: pointsArray)
+                {
+                    newPolygonItem << parsePoint(point.toString());
+                }
+
+                polygonItems.append(newPolygonItem);
+            }
+
+            imageEditor->updateApplicationRectState(fileName, rectItems);
+            imageEditor->updateApplicationTextState(fileName, textItems);
+            imageEditor->updateApplicationPolygonState(fileName, polygonItems);
+        }
+
+        imageEditor->forceReload();
+    }
 }
 
 void Labeller::on_addNameItemButton_clicked()

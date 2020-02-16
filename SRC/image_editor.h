@@ -40,6 +40,11 @@ public:
     void setImage(const QString fileName);
 
     /*!
+     *  Loads saved state annotations onto image if any exists
+     */
+    void loadAnnotations();
+
+    /*!
      *  Saves information of the text and shapes on the image into relevant hash tables
     */
     void saveImageState();
@@ -63,34 +68,61 @@ public:
     void updateClassLabel(const QString newClassLabel);
 
     /*!
+     *  Updates `applicationRectState`
+     *  @param fileName
+     *  @param rectItems
+     */
+    void updateApplicationRectState(const QString fileName, const QList<QRectF> rectItems);
+
+    /*!
+     *  Updates `applicationPolygonState`
+     *  @param fileName
+     *  @param polygonItems
+     */
+    void updateApplicationPolygonState(const QString fileName, const QList<QPolygonF> polygonItems);
+
+    /*!
+     *  Updates `applicationTextState`
+     *  @param fileName
+     *  @param textItems
+     */
+    void updateApplicationTextState(const QString fileName, const QList<QPair<QString, QPointF>> textItems);
+
+
+    /*!
      *  Clears all items on the scene except the image
-    */
+     */
     void clearItems();
 
     /*!
      *  Returns `cursorType`
-    */
+     */
     CursorType getCursorType() const;
 
     /*!
      *  Returns `annotationShape`
-    */
+     */
     AnnotationShapeType getAnnotationShapeType() const;
 
     /*!
      *  Returns `applicationRectState`
-    */
+     */
     QHash<QString, QList<QRectF>> getApplicationRectState() const;
 
     /*!
      *  Returns `applicationPolygonState`
-    */
+     */
     QHash<QString, QList<QPolygonF>> getApplicationPolygonState() const;
 
     /*!
      *  Returns `applicationTextState`
-    */
+     */
     QHash<QString, QList<QPair<QString, QPointF>>> getApplicationTextState() const;
+
+    /*!
+     *  Force reloads curent image to load any annotations from the annotation file
+     */
+    void forceReload();
 
 public slots:
 
