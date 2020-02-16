@@ -199,7 +199,7 @@ public:
         graphicsView->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
         cursorLabel = new QLabel(centralwidget);
         cursorLabel->setObjectName(QString::fromUtf8("cursorLabel"));
-        cursorLabel->setGeometry(QRect(610, 10, 111, 21));
+        cursorLabel->setGeometry(QRect(600, 10, 111, 21));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(500, 10, 101, 21));
@@ -211,7 +211,7 @@ public:
         label_7->setGeometry(QRect(740, 10, 101, 21));
         shapeLabel = new QLabel(centralwidget);
         shapeLabel->setObjectName(QString::fromUtf8("shapeLabel"));
-        shapeLabel->setGeometry(QRect(850, 10, 151, 21));
+        shapeLabel->setGeometry(QRect(840, 10, 151, 21));
         connectButton = new QPushButton(centralwidget);
         connectButton->setObjectName(QString::fromUtf8("connectButton"));
         connectButton->setGeometry(QRect(960, 9, 89, 25));

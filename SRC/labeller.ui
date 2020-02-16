@@ -375,7 +375,7 @@
    <widget class="QLabel" name="cursorLabel">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>600</x>
       <y>10</y>
       <width>111</width>
       <height>21</height>
@@ -427,7 +427,7 @@
    <widget class="QLabel" name="shapeLabel">
     <property name="geometry">
      <rect>
-      <x>850</x>
+      <x>840</x>
       <y>10</y>
       <width>151</width>
       <height>21</height>
