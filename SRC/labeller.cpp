@@ -310,13 +310,12 @@ void Labeller::on_annotationBrowseButton_clicked()
                 polygonItems.append(newPolygonItem);
             }
 
-            imageEditor->updateApplicationRectState(fileName, rectItems);
-            imageEditor->updateApplicationTextState(fileName, textItems);
-            imageEditor->updateApplicationPolygonState(fileName, polygonItems);
         }
-
-        imageEditor->forceReload();
+        imageEditor->updateApplicationRectState(fileName, rectItems);
+        imageEditor->updateApplicationTextState(fileName, textItems);
+        imageEditor->updateApplicationPolygonState(fileName, polygonItems);
     }
+    imageEditor->forceReload();
 }
 
 void Labeller::on_addNameItemButton_clicked()
