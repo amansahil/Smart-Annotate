@@ -31,6 +31,11 @@ Labeller::Labeller(QWidget *parent)
     ui->clearPoints->setVisible(false);
 
     createListeners();
+
+    // Starts autosave thread
+    QTimer *timer = new QTimer(this);
+    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(doAutoSave()));
+    timer->start(1000); //time specified in ms
 }
 
 Labeller::~Labeller()
@@ -193,6 +198,15 @@ QPointF Labeller::parsePoint(QString point)
     const QStringList points = point.split(",");
 
     return points.size() == 2 ? QPointF(points[0].toInt(), points[1].toInt()) : QPointF(0, 0);
+}
+
+void Labeller::doAutoSave() {
+    qDebug() << "Called";
+
+    if (!labellerModel->getAnnotationFile().isEmpty() && !labellerModel->getAnnotationFile().isNull())
+    {
+        on_saveButton_clicked();
+    }
 }
 
 // Controller methods

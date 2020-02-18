@@ -50,6 +50,11 @@ private:
 private slots:
 
     /*!
+     *  Calls save function if an annotation file is selected
+     */
+    void doAutoSave();
+
+    /*!
      *  Populates `imageList`
      */
     void setImageList();
