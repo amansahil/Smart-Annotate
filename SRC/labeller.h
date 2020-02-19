@@ -30,6 +30,13 @@ public:
     explicit Labeller(QWidget *parent = nullptr);
     ~Labeller();
 
+public slots:
+
+    /*!
+     *  Calls save function if an annotation file is selected
+     */
+    void doAutoSave();
+
 private:
     Ui::Labeller *ui;
 
@@ -48,11 +55,6 @@ private:
     QPointF parsePoint(QString point);
 
 private slots:
-
-    /*!
-     *  Calls save function if an annotation file is selected
-     */
-    void doAutoSave();
 
     /*!
      *  Populates `imageList`

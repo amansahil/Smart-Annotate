@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    auto_save_thread.cpp \
     custom_resizer.cpp \
     dark_style.cpp \
     image_editor.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
     string_date_hash.cpp
 
 HEADERS += \
+    auto_save_thread.h \
     custom_resizer.h \
     dark_style.h \
     image_editor.h \

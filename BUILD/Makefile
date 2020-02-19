@@ -52,18 +52,21 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SRC/custom_resizer.cpp \
+SOURCES       = ../SRC/auto_save_thread.cpp \
+		../SRC/custom_resizer.cpp \
 		../SRC/dark_style.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
 		../SRC/main.cpp \
 		../SRC/labeller.cpp \
 		../SRC/string_date_hash.cpp qrc_dark_style.cpp \
+		moc_auto_save_thread.cpp \
 		moc_dark_style.cpp \
 		moc_image_editor.cpp \
 		moc_labeller.cpp \
 		moc_labeller_model.cpp
-OBJECTS       = custom_resizer.o \
+OBJECTS       = auto_save_thread.o \
+		custom_resizer.o \
 		dark_style.o \
 		image_editor.o \
 		labeller_model.o \
@@ -71,6 +74,7 @@ OBJECTS       = custom_resizer.o \
 		labeller.o \
 		string_date_hash.o \
 		qrc_dark_style.o \
+		moc_auto_save_thread.o \
 		moc_dark_style.o \
 		moc_image_editor.o \
 		moc_labeller.o \
@@ -269,12 +273,14 @@ DIST          = ../../../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.12.6/gcc_64/mkspecs/features/lex.prf \
-		../SRC/SRC.pro ../SRC/custom_resizer.h \
+		../SRC/SRC.pro ../SRC/auto_save_thread.h \
+		../SRC/custom_resizer.h \
 		../SRC/dark_style.h \
 		../SRC/image_editor.h \
 		../SRC/labeller.h \
 		../SRC/labeller_model.h \
-		../SRC/string_date_hash.h ../SRC/custom_resizer.cpp \
+		../SRC/string_date_hash.h ../SRC/auto_save_thread.cpp \
+		../SRC/custom_resizer.cpp \
 		../SRC/dark_style.cpp \
 		../SRC/image_editor.cpp \
 		../SRC/labeller_model.cpp \
@@ -701,8 +707,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/dark_style.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/custom_resizer.h ../SRC/dark_style.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h ../SRC/string_date_hash.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SRC/custom_resizer.cpp ../SRC/dark_style.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp ../SRC/string_date_hash.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/auto_save_thread.h ../SRC/custom_resizer.h ../SRC/dark_style.h ../SRC/image_editor.h ../SRC/labeller.h ../SRC/labeller_model.h ../SRC/string_date_hash.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SRC/auto_save_thread.cpp ../SRC/custom_resizer.cpp ../SRC/dark_style.cpp ../SRC/image_editor.cpp ../SRC/labeller_model.cpp ../SRC/main.cpp ../SRC/labeller.cpp ../SRC/string_date_hash.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SRC/labeller.ui $(DISTDIR)/
 
 
@@ -745,9 +751,67 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../../../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_dark_style.cpp moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
+compiler_moc_header_make_all: moc_auto_save_thread.cpp moc_dark_style.cpp moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_dark_style.cpp moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
+	-$(DEL_FILE) moc_auto_save_thread.cpp moc_dark_style.cpp moc_image_editor.cpp moc_labeller.cpp moc_labeller_model.cpp
+moc_auto_save_thread.cpp: ../SRC/auto_save_thread.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasictimer.h \
+		moc_predefs.h \
+		../../../Qt/5.12.6/gcc_64/bin/moc
+	/home/sahil/Qt/5.12.6/gcc_64/bin/moc $(DEFINES) --include /home/sahil/Desktop/Group_24_SDI_SOFT20091/BUILD/moc_predefs.h -I/home/sahil/Qt/5.12.6/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Group_24_SDI_SOFT20091/SRC -I/home/sahil/Qt/5.12.6/gcc_64/include -I/home/sahil/Qt/5.12.6/gcc_64/include/QtWidgets -I/home/sahil/Qt/5.12.6/gcc_64/include/QtGui -I/home/sahil/Qt/5.12.6/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../SRC/auto_save_thread.h -o moc_auto_save_thread.cpp
+
 moc_dark_style.cpp: ../SRC/dark_style.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
@@ -1343,10 +1407,11 @@ moc_image_editor.cpp: ../SRC/image_editor.h \
 	/home/sahil/Qt/5.12.6/gcc_64/bin/moc $(DEFINES) --include /home/sahil/Desktop/Group_24_SDI_SOFT20091/BUILD/moc_predefs.h -I/home/sahil/Qt/5.12.6/gcc_64/mkspecs/linux-g++ -I/home/sahil/Desktop/Group_24_SDI_SOFT20091/SRC -I/home/sahil/Qt/5.12.6/gcc_64/include -I/home/sahil/Qt/5.12.6/gcc_64/include/QtWidgets -I/home/sahil/Qt/5.12.6/gcc_64/include/QtGui -I/home/sahil/Qt/5.12.6/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../SRC/image_editor.h -o moc_image_editor.cpp
 
 moc_labeller.cpp: ../SRC/labeller.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
+		../SRC/auto_save_thread.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
@@ -1368,17 +1433,7 @@ moc_labeller.cpp: ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
@@ -1403,6 +1458,20 @@ moc_labeller.cpp: ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
@@ -1623,6 +1692,62 @@ compiler_lex_clean:
 compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+auto_save_thread.o: ../SRC/auto_save_thread.cpp ../SRC/auto_save_thread.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasictimer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o auto_save_thread.o ../SRC/auto_save_thread.cpp
 
 custom_resizer.o: ../SRC/custom_resizer.cpp ../SRC/custom_resizer.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/QBrush \
@@ -2430,10 +2555,11 @@ labeller_model.o: ../SRC/labeller_model.cpp ../SRC/labeller_model.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o labeller_model.o ../SRC/labeller_model.cpp
 
 main.o: ../SRC/main.cpp ../SRC/labeller.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
+		../SRC/auto_save_thread.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qglobal.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig-bootstrapped.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qconfig.h \
@@ -2455,17 +2581,7 @@ main.o: ../SRC/main.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qmutex.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qnumeric.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qnamespace.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
-		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qstring.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qchar.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qbytearray.h \
@@ -2490,6 +2606,20 @@ main.o: ../SRC/main.cpp ../SRC/labeller.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/qbasictimer.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qtgui-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.12.6/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.12.6/gcc_64/include/QtGui/qwindowdefs_win.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qmargins.h \
 		../../../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevice.h \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/qrect.h \
@@ -3049,6 +3179,8 @@ labeller.o: ../SRC/labeller.cpp ../SRC/image_editor.h \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsItem \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
 		../SRC/labeller.h \
+		../SRC/auto_save_thread.h \
+		../../../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QAbstractItemView \
 		../../../Qt/5.12.6/gcc_64/include/QtCore/QFile \
 		../../../Qt/5.12.6/gcc_64/include/QtWidgets/QFileDialog \
@@ -3195,6 +3327,9 @@ string_date_hash.o: ../SRC/string_date_hash.cpp ../SRC/string_date_hash.h \
 
 qrc_dark_style.o: qrc_dark_style.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_dark_style.o qrc_dark_style.cpp
+
+moc_auto_save_thread.o: moc_auto_save_thread.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_auto_save_thread.o moc_auto_save_thread.cpp
 
 moc_dark_style.o: moc_dark_style.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dark_style.o moc_dark_style.cpp

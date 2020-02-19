@@ -124,7 +124,7 @@ static const uint qt_meta_data_Labeller[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  219,    2, 0x08 /* Private */,
+       1,    0,  219,    2, 0x0a /* Public */,
        3,    0,  220,    2, 0x08 /* Private */,
        4,    0,  221,    2, 0x08 /* Private */,
        5,    0,  222,    2, 0x08 /* Private */,

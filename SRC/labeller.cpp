@@ -2,6 +2,7 @@
 #include "labeller.h"
 #include "labeller_model.h"
 #include "ui_labeller.h"
+#include "auto_save_thread.h"
 
 // Listeners & UI
 
@@ -32,10 +33,10 @@ Labeller::Labeller(QWidget *parent)
 
     createListeners();
 
-    // Starts autosave thread
-    QTimer *timer = new QTimer(this);
-    QObject::connect(timer, SIGNAL(timeout()), this, SLOT(doAutoSave()));
-    timer->start(1000); //time specified in ms
+    QThread* thread = new QThread;
+    AutoSaveThread* autoSaveThread = new AutoSaveThread(this);
+    autoSaveThread->moveToThread(thread);
+    thread->start();
 }
 
 Labeller::~Labeller()
@@ -201,8 +202,6 @@ QPointF Labeller::parsePoint(QString point)
 }
 
 void Labeller::doAutoSave() {
-    qDebug() << "Called";
-
     if (!labellerModel->getAnnotationFile().isEmpty() && !labellerModel->getAnnotationFile().isNull())
     {
         on_saveButton_clicked();

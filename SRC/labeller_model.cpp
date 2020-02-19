@@ -1,4 +1,5 @@
 #include "labeller_model.h"
+#include "string_date_hash.h"
 
 LabellerModel::LabellerModel(QObject *parent) : QObject(parent), imageFiles(new StringDateHash), classNames(""), imageFilesSorting(None), classListSorting(None)
 {

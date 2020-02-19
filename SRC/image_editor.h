@@ -6,8 +6,6 @@
 #include <QtWidgets>
 #include <QWidget>
 
-#include <custom_resizer.h>
-
 //! Custom image editor component for annotating images and labelling image
 class ImageEditor : public QGraphicsScene
 {
