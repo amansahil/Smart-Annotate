@@ -1,6 +1,6 @@
 #include "auto_save_thread.h"
 
-AutoSaveThread::AutoSaveThread(Labeller* newLabeller)
+AutoSaveThread::AutoSaveThread(Labeller *newLabeller)
 {
     labeller = newLabeller;
 
@@ -10,6 +10,7 @@ AutoSaveThread::AutoSaveThread(Labeller* newLabeller)
     timer->start(30000); //time specified in ms
 }
 
-void AutoSaveThread::process() {
+void AutoSaveThread::process()
+{
     labeller->doAutoSave();
 }

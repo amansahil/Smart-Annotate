@@ -12,10 +12,10 @@ class AutoSaveThread : public QObject
     Q_OBJECT
 
 public:
-    AutoSaveThread(Labeller* newLabeller);
+    AutoSaveThread(Labeller *newLabeller);
 
 private:
-    Labeller* labeller;
+    Labeller *labeller;
 
 private slots:
 
