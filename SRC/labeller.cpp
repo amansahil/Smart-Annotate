@@ -30,8 +30,8 @@ Labeller::Labeller(QWidget *parent)
 
     createListeners();
 
-    QThread* thread = new QThread;
-    AutoSaveThread* autoSaveThread = new AutoSaveThread(this);
+    QThread *thread = new QThread;
+    AutoSaveThread *autoSaveThread = new AutoSaveThread(this);
     autoSaveThread->moveToThread(thread);
     thread->start();
 }
@@ -198,7 +198,8 @@ QPointF Labeller::parsePoint(QString point)
     return points.size() == 2 ? QPointF(points[0].toInt(), points[1].toInt()) : QPointF(0, 0);
 }
 
-void Labeller::doAutoSave() {
+void Labeller::doAutoSave()
+{
     if (!labellerModel->getAnnotationFile().isEmpty() && !labellerModel->getAnnotationFile().isNull())
     {
         on_saveButton_clicked();
@@ -319,7 +320,6 @@ void Labeller::on_annotationBrowseButton_clicked()
 
                 polygonItems.append(newPolygonItem);
             }
-
         }
         imageEditor->updateApplicationRectState(fileName, rectItems);
         imageEditor->updateApplicationTextState(fileName, textItems);
