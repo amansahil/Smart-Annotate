@@ -1,6 +1,10 @@
 #ifndef LABELLER_H
 #define LABELLER_H
 
+#include "ui_labeller.h"
+#include "labeller_model.h"
+#include "image_editor.h"
+
 #include <QAbstractItemView>
 #include <QFile>
 #include <QFileDialog>
@@ -15,9 +19,6 @@ namespace Ui
 class Labeller;
 }
 QT_END_NAMESPACE
-
-class LabellerModel;
-class ImageEditor;
 
 //! Class for UI and controller methods for the main page
 class Labeller : public QMainWindow

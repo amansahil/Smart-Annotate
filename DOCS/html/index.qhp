@@ -8,6 +8,11 @@
       <section title="Image Annotator" ref="index.html">
         <section title="Classes" ref="annotated.html">
           <section title="Class List" ref="annotated.html">
+            <section title="AutoSaveThread" ref="classAutoSaveThread.html">
+              <section title="AutoSaveThread" ref="classAutoSaveThread.html#a8aae402e21bb84f3abed66f54761a36a" />
+              <section title="process" ref="classAutoSaveThread.html#a23c2158bff5df30653a71efdfb359199" />
+              <section title="labeller" ref="classAutoSaveThread.html#ad2db13badef04efc8c015dfcfd63d98b" />
+            </section>
             <section title="CustomResizer" ref="classCustomResizer.html">
               <section title="HandleItem" ref="classCustomResizer_1_1HandleItem.html">
                 <section title="Type" ref="classCustomResizer_1_1HandleItem.html#a1e5bf3f95d050d2a1c58a7b8e09e3293ae829c8eef8df58778f6497388eefb083" />
@@ -159,6 +164,7 @@
               <section title="~Labeller" ref="classLabeller.html#a86dd4e637f3c44b8a2ca8abd08535b8a" />
               <section title="clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
               <section title="createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
+              <section title="doAutoSave" ref="classLabeller.html#a5ce2a812625ac856cc9347359b344350" />
               <section title="on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
               <section title="on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
               <section title="on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
@@ -289,6 +295,7 @@
               <section title="Labeller" ref="classLabeller.html" />
             </section>
             <section title="QObject">
+              <section title="AutoSaveThread" ref="classAutoSaveThread.html" />
               <section title="LabellerModel" ref="classLabellerModel.html" />
             </section>
             <section title="QProxyStyle">
@@ -307,6 +314,7 @@
         <section title="Files" ref="files.html">
           <section title="File List" ref="files.html">
             <section title="SRC" ref="dir_1e771ff450ae847412a8c28572c155bb.html">
+              <section title="auto_save_thread.h" ref="auto__save__thread_8h_source.html" />
               <section title="custom_resizer.h" ref="custom__resizer_8h_source.html" />
               <section title="dark_style.h" ref="dark__style_8h_source.html" />
               <section title="image_editor.h" ref="image__editor_8h_source.html" />
@@ -319,6 +327,10 @@
       </section>
     </toc>
     <keywords>
+      <keyword name="AutoSaveThread" id="AutoSaveThread" ref="classAutoSaveThread.html" />
+      <keyword name="AutoSaveThread" id="AutoSaveThread::AutoSaveThread" ref="classAutoSaveThread.html#a8aae402e21bb84f3abed66f54761a36a" />
+      <keyword name="process" id="AutoSaveThread::process" ref="classAutoSaveThread.html#a23c2158bff5df30653a71efdfb359199" />
+      <keyword name="labeller" id="AutoSaveThread::labeller" ref="classAutoSaveThread.html#ad2db13badef04efc8c015dfcfd63d98b" />
       <keyword name="CustomResizer" id="CustomResizer" ref="classCustomResizer.html" />
       <keyword name="CustomResizer" id="CustomResizer::CustomResizer" ref="classCustomResizer.html#a65f818fc1c2f3b89e0d3a1e573f19a79" />
       <keyword name="type" id="CustomResizer::type" ref="classCustomResizer.html#ad4d4498371f0f060ec2a27d793b4ccf2" />
@@ -439,6 +451,7 @@
       <keyword name="Text" id="ImageEditor::Text" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba35864e3eaa10eff21399c55f70a60840" />
       <keyword name="Select" id="ImageEditor::Select" ref="classImageEditor.html#ae1465fedd17e408c7a423ccebb0e0d9ba815aeaac7e7043f1c5241d6c22940dce" />
       <keyword name="Labeller" id="Labeller" ref="classLabeller.html" />
+      <keyword name="doAutoSave" id="Labeller::doAutoSave" ref="classLabeller.html#a5ce2a812625ac856cc9347359b344350" />
       <keyword name="Labeller" id="Labeller::Labeller" ref="classLabeller.html#a8a87b87c8c43b4f85d9a8b50d5568bd4" />
       <keyword name="setImageList" id="Labeller::setImageList" ref="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06" />
       <keyword name="setImageListToResult" id="Labeller::setImageListToResult" ref="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481" />
@@ -574,12 +587,16 @@
       <file>search/mag_sel.png</file>
       <file>search/search.css</file>
       <file>search/search.js</file>
+      <file>auto__save__thread_8h_source.html</file>
       <file>custom__resizer_8h_source.html</file>
       <file>dark__style_8h_source.html</file>
       <file>image__editor_8h_source.html</file>
       <file>labeller_8h_source.html</file>
       <file>labeller__model_8h_source.html</file>
       <file>string__date__hash_8h_source.html</file>
+      <file>classAutoSaveThread.html</file>
+      <file>classAutoSaveThread.png</file>
+      <file>classAutoSaveThread-members.html</file>
       <file>classCustomResizer.html</file>
       <file>classCustomResizer.png</file>
       <file>classCustomResizer-members.html</file>

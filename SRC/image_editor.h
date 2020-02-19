@@ -1,6 +1,8 @@
 #ifndef IMAGEEDITOR_H
 #define IMAGEEDITOR_H
 
+#include "custom_resizer.h"
+
 #include <QHash>
 #include <QRubberBand>
 #include <QtWidgets>

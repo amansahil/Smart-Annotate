@@ -1,5 +1,4 @@
 #include "auto_save_thread.h"
-#include "labeller.h"
 
 AutoSaveThread::AutoSaveThread(Labeller* newLabeller)
 {

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['darkstyle_194',['DarkStyle',['../classDarkStyle.html',1,'']]]
+  ['customresizer_197',['CustomResizer',['../classCustomResizer.html',1,'']]]
 ];

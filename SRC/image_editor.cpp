@@ -1,5 +1,4 @@
 ﻿#include "image_editor.h"
-#include "custom_resizer.h"
 
 #define SCENE_WIDTH 781
 #define SCENE_HEIGHT 651

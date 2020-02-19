@@ -1,7 +1,4 @@
-#include "image_editor.h"
 #include "labeller.h"
-#include "labeller_model.h"
-#include "ui_labeller.h"
 #include "auto_save_thread.h"
 
 // Listeners & UI

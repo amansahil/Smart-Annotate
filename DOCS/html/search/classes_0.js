@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['customresizer_193',['CustomResizer',['../classCustomResizer.html',1,'']]]
+  ['autosavethread_196',['AutoSaveThread',['../classAutoSaveThread.html',1,'']]]
 ];

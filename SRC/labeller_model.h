@@ -1,14 +1,13 @@
 #ifndef LABELLER_MODEL_H
 #define LABELLER_MODEL_H
 
-#include <string_date_hash.h>
+#include "string_date_hash.h"
 
 #include <QFileInfoList>
 #include <QObject>
 #include <QStringList>
 
 //! Class for model methods for the main page
-
 class LabellerModel : public QObject
 {
 

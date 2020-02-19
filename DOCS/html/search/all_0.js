@@ -7,5 +7,6 @@ var searchData=
   ['annotationshapetype_4',['AnnotationShapeType',['../classImageEditor.html#aa4f7e36a44ada440acb5fb3fa35ad700',1,'ImageEditor']]],
   ['applicationpolygonstate_5',['applicationPolygonState',['../classImageEditor.html#a302cb8abfd965fe7555fe0f04244e010',1,'ImageEditor']]],
   ['applicationrectstate_6',['applicationRectState',['../classImageEditor.html#ab7e117e99fc0a196149e6bdeb5aa240d',1,'ImageEditor']]],
-  ['applicationtextstate_7',['applicationTextState',['../classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d',1,'ImageEditor']]]
+  ['applicationtextstate_7',['applicationTextState',['../classImageEditor.html#a02375b47e3f027d3c743cbe598ed444d',1,'ImageEditor']]],
+  ['autosavethread_8',['AutoSaveThread',['../classAutoSaveThread.html',1,'']]]
 ];

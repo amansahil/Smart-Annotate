@@ -1,0 +1,52 @@
+\hypertarget{classAutoSaveThread}{}\doxysection{Auto\+Save\+Thread Class Reference}
+\label{classAutoSaveThread}\index{AutoSaveThread@{AutoSaveThread}}
+
+
+A thread worker class that calls save function of label class every 30 seconds.  
+
+
+
+
+{\ttfamily \#include $<$auto\+\_\+save\+\_\+thread.\+h$>$}
+
+Inheritance diagram for Auto\+Save\+Thread\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classAutoSaveThread}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAutoSaveThread_a8aae402e21bb84f3abed66f54761a36a}\label{classAutoSaveThread_a8aae402e21bb84f3abed66f54761a36a}} 
+{\bfseries Auto\+Save\+Thread} (\mbox{\hyperlink{classLabeller}{Labeller}} $\ast$new\+Labeller)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAutoSaveThread_a23c2158bff5df30653a71efdfb359199}{process}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAutoSaveThread_ad2db13badef04efc8c015dfcfd63d98b}\label{classAutoSaveThread_ad2db13badef04efc8c015dfcfd63d98b}} 
+\mbox{\hyperlink{classLabeller}{Labeller}} $\ast$ {\bfseries labeller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A thread worker class that calls save function of label class every 30 seconds. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAutoSaveThread_a23c2158bff5df30653a71efdfb359199}\label{classAutoSaveThread_a23c2158bff5df30653a71efdfb359199}} 
+\index{AutoSaveThread@{AutoSaveThread}!process@{process}}
+\index{process@{process}!AutoSaveThread@{AutoSaveThread}}
+\doxysubsubsection{\texorpdfstring{process}{process}}
+{\footnotesize\ttfamily void Auto\+Save\+Thread\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+A slot that calls {\ttfamily do\+Auto\+Save} function from the labller class 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+S\+R\+C/auto\+\_\+save\+\_\+thread.\+h\item 
+S\+R\+C/auto\+\_\+save\+\_\+thread.\+cpp\end{DoxyCompactItemize}

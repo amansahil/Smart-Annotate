@@ -73,178 +73,184 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LABELLER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LABELLER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QAbstractItemView&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QFileDialog&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QStringListModel&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;QT_BEGIN_NAMESPACE</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>Ui</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="classLabeller.html">Labeller</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;QT_END_NAMESPACE</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span><a class="code" href="classLabellerModel.html">LabellerModel</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span><a class="code" href="classImageEditor.html">ImageEditor</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classLabeller.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLabeller.html">Labeller</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Listeners &amp; UI Methods</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classLabeller.html">Labeller</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ~<a class="code" href="classLabeller.html">Labeller</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Ui::Labeller *ui;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;ui_labeller.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;labeller_model.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;image_editor.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QAbstractItemView&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QFileDialog&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QStringListModel&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;QT_BEGIN_NAMESPACE</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>Ui</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span><a class="code" href="classLabeller.html">Labeller</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;QT_END_NAMESPACE</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classLabeller.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLabeller.html">Labeller</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Listeners &amp; UI Methods</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classLabeller.html">Labeller</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ~<a class="code" href="classLabeller.html">Labeller</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span> slots:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classLabellerModel.html">LabellerModel</a> *labellerModel;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classImageEditor.html">ImageEditor</a> *imageEditor;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8">createListeners</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QPointF <a class="code" href="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582">parsePoint</a>(QString point);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06">setImageList</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481">setImageListToResult</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069">setClassList</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc">setImageDir</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d">setClassFile</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0">setAnnotationFile</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054">setSelectedImageFile</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66">setCursorTypeLabel</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c">setShapeTypeLabel</a>();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d">clearClassItemLineEdit</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73">setCursorToCross</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea">setCursorToArrow</a>();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Controller methods</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a">on_imageBrowseButton_clicked</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68">on_classBrowseButton_clicked</a>();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663">on_annotationBrowseButton_clicked</a>();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01">on_addNameItemButton_clicked</a>();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b">on_deleteClassItemButton_clicked</a>();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575">on_sortClassAscButton_clicked</a>();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa27142b813bf66d7f695f84853051b7d">on_sortClassDscButton_clicked</a>();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3">on_imageList_clicked</a>();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36">on_sortImagesAsc_clicked</a>();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a1128543a1407b48c9afa50202b336df6">on_sortImagesDsc_clicked</a>();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579">on_sortImagesdateAsc_clicked</a>();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e">on_sortImagesDateDsc_clicked</a>();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744">on_restoreImages_clicked</a>();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472">on_searchImages_clicked</a>();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade">on_saveButton_clicked</a>();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe">on_actionMark_Object_triggered</a>();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb">on_actionAdd_Text_triggered</a>();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aab60959afdd88f6b47965559d423b166">on_actionSelect_triggered</a>();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90">on_actionDelete_triggered</a>();</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634">on_actionCopy_triggered</a>();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603">on_actionPaste_triggered</a>();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa">on_clearButton_clicked</a>();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e">on_classList_clicked</a>();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b">on_actionRectangle_triggered</a>();</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c">on_actionSmart_annotate_triggered</a>();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a8234559100914d14603310c177da7b76">on_actionSmart_Click_triggered</a>();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf">on_connectButton_clicked</a>();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165">on_clearPoints_clicked</a>();</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;};</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#endif // LABELLER_H</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a5ce2a812625ac856cc9347359b344350">doAutoSave</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Ui::Labeller *ui;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classLabellerModel.html">LabellerModel</a> *labellerModel;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classImageEditor.html">ImageEditor</a> *imageEditor;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8">createListeners</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    QPointF <a class="code" href="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582">parsePoint</a>(QString point);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06">setImageList</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481">setImageListToResult</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069">setClassList</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc">setImageDir</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d">setClassFile</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0">setAnnotationFile</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054">setSelectedImageFile</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66">setCursorTypeLabel</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c">setShapeTypeLabel</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d">clearClassItemLineEdit</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73">setCursorToCross</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea">setCursorToArrow</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Controller methods</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a">on_imageBrowseButton_clicked</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68">on_classBrowseButton_clicked</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663">on_annotationBrowseButton_clicked</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01">on_addNameItemButton_clicked</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b">on_deleteClassItemButton_clicked</a>();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575">on_sortClassAscButton_clicked</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa27142b813bf66d7f695f84853051b7d">on_sortClassDscButton_clicked</a>();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3">on_imageList_clicked</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36">on_sortImagesAsc_clicked</a>();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a1128543a1407b48c9afa50202b336df6">on_sortImagesDsc_clicked</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579">on_sortImagesdateAsc_clicked</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e">on_sortImagesDateDsc_clicked</a>();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744">on_restoreImages_clicked</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472">on_searchImages_clicked</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade">on_saveButton_clicked</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe">on_actionMark_Object_triggered</a>();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb">on_actionAdd_Text_triggered</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aab60959afdd88f6b47965559d423b166">on_actionSelect_triggered</a>();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90">on_actionDelete_triggered</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634">on_actionCopy_triggered</a>();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603">on_actionPaste_triggered</a>();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa">on_clearButton_clicked</a>();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e">on_classList_clicked</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b">on_actionRectangle_triggered</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c">on_actionSmart_annotate_triggered</a>();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a8234559100914d14603310c177da7b76">on_actionSmart_Click_triggered</a>();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf">on_connectButton_clicked</a>();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165">on_clearPoints_clicked</a>();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;};</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">#endif // LABELLER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassLabeller_html_aa5eeab1f7e70b8c6b23a7e5e5bc42a5a"><div class="ttname"><a href="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a">Labeller::on_imageBrowseButton_clicked</a></div><div class="ttdeci">void on_imageBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:200</div></div>
-<div class="ttc" id="aclassLabeller_html_a0f65c95e70317cd11f41d90966f89b66"><div class="ttname"><a href="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66">Labeller::setCursorTypeLabel</a></div><div class="ttdeci">void setCursorTypeLabel()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:119</div></div>
-<div class="ttc" id="aclassLabeller_html_aa77b26e41321245dfd82f9d937ae3cfc"><div class="ttname"><a href="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc">Labeller::setImageDir</a></div><div class="ttdeci">void setImageDir()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:111</div></div>
-<div class="ttc" id="aclassLabeller_html_aab60959afdd88f6b47965559d423b166"><div class="ttname"><a href="classLabeller.html#aab60959afdd88f6b47965559d423b166">Labeller::on_actionSelect_triggered</a></div><div class="ttdeci">void on_actionSelect_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:586</div></div>
-<div class="ttc" id="aclassLabeller_html_a0eeb431a9f4efed7ed9c2857e0a18579"><div class="ttname"><a href="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579">Labeller::on_sortImagesdateAsc_clicked</a></div><div class="ttdeci">void on_sortImagesdateAsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:404</div></div>
-<div class="ttc" id="aclassLabeller_html_ab6beb95acfebfb4d4597b0340499d663"><div class="ttname"><a href="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663">Labeller::on_annotationBrowseButton_clicked</a></div><div class="ttdeci">void on_annotationBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:248</div></div>
-<div class="ttc" id="aclassLabeller_html_aa29be0d9b17cea6290109223fba3bdd8"><div class="ttname"><a href="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8">Labeller::createListeners</a></div><div class="ttdeci">void createListeners()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:171</div></div>
-<div class="ttc" id="aclassLabeller_html_a9a4d3756acf5dcbed79d9c121da64d90"><div class="ttname"><a href="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90">Labeller::on_actionDelete_triggered</a></div><div class="ttdeci">void on_actionDelete_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:588</div></div>
-<div class="ttc" id="aclassLabeller_html_aa7bc726e2ca7b582ab9161da5f10189c"><div class="ttname"><a href="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c">Labeller::setShapeTypeLabel</a></div><div class="ttdeci">void setShapeTypeLabel()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:141</div></div>
-<div class="ttc" id="aclassLabeller_html_a2e2030fedcd638ed89e3cb468d1f159d"><div class="ttname"><a href="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d">Labeller::setClassFile</a></div><div class="ttdeci">void setClassFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:113</div></div>
+<div class="ttc" id="aclassLabeller_html_aa5eeab1f7e70b8c6b23a7e5e5bc42a5a"><div class="ttname"><a href="classLabeller.html#aa5eeab1f7e70b8c6b23a7e5e5bc42a5a">Labeller::on_imageBrowseButton_clicked</a></div><div class="ttdeci">void on_imageBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:210</div></div>
+<div class="ttc" id="aclassLabeller_html_a0f65c95e70317cd11f41d90966f89b66"><div class="ttname"><a href="classLabeller.html#a0f65c95e70317cd11f41d90966f89b66">Labeller::setCursorTypeLabel</a></div><div class="ttdeci">void setCursorTypeLabel()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:122</div></div>
+<div class="ttc" id="aclassLabeller_html_aa77b26e41321245dfd82f9d937ae3cfc"><div class="ttname"><a href="classLabeller.html#aa77b26e41321245dfd82f9d937ae3cfc">Labeller::setImageDir</a></div><div class="ttdeci">void setImageDir()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:114</div></div>
+<div class="ttc" id="aclassLabeller_html_aab60959afdd88f6b47965559d423b166"><div class="ttname"><a href="classLabeller.html#aab60959afdd88f6b47965559d423b166">Labeller::on_actionSelect_triggered</a></div><div class="ttdeci">void on_actionSelect_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:595</div></div>
+<div class="ttc" id="aclassLabeller_html_a0eeb431a9f4efed7ed9c2857e0a18579"><div class="ttname"><a href="classLabeller.html#a0eeb431a9f4efed7ed9c2857e0a18579">Labeller::on_sortImagesdateAsc_clicked</a></div><div class="ttdeci">void on_sortImagesdateAsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:413</div></div>
+<div class="ttc" id="aclassLabeller_html_ab6beb95acfebfb4d4597b0340499d663"><div class="ttname"><a href="classLabeller.html#ab6beb95acfebfb4d4597b0340499d663">Labeller::on_annotationBrowseButton_clicked</a></div><div class="ttdeci">void on_annotationBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:258</div></div>
+<div class="ttc" id="aclassLabeller_html_aa29be0d9b17cea6290109223fba3bdd8"><div class="ttname"><a href="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8">Labeller::createListeners</a></div><div class="ttdeci">void createListeners()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:174</div></div>
+<div class="ttc" id="aclassLabeller_html_a9a4d3756acf5dcbed79d9c121da64d90"><div class="ttname"><a href="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90">Labeller::on_actionDelete_triggered</a></div><div class="ttdeci">void on_actionDelete_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:597</div></div>
+<div class="ttc" id="aclassLabeller_html_aa7bc726e2ca7b582ab9161da5f10189c"><div class="ttname"><a href="classLabeller.html#aa7bc726e2ca7b582ab9161da5f10189c">Labeller::setShapeTypeLabel</a></div><div class="ttdeci">void setShapeTypeLabel()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:144</div></div>
+<div class="ttc" id="aclassLabeller_html_a5ce2a812625ac856cc9347359b344350"><div class="ttname"><a href="classLabeller.html#a5ce2a812625ac856cc9347359b344350">Labeller::doAutoSave</a></div><div class="ttdeci">void doAutoSave()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:201</div></div>
+<div class="ttc" id="aclassLabeller_html_a2e2030fedcd638ed89e3cb468d1f159d"><div class="ttname"><a href="classLabeller.html#a2e2030fedcd638ed89e3cb468d1f159d">Labeller::setClassFile</a></div><div class="ttdeci">void setClassFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:116</div></div>
 <div class="ttc" id="aclassImageEditor_html"><div class="ttname"><a href="classImageEditor.html">ImageEditor</a></div><div class="ttdoc">Custom image editor component for annotating images and labelling image.</div><div class="ttdef"><b>Definition:</b> image_editor.h:12</div></div>
-<div class="ttc" id="aclassLabeller_html_a8234559100914d14603310c177da7b76"><div class="ttname"><a href="classLabeller.html#a8234559100914d14603310c177da7b76">Labeller::on_actionSmart_Click_triggered</a></div><div class="ttdeci">void on_actionSmart_Click_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:600</div></div>
-<div class="ttc" id="aclassLabeller_html_a3194095cb8d6569892fa6cd1aedb772e"><div class="ttname"><a href="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e">Labeller::on_sortImagesDateDsc_clicked</a></div><div class="ttdeci">void on_sortImagesDateDsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:406</div></div>
-<div class="ttc" id="aclassLabeller_html_a2cd9b2331498ab719f3070a833cc1165"><div class="ttname"><a href="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165">Labeller::on_clearPoints_clicked</a></div><div class="ttdeci">void on_clearPoints_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:604</div></div>
-<div class="ttc" id="aclassLabeller_html_a4707c1fb4b1a5bea1c89df33d0b845cf"><div class="ttname"><a href="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf">Labeller::on_connectButton_clicked</a></div><div class="ttdeci">void on_connectButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:602</div></div>
-<div class="ttc" id="aclassLabeller_html"><div class="ttname"><a href="classLabeller.html">Labeller</a></div><div class="ttdoc">Class for UI and controller methods for the main page.</div><div class="ttdef"><b>Definition:</b> labeller.h:23</div></div>
-<div class="ttc" id="aclassLabeller_html_a829ff2b349e737d350c0c08c7efa4575"><div class="ttname"><a href="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575">Labeller::on_sortClassAscButton_clicked</a></div><div class="ttdeci">void on_sortClassAscButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:388</div></div>
-<div class="ttc" id="aclassLabeller_html_a952550bf5dbcd8e1dc72e34e94d9e9fa"><div class="ttname"><a href="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa">Labeller::on_clearButton_clicked</a></div><div class="ttdeci">void on_clearButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:594</div></div>
-<div class="ttc" id="aclassLabeller_html_a817703f30d6d8f716cf69c94f8c54744"><div class="ttname"><a href="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744">Labeller::on_restoreImages_clicked</a></div><div class="ttdeci">void on_restoreImages_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:408</div></div>
-<div class="ttc" id="aclassLabeller_html_a19091a403d8e4e7925f17e3d5b5449ea"><div class="ttname"><a href="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea">Labeller::setCursorToArrow</a></div><div class="ttdeci">void setCursorToArrow()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:169</div></div>
-<div class="ttc" id="aclassLabeller_html_ae51da11a7f908e15e6f1453e568b4e73"><div class="ttname"><a href="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73">Labeller::setCursorToCross</a></div><div class="ttdeci">void setCursorToCross()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:167</div></div>
-<div class="ttc" id="aclassLabeller_html_a322189ca432707ec87cbc00fdc7faa2d"><div class="ttname"><a href="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d">Labeller::clearClassItemLineEdit</a></div><div class="ttdeci">void clearClassItemLineEdit()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:165</div></div>
-<div class="ttc" id="aclassLabeller_html_a8065a46a9661f06f4a7dc8e7857f7d01"><div class="ttname"><a href="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01">Labeller::on_addNameItemButton_clicked</a></div><div class="ttdeci">void on_addNameItemButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:322</div></div>
-<div class="ttc" id="aclassLabeller_html_ab7063224b9c7aeb2ede25a8e904dd069"><div class="ttname"><a href="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069">Labeller::setClassList</a></div><div class="ttdeci">void setClassList()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:84</div></div>
-<div class="ttc" id="aclassLabeller_html_aa282c5aa9bfd7678750279f22c3f219b"><div class="ttname"><a href="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b">Labeller::on_actionRectangle_triggered</a></div><div class="ttdeci">void on_actionRectangle_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:596</div></div>
-<div class="ttc" id="aclassLabeller_html_ab425b0e5e253b9ea9a3254ecb262b603"><div class="ttname"><a href="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603">Labeller::on_actionPaste_triggered</a></div><div class="ttdeci">void on_actionPaste_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:592</div></div>
-<div class="ttc" id="aclassLabeller_html_a5ed6e9f8ee5a89486a77a36136046472"><div class="ttname"><a href="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472">Labeller::on_searchImages_clicked</a></div><div class="ttdeci">void on_searchImages_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:417</div></div>
-<div class="ttc" id="aclassLabeller_html_aa27142b813bf66d7f695f84853051b7d"><div class="ttname"><a href="classLabeller.html#aa27142b813bf66d7f695f84853051b7d">Labeller::on_sortClassDscButton_clicked</a></div><div class="ttdeci">void on_sortClassDscButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:390</div></div>
-<div class="ttc" id="aclassLabeller_html_ae5e4d48693a5f4903f6894dcaec84634"><div class="ttname"><a href="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634">Labeller::on_actionCopy_triggered</a></div><div class="ttdeci">void on_actionCopy_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:590</div></div>
-<div class="ttc" id="aclassLabeller_html_a96fed5fb7bb190aaec6704b845a2fb5c"><div class="ttname"><a href="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c">Labeller::on_actionSmart_annotate_triggered</a></div><div class="ttdeci">void on_actionSmart_annotate_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:598</div></div>
-<div class="ttc" id="aclassLabeller_html_a67a9cf08335c1164c0f19a330e2c4d3b"><div class="ttname"><a href="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b">Labeller::on_deleteClassItemButton_clicked</a></div><div class="ttdeci">void on_deleteClassItemButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:349</div></div>
-<div class="ttc" id="aclassLabeller_html_a037487573bad1fb9b8ea8655d944f5fe"><div class="ttname"><a href="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe">Labeller::on_actionMark_Object_triggered</a></div><div class="ttdeci">void on_actionMark_Object_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:576</div></div>
-<div class="ttc" id="aclassLabeller_html_a442a2d64b36306b28130b5d6ce161e36"><div class="ttname"><a href="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36">Labeller::on_sortImagesAsc_clicked</a></div><div class="ttdeci">void on_sortImagesAsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:400</div></div>
-<div class="ttc" id="aclassLabeller_html_aa25b3ee81e73185a2f7b6ae85303604e"><div class="ttname"><a href="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e">Labeller::on_classList_clicked</a></div><div class="ttdeci">void on_classList_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:580</div></div>
-<div class="ttc" id="aclassLabeller_html_ace7dca62930f62a4b9961ca0d8bfaade"><div class="ttname"><a href="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade">Labeller::on_saveButton_clicked</a></div><div class="ttdeci">void on_saveButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:435</div></div>
-<div class="ttc" id="aclassLabeller_html_ada6b4ec9d388155d822edc6702c015fb"><div class="ttname"><a href="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb">Labeller::on_actionAdd_Text_triggered</a></div><div class="ttdeci">void on_actionAdd_Text_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:578</div></div>
-<div class="ttc" id="aclassLabeller_html_a7ab09fc9d3b8f532ce502b3f6b93b0a3"><div class="ttname"><a href="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3">Labeller::on_imageList_clicked</a></div><div class="ttdeci">void on_imageList_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:392</div></div>
-<div class="ttc" id="aclassLabeller_html_a03262ac0c1cad48b11b9d19e18f09c68"><div class="ttname"><a href="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68">Labeller::on_classBrowseButton_clicked</a></div><div class="ttdeci">void on_classBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:218</div></div>
-<div class="ttc" id="aclassLabeller_html_a824f60a3ddf5ee40afb9d227b15acbe0"><div class="ttname"><a href="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0">Labeller::setAnnotationFile</a></div><div class="ttdeci">void setAnnotationFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:115</div></div>
-<div class="ttc" id="aclassLabeller_html_a2ab61e89a2a1e1eb128b829fa48bc054"><div class="ttname"><a href="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054">Labeller::setSelectedImageFile</a></div><div class="ttdeci">void setSelectedImageFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:117</div></div>
-<div class="ttc" id="aclassLabellerModel_html"><div class="ttname"><a href="classLabellerModel.html">LabellerModel</a></div><div class="ttdoc">Class for model methods for the main page.</div><div class="ttdef"><b>Definition:</b> labeller_model.h:12</div></div>
-<div class="ttc" id="aclassLabeller_html_acdb30dd4ceeed4a4860b08373b5c1481"><div class="ttname"><a href="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481">Labeller::setImageListToResult</a></div><div class="ttdeci">void setImageListToResult()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:76</div></div>
-<div class="ttc" id="aclassLabeller_html_ae13ec99ef7ecef856a00361bc9590f06"><div class="ttname"><a href="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06">Labeller::setImageList</a></div><div class="ttdeci">void setImageList()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:43</div></div>
-<div class="ttc" id="aclassLabeller_html_a1128543a1407b48c9afa50202b336df6"><div class="ttname"><a href="classLabeller.html#a1128543a1407b48c9afa50202b336df6">Labeller::on_sortImagesDsc_clicked</a></div><div class="ttdeci">void on_sortImagesDsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:402</div></div>
-<div class="ttc" id="aclassLabeller_html_aa86d8bccd3ec46038e2bd9d367772582"><div class="ttname"><a href="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582">Labeller::parsePoint</a></div><div class="ttdeci">QPointF parsePoint(QString point)</div><div class="ttdef"><b>Definition:</b> labeller.cpp:189</div></div>
+<div class="ttc" id="aclassLabeller_html_a8234559100914d14603310c177da7b76"><div class="ttname"><a href="classLabeller.html#a8234559100914d14603310c177da7b76">Labeller::on_actionSmart_Click_triggered</a></div><div class="ttdeci">void on_actionSmart_Click_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:609</div></div>
+<div class="ttc" id="aclassLabeller_html_a3194095cb8d6569892fa6cd1aedb772e"><div class="ttname"><a href="classLabeller.html#a3194095cb8d6569892fa6cd1aedb772e">Labeller::on_sortImagesDateDsc_clicked</a></div><div class="ttdeci">void on_sortImagesDateDsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:415</div></div>
+<div class="ttc" id="aclassLabeller_html_a2cd9b2331498ab719f3070a833cc1165"><div class="ttname"><a href="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165">Labeller::on_clearPoints_clicked</a></div><div class="ttdeci">void on_clearPoints_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:613</div></div>
+<div class="ttc" id="aclassLabeller_html_a4707c1fb4b1a5bea1c89df33d0b845cf"><div class="ttname"><a href="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf">Labeller::on_connectButton_clicked</a></div><div class="ttdeci">void on_connectButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:611</div></div>
+<div class="ttc" id="aclassLabeller_html"><div class="ttname"><a href="classLabeller.html">Labeller</a></div><div class="ttdoc">Class for UI and controller methods for the main page.</div><div class="ttdef"><b>Definition:</b> labeller.h:24</div></div>
+<div class="ttc" id="aclassLabeller_html_a829ff2b349e737d350c0c08c7efa4575"><div class="ttname"><a href="classLabeller.html#a829ff2b349e737d350c0c08c7efa4575">Labeller::on_sortClassAscButton_clicked</a></div><div class="ttdeci">void on_sortClassAscButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:397</div></div>
+<div class="ttc" id="aclassLabeller_html_a952550bf5dbcd8e1dc72e34e94d9e9fa"><div class="ttname"><a href="classLabeller.html#a952550bf5dbcd8e1dc72e34e94d9e9fa">Labeller::on_clearButton_clicked</a></div><div class="ttdeci">void on_clearButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:603</div></div>
+<div class="ttc" id="aclassLabeller_html_a817703f30d6d8f716cf69c94f8c54744"><div class="ttname"><a href="classLabeller.html#a817703f30d6d8f716cf69c94f8c54744">Labeller::on_restoreImages_clicked</a></div><div class="ttdeci">void on_restoreImages_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:417</div></div>
+<div class="ttc" id="aclassLabeller_html_a19091a403d8e4e7925f17e3d5b5449ea"><div class="ttname"><a href="classLabeller.html#a19091a403d8e4e7925f17e3d5b5449ea">Labeller::setCursorToArrow</a></div><div class="ttdeci">void setCursorToArrow()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:172</div></div>
+<div class="ttc" id="aclassLabeller_html_ae51da11a7f908e15e6f1453e568b4e73"><div class="ttname"><a href="classLabeller.html#ae51da11a7f908e15e6f1453e568b4e73">Labeller::setCursorToCross</a></div><div class="ttdeci">void setCursorToCross()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:170</div></div>
+<div class="ttc" id="aclassLabeller_html_a322189ca432707ec87cbc00fdc7faa2d"><div class="ttname"><a href="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d">Labeller::clearClassItemLineEdit</a></div><div class="ttdeci">void clearClassItemLineEdit()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:168</div></div>
+<div class="ttc" id="aclassLabeller_html_a8065a46a9661f06f4a7dc8e7857f7d01"><div class="ttname"><a href="classLabeller.html#a8065a46a9661f06f4a7dc8e7857f7d01">Labeller::on_addNameItemButton_clicked</a></div><div class="ttdeci">void on_addNameItemButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:331</div></div>
+<div class="ttc" id="aclassLabeller_html_ab7063224b9c7aeb2ede25a8e904dd069"><div class="ttname"><a href="classLabeller.html#ab7063224b9c7aeb2ede25a8e904dd069">Labeller::setClassList</a></div><div class="ttdeci">void setClassList()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:87</div></div>
+<div class="ttc" id="aclassLabeller_html_aa282c5aa9bfd7678750279f22c3f219b"><div class="ttname"><a href="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b">Labeller::on_actionRectangle_triggered</a></div><div class="ttdeci">void on_actionRectangle_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:605</div></div>
+<div class="ttc" id="aclassLabeller_html_ab425b0e5e253b9ea9a3254ecb262b603"><div class="ttname"><a href="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603">Labeller::on_actionPaste_triggered</a></div><div class="ttdeci">void on_actionPaste_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:601</div></div>
+<div class="ttc" id="aclassLabeller_html_a5ed6e9f8ee5a89486a77a36136046472"><div class="ttname"><a href="classLabeller.html#a5ed6e9f8ee5a89486a77a36136046472">Labeller::on_searchImages_clicked</a></div><div class="ttdeci">void on_searchImages_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:426</div></div>
+<div class="ttc" id="aclassLabeller_html_aa27142b813bf66d7f695f84853051b7d"><div class="ttname"><a href="classLabeller.html#aa27142b813bf66d7f695f84853051b7d">Labeller::on_sortClassDscButton_clicked</a></div><div class="ttdeci">void on_sortClassDscButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:399</div></div>
+<div class="ttc" id="aclassLabeller_html_ae5e4d48693a5f4903f6894dcaec84634"><div class="ttname"><a href="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634">Labeller::on_actionCopy_triggered</a></div><div class="ttdeci">void on_actionCopy_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:599</div></div>
+<div class="ttc" id="aclassLabeller_html_a96fed5fb7bb190aaec6704b845a2fb5c"><div class="ttname"><a href="classLabeller.html#a96fed5fb7bb190aaec6704b845a2fb5c">Labeller::on_actionSmart_annotate_triggered</a></div><div class="ttdeci">void on_actionSmart_annotate_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:607</div></div>
+<div class="ttc" id="aclassLabeller_html_a67a9cf08335c1164c0f19a330e2c4d3b"><div class="ttname"><a href="classLabeller.html#a67a9cf08335c1164c0f19a330e2c4d3b">Labeller::on_deleteClassItemButton_clicked</a></div><div class="ttdeci">void on_deleteClassItemButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:358</div></div>
+<div class="ttc" id="aclassLabeller_html_a037487573bad1fb9b8ea8655d944f5fe"><div class="ttname"><a href="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe">Labeller::on_actionMark_Object_triggered</a></div><div class="ttdeci">void on_actionMark_Object_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:585</div></div>
+<div class="ttc" id="aclassLabeller_html_a442a2d64b36306b28130b5d6ce161e36"><div class="ttname"><a href="classLabeller.html#a442a2d64b36306b28130b5d6ce161e36">Labeller::on_sortImagesAsc_clicked</a></div><div class="ttdeci">void on_sortImagesAsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:409</div></div>
+<div class="ttc" id="aclassLabeller_html_aa25b3ee81e73185a2f7b6ae85303604e"><div class="ttname"><a href="classLabeller.html#aa25b3ee81e73185a2f7b6ae85303604e">Labeller::on_classList_clicked</a></div><div class="ttdeci">void on_classList_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:589</div></div>
+<div class="ttc" id="aclassLabeller_html_ace7dca62930f62a4b9961ca0d8bfaade"><div class="ttname"><a href="classLabeller.html#ace7dca62930f62a4b9961ca0d8bfaade">Labeller::on_saveButton_clicked</a></div><div class="ttdeci">void on_saveButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:444</div></div>
+<div class="ttc" id="aclassLabeller_html_ada6b4ec9d388155d822edc6702c015fb"><div class="ttname"><a href="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb">Labeller::on_actionAdd_Text_triggered</a></div><div class="ttdeci">void on_actionAdd_Text_triggered()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:587</div></div>
+<div class="ttc" id="aclassLabeller_html_a7ab09fc9d3b8f532ce502b3f6b93b0a3"><div class="ttname"><a href="classLabeller.html#a7ab09fc9d3b8f532ce502b3f6b93b0a3">Labeller::on_imageList_clicked</a></div><div class="ttdeci">void on_imageList_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:401</div></div>
+<div class="ttc" id="aclassLabeller_html_a03262ac0c1cad48b11b9d19e18f09c68"><div class="ttname"><a href="classLabeller.html#a03262ac0c1cad48b11b9d19e18f09c68">Labeller::on_classBrowseButton_clicked</a></div><div class="ttdeci">void on_classBrowseButton_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:228</div></div>
+<div class="ttc" id="aclassLabeller_html_a824f60a3ddf5ee40afb9d227b15acbe0"><div class="ttname"><a href="classLabeller.html#a824f60a3ddf5ee40afb9d227b15acbe0">Labeller::setAnnotationFile</a></div><div class="ttdeci">void setAnnotationFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:118</div></div>
+<div class="ttc" id="aclassLabeller_html_a2ab61e89a2a1e1eb128b829fa48bc054"><div class="ttname"><a href="classLabeller.html#a2ab61e89a2a1e1eb128b829fa48bc054">Labeller::setSelectedImageFile</a></div><div class="ttdeci">void setSelectedImageFile()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:120</div></div>
+<div class="ttc" id="aclassLabellerModel_html"><div class="ttname"><a href="classLabellerModel.html">LabellerModel</a></div><div class="ttdoc">Class for model methods for the main page.</div><div class="ttdef"><b>Definition:</b> labeller_model.h:11</div></div>
+<div class="ttc" id="aclassLabeller_html_acdb30dd4ceeed4a4860b08373b5c1481"><div class="ttname"><a href="classLabeller.html#acdb30dd4ceeed4a4860b08373b5c1481">Labeller::setImageListToResult</a></div><div class="ttdeci">void setImageListToResult()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:79</div></div>
+<div class="ttc" id="aclassLabeller_html_ae13ec99ef7ecef856a00361bc9590f06"><div class="ttname"><a href="classLabeller.html#ae13ec99ef7ecef856a00361bc9590f06">Labeller::setImageList</a></div><div class="ttdeci">void setImageList()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:46</div></div>
+<div class="ttc" id="aclassLabeller_html_a1128543a1407b48c9afa50202b336df6"><div class="ttname"><a href="classLabeller.html#a1128543a1407b48c9afa50202b336df6">Labeller::on_sortImagesDsc_clicked</a></div><div class="ttdeci">void on_sortImagesDsc_clicked()</div><div class="ttdef"><b>Definition:</b> labeller.cpp:411</div></div>
+<div class="ttc" id="aclassLabeller_html_aa86d8bccd3ec46038e2bd9d367772582"><div class="ttname"><a href="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582">Labeller::parsePoint</a></div><div class="ttdeci">QPointF parsePoint(QString point)</div><div class="ttdef"><b>Definition:</b> labeller.cpp:192</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
