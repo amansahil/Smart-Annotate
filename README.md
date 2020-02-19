@@ -1,25 +1,5 @@
-# Code Contribution and Maintenance Guide
+# Smart Annotate
 
-## Quick Start
+Smart annotate is a simple light weight annotation tool made with QT and C++ for NTU's SDI module. All documentation for the project is under the DOCS folder, instruction on how to use the app are on the [wiki](#)
 
-The project requires:
-
-- `Qmake version >= 3.0`
-- `Qt version >= 4.0` with `Core`, `Gui` enabled.
-- `c++11`
-- `doxygen v1.8.17` 
-
-### Resources
-
-- [Qt](https://doc.qt.io)
-- [HDF5](https://support.hdfgroup.org/HDF5/doc/cpplus_RM/index.html)
-- [qmake](https://doc.qt.io/qt-5/qmake-manual.html)
-- [doxygen](http://www.doxygen.nl)    
-
-## Pull Requests
-
-## Templates
-
-## Maintaining Documentation
-
-## Code Standards
+![app](https://user-images.githubusercontent.com/33552991/74864431-76415d00-5347-11ea-9cfe-8c73fa1c44ea.png)
