@@ -481,12 +481,10 @@ void Labeller::on_saveButton_clicked()
 
         QJsonArray shapesArray;
 
-        for (int i = 0; i < applicationRectState.value(fileName).count(); i++)
+        for (const QRectF &currRect: applicationRectState.value(fileName))
         {
 
             QJsonObject shapeObject;
-
-            const QRectF currRect = applicationRectState.value(fileName).at(i);
 
             const QString topLeft = "(" + QString::number(currRect.topLeft().x()) + "," + QString::number(currRect.topLeft().y()) + ")";
             const QString topRight = "(" + QString::number(currRect.topRight().x()) + "," + QString::number(currRect.topRight().y()) + ")";
@@ -502,11 +500,9 @@ void Labeller::on_saveButton_clicked()
             shapesArray.push_back(shapeObject);
         }
 
-        for (int i = 0; i < applicationTextState.value(fileName).count(); i++)
+        for (const QPair<QString, QPointF> &currText: applicationTextState.value(fileName))
         {
             QJsonObject shapeObject;
-
-            const QPair<QString, QPointF> currText = applicationTextState.value(fileName).at(i);
 
             const QString pos = "(" + QString::number(currText.second.x()) + "," + QString::number(currText.second.y()) + ")";
 
@@ -517,17 +513,15 @@ void Labeller::on_saveButton_clicked()
             shapesArray.push_back(shapeObject);
         }
 
-        for (int i = 0; i < applicationPolygonState.value(fileName).count(); i++)
+        for (const QPolygonF &currPolygon: applicationPolygonState.value(fileName))
         {
             QJsonObject shapeObject;
-
-            const QPolygonF currPoly = applicationPolygonState.value(fileName).at(i);
 
             shapeObject.insert("Shape Type", QJsonValue::fromVariant("Polygon"));
 
             QJsonArray pointArray;
 
-            for (const QPointF &point : currPoly)
+            for (const QPointF &point : currPolygon)
             {
                 QJsonObject pointObject;
 

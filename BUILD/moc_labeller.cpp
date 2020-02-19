@@ -32,20 +32,20 @@ struct qt_meta_stringdata_Labeller_t {
 static const qt_meta_stringdata_Labeller_t qt_meta_stringdata_Labeller = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "Labeller"
-QT_MOC_LITERAL(1, 9, 10), // "doAutoSave"
-QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 12), // "setImageList"
-QT_MOC_LITERAL(4, 34, 20), // "setImageListToResult"
-QT_MOC_LITERAL(5, 55, 12), // "setClassList"
-QT_MOC_LITERAL(6, 68, 11), // "setImageDir"
-QT_MOC_LITERAL(7, 80, 12), // "setClassFile"
-QT_MOC_LITERAL(8, 93, 17), // "setAnnotationFile"
-QT_MOC_LITERAL(9, 111, 20), // "setSelectedImageFile"
-QT_MOC_LITERAL(10, 132, 18), // "setCursorTypeLabel"
-QT_MOC_LITERAL(11, 151, 17), // "setShapeTypeLabel"
-QT_MOC_LITERAL(12, 169, 22), // "clearClassItemLineEdit"
-QT_MOC_LITERAL(13, 192, 16), // "setCursorToCross"
-QT_MOC_LITERAL(14, 209, 16), // "setCursorToArrow"
+QT_MOC_LITERAL(1, 9, 12), // "setImageList"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 20), // "setImageListToResult"
+QT_MOC_LITERAL(4, 44, 12), // "setClassList"
+QT_MOC_LITERAL(5, 57, 11), // "setImageDir"
+QT_MOC_LITERAL(6, 69, 12), // "setClassFile"
+QT_MOC_LITERAL(7, 82, 17), // "setAnnotationFile"
+QT_MOC_LITERAL(8, 100, 20), // "setSelectedImageFile"
+QT_MOC_LITERAL(9, 121, 18), // "setCursorTypeLabel"
+QT_MOC_LITERAL(10, 140, 17), // "setShapeTypeLabel"
+QT_MOC_LITERAL(11, 158, 22), // "clearClassItemLineEdit"
+QT_MOC_LITERAL(12, 181, 16), // "setCursorToCross"
+QT_MOC_LITERAL(13, 198, 16), // "setCursorToArrow"
+QT_MOC_LITERAL(14, 215, 10), // "doAutoSave"
 QT_MOC_LITERAL(15, 226, 28), // "on_imageBrowseButton_clicked"
 QT_MOC_LITERAL(16, 255, 28), // "on_classBrowseButton_clicked"
 QT_MOC_LITERAL(17, 284, 33), // "on_annotationBrowseButton_cli..."
@@ -76,12 +76,12 @@ QT_MOC_LITERAL(41, 938, 24), // "on_connectButton_clicked"
 QT_MOC_LITERAL(42, 963, 22) // "on_clearPoints_clicked"
 
     },
-    "Labeller\0doAutoSave\0\0setImageList\0"
-    "setImageListToResult\0setClassList\0"
-    "setImageDir\0setClassFile\0setAnnotationFile\0"
-    "setSelectedImageFile\0setCursorTypeLabel\0"
-    "setShapeTypeLabel\0clearClassItemLineEdit\0"
-    "setCursorToCross\0setCursorToArrow\0"
+    "Labeller\0setImageList\0\0setImageListToResult\0"
+    "setClassList\0setImageDir\0setClassFile\0"
+    "setAnnotationFile\0setSelectedImageFile\0"
+    "setCursorTypeLabel\0setShapeTypeLabel\0"
+    "clearClassItemLineEdit\0setCursorToCross\0"
+    "setCursorToArrow\0doAutoSave\0"
     "on_imageBrowseButton_clicked\0"
     "on_classBrowseButton_clicked\0"
     "on_annotationBrowseButton_clicked\0"
@@ -124,7 +124,7 @@ static const uint qt_meta_data_Labeller[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  219,    2, 0x0a /* Public */,
+       1,    0,  219,    2, 0x08 /* Private */,
        3,    0,  220,    2, 0x08 /* Private */,
        4,    0,  221,    2, 0x08 /* Private */,
        5,    0,  222,    2, 0x08 /* Private */,
@@ -136,7 +136,7 @@ static const uint qt_meta_data_Labeller[] = {
       11,    0,  228,    2, 0x08 /* Private */,
       12,    0,  229,    2, 0x08 /* Private */,
       13,    0,  230,    2, 0x08 /* Private */,
-      14,    0,  231,    2, 0x08 /* Private */,
+      14,    0,  231,    2, 0x0a /* Public */,
       15,    0,  232,    2, 0x08 /* Private */,
       16,    0,  233,    2, 0x08 /* Private */,
       17,    0,  234,    2, 0x08 /* Private */,
@@ -218,19 +218,19 @@ void Labeller::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<Labeller *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->doAutoSave(); break;
-        case 1: _t->setImageList(); break;
-        case 2: _t->setImageListToResult(); break;
-        case 3: _t->setClassList(); break;
-        case 4: _t->setImageDir(); break;
-        case 5: _t->setClassFile(); break;
-        case 6: _t->setAnnotationFile(); break;
-        case 7: _t->setSelectedImageFile(); break;
-        case 8: _t->setCursorTypeLabel(); break;
-        case 9: _t->setShapeTypeLabel(); break;
-        case 10: _t->clearClassItemLineEdit(); break;
-        case 11: _t->setCursorToCross(); break;
-        case 12: _t->setCursorToArrow(); break;
+        case 0: _t->setImageList(); break;
+        case 1: _t->setImageListToResult(); break;
+        case 2: _t->setClassList(); break;
+        case 3: _t->setImageDir(); break;
+        case 4: _t->setClassFile(); break;
+        case 5: _t->setAnnotationFile(); break;
+        case 6: _t->setSelectedImageFile(); break;
+        case 7: _t->setCursorTypeLabel(); break;
+        case 8: _t->setShapeTypeLabel(); break;
+        case 9: _t->clearClassItemLineEdit(); break;
+        case 10: _t->setCursorToCross(); break;
+        case 11: _t->setCursorToArrow(); break;
+        case 12: _t->doAutoSave(); break;
         case 13: _t->on_imageBrowseButton_clicked(); break;
         case 14: _t->on_classBrowseButton_clicked(); break;
         case 15: _t->on_annotationBrowseButton_clicked(); break;

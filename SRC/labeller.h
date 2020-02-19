@@ -31,13 +31,6 @@ public:
     explicit Labeller(QWidget *parent = nullptr);
     ~Labeller();
 
-public slots:
-
-    /*!
-     *  Calls save function if an annotation file is selected
-     */
-    void doAutoSave();
-
 private:
     Ui::Labeller *ui;
 
@@ -49,11 +42,6 @@ private:
      *  Initiates all listeners
      */
     void createListeners();
-
-    /*!
-     *  Parses point string from .annotations file to QPointF
-     */
-    QPointF parsePoint(QString point);
 
 private slots:
 
@@ -118,6 +106,20 @@ private slots:
     void setCursorToArrow();
 
     // Controller methods
+
+public slots:
+
+    /*!
+     *  Calls save function if an annotation file is selected
+     */
+    void doAutoSave();
+
+private:
+
+    /*!
+     *  Parses point string from .annotations file to QPointF
+     */
+    QPointF parsePoint(QString point);
 
 private slots:
 

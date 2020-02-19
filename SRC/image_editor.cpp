@@ -49,19 +49,19 @@ void ImageEditor::loadAnnotations()
 {
     if (savedStateExists(currFileName))
     {
-        for (int i = 0; i < applicationRectState.value(currFileName).count(); i++)
+        for (const QRectF &currRect: applicationRectState.value(currFileName))
         {
-            drawRectangle(applicationRectState.value(currFileName).at(i));
+            drawRectangle(currRect);
         }
 
-        for (int i = 0; i < applicationTextState.value(currFileName).count(); i++)
+        for (const QPair<QString, QPointF> &currText: applicationTextState.value(currFileName))
         {
-            drawText(applicationTextState.value(currFileName).at(i).first, applicationTextState.value(currFileName).at(i).second);
+            drawText(currText.first, currText.second);
         }
 
-        for (int i = 0; i < applicationPolygonState.value(currFileName).count(); i++)
+        for (const QPolygonF &currPolygon: applicationPolygonState.value(currFileName))
         {
-            drawPolygon(applicationPolygonState.value(currFileName).at(i));
+            drawPolygon(currPolygon);
         }
     }
 }
