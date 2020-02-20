@@ -237,7 +237,7 @@ class StringContainerType {};
 
 Follow [google guidelines](https://google.github.io/styleguide/cppguide.html) unless explicitly mentioned below
 
-Code can be kept neat with linters and analysis tool. Below are recommendations
+Code can be kept neat with linters and analysis tool. Below are recommendations: 
 
 - [Microsoft CPP](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
