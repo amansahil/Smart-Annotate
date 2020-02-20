@@ -368,7 +368,7 @@ Eg:
 #include <QObject>
 ```
 
-- Have sensible for ordering functions in header files
+- Have sensible for ordering members in header files
 
 - The order priority for header file are `sub-classes`, `public`,  `protected` and then finally `private`
 
