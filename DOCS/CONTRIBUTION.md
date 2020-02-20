@@ -404,7 +404,7 @@ private:
 This code base uses post increment instead of pre increment soly for styling and consistency purposes
 
 
-#### Handling exception
+#### Handling exceptions
 
 - Avoid using asserts as they take toll on performance
 - Generally try write exceptionless code and only throw exception incase of a disaster  
