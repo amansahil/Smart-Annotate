@@ -235,13 +235,13 @@ class StringContainerType {};
 
 ## Code Standards
 
-Follow (google guidelines)[https://google.github.io/styleguide/cppguide.html] unless explicitly mentioned below
+Follow [google guidelines](https://google.github.io/styleguide/cppguide.html) unless explicitly mentioned below
 
 Code can be kept neat with linters and analysis tool. Below are recommendations
 
-- (Microsoft CPP)[https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools]
+- [Microsoft CPP](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
-- (cppcheck)[http://cppcheck.sourceforge.net/] with below arguments
+- [cppcheck](http://cppcheck.sourceforge.net/) with below arguments
 
 ```sh
 cppcheck --enable=all --inconclusive --std=posix example.cpp
