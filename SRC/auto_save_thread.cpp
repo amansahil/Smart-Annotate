@@ -4,10 +4,9 @@ AutoSaveThread::AutoSaveThread(Labeller *newLabeller)
 {
     labeller = newLabeller;
 
-    // Starts autosave thread
     QTimer *timer = new QTimer(this);
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(process()));
-    timer->start(30000); //time specified in ms
+    timer->start(30000);
 }
 
 void AutoSaveThread::process()

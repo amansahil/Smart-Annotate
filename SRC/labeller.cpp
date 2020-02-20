@@ -30,6 +30,7 @@ Labeller::Labeller(QWidget *parent)
 
     createListeners();
 
+    // Creates a thread incharge of saving to annotations file
     QThread *thread = new QThread;
     AutoSaveThread *autoSaveThread = new AutoSaveThread(this);
     autoSaveThread->moveToThread(thread);
