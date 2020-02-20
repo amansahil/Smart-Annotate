@@ -23,7 +23,6 @@ To report a bug use the github issue to create a report. Ensure that you have se
 
 Ensure the title is clear, short and to the point. In the body of the issue be as descriptive as possible and provide as much detail as you can. Write steps to recreate the problem you ran into and also include what behaviour you expected to see instead. Include screenshots of the issue or GIFS of you recreating the issue if possible. If you are using a pre-compiled version of the application mention the OS version. If you are compiling using release binaries mention the version of QT and the OS Verison. And finally if you are using the QT IDE to generate binaries and run the code, try running the code in debugging mode and include the debug logs or any screenshots of any notification the debugger throws.
 
-
 ### Template 
 
 ```
@@ -236,4 +235,176 @@ class StringContainerType {};
 
 ## Code Standards
 
+Follow (google guidelines)[https://google.github.io/styleguide/cppguide.html] unless explicitly mentioned below
+
+Code can be kept neat with linters and analysis tool. Below are recommendations
+
+- (Microsoft CPP)[https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools]
+
+- (cppcheck)[http://cppcheck.sourceforge.net/] with below arguments
+
+```sh
+cppcheck --enable=all --inconclusive --std=posix example.cpp
+```
+
+### Code Philosiphy
+
+Here are three quotes that sum up the philosiphy for the coding style used
+
+"Premature optimization is the root of all evil"
+
+"Don't have architecture for the sake of architecture"
+
+"SOLID principles sounded to me like extremely bureaucratic programming that came from the mind of somebody that has not written a lot of code, frankly" - Stack overflow chairman (Joel Spolsky)
+
 ### General guidelines
+
+- Don't add any classes to the codebase unless absolutely needed. Best way to go about this is, don't add empty abstract classes before you implement a certain functionality, create classes if necessary as you go along 
+
+- Use QT containers instead of cpp stl containers unless creating a custom container
+
+- Check if QT has exisitng functionality for the problem before implementing custom functionality or adding external libraries
+
+- Composition over inheritance
+
+### General style guidelines
+
+- Use proper tabulation of 4 spaces, do not to tabualte access identifiers
+
+Eg:
+
+```cpp
+class someclass {
+public:
+    void someFunction();    
+};
+
+```
+
+- Attach astrix for pointers to the variable name instead of the container name
+
+Eg:
+
+```cpp
+// Use this 
+
+    int *bar;
+
+// Instead of
+
+    int* bar;
+
+```
+
+- Use inline functions for code that is only one line
+
+- Curly braces should be on a new line unless it's a inline function
+
+- If variables aren't being reassigned use const
+
+- If methods that aren't mainpulating any state use const
+
+- Use cpp foreach loop instead of a incrementor unless necessary  
+
+Eg:
+
+```cpp
+// Use this
+for (const auto &e: someList ) {
+
+}
+
+// Intstead of 
+
+for (int i = 0; i < someList.length(); i++) {
+
+}
+
+```
+
+- No using declarations in header file
+
+- Use include guards
+
+- Avoid magic numbers
+
+- Use the `define directive` when decleraing global variable where possible
+
+### More guidelines
+
+#### Naming conventions
+
+**Classes**: Initial capital and then camel case
+
+**Enums**: Initial capital and then camel case
+
+**EnumValues**: Initial capital and then camel case
+
+**Struct**: Initial capital and then camel case
+
+**Functions**: Camel case
+
+**Variables**: Camel case
+
+**Constants**: All caps and snake case
+
+#### Header files 
+
+- Only add includes to header files instead of CPP files unless necessary 
+
+- Use double quotes when incuding custom files and angled bracked when including library files
+
+- The order is custom includes first then library includes
+
+Eg:
+
+```cpp
+
+#include "example.h"
+#include "someotherexample.h"
+
+
+#include <vector>
+#include <QObject>
+```
+
+- Have sensible for ordering functions in header files
+
+- The order priority for header file are `sub-classes`, `public`,  `protected` and then finally `private`
+
+- The order for memebers is `enums`, `structs`, `data members` and finally `member functions`
+
+Eg:
+
+```cpp
+
+class exampleClass {
+private:
+    class subClass {};
+
+public:
+    void somePublicFunc();
+
+protected:
+    int someVariable;
+
+    void someProtectedFunc();
+
+private:
+    void somePrivateFunc();
+}
+```
+
+### CPP files
+
+- Order function in cpp files according to the order in header file
+
+#### Post increment vs Pre increment
+
+This code base uses post increment instead of pre increment soly for styling and consistency purposes
+
+
+#### Handling exception
+
+- Avoid using asserts as they take toll on performance
+- Generally try write exceptionless code and only throw exception incase of a disaster  
