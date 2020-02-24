@@ -17,7 +17,7 @@ The project requires:
 
 ## Reporting Issues
 
-To report a bug use the github issue to create a report. Ensure that you have searched similar topics and that there are no duplicate topics pertaining to your case. Please don't use the issue tracker for support questions
+To report a bug use the github issue tracker to create a report. Ensure that you have searched similar topics and that there are no duplicate topics pertaining to your case. Please don't use the issue tracker for support questions.
 
 ### Writing a good bug report
 
@@ -40,6 +40,14 @@ Ensure the title is clear, short and to the point. In the body of the issue be a
 
 ## Debugger log
 ```
+
+## Suggesting a feature or enhancement
+
+To suggest a feature or enhancement use the github issue tracker to create a report. Ensure that you have searched similar topics and that there are no duplicate topics pertaining to your suggestion. If it is a small enhancement to the code, simply open a pull request with details on the enhancement in the pull request description (Please follow the [PR guidelines](https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#pull-requests) when doing so).
+
+###  Writing a good suggestion  
+
+When suggesting a feature / enhancement ensure the description is clear. Include why the feature / enhancement is needed and how it would be implemented / used. If the feature / enhancement requires changes to the UI please provoide if possible a GUI mockup of such an implementation
 
 ## Pull Requests
 
@@ -249,13 +257,9 @@ cppcheck --enable=all --inconclusive --std=posix example.cpp
 
 ### Code Philosiphy
 
-Here are three quotes that sum up the philosiphy for the coding style used
+*"SOLID principles sounded to me like extremely bureaucratic programming that came from the mind of somebody that has not written a lot of code, frankly"* - Stack overflow chairman (Joel Spolsky)
 
-"Premature optimization is the root of all evil"
-
-"Don't have architecture for the sake of architecture"
-
-"SOLID principles sounded to me like extremely bureaucratic programming that came from the mind of somebody that has not written a lot of code, frankly" - Stack overflow chairman (Joel Spolsky)
+**Note :** We think SOLID is great but know when not to use it.
 
 ### General guidelines
 
