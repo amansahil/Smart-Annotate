@@ -17,17 +17,19 @@ QString string3("Apple");
 QString string4("Zebra");
 QString string5("Camera");
 
-std::ostream& operator<<(std::ostream &outputStream, const QDateTime &dateTime)
+// Overload for << operator for containers without one to display contents
+
+std::ostream &operator<<(std::ostream &outputStream, const QDateTime &dateTime)
 {
     outputStream << dateTime.toString().toStdString();
 
     return outputStream;
 }
 
-std::ostream& operator<<(std::ostream& outputStream, const QStringList &stringList)
+std::ostream &operator<<(std::ostream &outputStream, const QStringList &stringList)
 {
     outputStream << '{';
-    for (auto &key: stringList)
+    for (auto &key : stringList)
     {
         outputStream << ' ';
         outputStream << key.toStdString();
@@ -37,56 +39,56 @@ std::ostream& operator<<(std::ostream& outputStream, const QStringList &stringLi
     return outputStream;
 }
 
-BOOST_AUTO_TEST_CASE( TestGetTrue )
+BOOST_AUTO_TEST_CASE(TestGetTrue)
 {
-   StringDateHash testGet;
+    StringDateHash testGet;
 
-   testGet.put(string1, dateTime1);
-   testGet.put(string2, dateTime2);
-   testGet.put(string3, dateTime3);
+    testGet.put(string1, dateTime1);
+    testGet.put(string2, dateTime2);
+    testGet.put(string3, dateTime3);
 
-   QDateTime getDateTime1;
-   QDateTime getDateTime2;
-   QDateTime getDateTime3;
+    QDateTime getDateTime1;
+    QDateTime getDateTime2;
+    QDateTime getDateTime3;
 
-   bool get1 = testGet.get(string1, getDateTime1);
-   bool get2 = testGet.get(string2, getDateTime2);
-   bool get3 = testGet.get(string3, getDateTime3);
+    bool get1 = testGet.get(string1, getDateTime1);
+    bool get2 = testGet.get(string2, getDateTime2);
+    bool get3 = testGet.get(string3, getDateTime3);
 
-   BOOST_CHECK( get1 );
-   BOOST_CHECK( get2 );
-   BOOST_CHECK( get3 );
+    BOOST_CHECK(get1);
+    BOOST_CHECK(get2);
+    BOOST_CHECK(get3);
 
-   BOOST_CHECK_EQUAL( dateTime1, getDateTime1 );
-   BOOST_CHECK_EQUAL( dateTime2, getDateTime2 );
-   BOOST_CHECK_EQUAL( dateTime3, getDateTime3 );
+    BOOST_CHECK_EQUAL(dateTime1, getDateTime1);
+    BOOST_CHECK_EQUAL(dateTime2, getDateTime2);
+    BOOST_CHECK_EQUAL(dateTime3, getDateTime3);
 }
 
-BOOST_AUTO_TEST_CASE( TestGetFalse )
+BOOST_AUTO_TEST_CASE(TestGetFalse)
 {
-   StringDateHash testGet;
+    StringDateHash testGet;
 
-   testGet.put(string1, dateTime1);
+    testGet.put(string1, dateTime1);
 
-   QDateTime getDateTime1;
+    QDateTime getDateTime1;
 
-   bool get1 = testGet.get(string2, getDateTime1);
+    bool get1 = testGet.get(string2, getDateTime1);
 
-   BOOST_CHECK( !get1 );
+    BOOST_CHECK(!get1);
 }
 
-BOOST_AUTO_TEST_CASE( TestGetEmptyFalse )
+BOOST_AUTO_TEST_CASE(TestGetEmptyFalse)
 {
-   StringDateHash testGet;
+    StringDateHash testGet;
 
-   QDateTime getDateTime1;
+    QDateTime getDateTime1;
 
-   bool get1 = testGet.get(string1, getDateTime1);
+    bool get1 = testGet.get(string1, getDateTime1);
 
-   BOOST_CHECK( !get1 );
+    BOOST_CHECK(!get1);
 }
 
-BOOST_AUTO_TEST_CASE ( TestPut )
+BOOST_AUTO_TEST_CASE(TestPut)
 {
     StringDateHash testPut;
 
@@ -100,12 +102,11 @@ BOOST_AUTO_TEST_CASE ( TestPut )
     testPut.get(string1, getDateTime1);
     testPut.get(string2, getDateTime2);
 
-
-    BOOST_CHECK_EQUAL( dateTime1, getDateTime1 );
-    BOOST_CHECK_EQUAL( dateTime3, getDateTime2 );
+    BOOST_CHECK_EQUAL(dateTime1, getDateTime1);
+    BOOST_CHECK_EQUAL(dateTime3, getDateTime2);
 }
 
-BOOST_AUTO_TEST_CASE ( TestRemove )
+BOOST_AUTO_TEST_CASE(TestRemove)
 {
     StringDateHash testRemove;
 
@@ -124,13 +125,12 @@ BOOST_AUTO_TEST_CASE ( TestRemove )
     bool get2 = testRemove.get(string2, getDateTime2);
     bool get3 = testRemove.get(string3, getDateTime3);
 
-    BOOST_CHECK( get1 );
-    BOOST_CHECK( !get2 );
-    BOOST_CHECK( get3 );
+    BOOST_CHECK(get1);
+    BOOST_CHECK(!get2);
+    BOOST_CHECK(get3);
 }
 
-
-BOOST_AUTO_TEST_CASE ( TestGetSize )
+BOOST_AUTO_TEST_CASE(TestGetSize)
 {
     StringDateHash testgetSize;
 
@@ -138,10 +138,10 @@ BOOST_AUTO_TEST_CASE ( TestGetSize )
     testgetSize.put(string2, dateTime2);
     testgetSize.put(string3, dateTime3);
 
-    BOOST_CHECK_EQUAL( testgetSize.getSize(), 3 );
+    BOOST_CHECK_EQUAL(testgetSize.getSize(), 3);
 }
 
-BOOST_AUTO_TEST_CASE ( TestGetSizePut )
+BOOST_AUTO_TEST_CASE(TestGetSizePut)
 {
     StringDateHash testgetSize;
 
@@ -149,10 +149,10 @@ BOOST_AUTO_TEST_CASE ( TestGetSizePut )
     testgetSize.put(string2, dateTime2);
     testgetSize.put(string2, dateTime3);
 
-    BOOST_CHECK_EQUAL( testgetSize.getSize(), 2 );
+    BOOST_CHECK_EQUAL(testgetSize.getSize(), 2);
 }
 
-BOOST_AUTO_TEST_CASE ( TestGetSizeRemove )
+BOOST_AUTO_TEST_CASE(TestGetSizeRemove)
 {
     StringDateHash testgetSize;
 
@@ -162,22 +162,21 @@ BOOST_AUTO_TEST_CASE ( TestGetSizeRemove )
 
     testgetSize.remove(string2);
 
-    BOOST_CHECK_EQUAL( testgetSize.getSize(), 2 );
+    BOOST_CHECK_EQUAL(testgetSize.getSize(), 2);
 }
 
-
-BOOST_AUTO_TEST_CASE ( TestCollision )
+BOOST_AUTO_TEST_CASE(TestCollision)
 {
     StringDateHash testCollision;
 
-    testCollision.put(string1 , dateTime1);
-    testCollision.put(string2 , dateTime2);
-    testCollision.put(string3 , dateTime3);
+    testCollision.put(string1, dateTime1);
+    testCollision.put(string2, dateTime2);
+    testCollision.put(string3, dateTime3);
 
-    BOOST_CHECK( testCollision.getCapacity() >= 1 );
+    BOOST_CHECK(testCollision.getCapacity() >= 1);
 }
 
-BOOST_AUTO_TEST_CASE ( TestGetKeys )
+BOOST_AUTO_TEST_CASE(TestGetKeys)
 {
     StringDateHash testGetKeys;
 
@@ -185,12 +184,12 @@ BOOST_AUTO_TEST_CASE ( TestGetKeys )
     testGetKeys.put(string2, dateTime2);
     testGetKeys.put(string3, dateTime3);
 
-    QStringList getKeysList = { string1, string3, string2 };
+    QStringList getKeysList = {string1, string3, string2};
 
-    BOOST_CHECK_EQUAL( testGetKeys.getKeys(), getKeysList );
+    BOOST_CHECK_EQUAL(testGetKeys.getKeys(), getKeysList);
 }
 
-BOOST_AUTO_TEST_CASE ( TestSortKeyAsc )
+BOOST_AUTO_TEST_CASE(TestSortKeyAsc)
 {
     StringDateHash testSort;
 
@@ -200,12 +199,12 @@ BOOST_AUTO_TEST_CASE ( TestSortKeyAsc )
     testSort.put(string4, dateTime4);
     testSort.put(string5, dateTime5);
 
-    QStringList sortedList = { string3, string5, string2, string1, string4 };
+    QStringList sortedList = {string3, string5, string2, string1, string4};
 
-    BOOST_CHECK_EQUAL( testSort.sortByKeyAsc(), sortedList );
+    BOOST_CHECK_EQUAL(testSort.sortByKeyAsc(), sortedList);
 }
 
-BOOST_AUTO_TEST_CASE ( TestSortKeyDesc )
+BOOST_AUTO_TEST_CASE(TestSortKeyDesc)
 {
     StringDateHash testSort;
 
@@ -215,12 +214,12 @@ BOOST_AUTO_TEST_CASE ( TestSortKeyDesc )
     testSort.put(string4, dateTime4);
     testSort.put(string5, dateTime5);
 
-    QStringList sortedList = { string4, string1, string2, string5, string3 };
+    QStringList sortedList = {string4, string1, string2, string5, string3};
 
-    BOOST_CHECK_EQUAL( testSort.sortByKeyDesc(), sortedList );
+    BOOST_CHECK_EQUAL(testSort.sortByKeyDesc(), sortedList);
 }
 
-BOOST_AUTO_TEST_CASE ( TestSortDateAsc )
+BOOST_AUTO_TEST_CASE(TestSortDateAsc)
 {
     StringDateHash testSort;
 
@@ -230,12 +229,12 @@ BOOST_AUTO_TEST_CASE ( TestSortDateAsc )
     testSort.put(string4, dateTime4);
     testSort.put(string5, dateTime5);
 
-    QStringList sortedList = { string5, string4, string3, string2, string1 };
+    QStringList sortedList = {string5, string4, string3, string2, string1};
 
-    BOOST_CHECK_EQUAL( testSort.sortByDateAsc(), sortedList );
+    BOOST_CHECK_EQUAL(testSort.sortByDateAsc(), sortedList);
 }
 
-BOOST_AUTO_TEST_CASE ( TestSortDateDesc )
+BOOST_AUTO_TEST_CASE(TestSortDateDesc)
 {
     StringDateHash testSort;
 
@@ -245,7 +244,7 @@ BOOST_AUTO_TEST_CASE ( TestSortDateDesc )
     testSort.put(string4, dateTime4);
     testSort.put(string5, dateTime5);
 
-    QStringList sortedList = { string1, string2, string3, string4, string5 };
+    QStringList sortedList = {string1, string2, string3, string4, string5};
 
-    BOOST_CHECK_EQUAL( testSort.sortByDateDesc(), sortedList );
+    BOOST_CHECK_EQUAL(testSort.sortByDateDesc(), sortedList);
 }
