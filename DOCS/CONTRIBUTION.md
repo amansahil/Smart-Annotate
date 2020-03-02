@@ -14,6 +14,23 @@ The project requires:
 - [Qt](https://doc.qt.io)
 - [qmake](https://doc.qt.io/qt-5/qmake-manual.html)
 - [doxygen](http://www.doxygen.nl)
+- [jenkins](https://jenkins.io/doc/)
+
+## Code of conduct
+
+Please follow these guidelines to create a respectful and productive enviroment for all contributors
+
+- Ensure you have an open mind when tackling or commenting on issues, feature requests and PR's
+
+- Be considerate of peoples work and effort
+
+- Be open to constructive criticism and do so in a polite manner 
+
+- Please keep community first over personal opinions/preferences
+
+- Please refrain from using negative language, always be welcoming and inclusive 
+
+- Ensure community standards are being met
 
 ## Reporting Issues
 
