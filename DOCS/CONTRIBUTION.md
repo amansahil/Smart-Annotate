@@ -38,7 +38,7 @@ To report a bug, use the GitHub issue tracker to create a report. Ensure that yo
 
 ### Writing a good bug report
 
-Ensure the title is clear, short and to the point. In the body of the issue be as descriptive as possible and provide as much detail as you can. Write steps to recreate the problem you ran into and also include what behaviour you expected to see instead. Include screenshots of the issue or GIFS of you recreating the issue if possible. If you are using a pre-compiled version of the application mention the OS version and name. If you are compiling using release binaries mention the version of QT and the OS Verison. And finally, if you are using the QT IDE to generate binaries and run the code, try running the code in debugging mode and include the debug logs or any screenshots of any notification the debugger throws.
+Ensure the title is clear, short and to the point. In the body of the issue be as descriptive as possible and provide as much detail as you can. Write steps to recreate the problem you ran into and also include what behaviour you expected to see instead. Include screenshots of the issue or GIFS of you recreating the issue if possible. If you are using a pre-compiled version of the application mention the OS version and name. If you are compiling using release binaries mention the version of QT and the OS Verison and name. And finally, if you are using the QT IDE to generate binaries and run the code, try running the code in debugging mode and include the debug logs or any screenshots of any notification the debugger throws.
 
 ### Template
 
@@ -70,7 +70,7 @@ When suggesting a feature/enhancement ensure the description is clear. Include w
 
 ### Guidelines
 
-- Ensure you have read the [Commit guidelines](https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#commit-guidelines) and (Branch guidelines)[https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#branch-guidelines] subsection of this section.
+- Ensure you have read the [Commit guidelines](https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#commit-guidelines) and [Branch guidelines](https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#branch-guidelines) subsection of this section.
 - Ensure you have followed standards in the [Code Standards](https://github.com/amansahil/Group_24_SDI_SOFT20091/blob/master/DOCS/CONTRIBUTION.md#code-standards) section
 - Ensure cross-platform compatibility for Windows, Ubuntu and Mac
 - Write a descriptive pull request title
@@ -276,7 +276,7 @@ cppcheck --enable=all --inconclusive --std=posix example.cpp
 
 ### Code Philosiphy
 
-_"SOLID principles sounded to me like extremely bureaucratic programming that came from the mind of somebody that has not written a lot of code, frankly"_ - Stack overflow chairman (Joel Spolsky)
+_"SOLID principles sounded to me like extremely bureaucratic programming that came from the mind of somebody that has not written a lot of code, frankly"_ - Stack Overflow chairman (Joel Spolsky)
 
 **Note :** We think SOLID is great but know when not to use it.
 
@@ -289,8 +289,6 @@ _"SOLID principles sounded to me like extremely bureaucratic programming that ca
 - Check if QT has existing functionality for the problem before implementing custom functionality or adding external libraries
 
 - Composition over inheritance
-
-### General style guidelines
 
 ### General style guidelines
 
@@ -307,7 +305,7 @@ public:
 
 ```
 
-- Attach asterisk for pointers to the variable name instead of the container name
+- Attach asterisk or ampersand to the variable name instead of the container name
 
 Eg:
 
@@ -373,7 +371,7 @@ for (int i = 0; i < someList.length(); i++)
 
 **Constants**: All caps and snake case
 
-#### Header file guidelines
+### Header file guidelines
 
 - Only add includes to header files instead of CPP files unless necessary
 
@@ -424,15 +422,15 @@ private:
 }
 ```
 
-#### CPP file guidelines
+### CPP file guidelines
 
 - Order function in CPP files according to the order in the header file
 
-#### Post-increment vs Pre-increment
+### Post-increment vs Pre-increment
 
-This codebase uses post-increment instead of pre-increment solely for styling and consistency purposes
+- This codebase uses post-increment instead of pre-increment solely for styling and consistency purposes
 
-#### Exceptions guidelines
+### Exceptions guidelines
 
 - Avoid using asserts as they take a toll on performance, remove all asserts before submitting a pull request
 
