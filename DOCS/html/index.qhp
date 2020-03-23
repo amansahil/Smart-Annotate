@@ -165,9 +165,11 @@
               <section title="clearClassItemLineEdit" ref="classLabeller.html#a322189ca432707ec87cbc00fdc7faa2d" />
               <section title="createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
               <section title="doAutoSave" ref="classLabeller.html#a5ce2a812625ac856cc9347359b344350" />
+              <section title="on_actionAbout_triggered" ref="classLabeller.html#a6045482891eaf79d6abd1e192c0b123a" />
               <section title="on_actionAdd_Text_triggered" ref="classLabeller.html#ada6b4ec9d388155d822edc6702c015fb" />
               <section title="on_actionCopy_triggered" ref="classLabeller.html#ae5e4d48693a5f4903f6894dcaec84634" />
               <section title="on_actionDelete_triggered" ref="classLabeller.html#a9a4d3756acf5dcbed79d9c121da64d90" />
+              <section title="on_actionHow_to_use_triggered" ref="classLabeller.html#ad15db741e98f348cbf1a36df7d9716db" />
               <section title="on_actionMark_Object_triggered" ref="classLabeller.html#a037487573bad1fb9b8ea8655d944f5fe" />
               <section title="on_actionPaste_triggered" ref="classLabeller.html#ab425b0e5e253b9ea9a3254ecb262b603" />
               <section title="on_actionRectangle_triggered" ref="classLabeller.html#aa282c5aa9bfd7678750279f22c3f219b" />
@@ -493,6 +495,8 @@
       <keyword name="on_actionSmart_Click_triggered" id="Labeller::on_actionSmart_Click_triggered" ref="classLabeller.html#a8234559100914d14603310c177da7b76" />
       <keyword name="on_connectButton_clicked" id="Labeller::on_connectButton_clicked" ref="classLabeller.html#a4707c1fb4b1a5bea1c89df33d0b845cf" />
       <keyword name="on_clearPoints_clicked" id="Labeller::on_clearPoints_clicked" ref="classLabeller.html#a2cd9b2331498ab719f3070a833cc1165" />
+      <keyword name="on_actionHow_to_use_triggered" id="Labeller::on_actionHow_to_use_triggered" ref="classLabeller.html#ad15db741e98f348cbf1a36df7d9716db" />
+      <keyword name="on_actionAbout_triggered" id="Labeller::on_actionAbout_triggered" ref="classLabeller.html#a6045482891eaf79d6abd1e192c0b123a" />
       <keyword name="createListeners" id="Labeller::createListeners" ref="classLabeller.html#aa29be0d9b17cea6290109223fba3bdd8" />
       <keyword name="parsePoint" id="Labeller::parsePoint" ref="classLabeller.html#aa86d8bccd3ec46038e2bd9d367772582" />
       <keyword name="ui" id="Labeller::ui" ref="classLabeller.html#ab57499984e445cf91f9b13f10501828f" />
