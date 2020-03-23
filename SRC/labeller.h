@@ -25,7 +25,7 @@ class Labeller : public QMainWindow
 {
     Q_OBJECT
 
-    // Listeners & UI Methods
+    // Listeners & Render Methods
 
 public:
     explicit Labeller(QWidget *parent = nullptr);
@@ -262,5 +262,15 @@ private slots:
      *  Triggered when `clearPoints` is clicked
      */
     void on_clearPoints_clicked();
+
+    /*!
+     *  Triggered when How To Use ? is clicked from the menu
+     */
+    void on_actionHow_to_use_triggered();
+
+    /*!
+     *  Triggered when About is clicked from the menu
+     */
+    void on_actionAbout_triggered();
 };
 #endif // LABELLER_H

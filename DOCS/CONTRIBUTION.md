@@ -5,7 +5,7 @@
 The project requires:
 
 - `Qmake version >= 3.0`
-- `Qt version >= 4.0` with `Core`, `Gui` enabled.
+- `Qt version >= 5.10` with `Core`, `Gui` enabled.
 - `c++11`
 - `doxygen v1.8.17`
 

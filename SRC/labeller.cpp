@@ -606,3 +606,7 @@ void Labeller::on_actionSmart_Click_triggered() { imageEditor->updateAnnotationS
 void Labeller::on_connectButton_clicked() { imageEditor->connectClickElipses(); }
 
 void Labeller::on_clearPoints_clicked() { imageEditor->deleteClickElipses(); }
+
+void Labeller::on_actionHow_to_use_triggered() { QMessageBox::about(nullptr, tr("How to use ?"), tr("<p>Our wiki has all the information you need, to start using Smart Annotate</p>Link: <a href='https://github.com/amansahil/Group_24_SDI_SOFT20091/wiki/How-to-use-%3F'>How to use ?</a>")); }
+
+void Labeller::on_actionAbout_triggered() { QMessageBox::about(nullptr, tr("Smart Annotate"), tr("<p>Smart annotate is a simple lightweight dataset labelling tool made with QT and C++.</p><p>We ❤️ open source <a href='https://github.com/amansahil/Group_24_SDI_SOFT20091/wiki'>(Learn More)</a></p>")); }

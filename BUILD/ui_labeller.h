@@ -38,6 +38,8 @@ public:
     QAction *actionRectangle;
     QAction *actionSmart_annotate;
     QAction *actionSmart_Click;
+    QAction *actionHow_to_use;
+    QAction *actionAbout;
     QWidget *centralwidget;
     QPushButton *imageBrowseButton;
     QLabel *label;
@@ -77,6 +79,7 @@ public:
     QMenu *menuLabel;
     QMenu *menuEdit;
     QMenu *menuShape;
+    QMenu *menuHelo;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Labeller)
@@ -102,6 +105,10 @@ public:
         actionSmart_annotate->setObjectName(QString::fromUtf8("actionSmart_annotate"));
         actionSmart_Click = new QAction(Labeller);
         actionSmart_Click->setObjectName(QString::fromUtf8("actionSmart_Click"));
+        actionHow_to_use = new QAction(Labeller);
+        actionHow_to_use->setObjectName(QString::fromUtf8("actionHow_to_use"));
+        actionAbout = new QAction(Labeller);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         centralwidget = new QWidget(Labeller);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         imageBrowseButton = new QPushButton(centralwidget);
@@ -228,6 +235,8 @@ public:
         menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         menuShape = new QMenu(menubar);
         menuShape->setObjectName(QString::fromUtf8("menuShape"));
+        menuHelo = new QMenu(menubar);
+        menuHelo->setObjectName(QString::fromUtf8("menuHelo"));
         Labeller->setMenuBar(menubar);
         statusbar = new QStatusBar(Labeller);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -236,6 +245,7 @@ public:
         menubar->addAction(menuLabel->menuAction());
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuShape->menuAction());
+        menubar->addAction(menuHelo->menuAction());
         menuLabel->addAction(actionMark_Object);
         menuLabel->addAction(actionAdd_Text);
         menuLabel->addAction(actionSelect);
@@ -245,6 +255,8 @@ public:
         menuShape->addAction(actionRectangle);
         menuShape->addAction(actionSmart_annotate);
         menuShape->addAction(actionSmart_Click);
+        menuHelo->addAction(actionHow_to_use);
+        menuHelo->addAction(actionAbout);
 
         retranslateUi(Labeller);
 
@@ -263,6 +275,8 @@ public:
         actionRectangle->setText(QApplication::translate("Labeller", "Rectangle", nullptr));
         actionSmart_annotate->setText(QApplication::translate("Labeller", "Smart annotate", nullptr));
         actionSmart_Click->setText(QApplication::translate("Labeller", "Smart Click", nullptr));
+        actionHow_to_use->setText(QApplication::translate("Labeller", "How to use ?", nullptr));
+        actionAbout->setText(QApplication::translate("Labeller", "About", nullptr));
         imageBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
         label->setText(QApplication::translate("Labeller", "Images", nullptr));
         classBrowseButton->setText(QApplication::translate("Labeller", "Browse", nullptr));
@@ -295,6 +309,7 @@ public:
         menuLabel->setTitle(QApplication::translate("Labeller", "Label", nullptr));
         menuEdit->setTitle(QApplication::translate("Labeller", "Edit", nullptr));
         menuShape->setTitle(QApplication::translate("Labeller", "Shape", nullptr));
+        menuHelo->setTitle(QApplication::translate("Labeller", "Help", nullptr));
     } // retranslateUi
 
 };

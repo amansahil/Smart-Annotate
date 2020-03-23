@@ -497,9 +497,17 @@
     <addaction name="actionSmart_annotate"/>
     <addaction name="actionSmart_Click"/>
    </widget>
+   <widget class="QMenu" name="menuHelo">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHow_to_use"/>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuLabel"/>
    <addaction name="menuEdit"/>
    <addaction name="menuShape"/>
+   <addaction name="menuHelo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMark_Object">
@@ -545,6 +553,16 @@
   <action name="actionSmart_Click">
    <property name="text">
     <string>Smart Click</string>
+   </property>
+  </action>
+  <action name="actionHow_to_use">
+   <property name="text">
+    <string>How to use ?</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
