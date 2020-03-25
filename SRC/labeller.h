@@ -115,7 +115,6 @@ public slots:
     void doAutoSave();
 
 private:
-
     /*!
      *  Parses point string from .annotations file to QPointF
      */

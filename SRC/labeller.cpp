@@ -482,7 +482,7 @@ void Labeller::on_saveButton_clicked()
 
         QJsonArray shapesArray;
 
-        for (const QRectF &currRect: applicationRectState.value(fileName))
+        for (const QRectF &currRect : applicationRectState.value(fileName))
         {
 
             QJsonObject shapeObject;
@@ -501,7 +501,7 @@ void Labeller::on_saveButton_clicked()
             shapesArray.push_back(shapeObject);
         }
 
-        for (const QPair<QString, QPointF> &currText: applicationTextState.value(fileName))
+        for (const QPair<QString, QPointF> &currText : applicationTextState.value(fileName))
         {
             QJsonObject shapeObject;
 
@@ -514,7 +514,7 @@ void Labeller::on_saveButton_clicked()
             shapesArray.push_back(shapeObject);
         }
 
-        for (const QPolygonF &currPolygon: applicationPolygonState.value(fileName))
+        for (const QPolygonF &currPolygon : applicationPolygonState.value(fileName))
         {
             QJsonObject shapeObject;
 

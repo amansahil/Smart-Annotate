@@ -24,11 +24,11 @@ Please follow these guidelines to create a respectful and productive enviroment 
 
 - Be considerate of peoples work and effort
 
-- Be open to constructive criticism and do so in a polite manner 
+- Be open to constructive criticism and do so in a polite manner
 
 - Please keep community first over personal opinions/preferences
 
-- Please refrain from using negative language, always be welcoming and inclusive 
+- Please refrain from using negative language, always be welcoming and inclusive
 
 - Ensure community standards are being met
 
