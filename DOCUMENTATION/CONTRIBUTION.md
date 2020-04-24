@@ -4,7 +4,7 @@
 
 The project requires:
 
-- `Qmake version >= 3.0`
+- `Qmake version >= 4.0`
 - `Qt version >= 5.10` with `Core`, `Gui` enabled.
 - `c++11`
 - `doxygen v1.8.17`
@@ -208,7 +208,7 @@ enum someEnum {
 int someValue;
 
 /*!
- *  A nice short description of the function does, two spaces away from the astrix
+ *  A nice short description of what the function does, two spaces away from the astrix
  */
 void sumeFunc();
 
