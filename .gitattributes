@@ -39,5 +39,5 @@
 DOCUMENTATION/* linguist-documentation=true
 
 # Build Files
-BUILD/* linguist-vendored
-BUILD_TESTS/* linguist-vendored
+BUILD/* linguist-generated
+BUILD_TESTS/* linguist-generated
