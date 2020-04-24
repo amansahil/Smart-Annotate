@@ -37,3 +37,7 @@
 
 # Documentation
 DOCUMENTATION/* linguist-documentation=true
+
+# Build Files
+BUILD/* linguist-vendored
+BUILD_TESTS/* linguist-vendored
